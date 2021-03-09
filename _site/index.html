@@ -1,1024 +1,357 @@
-<!DOCTYPE html>
-<html lang="en"><!--
- __  __                __                                     __
-/\ \/\ \              /\ \             __                    /\ \
-\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
- \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
-  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
-   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
-    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
-                /\___/                \ \____/
-                \/__/                  \/___/
-
-Powered by Hydejack v9.1.2 <https://hydejack.com/>
--->
 
 
-
-
-
-
-
-<head>
-  
-
-
-
-
-
-
-  
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-<!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Blog | Invariant Subspace</title>
-<meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Blog" />
-<meta name="author" content="Thomas Knudson" />
-<meta property="og:locale" content="en" />
-<meta name="description" content="The official Hydejack blog. Version updates, example content and how-to guides on how to blog with Jekyll." />
-<meta property="og:description" content="The official Hydejack blog. Version updates, example content and how-to guides on how to blog with Jekyll." />
-<meta property="og:site_name" content="Invariant Subspace" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Blog" />
-<script type="application/ld+json">
-{"url":"/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/img/logo.png"},"name":"Thomas Knudson"},"name":"Invariant Subspace","author":{"@type":"Person","name":"Thomas Knudson"},"description":"The official Hydejack blog. Version updates, example content and how-to guides on how to blog with Jekyll.","headline":"Blog","dateModified":"2021-03-08T16:31:29-08:00","@type":"WebSite","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-
-  
-
-  
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-<meta name="mobile-web-app-capable" content="yes">
 
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Invariant Subspace">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-<meta name="application-name" content="Invariant Subspace">
+<!-- begin SEO -->
 
 
-  <meta name="theme-color" content="rgb(8,46,57)">
 
 
-<meta name="generator" content="Hydejack v9.1.2" />
 
 
-<link rel="alternate" href="/example/2012-02-07-example-content/" hreflang="en">
 
-<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Invariant Subspace" />
 
 
-<link rel="shortcut icon"    href="/assets/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
+<title>academicpages is a ready-to-fork GitHub Pages template for academic personal websites - Invariant Subspace</title>
 
-<link rel="manifest" href="/assets/site.webmanifest">
 
 
 
 
 
-<link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
 
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Invariant Subspace">
+<meta property="og:title" content="academicpages is a ready-to-fork GitHub Pages template for academic personal websites">
 
 
+  <link rel="canonical" href="https://simmeringrook.github.io/">
+  <meta property="og:url" content="https://simmeringrook.github.io/">
 
 
 
-<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script");n.src=e,t&&a(n,"load",t,{once:!0});t=c.scripts[0];return t.parentNode.insertBefore(n,t),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
-!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
-!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
-!function(w) {
-  w._baseURL = '/';
-  w._publicPath = '/assets/js/';
-  w._noPushState = false;
-  w._noDrawer = false;
-  w._noNavbar = false;
-  w._noToc = false;
-  w._noSearch = false;
-  w._search = {
-    DATA_URL: '/assets/sitedata.json?no-cache',
-    STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2021-03-09T05:19:58-08:00',
-  };
-  w._clapButton = true;
-}(window);</script>
+  <meta property="og:description" content="About me">
 
 
-<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
 
 
-<!--[if gt IE 8]><!---->
 
   
 
-
-
-
-<link rel="stylesheet" href="/assets/css/hydejack-9.1.2.css" id="_stylePreload">
-<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
-
-
-
-
-  <style id="_pageStyle">
-
-html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-highlight: rgba(79,177,186,0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(8,46,57)}
-
-</style>
-
-
-<!--<![endif]-->
-
-
-<!--
-Code used for embedding Gumroad on the Hydejack Site. 
-Left here for reference, feel free to delete.
--->
-<link rel="dns-prefetch" href="https://assets.gumroad.com">
-<script>window.GET_CLAPS_API = 'https://worker.getclaps.dev'</script>
-<script type="module">
-  const ppiData = window._ppiData = fetch('https://hydejack-ppi.qwtel.workers.dev', { mode: 'cors'}).then(res => res.json()).catch(() => ({}));
-  const promisify = f => x => new Promise(r => f(x).addEventListener('load', r));
-  const loadJS = promisify(window.loadJS);
-  {
-    let p;
-    document.querySelector('hy-push-state').addEventListener('load', () => {
-      const io = new IntersectionObserver(async (entries) => {
-        if (entries.some(x => x.isIntersecting)) {
-          p = p || loadJS('https://gumroad.com/js/gumroad-embed.js');
-          const [{ code }] = await Promise.all([ppiData, p]);
-          document.querySelectorAll('.gumroad-product-embed').forEach(el => { 
-            if (!el.dataset.gumroadParams) {
-              el.dataset.gumroadParams = 'offer_code=' + (code || 'qr0tw8m');
-            }
-          });
-          if (!window.GumroadEmbed) {
-            await new Promise(function check1(res) {
-              if ('createGumroadEmbed' in window) res(window.createGumroadEmbed());
-              else setTimeout(() => check1(res), 200);
-            });
-          }
-          await new Promise(function check2(res) {
-            if ('GumroadEmbed' in window) res(GumroadEmbed.reload());
-            else setTimeout(() => check2(res), 200);
-          });
-        }
-      }, { rootMargin: '1440px' });
-      document.querySelectorAll('.gumroad-product-embed').forEach(el => io.observe(el));
-    });
-  }
-  {
-    let p;
-    document.querySelector('hy-push-state').addEventListener('load', () => {
-      const io = new IntersectionObserver(async (entries) => {
-        if (entries.some(x => x.isIntersecting)) {
-          p = p || loadJS('https://gumroad.com/js/gumroad.js');
-          const [{ code }] = await Promise.all([ppiData, p]);
-          if (code) {
-            document.querySelectorAll('.gumroad-button').forEach(el => { 
-              if (!el.href.endsWith(code)) {
-                el.href = el.href + '/' + (code || 'qr0tw8m');
-              }
-            });
-          }
-          if (!window.GumroadOverlay) {
-            await new Promise(function check(res) {
-              if ('createGumroadOverlay' in window) res(window.createGumroadOverlay());
-              else setTimeout(() => check(res), 200);
-            });
-          }
-        }
-      }, { rootMargin: '300px' });
-      document.querySelectorAll('.gumroad-button').forEach(el => io.observe(el));
-    });
-  }
-</script>
-
-
-</head>
-
-<body class="no-break-layout">
-  
-
-
-<hy-push-state
-  id="_pushState"
-  replace-selector="#_main"
-  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
-  script-selector="script"
-  duration="500"
-  hashchange
->
-  
-  <hy-drawer
-  id="_drawer"
-  class="cover"
-  side="left"
-  threshold="10"
-  noscroll
-  opened
->
-  <header id="_sidebar" class="sidebar" role="banner">
-    
-
-
-
-
-<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(8,46,57);background-image:url(/assets/img/sidebar-bg.jpg)"></div>
-
-    <div class="sidebar-sticky">
-  <div class="sidebar-about">
-    
-      <a class="no-hover" href="/" tabindex="-1">
-        <img src="/assets/img/logo.png" class="avatar" alt="Invariant Subspace" width="120" height="120" loading="lazy" />
-      </a>
-    
-    <a class="sidebar-title" href="/"><h2 class="h1">Invariant Subspace</h2></a>
-    
-    
-      <p class="">
-        Change <code class="language-plaintext highlighter-rouge">tagline</code> in <code class="language-plaintext highlighter-rouge">_config.yml</code>
-
-      </p>
-    
-  </div>
-
-  <nav class="sidebar-nav heading" role="navigation">
-    <span class="sr-only">Navigation:</span>
-<ul>
-  
-    
-      
-      <li>
-        <a
-          id="_drawer--opened"
-          href="/physics/"
-          class="sidebar-nav-item "
-          
-        >
-          Physics
-        </a>
-      </li>
-    
-      
-      <li>
-        <a
-          
-          href="/maths/"
-          class="sidebar-nav-item "
-          
-        >
-          Mathematics
-        </a>
-      </li>
-    
-      
-      <li>
-        <a
-          
-          href="/courses/"
-          class="sidebar-nav-item "
-          
-        >
-          Courses
-        </a>
-      </li>
-    
-      
-      <li>
-        <a
-          
-          href="/about/"
-          class="sidebar-nav-item "
-          
-        >
-          About
-        </a>
-      </li>
-    
-  
-</ul>
-
-  </nav>
-
-  
-  <div class="sidebar-social">
-    <span class="sr-only">Social:</span>
-<ul>
-  
-    
-    
-
-    
-    
-
-    
-    
-      
-
-
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  <li>
-    <a href="mailto:<mail@domain.tld>" title="Email" class="no-mark-external">
-      <span class="icon-mail"></span>
-      <span class="sr-only">Email</span>
-    </a>
-  </li>
-
-
-    
-  
-</ul>
-
-  </div>
-</div>
-  </header>
-</hy-drawer>
-<hr class="sr-only" hidden />
-
-  <div id="_navbar" class="navbar fixed-top">
-  <div class="content">
-    <span class="sr-only">Jump to:</span>
-    <div class="nav-btn-bar">
-      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
-        <span class="sr-only">Navigation</span>
-        <span class="icon-menu"></span>
-      </a>
-      <div class="nav-span"></div>
-    </div>
-  </div>
-</div>
-<hr class="sr-only" hidden />
-
-  <main
-  id="_main"
-  class="content layout-blog"
-  role="main"
->
-  <nav id="breadcrumbs" class="screen-only"><ul>
-  
-  
-</ul></nav>
-  
-
-
-  
-
-  
-
-
-
-
-
-<article id="post-maths-courses-physics-Differential-Geometry" class="page post mb6" role="article">
-  <header>
-    <h1 class="post-title flip-project-title">
-      <a href="/maths/courses/physics/2021-03-08-Differential-Geometry/" class="flip-title">
-        Differential Geometry
-      </a>
-    </h1>
-
-    <div class="post-date">
-      
-      <span class="ellipsis mr1">
-        <time datetime="2021-03-08T00:00:00-08:00">08 Mar 2021</time> in <span>Maths</span><span>Courses</span><a href="/physics/" class="flip-title">Physics</a> on <span>Mathematics</span>, <span>Differential geometry</span>
-      </span>
-      
-        
-          
-          
-          
-        
-      
-    </div>
-
-    
-    
-
-    
-
-
-
-  
-    <p class="note-sm" >
-      Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
-
-    </p>
-  
-
-
-  </header>
-
-  
-    
-
-    
-    
-    <footer>
-      <p class="read-more">
-        Continue reading <a class="heading flip-title" href="/maths/courses/physics/2021-03-08-Differential-Geometry/">Differential Geometry</a>
-
-      </p>
-    </footer>
-  
-</article>
-
-
-  
-
-
-
-
-
-<article id="post-example-PH213" class="page post mb6" role="article">
-  <header>
-    <h1 class="post-title flip-project-title">
-      <a href="/example/2021-03-08-PH213/" class="flip-title">
-        PH 213
-      </a>
-    </h1>
-
-    <div class="post-date">
-      
-      <span class="ellipsis mr1">
-        <time datetime="2021-03-08T00:00:00-08:00">08 Mar 2021</time> in <span>Example</span> 
-      </span>
-      
-        
-          
-          
-          
-            
-            
-            <span class="ellipsis" data-tippy-content="Last modified at: 2021-03-09">
-              <span class="sr-only">Last modified at:</span>
-              <span class="icon-history"></span>
-              <time datetime="2021-03-09T05:19:57-08:00">2021-03-09</time>
-            </span>
-          
-        
-      
-    </div>
-
-    
-    
-
-    
-
-
-
-  
-    <p class="note-sm" >
-      Introductory Physics with Calculus, Part 3. Concepts covered include a brief survey of Maxwell’s equations and DC circuits.
-
-    </p>
-  
-
-
-  </header>
-
-  
-    
-
-    
-    
-    <footer>
-      <p class="read-more">
-        Continue reading <a class="heading flip-title" href="/example/2021-03-08-PH213/">PH 213</a>
-
-      </p>
-    </footer>
-  
-</article>
-
-
-  
-
-
-
-
-
-<article id="post-example-introducing-hydejack-9" class="page post mb6" role="article">
-  <header>
-    <h1 class="post-title flip-project-title">
-      <a href="/example/2020-07-03-introducing-hydejack-9/" class="flip-title">
-        PH 213
-      </a>
-    </h1>
-
-    <div class="post-date">
-      
-      <span class="ellipsis mr1">
-        <time datetime="2020-07-03T00:00:00-07:00">03 Jul 2020</time> in <span>Example</span> 
-      </span>
-      
-        
-          
-          
-          
-            
-            
-            <span class="ellipsis" data-tippy-content="Last modified at: 2021-03-08">
-              <span class="sr-only">Last modified at:</span>
-              <span class="icon-history"></span>
-              <time datetime="2021-03-08T16:31:29-08:00">2021-03-08</time>
-            </span>
-          
-        
-      
-    </div>
-
-    
-    
-
-    
-
-
-
-  
-    <p class="note-sm" >
-      Introductory Physics with Calculus, Part 3. Concepts covered include a brief survey of Maxwell’s equations and DC circuits.
-
-    </p>
-  
-
-
-  </header>
-
-  
-    
-
-    
-    
-    <footer>
-      <p class="read-more">
-        Continue reading <a class="heading flip-title" href="/example/2020-07-03-introducing-hydejack-9/">PH 213</a>
-
-      </p>
-    </footer>
-  
-</article>
-
-
-  
-
-
-
-
-
-<article id="post-example-example-content-iii" class="page post mb6" role="article">
-  <header>
-    <h1 class="post-title flip-project-title">
-      <a href="/example/2018-06-01-example-content-iii/" class="flip-title">
-        Example Content III
-      </a>
-    </h1>
-
-    <div class="post-date">
-      
-      <span class="ellipsis mr1">
-        <time datetime="2018-06-01T00:00:00-07:00">01 Jun 2018</time> in <span>Example</span> 
-      </span>
-      
-        
-          
-          
-          
-            
-            
-            <span class="ellipsis" data-tippy-content="Last modified at: 2021-03-08">
-              <span class="sr-only">Last modified at:</span>
-              <span class="icon-history"></span>
-              <time datetime="2021-03-08T16:31:29-08:00">2021-03-08</time>
-            </span>
-          
-        
-      
-    </div>
-
-    
-    
-      <a href="/example/2018-06-01-example-content-iii/" class="no-hover no-print-link flip-project" tabindex="-1">
-        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
-          
-
-
-<img
-  
-    src="/assets/img/blog/example-content-iii.jpg"
-    srcset="/assets/img/blog/example-content-iii.jpg 1060w,/assets/img/blog/example-content-iii@0,5x.jpg 530w,/assets/img/blog/example-content-iii@0,25x.jpg 265w"
-    
-  
-  alt="Example Content III"
-  
-  
-  width="864"
-  height="486"
-  loading="lazy"
-/>
-
-        </div>
-      </a>
-      
-    
-
-    
-
-
-
-  
-    <p class="note-sm" >
-      A page showing Hydejack-specific markdown content.
-
-    </p>
-  
-
-
-  </header>
-
-  
-    <p>Hydejack offers a few additional features to markup your markdown.
-Don’t worry, these are merely CSS classes added with kramdown’s <code class="language-plaintext highlighter-rouge">{:...}</code> syntax,
-so that your content remains compatible with other Jekyll themes.</p>
-
-
-    
-    
-    <footer>
-      <p class="read-more">
-        Continue reading <a class="heading flip-title" href="/example/2018-06-01-example-content-iii/">Example Content III</a>
-
-      </p>
-    </footer>
-  
-</article>
-
-
-  
-
-
-
-
-
-<article id="post-example-example-content-ii" class="page post mb6" role="article">
-  <header>
-    <h1 class="post-title flip-project-title">
-      <a href="/example/2017-11-23-example-content-ii/" class="flip-title">
-        Example Content II
-      </a>
-    </h1>
-
-    <div class="post-date">
-      
-      <span class="ellipsis mr1">
-        <time datetime="2017-11-23T00:00:00-08:00">23 Nov 2017</time> in <span>Example</span> 
-      </span>
-      
-        
-          
-          
-          
-            
-            
-            <span class="ellipsis" data-tippy-content="Last modified at: 2021-03-08">
-              <span class="sr-only">Last modified at:</span>
-              <span class="icon-history"></span>
-              <time datetime="2021-03-08T16:31:29-08:00">2021-03-08</time>
-            </span>
-          
-        
-      
-    </div>
-
-    
-    
-      <a href="/example/2017-11-23-example-content-ii/" class="no-hover no-print-link flip-project" tabindex="-1">
-        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
-          
-
-
-<img
-  
-    src="/assets/img/blog/example-content-ii.jpg"
-  
-  alt="Example Content II"
   
-  
-  width="864"
-  height="486"
-  loading="lazy"
-/>
-
-        </div>
-      </a>
-      
-    
-
-    
-
-
-
-  
-    <p class="note-sm" >
-      A page showing how regular markdown content is styled in Hydejack.
-
-    </p>
-  
-
-
-  </header>
-
-  
-    <p>There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.</p>
-
-
-    
-    
-    <footer>
-      <p class="read-more">
-        Continue reading <a class="heading flip-title" href="/example/2017-11-23-example-content-ii/">Example Content II</a>
-
-      </p>
-    </footer>
-  
-</article>
-
-
-  
-
-
-
 
 
-<article id="post-example-example-content" class="page post mb6" role="article">
-  <header>
-    <h1 class="post-title flip-project-title">
-      <a href="/example/2012-02-07-example-content/" class="flip-title">
-        Example Content
-      </a>
-    </h1>
 
-    <div class="post-date">
-      
-      <span class="ellipsis mr1">
-        <time datetime="2012-02-07T00:00:00-08:00">07 Feb 2012</time> in <span>Example</span> 
-      </span>
-      
-    </div>
 
-    
-    
 
-    
 
 
 
-  
-    <p class="note-sm" >
-      Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
-
-    </p>
-  
-
-
-  </header>
-
-  
-    <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-
-
-    
-    
-    <footer>
-      <p class="read-more">
-        Continue reading <a class="heading flip-title" href="/example/2012-02-07-example-content/">Example Content</a>
-
-      </p>
-    </footer>
-  
-</article>
 
 
 
 
-  <h2 class="sr-only">Pagination</h2>
-<nav class="pagination heading clearfix" role="navigation">
-  <ul>
-    <li class="pagination-item older" >
-      
-      
-      
-  <span class=" ">Older</span>
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Your Name",
+      "url" : "https://simmeringrook.github.io",
+      "sameAs" : null
+    }
+  </script>
 
 
-    </li>
-    <li class="pagination-item newer" >
-      
-      
-      
-  <span class=" ">Newer</span>
 
 
-    </li>
-  </ul>
-</nav>
 
 
+<!-- end SEO -->
 
-  
-<footer class="content" role="contentinfo">
-  <hr/>
-  
-    <p><small class="copyright">© 2021. All rights reserved.
-</small></p>
-  
-  
-    <nav class="legal"><small>
-    
-      
-      <a class="heading flip-title" href="/LICENSE/">LICENSE</a>
-      |
-    
-      
-      <a class="heading flip-title" href="/NOTICE/">NOTICE</a>
-      |
-    
-      
-      <a class="heading flip-title" href="/CHANGELOG/">CHANGELOG</a>
-      
-    
-    </small></nav>
-  
-    <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">9.1.2</span></small></p>
-  <hr class="sr-only"/>
-</footer>
-
 
-</main>
+<link href="https://simmeringrook.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Invariant Subspace Feed">
 
-  
-</hy-push-state>
-
-
-  <!--[if gt IE 10]><!---->
-  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
-</script>
-  <script src="/assets/js/hydejack-9.1.2.js" type="module"></script>
-  <script src="/assets/js/LEGACY-hydejack-9.1.2.js" nomodule defer></script>
-  
-
-  
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!--<![endif]-->
-  <!-- <script>
-  document.querySelector('hy-push-state').setAttribute('prefetch', '');
-
-  document.querySelectorAll('.sidebar a[href^="/"]').forEach(function (el) { 
-    el.addEventListener('click', function (e) {
-      if (el.pathname === window.location.pathname) {
-        e.preventDefault();
-        e.stopPropagation();
-        document.querySelector('hy-drawer').close();
-      }
-    });
-  });
-</script> -->
-
-<!--
-Code for integrating CloudFlare's email protection with Hydejack's single page app loading.
--->
 <script>
-  document.getElementById('_pushState').addEventListener('hy-push-state-after', function (e) {
-    function e(e){
-      (console.error?console.error:console.log).call(console,e)
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://simmeringrook.github.io/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://simmeringrook.github.io/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="https://simmeringrook.github.io/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="https://simmeringrook.github.io/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="https://simmeringrook.github.io/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="https://simmeringrook.github.io/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="https://simmeringrook.github.io/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="https://simmeringrook.github.io/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="https://simmeringrook.github.io/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="https://simmeringrook.github.io/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="https://simmeringrook.github.io/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="https://simmeringrook.github.io/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="icon" type="image/png" href="https://simmeringrook.github.io/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="https://simmeringrook.github.io/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="manifest" href="https://simmeringrook.github.io/images/manifest.json?v=M44lzPylqQ">
+<link rel="mask-icon" href="https://simmeringrook.github.io/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="https://simmeringrook.github.io/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="https://simmeringrook.github.io/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="https://simmeringrook.github.io/assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
     }
-
-    function t(e){
-      return l.innerHTML='<a href="'+e.replace(/"/g,"&quot;")+'"></a>',l.childNodes[0].getAttribute("href")
-    }
-
-    function r(e,t){
-      var r=e.substr(t,2);return parseInt(r,16)
-    }
-
-    function n(e,n){
-      for(var o="",c=r(e,n),a=n+2;a<e.length;a+=2){
-        var l=r(e,a)^c;
-        o+=String.fromCharCode(l)
-      }
-      return t(o)
-    }
-
-    var o="/cdn-cgi/l/email-protection#",
-        c=".__cf_email__",
-        a="data-cfemail",
-        l=document.createElement("div");
-
-    !function(){
-      for(var t=document.getElementsByTagName("a"),r=0;r<t.length;r++)
-        try{
-          var c=t[r],a=c.href.indexOf(o);
-          a>-1&&(c.href="mailto:"+n(c.href,a+o.length))
-        }catch(t){
-          e(t)
-        }
-    }(),
-    function(){
-      for(var t=document.querySelectorAll(c),r=0;r<t.length;r++)
-        try{
-          var o=t[r],l=n(o.getAttribute(a),0),i=document.createTextNode(l);
-          o.parentNode.replaceChild(i,o)
-        }catch(t){
-          e(t)
-        }
-    }()
   });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="https://simmeringrook.github.io/">Invariant Subspace</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://simmeringrook.github.io/publications/">Publications</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://simmeringrook.github.io/talks/">Talks</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://simmeringrook.github.io/teaching/">Teaching</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://simmeringrook.github.io/portfolio/">Portfolio</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://simmeringrook.github.io/year-archive/">Blog Posts</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://simmeringrook.github.io/cv/">CV</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://simmeringrook.github.io/markdown/">Guide</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  <div class="author__avatar">
+    
+    	<img src="https://simmeringrook.github.io/images/" class="author__avatar" alt="Your Sidebar Name">
+    
+  </div>
+
+  <div class="author__content">
+    <h3 class="author__name">Your Sidebar Name</h3>
+    <p class="author__bio">Your biography for the left-hand sidebar</p>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Location</li>
+      
+      
+      
+      
+      
+       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><a href="https://github.com/academicpages"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="academicpages is a ready-to-fork GitHub Pages template for academic personal websites">
+    <meta itemprop="description" content="About me">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">academicpages is a ready-to-fork GitHub Pages template for academic personal websites
+</h1>
+          
+        
+        
+        
+        
+             
+        
+    
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>This is the landing page, so I should probably have a table of contents go hear similar to what currently exists on the wiki to allow for quick navigation.</p>
+
+<p>This is a <a href="markdown">link</a> to the markdown test page.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+
+
+      </footer>
+
+      
+
+      
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<a href="/sitemap/">Sitemap</a>
+<!-- end custom footer snippets -->
+
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/academicpages"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="https://simmeringrook.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Your Name. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script src="https://simmeringrook.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
 </script>
 
 
 
 
 
-<div hidden>
-  
-  <h2 class="sr-only">Templates (for web app):</h2>
 
-  <clap-config>
-    <clap-text at="1">Keep going!</clap-text>
-    <clap-text at="2">Keep going ×2!</clap-text>
-    <clap-text at="3">Give me more!</clap-text>
-    <clap-text at="5">Thank you, thank you</clap-text>
-    <clap-text at="7">Far too kind!</clap-text>
-    <clap-text at="10">Never gonna give me up?</clap-text>
-    <clap-text at="14">Never gonna let me down?</clap-text>
-    <clap-text at="20">Turn around and desert me!</clap-text>
-    <clap-text at="30">You're an addict!</clap-text>
-    <clap-text at="40">Son of a clapper!</clap-text>
-    <clap-text at="50">No way</clap-text>
-    <clap-text at="60">Go back to work!</clap-text>
-    <clap-text at="70">This is getting out of <em>hand</em></clap-text>
-    <clap-text at="80">Unbelievable</clap-text>
-    <clap-text at="90">PREPOSTEROUS</clap-text>
-    <clap-text at="100">I N S A N I T Y</clap-text>
-    <clap-text at="185"><span style="font-family:monospace">FEED ME A STRAY CAT</span></clap-text>
-  </clap-config>
-
-  <template id="_animation-template">
-  <div class="animation-main fixed-top">
-    <nav id="breadcrumbs" class="screen-only"><ul>
-  
-  
-</ul></nav>
-    <div class="content">
-      <div class="page"></div>
-    </div>
-  </div>
-</template>
-
-  <template id="_loading-template">
-  <div class="loading nav-btn fr">
-    <span class="sr-only">Loading…</span>
-    <span class="icon-cog"></span>
-  </div>
-</template>
-
-  <template id="_error-template">
-  <div class="page">
-    <h1 class="page-title">Error</h1>
-    
-    
-    <p class="lead">
-      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
-
-    </p>
-  </div>
-</template>
-
-  <template id="_permalink-template">
-  <a href="#" class="permalink">
-    <span class="sr-only">Permalink</span>
-    <span class="content-hash"></span>
-  </a>
-</template>
-
-</div>
-
-
-</body>
+  </body>
 </html>
+
