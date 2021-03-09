@@ -1,23 +1,19 @@
 ---
 layout: post
 title: Electromagnetism
-description: >
-  Overview the Coulomb Force and the interaction of charged particles.
 categories: [physics]
 tags:       [physics, electromagnetism]
+description: >
+  Overview the Coulomb Force and the interaction of charged particles.
 related_posts:
   - courses/_posts/PH213.md
 #  - courses/_posts/PH422.md
 #  - courses/_posts/PH431.md
-sitemap: true
 ---
 
-I am going to try to start this page without formatted text this time.
+I am going to try to start this page without formatted text this time. **Definition**: A definition of E&M goes here.
 
-**Definition**: A definition of E&M goes here.
-
-* toc
-{:toc .large-only}
+I don't understand why the markdown is not rendering.
 
 ## Models
 
