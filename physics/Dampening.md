@@ -1,6 +1,4 @@
-'''Definition''':
-Typically referred to as β, damping is when an external force reduces or removes energy from the system.
-For a mechanical system, this typically takes the form of friction. In an electrical oscillator, this takes the form of a [[Resistor|resistor]].
+?>**Definition**: Typically referred to as $\beta$, damping is when an external force reduces or removes energy from the system. For a mechanical system, this typically takes the form of friction. In an electrical oscillator, this takes the form of a [[Resistor|resistor]].
 
 ==Equations==
 ===Mechanical===

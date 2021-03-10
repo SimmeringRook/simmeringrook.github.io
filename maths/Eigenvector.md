@@ -1,5 +1,4 @@
-'''Definition''':
-A characteristic [[Vector|vector]] of a [[Vector Space|vector space]] whose linear
+?>**Definition**: A characteristic [[Vector|vector]] of a [[Vector Space|vector space]] whose linear
 combination with other eigenvectors can describe any vector or point in that vector space.
 
 ==Uses==

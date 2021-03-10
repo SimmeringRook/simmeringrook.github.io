@@ -1,5 +1,4 @@
-'''Definition''':
-The scalar multiple of which eigenvectors are scaled by.
+?>**Definition**: The scalar multiple of which eigenvectors are scaled by.
 
 ==Uses==
 *[[Eigenvalue Equations]]

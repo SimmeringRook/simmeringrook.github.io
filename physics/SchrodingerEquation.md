@@ -1,4 +1,5 @@
-'''Definition''':
+?>**Definition**:
+
 The Schrodinger Equation is
 
 [[File:Schrodinger.JPG|200px|x55px]]

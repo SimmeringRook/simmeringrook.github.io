@@ -1,5 +1,4 @@
-'''Definition''':
-
+?>**Definition**:
 The charge model let's us simplify electrostatic problems by only requiring
 adherence to the following postulates.
 

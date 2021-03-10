@@ -1,4 +1,4 @@
-'''Definition''': A reference frame in which [[Newton's First Law]] is obeyed. Another way to consider this is that there is a net force of 0 acting on the body in the frame. The size of a frame can be arbitrarily sized as long as the initial criteria is maintained. We can then say that objects traveling in these frames are said to have natural motion.
+?>**Definition**: A reference frame in which [[Newton's First Law]] is obeyed. Another way to consider this is that there is a net force of 0 acting on the body in the frame. The size of a frame can be arbitrarily sized as long as the initial criteria is maintained. We can then say that objects traveling in these frames are said to have natural motion.
 <br /><br />
 
 ==Usage==

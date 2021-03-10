@@ -1,6 +1,4 @@
-'''Definition''':
-The [[Simple_Harmonic_Motion#Frequency_and_Period|frequency]] at which a system would [[Oscillations|oscillate]] at if disturbed and then allowed to oscillate freely.
-The symbol typically used to denote this is '''ω''', or when in an equation with more than one angular frequencies, will be referred to as '''ω_0'''.
+?>**Definition**: The [[Simple_Harmonic_Motion#Frequency_and_Period|frequency]] at which a system would [[Oscillations|oscillate]] at if disturbed and then allowed to oscillate freely. The symbol typically used to denote this is $\omega$, or when in an equation with more than one angular frequencies, will be referred to as $\omega_0$.
 
 This natural frequency is a result of properties of the system.
 For an [[LC Circuit|LC circuit]], ''ω'' is defined by (L*C)^-1; where ''L'' is the inductance of the [[Inductor|inductor]] and ''C'' is the capacitance of the [[Capacitor|capacitor]].

@@ -1,5 +1,4 @@
-'''Definition''':
-A simple circuit that contains both an [[Inductor]] and [[Capacitor]].
+?>**Definition**: A simple circuit that contains both an [[Inductor]] and [[Capacitor]].
 
 [[File:LC_Circuit_Schematic.png]]
 

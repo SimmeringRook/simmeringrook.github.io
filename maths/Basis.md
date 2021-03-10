@@ -1,5 +1,5 @@
-**Definition**:
-> A basis is the set of [[Vector|vectors]] that [[Span|span]] the [[Vector Space]]. This set of
+# Basis
+?>**Definition**: A basis is the set of [[Vector|vectors]] that [[Span|span]] the [[Vector Space]]. This set of
 vectors must also be [[linearly Independent|linearly independent]] from each other.
 <br><br>
 

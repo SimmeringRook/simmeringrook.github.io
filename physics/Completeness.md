@@ -1,5 +1,4 @@
-'''Definition''':
-
+?>**Definition**:
 Completeness in the context of vectors means we can use linear combinations of the
 eigenvectors of a basis to describe any vector that exists in that space.
 

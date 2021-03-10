@@ -1,4 +1,4 @@
-'''Definition''': An observable is a physical quantity that can be measured.
+?>**Definition**: An observable is a physical quantity that can be measured.
 
 ==Quantum Systems==
 ===[[Spin|Spin]]===

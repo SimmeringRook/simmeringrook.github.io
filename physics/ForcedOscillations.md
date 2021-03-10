@@ -1,5 +1,4 @@
-'''Definition''':
-External driving frequency, either referred to as ω (with no subscript) or ω_d (as ω_driving).
+?>**Definition**: External driving frequency, either referred to as $\omega$ (with no subscript) or $\omega_{d}$ (as in $\omega_{\text{driving}}$).
 
 ==Implications==
 An [[Oscillations|oscillator]] must oscillate at the driving frequency.

@@ -1,5 +1,4 @@
-'''Definition''':
-A simple circuit that contains a [[Inductor]], [[Capacitor]], and [[Resistor]].
+?>**Definition**: A simple circuit that contains a [[Inductor]], [[Capacitor]], and [[Resistor]].
 
 [[File:LCR_Circuit_Schematic.png]]
 

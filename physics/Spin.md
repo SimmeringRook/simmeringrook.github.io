@@ -1,4 +1,5 @@
-'''Definition''':
+?>**Definition**: The intrinsic angular momentum a particle has. E.g., if an electron can be thought of as a ball, _spin_ would describe the rotation of the ball about its axis.
+
 Allude to Stern-Gerlach experiments and talk about the difference between classical
 expectations and empirical evidence.
 

@@ -1,5 +1,4 @@
-'''Definition''':
-Resonance is when the velocity amplitude of an oscillating system reaches its global maximum.
+?>**Definition**: Resonance is when the velocity amplitude of an oscillating system reaches its global maximum.
 This effect becomes noticeable as the [[Forced Oscillations|driving frequency]], ''ω_d'', approaches the resonance frequency, ''ω_f''.
 
 The value of ''ω_f'' is dependent on the amount of [[Damping|damping]] present in the system, as well as the system's [[Characteristic Angular Frequency|natural frequency]].

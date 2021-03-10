@@ -1,5 +1,5 @@
-==Definition==
-'''Definition''': A differential equation is an equation that involves the function and its derivatives. Differential equations are used to model concepts that change proportionally to their own derivative(s).
+# Differential Equations
+?>**Definition**: A differential equation is an equation that involves the function and its derivatives. Differential equations are used to model concepts that change proportionally to their own derivative(s).
 
 There are a few different important classifications of a differential equation. Exclusive classifications are listed in the same section:
 <br />
@@ -70,7 +70,7 @@ Annoyingly, there are two different types of classifications for homogeneous:
 <strong>TODO:: Get Image</strong> [[File:FirstOrder_Nonlinear_ODE.png]]
 
 * Special Forms:
-** [[Bernoulli Equation Method]]
+** [Bernoulli Equations](/maths/BernoulliEquation.md)
 ** [[Homogeneous (Function) Method]]
 * Homogeneous (Forcing function is equal to 0)
 ** [[Separation of Variables]]
