@@ -1,4 +1,4 @@
-?>**Definition**: A bra is the [Hermitian Adjoint|Hermitian adjoint]] of a [Ket]($1). The primary use of the bra representation is for taking the [Inner Product|inner product]] of a system’s [Eigenvector]($1) with a quantum state to find the probability that the corresponding [Eigenvalue](\$\1) will be measured.
+?>**Definition**: A bra is the [Hermitian Adjoint|Hermitian adjoint]] of a [Ket](/physics/ket.md). The primary use of the bra representation is for taking the [Inner Product|inner product]] of a system’s [Eigenvector]($1) with a quantum state to find the probability that the corresponding [Eigenvalue](\$\1) will be measured.
 
 ## Forms
 ### Dirac
