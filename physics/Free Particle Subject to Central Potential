@@ -1,0 +1,39 @@
+Particle in 3 Space in the Presence of a Central potential
+
+This is an approximation of a Hydrogen atom (All ions that have one electron orbiting around a nucleus: He^+ and Li^++).
+
+==Central Potential==
+For this system, the potential is given by a spherically symmetric central potential:
+
+V(r)= - (Ze^2)/(4*pi*epsilon_0*r)
+
+
+==Derivation==
+
+The energy eigenvalue equation for a particle of mass mu subject to an arbitrary central potential V(r) is:
+
+page 35 of PH426_Module_04-W8D2
+
+We can use our solution for the spherical harmonics, Y(\theta, \phi), in forming our ansatz
+for a \psi(r,\theta,\phi). Through separation of variables, our ansatz becomes:
+
+\psi(r,\theta,\phi) = R(r)Y(\theta,\phi) = R(r)\Theta(\theta)\Phi(\phi)
+
+separates into two equations:
+
+'''TODO''' Radial Equation
+'''TODO''' Angular Equation
+
+==Energy Eigenvalue Equation==
+
+H·|n,l,m> = E_n |n,l,m>
+
+where: |n,l,m> = R_n,l(r)Y_l,m(\theta,\phi)
+
+E_n= -1/n^2 [(mu Z^2 /(2 \hbar^2))· (e^2/(4\pi\epsilon_0))^2 ]
+
+We want energy to be negative, because we're only concerned with bound state electrons at this point.
+
+==Principle Quantnum Number==
+
+n=1,2,3,...,\infty

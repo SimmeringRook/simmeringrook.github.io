@@ -1,0 +1,101 @@
+LCAO Approximation of Simple Model
+
+Hamiltonian of 2 atoms
+
+H= p^2 /2m + (-gamma)delta(x-a) + (-gamma)delta(x+a)
+
+Energy of bound state must be less than 0, so the particle doesn't escape to infinity
+
+LCAO = Linear Combination of Atomic Orbitals
+
+Assumptions:
+->The atomic orbital Psi is a superposition of both atomic Orbitals
+->Simplify Hamiltonian Eigenvalue Equation
+    Reduce to:
+
+    <1|H|Psi> = E <1|Psi>
+    <2|H|Psi> = E <2|Psi>
+
+    Which we can rewrite as a matrix equation
+
+      ~H (c1, c2)^T = E (c1, c2)^T
+
+      where ~H is ((h, s), (s, h)) check mini-lecture from 27 May for values of
+      h and s
+
+Essential Steps to general to more atoms:
+
+  1. Starting point is the equation:
+
+    ~H ~C = E ~C;
+      ~H is ((h, s), (s, h)), ~C = (c1, c2)^T
+
+      Find the Eigenvectors
+      Normalize the eigenvectors
+
+  2. ~C_even = 1/sqrt(2) (1,1)^T; ~C_odd = 1/sqrt(2) (1, -1)^T
+
+    E_even = h+s;   E_odd = h-s
+
+    a is the radius of the molecule
+
+    Which energy level holds the two atoms? Which energy level pushes the two appart?
+
+    Consider the plots where all constants other than a are set to 1.
+    Plotting this, we see that E_even starts below the a-axis and asymptotically approaches -1.
+    We then see that E_odd starts above the a-axis and asymptotically approaches +1.
+
+    Therefore E_even wants to pull the atoms together and E_odd wants to push away.
+
+    LCAO approximation works best when the separation between the atoms is large.
+
+Benzine Example
+
+  We have 6 atoms
+
+  1. Start with the monster equations
+
+    ~H ~C = E ~C
+
+      We need to find ~H:
+
+        Assume that the molecular orbital is a superposition of the atom Orbitals
+
+        Psi = c_1 |1> + c_2 |2> + c_3 |3> + c_4 |4> + c_5 |5> +c_6 |6>
+
+        Instead of solving H|psi>=E|psi>
+
+          We do: <i|H|psi> = E<i|psi>, i = 1, ... , 6
+
+
+        This lets us write ~H as:
+
+            ((<1|H|1>, <1|H|2>, ..., <1|H|6>)
+             (<2|H|1>, ..., <2|H|6>),
+             ...
+             (..., <6|H|6>))
+
+        Nearest Neighbor Interactions:
+          The matrix elements of ~H are only nonzero if the two atoms are next to each other.
+          E.g. :
+
+          ((h, s, 0, 0, 0, s)
+           (s, h, s, 0, 0, 0)=,
+           ...
+           (s, 0, 0, 0, s, h))
+
+           ~H = hI + s(S^up + S^down)
+
+      2. Find eigenvector of ~H matrix
+
+          ~C = (1, lambda, lambda^2, lambda^3, lambda^4, lambda^5, lambda^6)^T
+
+          lambda = (1)^(1/6) = exp(i2piL/6); L = 0, ..., 5
+
+          -> We have six eigenvectors: (Normalize them)
+
+          C_1 = 1/sqrt(6) (1, exp(i2piL/6), exp(i2piL/6 · 2), ..., exp(i2piL/6 · 5))
+
+          Find energies by plugging eigenvectors into Matrix equation:
+
+            E_L =

@@ -1,0 +1,457 @@
+# Chapter 2 Exercises
+
+## Exercise 1
+
+### Problem Setup
+##### Problem Statement
+
+A black hole has mass $M = 5$ kilometers, a little more than three times that of our Sun. Two concentric spherical shells surround this black hole. The inner shell has $r$-coordinate (reduced circumference) $r$; the out one has $r$-coordinate $r+dr$, where $dr=1$ meter. What is the radial separation $d\sigma=dr_{shell}$ between these spherical shells as measured <em>directly</em> by an observer on one of these shells? Treat three cases of the reduced circumference $r$ of the inner shell.
+
+- Part A: $r=50\ \text{kilometers}$
+- Part B: $r=15\ \text{kilometers}$
+- Part C: $r=10.5\ \text{kilometers}$
+
+#### Assumptions/Simplifications
+
+We assume the black hole is non-rotating, or rotating slow enough (e.g. like Earth or the Sun), that we can describe the curvature of spacetime about the black hole with the Schwarzschild metric. We also assume that the black hole is uncharged, or can be modeled as such. We further assume that the black hole is spherically symmetric.
+
+##### Givens
+
+- the mass of the black hole, as measured in length: $M = 5\times10^3\ \text{meters}$
+- the reduced circumference, (or $r$-coordinate) for each shell:
+  - Part A: $r=5.0\times10^4\ \text{meters}$
+  - Part B: $r=1.5\times10^4\ \text{meters}$
+  - Part C: $r=1.05\times10^4\ \text{meters}$
+
+#### Goal
+
+Use the Schwarzschild Metric to describe the proper distance between two events on two concentric shells with the $r$ values given and the second shell with separation of $dr = 1\ \text{meter}$.
+
+#### Diagrams/Figures
+
+None.
+
+### Solution
+#### Applicable Concepts and Laws
+##### Schwarzschild Metric
+
+The equation that describes the proper (Euclidean) distance between two events is the spacelike spacetime interval in Schwarzschild coordinates:
+
+$$
+(d\sigma)^2=-\left(1-\frac{2M}{r}\right)(dt)^2+\left(1-\frac{2M}{r}\right)^{-1}(dr)^2+(rd\phi)^2
+$$
+
+#### Derivation of Symbolic Solution
+For all three parts, we have that $d\phi=0, dt=0$, which allows us to simplify the Schwarzschild Metric that describes the proper distance between events:
+
+$$
+(d\sigma)^2=-\left(1-\frac{2M}{r}\right)(dt)^2+\left(1-\frac{2M}{r}\right)^{-1}(dr)^2+(rd\phi)^2 \\
+d\phi = 0,\ dt =0
+$$
+
+Becomes:
+
+$$
+(d\sigma)^2=\left(1-\frac{2M}{r}\right)^{-1}(dr)^2
+$$
+
+We then simplify:
+
+$$
+d\sigma =\pm\sqrt{\left(1-\frac{2M}{r}\right)^{-1}(dr)^2} \\
+d\sigma =\pm\left(1-\frac{2M}{r}\right)^{-1/2}(dr)
+$$
+
+Note that, we are talking about the spatial distance between events, and by definition, length must be positive.
+
+$$d\sigma =\left(1-\frac{2M}{r}\right)^{-1/2}(dr)$$
+
+This expression will correctly describe the proper (Euclidean) distance between two concentric shells.
+
+#### Numeric Solution
+
+##### Part A
+
+Take given values:
+$$r=5.0\times10^4\ \text{meters},\ dr=1\ \text{meters},\ M = 5\times10^3\ \text{meters}$$
+and the simplified equation:
+$$
+d\sigma = dr_{shell} = \left(1-\frac{2M}{r}\right)^{-1/2}(dr)
+$$
+Substitute:
+$$
+d\sigma = \left(1-\frac{2(5\times10^3\ \text{meters}))}{5\times10^4\ \text{meters}}\right)^{-1/2}(1\ \text{meters})
+$$
+Simplify:
+$$
+d\sigma = \left(1-\frac{2}{10}\right)^{-1/2}\text{meters}\\
+d\sigma =\left(\frac{4}{5}\right)^{-1/2}\text{meters}
+$$
+Calculate:
+$$d\sigma = 1.118...\ \text{meters}\ \approx 1\ \text{meter}$$
+<br />
+
+##### Part B
+
+Take given values:
+$$r=1.5\times10^4\ \text{meters},\ dr=1\ \text{meters},\ M = 5\times10^3\ \text{meters}$$
+and the simplified equation:
+$$
+d\sigma = dr_{shell} = \left(1-\frac{2M}{r}\right)^{-1/2}(dr)
+$$
+Substitute:
+$$
+d\sigma = \left(1-\frac{2(5\times10^3\ \text{meters}))}{1.5\times10^4\ \text{meters}}\right)^{-1/2}(1\ \text{meters})
+$$
+Simplify:
+$$
+d\sigma = \left(1-\frac{1}{1.5}\right)^{-1/2}\text{meters}
+$$
+Calculate:
+$$d\sigma = 1.732...\ \text{meters}\ \approx 2\ \text{meters}$$
+<br />
+
+##### Part C
+
+Take given values:
+$$r=1.05\times10^4\ \text{meters},\ dr=1\ \text{meters},\ M = 5\times10^3\ \text{meters}$$
+and the simplified equation:
+$$
+d\sigma = dr_{shell} = \left(1-\frac{2M}{r}\right)^{-1/2}(dr)
+$$
+Substitute:
+$$
+d\sigma = \left(1-\frac{2(5\times10^3\ \text{meters}))}{1.05\times10^4\ \text{meters}}\right)^{-1/2}(1\ \text{meters})
+$$
+Simplify:
+$$
+d\sigma = \left(1-\frac{1}{1.05}\right)^{-1/2}\text{meters}
+$$
+Calculate:
+$$d\sigma = 4.582...\ \text{meters}\ \approx 5\ \text{meters}$$
+
+### Numeric and Physical Confidence
+#### Unit Check
+
+
+#### Magnitude Check
+
+
+#### Limiting Cases
+
+---
+
+## Exercise 2
+
+### Problem Setup
+##### Problem Statement
+
+Verify the statement in Section 4 concerning two spherical shells around our Sun.
+
+From page 2-11:<blockquote>"...Around this inner shell we erect a second one, again in imagination, of r-coordinate 1 kilometer greater: 695 981 kilometers. The directly measured distance between the two would be not 1 kilometer, but 2 millimeters more than 1 kilometer."</blockquote><br />
+
+The inner shell, of reduced circumference $r_1=695\ 980\ \text{kilometers}$, just grazes the Sun. The outer shell is of reduced circumference one kilometer greater, namely $r_2=695\ 981\ \text{kilometers}$. Verify the prediction that the directly measured distance between these shells will be 2 millimeters more than 1 kilometer.
+
+#### Assumptions/Simplifications
+
+We assume that we can model (or approximate) the Sun as a non-rotating body such that it can be described by Schwarzschild Coordinates. We also assume the Sun can be considered spherically symmetric.
+
+##### Givens
+
+- Mass of Sun (in $m$): $1.477\times10^3$
+- $dr = 1\ \text{kilometer}$
+
+#### Goal
+
+Use the Schwarzschild Metric to find the proper distance (Euclidean spatial separation) between two events on concentric spheres: one at the surface of the Sun, and one $1\ \text{meter}$ away (as measured by difference of $r$-coordinates).
+
+#### Diagrams/Figures
+
+None.
+
+### Solution
+#### Applicable Concepts and Laws
+##### Schwarzschild Metric
+
+The equation that describes the proper (Euclidean) distance between two events is the spacelike spacetime interval in Schwarzschild coordinates:
+
+$$
+(d\sigma)^2=-\left(1-\frac{2M}{r}\right)(dt)^2+\left(1-\frac{2M}{r}\right)^{-1}(dr)^2+(rd\phi)^2
+$$
+
+##### Power Series Approximation
+
+Recall that the expression:
+
+$$(1+z)^p,\ \ \ \ \text{for }\left|z\right|\ll1$$
+
+Can be approximated as:
+
+$$(1+z)^p = \sum_{k=0}^{\infty}{\left(\frac{p!}{(p-k)!}\frac{z^k}{k}\right)} = 1 + pz + \frac{p(p-1)z^2}{2}+...$$
+
+And if $\left|zp\right|\ll1$, we can more simply approximate as:
+
+$$(1+z)^p\ \approx\ 1+zp$$
+
+#### Derivation of Symbolic Solution
+
+Because we're considering the Sun as spherically symmetric and we want to know the proper distance between concentric shells, we will place the two events separated by the minimum 'distance'. This means they share the same azimuthal angle $\phi$, and for convenience, we will set $\phi=0$. We will also consider the two events to happen simultaneously, thereby making $t=0$. Recall the spacelike equation of the Schwarzschild Metric:
+
+$$
+(d\sigma)^2=-\left(1-\frac{2M}{r}\right)(dt)^2+\left(1-\frac{2M}{r}\right)^{-1}(dr)^2+(rd\phi)^2
+$$
+
+With $d\phi=0,\ dt=0$, it becomes:
+
+$$
+(d\sigma)^2=\left(1-\frac{2M}{r}\right)^{-1}(dr)^2
+$$
+
+We then simplify:
+
+$$
+d\sigma =\pm\sqrt{\left(1-\frac{2M}{r}\right)^{-1}(dr)^2} \\
+d\sigma =\pm\left(1-\frac{2M}{r}\right)^{-1/2}(dr)
+$$
+
+Note that, we are talking about the spatial distance between events, and by definition, length must be positive.
+
+$$d\sigma =\left(1-\frac{2M}{r}\right)^{-1/2}(dr)$$
+
+This expression will correctly describe the proper (Euclidean) distance between the two concentric shells separated by a distance of $dr$.
+
+#### Numeric Solution
+
+Using the given values:
+
+- Mass of Sun: $1.477\times10^3\ \text{meters}$
+- $dr = 1\ \text{kilometer}$
+- $r = 6.95980\times10^8\ \text{meters}$
+
+Substitute in:
+
+$$d\sigma =\left(1-\frac{2M}{r}\right)^{-1/2}(dr)\\
+d\sigma =\left(1-\frac{2(1.477\times10^3\ \text{meters})}{6.95980\times10^8\ \text{meters}}\right)^{-1/2}(1\ \text{kilometer})
+$$
+
+Simplifies to:
+
+$$
+d\sigma =\left(1-\frac{2.954}{6.95980\times10^5}\right)^{-1/2}\ \text{kilometers}\\
+d\sigma = 1.000002...\ \text{kilometers} \approx 1\ \text{kilometers}+000\ \text{meters}+00\ \text{centimeters}+2\ \text{millimeters}
+$$
+
+### Numeric and Physical Confidence
+#### Unit Check
+
+
+#### Magnitude Check
+
+
+#### Limiting Cases
+
+As stated by the rest of the problem statement,
+
+<blockquote>Outbursts and flares leap thousands of kilometers up from [the] Sun's roiling surface, so this exercise is a bit unrealistic, even if we could build these shells!</blockquote>
+
+---
+
+## Exercise 3
+
+### Problem Setup
+##### Problem Statement
+
+Consider a black hole with $M=1.5\ \text{kilometers}$, approximately equal to that of our Sun. An observer standing on a spherical shell of reduced circumference $r$ shines a steady laser beam of wavelength 400 nanometers ($4\times10^{-7}\ meters$: violet light) radially outward. This light is received by a remote observer at a radius very much greater than $2M$. What is the wavelength of the light received by this remote observer in each of the following cases? Note that red light has wavelength 700 nanometers and that, in conventional units,
+
+$$\frac{\text{wavelength}}{period}=\frac{\lambda}{T_{sec}}=c$$
+
+Treat three cases: The person shining the laser outward stands on a spherical shell of reduced circumference $r$ with the value
+
+- Part A: $r=20\ \text{kilometers}$
+- Part B: $r=5\ \text{kilometers}$
+- Part C: $r=3.01\ \text{kilometers}$
+- Part D: <em>Guess:</em> Suppose the source is aimed in some other direction than the outward radial one, but the laser beam still arrives at a distant observer. Will this distant observer measure the same wavelength as computed in cases A, B, and C, or will the wavelength be different for a non-radial initial direction?
+
+#### Assumptions/Simplifications
+
+We assume that we can model (or approximate) the black hole as a non-rotating body and that it can be considered spherically symmetric such that it can be described by Schwarzschild Coordinates.
+
+##### Givens
+
+- Mass of black hole: $1.5\times10^3\ \text{meters}$
+- $r$-coordinate of emission:
+  - Part A: $r=2.0\times10^4\ \text{meters}$
+  - Part B: $r=5\times10^3\ \text{meters}$
+  - Part C: $r=3.01\times10^3 \text{meters}$
+- Wavelength of laser at emission: $400\times10^{-9}\ \text{meters}$
+
+#### Goal
+
+Use the Schwarzschild Metric to find the proper distance (Euclidean spatial separation) between two events on concentric spheres: one at the surface of the Sun, and one $1\ \text{meter}$ away (as measured by difference of $r$-coordinates).
+
+#### Diagrams/Figures
+
+None.
+
+### Solution
+#### Applicable Concepts and Laws
+##### Schwarzschild Metric
+
+The equation that describes the proper (Euclidean) distance between two events is the timelike spacetime interval in Schwarzschild coordinates:
+
+$$ (d\tau)^2 = \left(1 - \frac{2M}{r}\right)(dt)^2 - \left(1 - \frac{2M}{r}\right)^{-1}(dr)^2 - (rd\phi)^2 $$
+
+#### Derivation of Symbolic Solution
+
+We start with the Schwarzschild Metric as describing the concentric shell of the person shinning the laser radially outward. We use the timelike Schwarzschild Metric to describe the proper time between the person at $r$-coordinate $r$ and the remote observer $r_{far}$. We note that both, the person and far-away observer, remain at constant radius from the black hole, and thus $dr = 0$ for each.
+
+$$
+(d\tau_{near})^2 = \left(1 - \frac{2M}{r_{near}}\right)(dt)^2 - (rd\phi)^2 \\
+(d\tau_{far})^2 = \left(1 - \frac{2M}{r_{far}}\right)(dt)^2 - (rd\phi)^2
+$$
+
+We divide through both equations by $dt$ and also note that both are at rest and as such, $rd\phi/dt = 0$:
+
+$$
+(d\tau_{near})^2 = \left(1 - \frac{2M}{r_{near}}\right) - \left(\frac{rd\phi}{dt}^2\right) \\
+(d\tau_{far})^2 = \left(1 - \frac{2M}{r_{far}}\right) - \left(\frac{rd\phi}{dt}^2\right)
+$$
+
+Therefore, both equations simplify to:
+
+$$
+\frac{d\tau_{near}}{dt} = \left(1 - \frac{2M}{r_{near}}\right)^{1/2} \\
+\frac{d\tau_{far}}{dt} = \left(1 - \frac{2M}{r_{far}}\right)^{1/2}
+$$
+
+We then divide $d\tau_{near}$ by $d\tau_{far}$:
+
+$$
+\frac{d\tau_{near}}{dt}\cdot\frac{dt}{d\tau_{far}} = \left(1 -  \frac{2M}{r_{near}}\right)^{1/2}\cdot\left(1 - \frac{2M}{r_{far}}\right)^{-1/2}
+$$
+
+We note that the curvature of spacetime by the black hole at $r_{far}$ is 0, because the far-away observer is in flat spacetime. We also note that both $dt$ variables are the same by definition of the Schwarzschild Metric as $dt$ is the measure of time between clock ticks as measured by a far-away observer. Therefore, we have the relation:
+
+$$
+\frac{d\tau_{near}}{d\tau_{far}} =  \left(1 - \frac{2M}{r_{near}}\right)^{1/2}\cdot \left(1 - 0\right)^{-1/2} = \left(1 - \frac{2M}{r_{near}}\right)^{1/2}
+$$
+
+Therefore, the rate of emissions are just:
+
+$$
+\frac{1}{d\tau_{near}}=\nu_{near}\\
+\frac{1}{d\tau_{far}}=\nu_{far}
+$$
+
+We simplify to the final expression of:
+
+$$
+\frac{\nu_{far}}{\nu_{near}} = \left(1 - \frac{2M}{r_{near}} \right)^{-1/2}\\
+\nu_{far} = \nu_{near}\left(1 - \frac{2M}{r_{near}} \right)^{-1/2}
+$$
+
+#### Numeric Solution
+
+Using the given values:
+
+- Mass of black hole: $1.5\times10^3\ \text{meters}$
+- $r$-coordinate of emission:
+  - Part A: $r_{near}=2.0\times10^4\ \text{meters}$
+  - Part B: $r_{near}=5\times10^3\ \text{meters}$
+  - Part C: $r_{near}=3.01\times10^3 \text{meters}$
+- Wavelength of laser at emission: $400\times10^{-9}\ \text{meters}$
+- Speed of Light in a vacuum: $2.99792458\times10^8\ \frac{\text{m}}{\text{s}}$
+
+We first convert the wavelength to frequency:
+
+$$
+\frac{\lambda_{near}}{T_{near}}=c\\
+\lambda_{near}\nu_{near}=c \\
+\nu_{near} = \frac{c}{\lambda_{near}} \\
+\nu_{near} = \frac{2.99792458\times10^8\ \frac{\text{m}}{\text{s}}}{4.00\times10^{-9}\ \text{meters}} = 7.49481145\times10^{14}\ s^{-1}
+$$
+
+Then use our derived equation to describe the total gravitational redshift from the person at $r_{near}$ to an observer far-away:
+
+$$
+\nu_{far} = \nu_{near}\left(1 - \frac{2M}{r_{near}} \right)^{-1/2}
+$$
+
+##### Part A:
+Substitute in:
+
+$$
+\nu_{far} = \nu_{near}\left(1 - \frac{2M}{r_{near}} \right)^{-1/2}
+$$
+
+Becomes:
+
+$$
+\nu_{far} = (7.49481145\times10^{14}\ s^{-1})\left(1 - \frac{2(1.5\times10^3\ \text{meters})}{2.0\times10^4\ \text{meters}} \right)^{-1/2}\\
+= (7.49481145\times10^{14}\ s^{-1})\left(1 - \frac{3}{20} \right)^{-1/2}
+\\ = 8.12926440...\times10^{14}\ s^{-1}
+\\ = 8.13\times10^{14}\ s^{-1}
+$$
+
+Convert back to wavelength for comparison:
+
+$$\lambda_{far} = c\cdot T$$
+
+$$\lambda_{far} = \frac{2.99792458\times10^8\ \frac{\text{m}}{\text{s}}}{8.12926440...\times10^{14}\ s^{-1}}\ \text{meters} = 3.6878...\times10^{-7} = 3.69\times10^{-7}\ \text{meters}$$
+
+##### Part B:
+Substitute in:
+
+$$
+\nu_{far} = \nu_{near}\left(1 - \frac{2M}{r_{near}} \right)^{-1/2}
+$$
+
+Becomes:
+
+$$
+\nu_{far} = (7.49481145\times10^{14}\ s^{-1})\left(1 - \frac{2(1.5\times10^3\ \text{meters})}{5\times10^3\ \text{meters}} \right)^{-1/2} \\
+= (7.49481145\times10^{14}\ s^{-1})\left(1 - \frac{3}{5} \right)^{-1/2}
+\\ = 1.18503374...\times10^{15}\ s^{-1}
+\\ = 1.19\times10^{15}\ s^{-1}
+$$
+
+Convert back to wavelength for comparison:
+
+$$\lambda_{far} = c\cdot T$$
+
+$$\lambda_{far} = \frac{2.99792458\times10^8\ \frac{\text{m}}{\text{s}}}{1.18503374...\times10^{15}\ s^{-1}} = 2.52982...\times10^{-7}\ \text{meters} = 2.53\times10^{-7}\ \text{meters}$$
+
+##### Part C:
+Substitute in:
+
+$$
+\nu_{far} = \nu_{near}\left(1 - \frac{2M}{r_{near}} \right)^{-1/2}
+$$
+
+Becomes:
+
+$$
+\nu_{far} = (7.49481145\times10^{14}\ s^{-1})\left(1 - \frac{2(1.5\times10^3\ \text{meters})}{3.01\times10^3 \text{meters}} \right)^{-1/2}\\
+= (7.49481145\times10^{14}\ s^{-1})\left(1 - \frac{3}{3.01} \right)^{-1/2}
+\\ = 1.30030...\times10^{16}\ s^{-1}
+\\ = 1.30\times10^{16}\ s^{-1}
+$$
+
+Convert back to wavelength for comparison:
+
+$$\lambda_{far} = c\cdot T$$
+
+$$\lambda_{far} = \frac{2.99792458\times10^8\ \frac{\text{m}}{\text{s}}}{1.30030...\times10^{16}\ s^{-1}} = 2.30556...\times10^{-8}\ \text{meters} = 2.31\times10^{-8}\ \text{meters}$$
+
+##### Part D:
+We note that direction is not accounted for in these equations, nor does it matter. Classically, Gravity is a conservative force which means Energy is conserved and it is path independent. We are only concerned with the starting and end points.
+
+
+### Numeric and Physical Confidence
+#### Unit Check
+
+
+#### Magnitude Check
+
+
+#### Limiting Cases
