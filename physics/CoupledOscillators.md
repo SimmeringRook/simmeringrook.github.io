@@ -1,4 +1,4 @@
-==Normal Modes==
+## Normal Modes
 We are interested in when all the spring constants and all the masses are the same.
 
   M becomes m·I; where m is now a scalar value
@@ -10,7 +10,7 @@ This lets us rewrite the eigenvalue equation:
 X is an eigenvector of the K matrix with an eigenvalue of -\omega^2 m.
 
 We want to be able to guess the solution.
-==Solving a Coupled Harmonic Oscillator==
+## Solving a Coupled Harmonic Oscillator
 We can always write the normal modes down for the Coupled Oscillator problem in the form:
 
 KX=-\omega^2 MX
@@ -38,7 +38,7 @@ KX = -\omega^2m X
 --
 Next step: how to solve for values of K, we guess the solution:
 
-===Find the K matrix===
+### Find the K matrix
 '''Example''': 3 Mass system between 2 walls
 
 K is a 3x3 matrix:
@@ -77,15 +77,15 @@ Move m2 -> ∆x to the right
   --
   R3,C1: -2k
 
-===Find the Eigenvalues of K matrix===
-====Find solution from Physical Intuition====
+### Find the Eigenvalues of K matrix
+#### Find solution from Physical Intuition
 Consider the motion of the masses and their normal modes:
 
 if mass 1 and 3 move towards mass 2, we have:
 
 '''X''' = (1,0,-1)^T
 
-====Plug into Eigenvalue Equation====
+#### Plug into Eigenvalue Equation
 
 KX = (-2k, 0, -2k)^T = -2k1,0,-1)^T
 

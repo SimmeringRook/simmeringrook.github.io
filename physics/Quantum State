@@ -3,24 +3,24 @@ A quantum state vector  is an abstract mathematical entity that describes [[Quan
 The employ the use of [[Complex|complex]] numbers and follow the rules of other [[Vector Space|vector spaces]], in particular the
 [[Vector Space#Hilbert_Space|Hilbert Space]].
 
-==Properties of Quantum State Vectors==
-===Orthogonality===
-===Normalization===
-===Completeness===
+## Properties of Quantum State Vectors
+### Orthogonality
+### Normalization
+### Completeness
 
-==Operations==
-===Inner Product===
-===Outer Product===
+## Operations
+### Inner Product
+### Outer Product
 
-==Forms==
-===Wave function===
+## Forms
+### Wave function
 
-====Example====
-===Dirac Notation===
+#### Example
+### Dirac Notation
 *[[Ket]]
 *[[Bra]]
 
-====Example====
-===Matrix===
+#### Example
+### Matrix
 
-====Example====
+#### Example

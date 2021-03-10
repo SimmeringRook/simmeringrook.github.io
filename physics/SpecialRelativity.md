@@ -8,26 +8,26 @@
     —Tevian Dray, <cite>[[The Geometry of Special Relativity]]</cite>
 </blockquote>
 
-==Postulates==
-===Postulate 1: Principle of Relativity===
+## Postulates
+### Postulate 1: Principle of Relativity
 <blockquote>
     <p><i>The laws of physics apply in all inertial reference frames.</i></p>
 </blockquote>
 
-===Postulate 2: Invariance of c===
+### Postulate 2: Invariance of c
 <blockquote>
     <p><i>The speed of light in free space is the same for all inertial observers.</i></p>
 </blockquote>
 
-==Usage==
+## Usage
 The power of Special Relativity is that it gives us a method for every observer to agree on the distance or time between events, irregardless of inertial reference frame. We derive the metric used to describe the separation between events by using hyperbola geometry.
 
-===Spacetime Interval===
+### Spacetime Interval
 See [[Spacetime Interval]]. '''TODO:''' Add a concise description.
 
-==Properties and Gedankenexperiments==
-===Time Dilation===
+## Properties and Gedankenexperiments
+### Time Dilation
 Twin paradox.
 
-===Length Contraction===
+### Length Contraction
 Barn and Pole paradox.

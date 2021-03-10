@@ -1,18 +1,18 @@
 LaTeX writeup: [[Media:Juno_Attempt2_Solution.pdf|Juno Attempt 2]]
 
-== Abstract ==
+## Abstract
 
 This approach attempts to model the impact of the Doppler Effect (via gravity) on transmissions from Earth to Jupiter by considering the total effect on a transmission from either planet to flat spacetime. I utilize a series of ratios to describe the total shift to the wavelength of a signal at 3 key points: Earth, L1, and Jupiter. The result is a negligible effect (total blue shift by a factor of <math display="inline">1\times10^{-8}</math>) which is both expected and surprising.
 <br /><br />
 
-== Problem Setup ==
+## Problem Setup
 
-=== Problem Statement ===
+Problem Statement
 
 Does the curvature of spacetime, due to the presence of Earth and Jupiter, effect how a transmission from Earth to the Juno spacecraft would be received? Is this effect significant enough that we design spacecraft to receive a wide band of frequencies or allow variable frequencies for contact?
 <br /><br />
 
-=== Assumptions/Simplifications ===
+Assumptions/Simplifications
 
 Consider an empty universe that only contains Earth and Jupiter. We will then treat this Earth and Jupiter as:
 
@@ -27,8 +27,7 @@ Note that uniform mass density implies the gravitation field about each planet i
 * Jupiter,
 * Flat spacetime.
 <br /><br />
-
-==== Givens ====
+ Givens
 
 * radius of Earth: <math display="inline">6\times10^{6}\ m</math>
 * mass of Earth: <math display="inline">6\times10^{24}\ kg</math>
@@ -38,7 +37,7 @@ Note that uniform mass density implies the gravitation field about each planet i
 * The distances for the L1 Lagrange point between Earth and Jupiter can be found listed [https://www.wolframalpha.com/input/?i=lagrange+point+Earth+and+Jupiter|here].
 <br /><br />
 
-=== Goal ===
+Goal
 
 We want to find the total gravitational shifting of a transmission from the surface of the Earth to the surface of Jupiter.
 
@@ -49,24 +48,22 @@ We want to find the total gravitational shifting of a transmission from the surf
 #* Calculate the total blue shift that would occur from a signal originating in flat spacetime to Jupiter
 <br /><br />
 
-=== Diagrams/Figures ===
+Diagrams/Figures
 
 This section intentionally left blank at this time.
 <br /><br />
 
-== Solution ==
+## Solution
 
-=== Applicable Concepts and Laws ===
-
-==== Lagrange Points ====
+Applicable Concepts and Laws
+ Lagrange Points
 
 The L1 Lagrange Point, or “Lagrangian Point”, is the location directly between two masses where the gravitational attraction from each mass cancels out. The L1 point is located directly on the line between the two masses. We can calculate the L1 point from Earth and Jupiter by using the following formula [<nowiki/>[https://en.wikipedia.org/wiki/Lagrangian_point#L1 1]]:
 <br /><br />
 
 <math display="block"> \frac{M_1}{(R-r)^2} = \frac{M_2}{r^2} + \left( \frac{M_1 R}{M_1 + M_2} - r\right) \frac{M_1 + M_2}{R^3}</math>
 <br /><br />
-
-==== Gravitational Doppler Effect ====
+ Gravitational Doppler Effect
 
 We can describe the ratio of unshifted versus shifted wavelengths due to the Doppler Effect caused by gravity using the following expression [<nowiki/>[https://en.wikipedia.org/wiki/Gravitational_redshift#Prediction_by_the_equivalence_principle_and_general_relativity 2]]:
 <br /><br />
@@ -81,7 +78,7 @@ We can describe the ratio of unshifted versus shifted wavelengths due to the Dop
 * <math display="inline">R_e</math> is the radial distance at which the photon is emitted
 <br /><br />
 
-=== Derivation of Symbolic Solution ===
+Derivation of Symbolic Solution
 
 We can derive the expression to describe the total blue shifting a photon would experience being emitted from Earth to Jupiter by using combining the Gravitational Doppler Effect equation for various distances. Consider the first step: we need to express how much total gravitational red-shifting would occur for a photon, being emitted at the surface of the Earth, would experience as travels to flat spacetime. We also need to express the other half of the journey: how much gravitational red-shifting would occur for a photon emitted at the surface of Jupiter as it travels to flat spacetime. This naturally leads to the simple substitutions of the components for each planet in for <math display="inline">\lambda_e</math>:
 <br /><br />
@@ -95,7 +92,7 @@ We have a more useful common point between Earth and Jupiter we can discuss. Let
 Due note the difference in Equations  and . We can now solve both equations,  for <math display="inline">\lambda_{L1_E}</math> and  for <math display="inline">\lambda_J</math>. We will then substitute in Equation  for the <math display="inline">\lambda_{L1_J}</math> term in Equation .
 <br /><br />
 
-=== Numeric Solution ===
+Numeric Solution
 
 The L1 Lagrange point for Earth and Jupiter, as calculated by [https://www.wolframalpha.com/input/?i=lagrange+point+earth+and+jupiter WolframAlpha]:
 
@@ -115,14 +112,14 @@ We obtain [<nowiki/>[https://www.wolframalpha.com/input/?i=x%3D%28sqrt%281-a%2Fb
 Which is equivalent to a relative blue shift of <math display="inline">1\times10^{-8}</math>.
 <br /><br />
 
-== Sense Making ==
+## Sense Making
 
-=== Unit Check ===
+Unit Check
 
 Checks out! (add later)
 <br /><br />
 
-=== Physicality ===
+Physicality
 
 As we discussed during the derivation of Equations  and , we started with the simplest approach: relate the Doppler Effect from gravity by sending the signal from Earth to flat spacetime and back to Jupiter. We then added a step of complexity by considering the Lagrange point between them, almost like:
 <br /><br />
@@ -139,7 +136,7 @@ Our result is a dimensionless ratio, which we expect, where a value less than 1 
 We can note that in the final equation, Equation , the ratio depends on values that are all constant. We can also see from inspecting the general form of the equation that this Doppler Effect being caused by gravity is only going to have a noticeable effect when <math display="inline">\frac{1}{R_e} < 1</math> and not <math display="inline">\frac{1}{R_e} \ll 1</math>. This is to say, the receiver or sender of a transmission only needs to begin to account for this effect when they are able to be significantly closer to the Schwarzschild radius of a massive object.
 <br /><br />
 
-=== Numeric Reasonableness ===
+Numeric Reasonableness
 
 The measured total effect of the shifting for a signal from Earth to Jupiter (not Juno) is by a factor of <math display="inline">1\times10^{-8}</math>. This value does match expectations, as if this were a noticeable effect for objects of size and mass equivalent to the Earth and Jupiter, there would be material discussing this situation as an example.
 <br /><br />

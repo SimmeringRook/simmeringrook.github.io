@@ -4,7 +4,7 @@
 
 <math display="block"> v < c </math>
 
-== Spacetime ==
+## Spacetime
 
 Consider a rock floating by with a wristwatch affixed to it. Record the time and position of at the start of a clock tick and then at then of the clock tick.
 
@@ -18,7 +18,7 @@ We now have the frame spacetime coordinates recorded for these two events and ca
 </blockquote>
 This set of invariant coordinates of spacetime is called the [[Spacetime Interval|Spacetime Metric or Spacetime Interval]]. <br />
 
-== Proper Time ==
+## Proper Time
 
 Equations: <math display="block">\tau^2 = t^2 - s^2</math>
 
@@ -30,7 +30,7 @@ Note that <math display="inline">t</math>, the frame time, is measured in the sa
 
 This form is more explicit and used in [[The Geometry of Special Relativity]]. <br />
 
-== Proper Distance ==
+## Proper Distance
 
 Equations: <math display="block">\sigma^2 = s^2 - t^2</math>
 
@@ -40,11 +40,11 @@ Similar to the previous section, the frame time <math display="inline">t</math> 
 
 <math display="block">\sigma^2 = s^2 - (ct)^2</math> <br />
 
-=== Proper Length ===
+Proper Length
 
 This property gives rise to a similar measurement, the length of an object. We still use the Proper distance formula to calculate this value, but the proper length <strong>can only be calculated in a frame where the object is at rest</strong>. <br />
 
-== Speed ==
+## Speed
 
 Given that we can now discuss the time or distance between any events (that are in an inertial reference frame), that means we can discuss the speed of an object that is causing these events:
 
@@ -59,14 +59,14 @@ This velocity is the speed at which the object is moving in its own frame. We ex
 
 <math display="block">s = t,\ \ v=\frac{s}{t}=1</math> <br />
 
-== Principle of Extremal Aging ==
+## Principle of Extremal Aging
 
 <blockquote>
 The path a free object takes between two events in spacetime is the path for which the time lapse between these events, recorded on the object’s wristwatch, is an extremum.
 </blockquote>
 <br />
 
-== Energy ==
+## Energy
 
 We can combine the [[Metric]] with the [<nowiki/>[[#principle-of-extremal-aging|Principle of Extremal Aging]]] to derive the relativistic expression of energy in flat spacetime. In general, the expression takes the form:
 
@@ -90,17 +90,16 @@ We use this equation to describe the energy of a particle at <strong>rest</stron
 </blockquote>
 <br />
 
-== Momentum ==
+## Momentum
 
 <math display="block"> \frac{p}{m} = \frac{ds}{d\tau} </math>
 
 Seek [[Spacetime Physics]] Chapter 7 for more information. <br />
 
-== Mass ==
+## Mass
 
 Particle mass <math display="inline">m</math> is invariant. We can find this value by measuring the momentum and energy of the particle (in an inertial reference frame) while observing from an inertial reference frame. <br />
-
-==== Derivation ====
+ Derivation
 
 Take the timelike spacetime interval:
 

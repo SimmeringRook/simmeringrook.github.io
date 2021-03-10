@@ -1,4 +1,4 @@
-== By Topic ==
+## By Topic
 ===[[Calculus]]===
 * [[Derivative|Derivatives]]
 * [[Integral|Integrals]]
@@ -14,9 +14,9 @@
 
 ===[[Discrete Mathematics]]===
 
-== By Course ==
+## By Course
 
-=== 25X Series ===
+25X Series
 * [[MTH 251]]
 * [[MTH 252]]
 * [[MTH 253]]
@@ -24,14 +24,14 @@
 * [[MTH 255]]
 * [[MTH 256]]
 
-=== Linear Algebra ===
+Linear Algebra
 * [[MTH 341]]
 * [[MTH 342]]
 
-=== Differential Geometry ===
+Differential Geometry
 * [[MTH 434]]
 * [[MTH 435]]
 
-===Other===
+### Other
 * [[MTH 231]]
 * [[MTH 322]]

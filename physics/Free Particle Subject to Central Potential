@@ -2,13 +2,13 @@ Particle in 3 Space in the Presence of a Central potential
 
 This is an approximation of a Hydrogen atom (All ions that have one electron orbiting around a nucleus: He^+ and Li^++).
 
-==Central Potential==
+## Central Potential
 For this system, the potential is given by a spherically symmetric central potential:
 
 V(r)= - (Ze^2)/(4*pi*epsilon_0*r)
 
 
-==Derivation==
+## Derivation
 
 The energy eigenvalue equation for a particle of mass mu subject to an arbitrary central potential V(r) is:
 
@@ -24,7 +24,7 @@ separates into two equations:
 '''TODO''' Radial Equation
 '''TODO''' Angular Equation
 
-==Energy Eigenvalue Equation==
+## Energy Eigenvalue Equation
 
 H·|n,l,m> = E_n |n,l,m>
 
@@ -34,6 +34,6 @@ E_n= -1/n^2 [(mu Z^2 /(2 \hbar^2))· (e^2/(4\pi\epsilon_0))^2 ]
 
 We want energy to be negative, because we're only concerned with bound state electrons at this point.
 
-==Principle Quantnum Number==
+## Principle Quantnum Number
 
 n=1,2,3,...,\infty

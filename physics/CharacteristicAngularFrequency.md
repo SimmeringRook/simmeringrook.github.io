@@ -8,7 +8,7 @@ For a mass on a spring, ''ω'' is defined by the ratio of the square root of ''k
 
 [[File:Angular_Frequency_Hookes_Law.png]]
 
-==See Also==
+## See Also
 *[[Simple Harmonic Motion]]
 *[[Resonance]]
 *[[Oscillations]]

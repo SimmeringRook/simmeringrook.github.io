@@ -1,6 +1,6 @@
 = Chapter 2: Curving =
 
-== Distances Determine Geometry ==
+## Distances Determine Geometry
 
 The spacetime interval is the “distance” between events
 
@@ -9,12 +9,12 @@ The spacetime interval is the “distance” between events
 </blockquote>
 <br />
 
-== Reference Frames are Secondary ==
+## Reference Frames are Secondary
 
 * Spacetime geometry exists regardless of reference frame (and even without a frame)
 ** As such, all frames are equally valid <br />
 
-== Free Float Frames ==
+## Free Float Frames
 
 * Relative accelerations are called “tidal accelerations”
 * Reference frame can be as
@@ -23,7 +23,7 @@ The spacetime interval is the “distance” between events
 * Schwarzschild coordinates apply to slowly spinning or non-rotating bodies
 ** We can talk about the Earth and Sun using Schwarzschild coordinates <br />
 
-== The r-coordinate: the Reduced Circumference ==
+## The r-coordinate: the Reduced Circumference
 
 * Due to space stretching in the presence of massive objets, we don’t measure radial distances (Euclidean Geometry doesn’t work for spacetime)
 ** The is especially apparent with black holes
@@ -37,11 +37,11 @@ The spacetime interval is the “distance” between events
 
 Schwarzschild Metric describes spacetime external to any <strong>isolated</strong>, slowly rotating, and spherically symmetric body. <br />
 
-== Gravitational Red Shift ==
+## Gravitational Red Shift
 
 * <math display="inline">dt_{shell}</math> time between clock ticks &gt; <math display="inline">dt_{far-away}</math> time between clock ticks <br />
 
-== Mass in Units of Length ==
+## Mass in Units of Length
 
 * Conversion factor: <math display="block">\frac{G}{c^2}</math> Where:
 ** G is Gravitational constant: <math display="inline">6.6726\times10^{-11} \frac{m^3}{kg\ s^2}</math>
@@ -49,7 +49,7 @@ Schwarzschild Metric describes spacetime external to any <strong>isolated</stron
 
 Such that: <math display="block">M_{in\ m} = \frac{G}{c^2}M_{in\ kg}</math> <br />
 
-== Satellite Motion in a Plane ==
+## Satellite Motion in a Plane
 
 * A satellite is restricted to its plane of motion because of spherical symmetry
 ** There is nothing to displace or alter it from its plane of motion
@@ -60,7 +60,7 @@ Such that: <math display="block">M_{in\ m} = \frac{G}{c^2}M_{in\ kg}</math> <br 
 </blockquote>
 <br />
 
-== Metric for Flat Spacetime ==
+## Metric for Flat Spacetime
 
 * From Ch1, we have the spacetime interval as: <math display="block"> \tau^2 = t^2 - s^2 \\
 \sigma^2 = -t^2 + s^2 </math>
@@ -77,7 +77,7 @@ Changing into spherical coordinates: <math display="block">
 (d\sigma)^2 = -(dt)^2 + (dr)^2 + (rd\phi)^2
 </math> <br />
 
-== Schwarzschild Metric ==
+## Schwarzschild Metric
 
 We take the [[#metric-for-flat-spacetime|Metric for Flat Spacetime]]:
 
@@ -91,7 +91,7 @@ And then we can describe two events close to one another, where <math display="i
 
 <math display="block"> (d\sigma)^2 = -\left(1 - \frac{2M}{r}\right)(dt)^2 + \left(1 - \frac{2M}{r}\right)^{-1}(dr)^2 + (rd\phi)^2 </math> <br />
 
-=== Sense Making ===
+Sense Making
 
 # The <strong>curvature factor</strong> only depends on <math display="inline">r</math>, not <math display="inline">\phi</math>
 #* <math display="inline">\left(1 - \frac{2M}{r}\right)</math>
@@ -121,7 +121,7 @@ d\tau = dt_{shell} = \left(1 - \frac{2M}{r}\right)^{1/2}dt
 </blockquote>
 <br />
 
-== Far-away Time ==
+## Far-away Time
 
 * <math display="inline">t</math>-coordinate
 ** also called “ephemeris time”

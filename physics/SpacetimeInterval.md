@@ -24,7 +24,7 @@ Equation Notation:
 #** <strong>ρ</strong>: denotes the [[Proper Distance]] between events
 #** <strong>-ρ</strong>: denotes the [[Proper Time]] or [[wristwatch Time]] between events
 
-==Timelike==
+## Timelike
 ''Also the '''metric'''?''
 Also referred to as '''proper time''' or '''wristwatch time'''. This is time measured
 according to the object in the [[Inertial Reference Frame|inertial reference frame]].
@@ -38,7 +38,7 @@ tau^2 = t^2 - s^2
 
 where t is the frame time and s is the frame distance between two pair of events.
 
-==Spacelike==
+## Spacelike
 Also referred to as '''proper distance'''. This is the spatial measurement that
 all observers will agree on. It too requires the object and observers to be in
 [[Inertial Reference Frame|inertial reference frames]].

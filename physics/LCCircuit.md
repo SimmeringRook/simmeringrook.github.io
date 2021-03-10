@@ -2,8 +2,8 @@
 
 [[File:LC_Circuit_Schematic.png]]
 
-==Differential Equation==
-===Derivation===
+## Differential Equation
+### Derivation
 This derivation will be analogous to that performed for a mechanical system in the [[Simple_Harmonic_Motion#Differential_Equation| Simple Harmonic Motion]]
 page.
 
@@ -19,11 +19,11 @@ Note that, in this case, we define ω_0 as the inverse of the capacitor multipli
 
 [[File:Angular_Frequency_LC.png]]
 
-===General Solutions===
+### General Solutions
 Given that the differential equation has the same form as that derived for a mechanical harmonic oscillator, the same solutions are valid for this equation.
 
 [[File:ABCD_Forms_SMH.png]]
 
-==See Also==
+## See Also
 *[[Oscillations]]
 *[[LCR Circuit]]

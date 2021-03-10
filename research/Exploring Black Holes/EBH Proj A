@@ -1,4 +1,4 @@
-==Query 1==
+## Query 1
 <div class="toccolours mw-collapsible mw-collapsed" style="overflow:auto;">
 <div style="font-weight:bold;line-height:1.6;">Prompt:</div>
 <div class="mw-collapsible-content">
@@ -50,7 +50,7 @@ Convince yourself that if 2M/r_Earth is ≪1, that 2M/r_satellite would be even 
 
   (dt_satellite)/(dt_Earth) ≈ 1 + M/r_satellite - M/r_Earth - (M/r_Earth)(M/r_satellite)    (Eq I.4)
 </div></div>
-==Query 2==
+## Query 2
 <div class="toccolours mw-collapsible mw-collapsed" style="overflow:auto;">
 <div style="font-weight:bold;line-height:1.6;">Prompt:</div>
 <div class="mw-collapsible-content">
@@ -64,7 +64,7 @@ Recall that we showed M/r_Earth and M/r_satellite were significantly smaller tha
   (dt_satellite)/(dt_Earth) ≈ 1 + M/r_satellite - M/r_Earth    (Eq II.1)
 
 </div></div>
-==Query 3==
+## Query 3
 <div class="toccolours mw-collapsible mw-collapsed" style="overflow:auto;">
 <div style="font-weight:bold;line-height:1.6;">Prompt:</div>
 <div class="mw-collapsible-content">
@@ -86,7 +86,7 @@ Substituting into Equation II.1: ([https://www.wolframalpha.com/input/?i=1%2B%28
 
 From this ratio being less than 1, we can see that means the interval between far-away time ticks for the satellite is less than the interval for the clock on the Earth. From an outside observer (in a free-float frame), they would observe, ever so slightly, time passing slower on the surface of the Earth when compared to the Satellite.
 </div></div>
-==Query 4==
+## Query 4
 <div class="toccolours mw-collapsible mw-collapsed" style="overflow:auto;">
 <div style="font-weight:bold;line-height:1.6;">Prompt:</div>
 <div class="mw-collapsible-content">
@@ -97,7 +97,7 @@ From this ratio being less than 1, we can see that means the interval between fa
 <div class="mw-collapsible-content">
 Due note that the approximated value we found in Query 3 means that the period between (far-away) time ticks for the satellite is 1×10^(-9)  s faster than the Earth. We will now explore just how desynchronized the two clocks will be after just 24 hours.
 </div></div>
-==Query 5==
+## Query 5
 <div class="toccolours mw-collapsible mw-collapsed" style="overflow:auto;">
 <div style="font-weight:bold;line-height:1.6;">Prompt:</div>
 <div class="mw-collapsible-content">
@@ -108,7 +108,7 @@ Due note that the approximated value we found in Query 3 means that the period b
 <div class="mw-collapsible-content">
 <strong> TODO:: Add Solution </strong>
 </div></div>
-==Query 6==
+## Query 6
 <div class="toccolours mw-collapsible mw-collapsed" style="overflow:auto;">
 <div style="font-weight:bold;line-height:1.6;">Prompt:</div>
 <div class="mw-collapsible-content">
@@ -119,7 +119,7 @@ Due note that the approximated value we found in Query 3 means that the period b
 <div class="mw-collapsible-content">
 <strong> TODO:: Add Solution </strong>
 </div></div>
-==Query 7==
+## Query 7
 <div class="toccolours mw-collapsible mw-collapsed" style="overflow:auto;">
 <div style="font-weight:bold;line-height:1.6;">Prompt:</div>
 <div class="mw-collapsible-content">
@@ -130,7 +130,7 @@ Due note that the approximated value we found in Query 3 means that the period b
 <div class="mw-collapsible-content">
 <strong> TODO:: Add Solution </strong>
 </div></div>
-==Query 8==
+## Query 8
 <div class="toccolours mw-collapsible mw-collapsed" style="overflow:auto;">
 <div style="font-weight:bold;line-height:1.6;">Prompt:</div>
 <div class="mw-collapsible-content">
@@ -141,7 +141,7 @@ Due note that the approximated value we found in Query 3 means that the period b
 <div class="mw-collapsible-content">
 <strong> TODO:: Add Solution </strong>
 </div></div>
-==Query 9==
+## Query 9
 <div class="toccolours mw-collapsible mw-collapsed" style="overflow:auto;">
 <div style="font-weight:bold;line-height:1.6;">Prompt:</div>
 <div class="mw-collapsible-content">
@@ -152,7 +152,7 @@ Due note that the approximated value we found in Query 3 means that the period b
 <div class="mw-collapsible-content">
 <strong> TODO:: Add Solution </strong>
 </div></div>
-==Query 10==
+## Query 10
 <div class="toccolours mw-collapsible mw-collapsed" style="overflow:auto;">
 <div style="font-weight:bold;line-height:1.6;">Prompt:</div>
 <div class="mw-collapsible-content">

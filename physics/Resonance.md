@@ -10,7 +10,7 @@ With dampening:
 
 ω_f = ω_1
 
-==Q Factor==
+## Q Factor
 Also known as '''quality factor''', this is describes the ratio between the [[Characteristic Angular Frequency|natural frequency]]
  and the [[Damping|damping]] present in the system. This dimensionless value directly and quantitatively describes how underdamped an [[Oscillations|oscillator]] is.
 The following are the formulas for calculating the Q factor for:
@@ -21,12 +21,12 @@ The following are the formulas for calculating the Q factor for:
 *A mechanical system:
 **[[File:Q_Factor_Mech.png]]
 
-==Bandwidth==
+## Bandwidth
 
-==See Also==
+## See Also
 *[[Damping]]
 *[[Characteristic Angular Frequency]]
 
-==Further Reading==
+## Further Reading
 *[https://www.electronics-tutorials.ws/accircuits/series-resonance.html Series Resonance Circuit]
 *[https://en.wikipedia.org/wiki/Q_factor Q Factor]

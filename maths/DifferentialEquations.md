@@ -51,8 +51,8 @@ Annoyingly, there are two different types of classifications for homogeneous:
 *; Constant coefficients : All multiplicative terms associated with the dependent variable (and its derivatives) are constants.
 </div></div>
 
-==Ordinary Differential Equations==
-===First Order===
+## Ordinary Differential Equations
+### First Order
 <div class="toccolours mw-collapsible mw-collapsed" style="overflow:auto;">
 <div style="font-weight:bold;line-height:1.6;">[[First Order Linear Ordinary Differential Equation|First Order Linear]]</div>
 <div class="mw-collapsible-content">
@@ -78,7 +78,7 @@ Annoyingly, there are two different types of classifications for homogeneous:
 ** [[Exact Equation Method]]
 </div></div>
 
-===Second Order===
+### Second Order
 <div class="toccolours mw-collapsible mw-collapsed" style="overflow:auto;">
 <div style="font-weight:bold;line-height:1.6;">[[Second Order Linear Ordinary Differential Equation|Second Order Linear]]</div>
 <div class="mw-collapsible-content">
@@ -98,10 +98,10 @@ Annoyingly, there are two different types of classifications for homogeneous:
 ** [[Laplace Transforms]]
 </div></div>
 
-==Partial Differential Equations==
-===First Order===
+## Partial Differential Equations
+### First Order
 Do they exist?
-===Second Order===
+### Second Order
 <div class="toccolours mw-collapsible mw-collapsed" style="overflow:auto;">
 <div style="font-weight:bold;line-height:1.6;">[[Second Order Linear Partial Differential Equation|Second Order Linear]]</div>
 <div class="mw-collapsible-content">

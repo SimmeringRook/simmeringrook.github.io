@@ -1,5 +1,5 @@
-==Method==
-===First Order Linear===
+## Method
+### First Order Linear
 Given a First order linear ODE in the form:
 y' + p(t)y = f(t)
 #  Multiply both sides of the equation by mu(t), where t is the independent variable. Rewrite the Left-hand side such that the equation is now in the form of:
@@ -9,16 +9,16 @@ y' + p(t)y = f(t)
 #  Integrate both sides. If solving an equation with initial value problems, it might be easier to solve for C now before moving onto step 4.
 #  Solve for y(t). General solution will have the form:
 #*  y = 1/mu(t) · Integrate (mu(s)f(s)ds) + C
-===Second Order Linear===
+### Second Order Linear
 <strong>TODO:: Elaborate</strong>
 [https://en.wikipedia.org/wiki/Integrating_factor#Solving_second_order_linear_ordinary_differential_equations Wikipedia on using the method to solve Second Order Linear ODEs]
-==Explanation of Method==
-====Step 1====
+## Explanation of Method
+#### Step 1
 Multiply both sides of equation by mu(t). mu(t) has not been defined at this stage.
 
   mu(t)y' + mu(t)p(t)y = mu(t)f(t)
 
-====Step 2====
+#### Step 2
 Find a mu(t) such that the left hand side can be written as:
 
   (mu(t)y)'
@@ -38,7 +38,7 @@ Integrate both sides
   ln(mu(t)) = Integrate(p(t) dt)
   mu(t) = exp( Integrate(p(t) dt) )
 
-====Step 3====
+#### Step 3
 
   (mu(t)y)' = mu(t)f(t)
 
@@ -48,8 +48,8 @@ Integrate w.r.t. some placeholder variable
   mu(t)y = Integrate (mu(s)f(s)ds) + C
   y = 1/mu(t) · Integrate (mu(s)f(s)ds) + C
 
-==Examples==
-===Example 1===
+## Examples
+### Example 1
 Solve the Initial Value Problem:
 
   ty'+2y=4t^2, y(1) = 2

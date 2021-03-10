@@ -1,15 +1,15 @@
 ?>**Definition**: Typically referred to as $\beta$, damping is when an external force reduces or removes energy from the system. For a mechanical system, this typically takes the form of friction. In an electrical oscillator, this takes the form of a [[Resistor|resistor]].
 
-==Equations==
-===Mechanical===
+## Equations
+### Mechanical
 [[File:Beta_Mech.png]]
-===Electrical===
+### Electrical
 [[File:Beta_LRC.png]]
-===Other Forms===
+### Other Forms
 [[File:Beta_omega1_omega0.png]]
 
-==Changes to the Differential Equation==
-===For Standing Waves===
+## Changes to the Differential Equation
+### For Standing Waves
 This example will show the changes made to the [[LC Circuit]] when dampening is added. Like with the original derivations, the same process is valid and applies to the mechanical case (which is not shown).
 The addition of a resistor makes the LC Circuit into a [[LCR Circuit]] and using [[Kirchhoff's Voltage Law]] we obtain:
 
@@ -28,30 +28,30 @@ We call this new characteristic frequency of the system ω_1:
 
 [[File:Omega1_Definition.png]]
 
-===For Traveling Waves===
+### For Traveling Waves
 For electrical systems, this is often referred to as [[Attenuation|attenuation]].
 
-==Behavior==
-===Decay over time===
+## Behavior
+### Decay over time
 
-===Underdamped===
+### Underdamped
 β<ω_0
 
 It is important to note that in an underdamped oscillator, the motion is no longer strictly periodic, that is, the length of the period increases as the amplitude exponentially decays.
 
 [[File:Graph_of_Underdamped.png]]
-===Overdamped===
+### Overdamped
 β>ω_0
 
 [[File:Graph_of_Overdamped.png]]
-===Critically Damped===
+### Critically Damped
 β=ω_0
 
 [[File:Graph_of_CriticallyDamped.png]]
 
-==See Also==
+## See Also
 *[[Oscillations]]
 *[[LCR Circuit]]
 
-==Further Reading==
+## Further Reading
 *[http://hyperphysics.phy-astr.gsu.edu/hbase/oscda.html Damped Harmonic Oscillator on HyperPhysics]

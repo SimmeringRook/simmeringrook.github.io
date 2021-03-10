@@ -1,9 +1,9 @@
-==Types of Waves==
-===Standing===
-===Traveling===
+## Types of Waves
+### Standing
+### Traveling
 
-==Properties of Waves==
-===Reflection===
+## Properties of Waves
+### Reflection
 When a traveling wave encounters a change in medium, a portion of the incident wave is reflected back down the original medium.
 In the context of waves traveling down a coaxial cable, this happens when two cables are connected, and the second cable has a different impedance value than the first.
 We can calculate the ratio of the amplitude for this reflected wave with the following relationship:
@@ -20,7 +20,7 @@ The '''sign''' of the amplitude for this wave depends on the type of boundary en
 Also note that, the reflected wave is traveling in the same medium as the incident wave did. This can be particularly useful if you're trying to answer questions about
 the incident wave using only the reflected and transmitted wave. The impact of this effect is that the '''width''' of the reflected wave and incident wave will be the
 '''same'''.
-===Transmission===
+### Transmission
 Like with reflection, when the incident wave encounters a boundary, a portion of the incident wave continues to travel in the original direction.
 The transmission coefficient is the ratio of the amplitudes between the transmitted wave and incident wave and has the similar relationship:
 
@@ -30,16 +30,16 @@ The transmitted wave '''does not''' change polarity when encountering either typ
 different width and amplitude from the incident wave. If there is no difference between the incident and transmitted wave, then the boundary crossed
 by the incident wave is negligible and should be verifiable by a 0 reflection coefficient.
 
-==One Dimensional Waves==
-===Deriving the Non-dispersive Wave Equation===
+## One Dimensional Waves
+### Deriving the Non-dispersive Wave Equation
 Depending on the physical system we are discussing, there are a variety of ways that we can arrive at the '''Non-dispersive Wave Equation'''.
 *For a string, we can use [[Tension|tension]] and [[Newton's Second Law]]
 *For [[Electromagnetism|electromagnetic]] [[Electromagnetic Radiation|waves]], we can use [[Maxwell's Equations]]
 *For a circuit, we can use [[Kirchhoff's Voltage Law]]
 
-===Guide to Solve the Non-dispersive PDE===
+### Guide to Solve the Non-dispersive PDE
 *[[Media:PDE_Solution_Guide.pdf|General Solution]]
 *[[Media:Dirichlet_Boundary_Conditions.pdf|Dirichlet Boundary Conditions]]
 *[[Media:Neumann_Boundary_Conditions.pdf|Neumann Boundary Condtions]]
 
-===Accounting for Attenuation===
+### Accounting for Attenuation

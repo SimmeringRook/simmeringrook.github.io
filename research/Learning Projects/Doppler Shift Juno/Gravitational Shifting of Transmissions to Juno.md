@@ -1,6 +1,6 @@
 Inspired as an extension of [[Exploring Black Holes, Project A|Project A]] from [[Exploring Black Holes]]. This question seeks to estimate the effects of [[Gravitational Red Shifting]] and Blue shifting of a transmission from Earth to the [https://en.wikipedia.org/wiki/Juno_(spacecraft) Juno spacecraft (Wikipedia)].
 
-== Problem Statement ==
+## Problem Statement
 Does the curvature of spacetime, due to the presence of Earth and Jupiter, effect how a transmission from Earth to the Juno spacecraft would be received? Is this effect significant enough that we design spacecraft to receive a wide band of frequencies or allow variable frequencies for contact?
 
 <br /><br />

@@ -1,11 +1,11 @@
 ?>**Definition**: The scalar multiple of which eigenvectors are scaled by.
 
-==Uses==
+## Uses
 *[[Eigenvalue Equations]]
 
-==Further Reading==
+## Further Reading
 *[http://sites.science.oregonstate.edu/physics/mathbook/LinAlg/eigenvalue.html Geometry of Linear Algebra: Finding Eigenvalues]
 *[https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors Wikipedia: Eigenvalues and Eigenvectors]
 
-==See Also==
+## See Also
 *[[Eigenvector]]

@@ -3,8 +3,8 @@
 *Spin 1
 *Spin 3/2
 
-==Particle in a Box==
-===Description===
+## Particle in a Box
+### Description
 A particle in an infinite square well (also called a particle in a box), where the well is between x=0 and x=L, experiences infinite potential everywhere outside the box and 0 potential everywhere inside the box (between 0 < x < L), so the particle cannot escape the bounds {0,L}. The kets, in wavefunction notation, are given by
 
 [[File:Wavefunction_ket.JPG]]
@@ -22,22 +22,22 @@ Since the particle must be somewhere within the well:
 [[File:Total_probability.JPG]]
 
 In other words, the total probability of finding the particle anywhere in the well is 1.
-===Observables===
+### Observables
 *Energy
 *Position
 *Linear Momentum
 *Angular Momentum
 
-==Particle on a Ring==
+## Particle on a Ring
 *Energy
 *Position
 *Angular Momentum
 
-==Particle on a Sphere==
+## Particle on a Sphere
 *Energy
 *Position
 *Angular Momentum
 
-==Free Particle==
+## Free Particle
 *Energy
 *Position

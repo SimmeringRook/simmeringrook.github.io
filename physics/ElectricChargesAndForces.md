@@ -1,6 +1,6 @@
 Electric Charges and Forces
 
-==Charge Model==
+## Charge Model
 Objects are charged by the addition or removal of electrons.
 
 Glass rods charged by silk is associated with positive charge.

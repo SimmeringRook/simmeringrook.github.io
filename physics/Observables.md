@@ -1,6 +1,6 @@
 ?>**Definition**: An observable is a physical quantity that can be measured.
 
-==Quantum Systems==
+## Quantum Systems
 ===[[Spin|Spin]]===
 *Spin 1/2
 ** <nowiki>+hbar*1/2</nowiki>
@@ -15,22 +15,22 @@
 ** <nowiki>-hbar*1/2</nowiki>
 ** <nowiki>-hbar*3/2</nowiki>
 
-===Particle in a Box===
+### Particle in a Box
 *Energy
 *Position
 *Linear Momentum
 *Angular Momentum
 
-===Particle on a Ring===
+### Particle on a Ring
 *Energy
 *Position
 *Angular Momentum
 
-===Particle on a Sphere===
+### Particle on a Sphere
 *Energy
 *Position
 *Angular Momentum
 
-===Free Particle===
+### Free Particle
 *Energy
 *Position

@@ -1,4 +1,4 @@
-=== After the fact commentary ===
+After the fact commentary
 
 I originally sought to find the amount of red shifting as the transmission left Earth and the amount of blue shifting as the transmission approached Jupiter by using the concepts derived from [[Exploring Black Holes, Project A|EBH's Project A]]. The idea was to measure the ratio in clock tick intervals at Juno with respect to the equator of Earth, and the ratio in clock tick intervals at Juno with respect to the equator of Jupiter.
 <br /><br />
@@ -8,7 +8,7 @@ Drawing inspiration from how we would use [[Superposition]] of forces to describ
 
 This approach seemed promising and lead to questions about [[Curved Spacetime#Negative_Curvature|Negative Curvature of Spacetime]]; but appears to have dead-ended.
 
-===Original Solution===
+### Original Solution
 
 Compare the difference in the frame time delta of Juno (vs Bookkeeper) to the frame time delta of Earth (vs Bookkeeper) and then measure the gravitational red/blue shifting of transmissions from Earth to Juno.
 <br /><br />
