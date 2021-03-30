@@ -4,12 +4,13 @@
 ### Dirac
 In Dirac notation, kets are represented as:
 
-$$\ket{\psi}$$
+$$\vert\psi\rang$$
 
 ### Matrix
 In Matrix notation, kets are represented as column matrices:
 
-$$\vert\psi\rang \doteq\begin{array}{c}
+$$\vert\psi\rang \doteq\begin{pmatrix}
 \lang a_1\vert\psi\rang \\
 \vdots
-\\ \braket{a_n \vert\psi}\end{array}$$
+\\ \lang a_n \vert\psi\rang
+\end{pmatrix}$$

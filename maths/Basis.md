@@ -3,20 +3,18 @@
 vectors must also be [[linearly Independent|linearly independent]] from each other.
 <br><br>
 
-## [Linear Algebra]
-Let V be a [[subspace]] of R^n. The set of vectors, {v_1, ..., v_k} is called a basis if:
-- $V = Span(v_1, ..., v_k)$
-- $\{v_1, ..., v_k\}$ is linearly independent
+## Linear Algebra
+Let $\mathcal{V}$ be a [subspace](/maths/Subspace.md) of $\R^n$. The set of vectors, $\{v_1,\ \dots,\ v_n\}$ is called a basis if:
+- $\mathcal{V} = Span(v_1, \dots, v_n)$
+- $\{v_1,\ \dots,\ v_n\}$ is linearly independent
 
-## [Quantum Mechanics]
-A basis in [[Quantum Mechanics]] is a set of vectors that [[span]] the [[Hilbert Space]] for a [[Quantum Mechanical System]].
+## Quantum Mechanics
+A basis in [Quantum Mechanics](/physics/QuantumMechanics.md) is a set of vectors that [span](/maths/Span.md) the [Hilbert Space](/maths/HilbertSpace.md) for a [Quantum Mechanical System](/phyiscs/QuantumMechanicalSystem.md).
 
-!> **Important**: [Linear Algebra] only requires that each vector be linearly independent from each other,
-where as when we discuss bases (plural of basis) in [Quantum Mechanics], we require that
-each basis vector is [Orthogonal|orthogonal].
+!> **Important**: [Linear Algebra](/maths/LinearAlgebra.md) only requires that each vector be linearly independent from each other. In Quantum Mechanics, we require that each basis vector is [orthogonal](/maths/Orthogonal.md).
 
 ### Properties
 Each basis must exhibit the follow properties:
-- [Normalization]]
-- [Orthogonality]]
-- [Completeness]]
+- [Normalization]
+- [Orthogonality]
+- [Completeness]
