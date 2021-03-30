@@ -5,7 +5,7 @@ $$T=\frac{1}{f}$$
 
 '''Angular Frequency''' is an extension of this relationship, such that every full period corresponds to $2\pi$ about the unit circle (or Argand diagram). As such, its relationship to period and frequency is defined as:
 
-$$\omega=2\pi f=\frac{1}{T}$$
+$$\omega=2\pi f=\frac{2\pi}{T}$$
 
 ## Differential Equation
 ### Derivation
@@ -13,6 +13,7 @@ We derive the equation of motion for a simple harmonic system by starting off wi
 - The restoring force, often called [Hooke's Law](/physics/HookesLaw.md)
 - [Gravity](/physics/Gravity.md)
 $$F_{net}=m\ddot{x} \\ F_{net}= kx - mg$$
+
 From this, we can describe the net force of the system as the [superposition](/physics/Superposition.md) of these two forces. Setting both equations equal to each other, we arrive at the following differential equation:
 
 $$m\ddot{x}-kx=-mg$$
@@ -55,5 +56,5 @@ For systems being described by the A form, it is easy to see the following relat
 The terms used above directly relate to mechanical systems, but the math and concepts are equally applicable to electrical simple harmonic [[Oscillations|oscillators]].
 
 ## See Also
-*[[Oscillations]]
-*[[LC Circuit]]
+- [Oscillations](/physics/Oscillations.md)
+- [LC Circuit](/physics/LCCircuit.md)
