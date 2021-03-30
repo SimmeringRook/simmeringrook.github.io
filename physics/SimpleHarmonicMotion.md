@@ -47,6 +47,10 @@ This differential equation has many solutions, but the four standard versions ar
 - D-form:
   - $\Re e(De^{i\omega_0 t})$
 
+#### Initial Conditions
+
+
+
 ## Other Notes
 
 For systems being described by the A form, it is easy to see the following relationships between maximal and minimal values for position, velocity, and acceleration:
