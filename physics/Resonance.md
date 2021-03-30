@@ -1,32 +1,50 @@
-?>**Definition**: Resonance is when the velocity amplitude of an oscillating system reaches its global maximum.
-This effect becomes noticeable as the [[Forced Oscillations|driving frequency]], ''ω_d'', approaches the resonance frequency, ''ω_f''.
+# Resonance
 
-The value of ''ω_f'' is dependent on the amount of [[Damping|damping]] present in the system, as well as the system's [[Characteristic Angular Frequency|natural frequency]].
-For systems with no dampening:
+?>**Definition**: Resonance is when the velocity amplitude of an oscillating system reaches its global maximum. This effect becomes noticeable as the [driving frequency](/physics/ForcedOscillations.md), $\omega_d$, approaches the resonance frequency, $\omega_f$.
 
-ω_f = ω_0
+The value of $\omega_f$ is dependent on the amount of [damping](/physics/Damping.md) present in the system, as well as the system's [natural frequency](/physics/AngularFrequency#Characteristic-Angular-Frequency.md).
 
-With dampening:
-
-ω_f = ω_1
+For systems with:
+- no damping
+  - $\omega_f=\omega_0$
+- with damping:
+  - $\omega_f=\omega_1$
 
 ## Q Factor
-Also known as '''quality factor''', this is describes the ratio between the [[Characteristic Angular Frequency|natural frequency]]
- and the [[Damping|damping]] present in the system. This dimensionless value directly and quantitatively describes how underdamped an [[Oscillations|oscillator]] is.
+Also known as **quality factor**, this is describes the ratio between the natural frequency and the damping present in the system. This dimensionless value directly and quantitatively describes how underdamped an [oscillator](/physics/Oscillations.md) is.
+
 The following are the formulas for calculating the Q factor for:
-*A Generalized Oscillator:
-**[[File:Q_Factor_General.png]]
-*An [[LCR Circuit]]:
-**[[File:Q_Factor_LCR.png]]
-*A mechanical system:
-**[[File:Q_Factor_Mech.png]]
+- A Generalized Oscillator:
+  - [[File:Q_Factor_General.png]]
+- An [[LCR Circuit]]:
+  - [[File:Q_Factor_LCR.png]]
+- A mechanical system:
+  - [[File:Q_Factor_Mech.png]]
 
 ## Bandwidth
 
-## See Also
-*[[Damping]]
-*[[Characteristic Angular Frequency]]
+!>**TODO**: Add description and content for Bandwidth.
 
-## Further Reading
-*[https://www.electronics-tutorials.ws/accircuits/series-resonance.html Series Resonance Circuit]
-*[https://en.wikipedia.org/wiki/Q_factor Q Factor]
+---
+
+## External Resources
+- [Series Resonance Circuit](https://www.electronics-tutorials.ws/accircuits/series-resonance.html)
+- Wikipedia: [Q Factor](https://en.wikipedia.org/wiki/Q_factor)
+
+---
+
+## Internal Links
+### Courses
+
+- [PH424: Oscillations and Waves](/courses/PH424.md)
+- [PH481: Physical Optics]
+
+### Topics
+
+- [Oscillations](/physics/Oscillations.md)
+  - [Damping](/physics/Damping.md)
+  - [Characteristic Angular Frequency](/physics/AngularFrequency#Characteristic-Angular-Frequency.md)
+
+### Similar
+
+- [Interference Patterns]

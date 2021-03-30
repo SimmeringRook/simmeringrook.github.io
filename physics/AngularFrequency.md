@@ -14,7 +14,19 @@ For a mass on a spring, ''ω'' is defined by the ratio of the square root of ''k
 
 [[File:Angular_Frequency_Hookes_Law.png]]
 
-## See Also
-*[[Simple Harmonic Motion]]
-*[[Resonance]]
-*[[Oscillations]]
+---
+
+## Internal Links
+### Courses
+
+- [PH424: Oscillations and Waves](/courses/PH424.md)
+
+### Topics
+
+- [Oscillations](/physics/Oscillations.md)
+  - [Simple Harmonic Motion](/physics/SimpleHarmonicMotion.md)
+  - [Damping](/physics/Damping.md)
+  - [Resonance](/physics/Resonance.md)
+
+### Similar
+- [Cyclic Frequency]

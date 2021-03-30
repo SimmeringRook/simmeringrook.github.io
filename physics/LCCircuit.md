@@ -1,4 +1,6 @@
-?>**Definition**: A simple circuit that contains both an [[Inductor]] and [[Capacitor]].
+# LC Circuit
+
+?>**Definition**: A simple circuit that contains both an [Inductor](/physics/Inductor.md) and [Capacitor](/physics/Capacitor.md).
 
 [[File:LC_Circuit_Schematic.png]]
 
@@ -24,6 +26,18 @@ Given that the differential equation has the same form as that derived for a mec
 
 [[File:ABCD_Forms_SMH.png]]
 
-## See Also
-*[[Oscillations]]
-*[[LCR Circuit]]
+---
+
+## Internal Links
+### Courses
+
+- [PH411: Electronics](/courses/PH411.md)
+- [PH424: Oscillations and Waves](/courses/PH424.md)
+
+### Topics
+
+- [Oscillations](/physics/Oscillations.md)
+  - [Simple Harmonic Motion](/physics/SimpleHarmonicMotion.md)
+
+### Similar
+- [LRC Circuit](/physics/LCRCircuit.md)

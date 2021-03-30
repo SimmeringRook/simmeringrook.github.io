@@ -5,5 +5,14 @@
 ## Overview
 - [Simple Harmonic Motion](/physics/SimpleHarmonicMotion.md)
 - [Damping](/physics/Damping.md)
-- [Forced Oscilaltions](/physics/ForcedOscillations.md)
+- [Forced Oscillations](/physics/ForcedOscillations.md)
 - [Resonance](/physics/Resonance.md)
+
+---
+
+## Internal Links
+### Courses
+
+- [PH424: Oscillations and Waves](/courses/PH424.md)
+- [PH451: Capstone: Quantum Mechanics](/courses/PH451.md)
+- [PH585: Atomic, Molecular, and Optical Physics](/courses/PH585.md)
