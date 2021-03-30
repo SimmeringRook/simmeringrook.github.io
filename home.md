@@ -4,10 +4,12 @@
 - [Astrophysics](/physics/Astrophysics.md)
 - [Electromagnetism](/physics/Electromagnetism.md)
 - [Kinematics](/physics/Kinematics.md)
-- [Waves]((/physics/Waves.md))
+- [Waves](/physics/Waves.md)
+- [Thermodynamics](/physics/Thermodynamics.md)
 
 ## Quantum Mechanics
 - [Quantum Mechanics](/physics/QuantumMechanics.md)
+- [Statistical Mechanics](/physics/StatisticalMechanics.md)
 
 ## Relativity
 - [Special Relativity](/physics/SpecialRelativity.md)
@@ -65,7 +67,7 @@
 
 ### Capstone
 - [PH 431: Electromagnetism](/courses/PH431.md)
-- [PH 441: Statistical Mechanics](/courses/PH441.md)
+- [PH 441: Statistical Mechanics](/courses/PH541.md)
 - [PH 451: Quantum Mechanics](/courses/PH451.md)
 
 ### Other
@@ -73,6 +75,7 @@
 - [PH 335: Theoretical Mechanics](/courses/PH335.md)
 - [PH 401: Research](/courses/PH401.md)
 - [PH 455: Astrophysics](/courses/PH455.md)
+- [PH 585: Atomic, Molecular, and Optical Physics](/courses/PH585.md)
 
 ## Mathematics
 ### 25X Series
@@ -90,4 +93,4 @@
 ### Other
 - [MTH 231](/courses/MTH231.md)
 - [MTH 434](/courses/MTH434.md)
-- [MTH 437](/courses/MTH437.md)
+- [MTH 537](/courses/MTH537.md)
