@@ -1,9 +1,13 @@
+# Simple Harmonic Motion
+
+?>**Definition:** *Concise definition goes here*
+
 ## Frequency and Period
-The rate at which a system oscillates is called the '''frequency''' of the system. (Cyclic) Frequency is measured in hertz ($Hz$ or $s^-1$) as cycles per second. The time one full cycle takes to complete (start to stop) is called the period of the system. Period and frequency are related through the following relationship:
+The rate at which a system oscillates is called the frequency of the system. (Cyclic) Frequency is measured in hertz ($Hz$ or $s^-1$) as cycles per second. The time one full cycle takes to complete (start to stop) is called the period of the system. Period and frequency are related through the following relationship:
 
 $$T=\frac{1}{f}$$
 
-'''Angular Frequency''' is an extension of this relationship, such that every full period corresponds to $2\pi$ about the unit circle (or Argand diagram). As such, its relationship to period and frequency is defined as:
+Angular Frequency is an extension of this relationship, such that every full period corresponds to $2\pi$ about the unit circle (or Argand diagram). As such, its relationship to period and frequency is defined as:
 
 $$\omega=2\pi f=\frac{2\pi}{T}$$
 
@@ -27,21 +31,21 @@ Note that we define $\omega_0$ in this context to be:
 
 $$\omega_0 = \frac{k}{m}$$
 
-And this is true for any SHM that experiences the restoring force from Hooke's Law. $\omega_0$ is often referred to as the [Natural Angular Frequency(or Characteristic angular frequency)](/physics/AngularFrequency.md) of the system.
+And this is true for any SHM that experiences the restoring force from Hooke's Law. $\omega_0$ is often referred to as the [Natural Angular Frequency(or Characteristic angular frequency)](/physics/AngularFrequency#Characteristic-Angular-Frequency.md) of the system.
 
 ### General Solutions
 
 This differential equation has many solutions, but the four standard versions are as follows:
 - A-form:
-  - $Acos(\omega_0 t+\phi)$
+  - $A\cos{(\omega_0 t+\phi)}$
 - B-form:
-  - $B_p\cos{\omega_0 t} + B_q\sin{\omega_0 t}$
-  - $p$ is *phase*
-  - $q$ is *quadrature*
+  - $B_p\cos{(\omega_0 t)} + B_q\sin{(\omega_0 t)}$
+    - $p$ is *phase*
+    - $q$ is *quadrature*
 - C-form:
   - $Ce^{i\omega_0 t}+C^* e^{-i\omega_0 t}$
 - D-form:
-  - $\Re(De^{i\omega_0 t})$
+  - $\Re e(De^{i\omega_0 t})$
 
 ## Other Notes
 
