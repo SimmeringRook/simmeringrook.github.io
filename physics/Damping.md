@@ -1,3 +1,5 @@
+# Damping
+
 ?>**Definition**: Typically referred to as $\beta$, damping is when an external force reduces or removes energy from the system. For a mechanical system, this typically takes the form of friction. In an electrical oscillator, this takes the form of a [Resistor](/physics/Resistor.md).
 
 ## Equations
@@ -11,6 +13,7 @@ $$\beta=\frac{b}{2m}$$
 ### Electrical
 
 $$\beta=\frac{R}{2L}$$
+
 - $R$ is the resistance of the [Resistor](/physics/Resistor.md) in the circuit
 - $L$ is the inductance of the [Inductor](/physics/Inductor.md) in the circuit
 
