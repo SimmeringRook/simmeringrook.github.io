@@ -8,6 +8,12 @@
 - [Forced Oscillations](/physics/ForcedOscillations.md)
 - [Resonance](/physics/Resonance.md)
 
+## Free Oscillator
+Canonical Systems:
+- Mass on a spring
+  - Charge on a spring
+- LC Circuit
+
 ---
 
 ## Internal Links

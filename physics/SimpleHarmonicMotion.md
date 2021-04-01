@@ -16,7 +16,10 @@ $$\omega=2\pi f=\frac{2\pi}{T}$$
 We derive the equation of motion for a simple harmonic system by starting off with [Newton's Second Law](/physics/NewtonsLaws.md). In the simple case of a mass being suspended from the ceiling by a spring, there are two forces acting on the mass:
 - The restoring force, often called [Hooke's Law](/physics/HookesLaw.md)
 - [Gravity](/physics/Gravity.md)
-$$F_{net}=m\ddot{x} \\ F_{net}= kx - mg$$
+$$\begin{aligned}
+F_{net} &= m\ddot{x} \\
+F_{net} &= kx - mg
+\end{aligned}$$
 
 From this, we can describe the net force of the system as the [superposition](/physics/Superposition.md) of these two forces. Setting both equations equal to each other, we arrive at the following differential equation:
 
@@ -25,11 +28,11 @@ $$m\ddot{x}-kx=-mg$$
 After rearranging terms and performing a variable substitution, we can arrive at the more common version of this equation,
 which is the [Second Order](/maths/SecondOrderODE.md) [linear homogeneous ordinary differential equation](/maths/DifferentialEquations.md) with constant coefficients:
 
-$$\ddot{x}-\omega_0 x=-g$$
+$$\ddot{x}-{\omega_0}^2 x=-g$$
 
 Note that we define $\omega_0$ in this context to be:
 
-$$\omega_0 = \frac{k}{m}$$
+$$\omega_0 = \sqrt{\frac{k}{m}}$$
 
 And this is true for any SHM that experiences the restoring force from Hooke's Law. $\omega_0$ is often referred to as the [Natural Angular Frequency(or Characteristic angular frequency)](/physics/AngularFrequency#Characteristic-Angular-Frequency.md) of the system.
 

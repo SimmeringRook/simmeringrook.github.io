@@ -19,7 +19,7 @@ $$\beta=\frac{R}{2L}$$
 
 ### Other Forms
 
-$$\beta=\sqrt{{\omega_1}^2-{\omega_0}^2}$$
+$$\beta=\sqrt{{\omega_0}^2-{\omega_1}^2}$$
 
 - $\omega_0$ is the [characteristic angular frequency](/physics/AngularFrequency#Characteristic-Angular-Frequency.md) of the system
 - $\omega_1$ is the ...
