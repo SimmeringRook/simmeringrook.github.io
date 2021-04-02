@@ -38,7 +38,7 @@ $$L\ddot{q}+R\dot{q}+\frac{q}{C}=0$$
 
 Just like we used $\omega_0$ to generalize the previous iteration of this ODE, we will now use $\beta$ to represent the damping of the system:
 
-$$\ddot{q}+2\beta\dot{q}+\omega_0 q = 0$$
+$$\ddot{q}+2\beta\dot{q}+{\omega_0}^2 q = 0$$
 
 The same Ansatz-es apply to this ODE as well, and the process remains the same. The notable difference is that because there is damping, the [characteristic angular frequency](/physics/AngularFrequency#Characteristic-Angular-Frequency.md) of the system is changed. We call the characteristic frequency of this new system $\omega_1$, which is defined as follows:
 
