@@ -15,9 +15,15 @@ Also known as **quality factor**, this is describes the ratio between the natura
 
 The following are the formulas for calculating the Q factor for:
 - A Generalized Oscillator:
-  - [[File:Q_Factor_General.png]]
-- An [[LCR Circuit]]:
-  - [[File:Q_Factor_LCR.png]]
+$$Q=\frac{\omega_0}{2\beta}$$
+- A (series) [LCR Circuit](/physics/LCRCircuit.md):
+$$\begin{aligned}
+Q &=\frac{\omega_0}{2\beta} \\
+ &=\frac{1}{\sqrt{LC}}\frac{1}{2}\left(\frac{R}{2L}\right)^{-1} \\
+ &=\frac{2L}{2R\sqrt{LC}} =\frac{\sqrt{L}}{R\sqrt{C}} \\
+ &=\frac{\sqrt{C}}{\sqrt{C}}\frac{\sqrt{L}}{R\sqrt{C}}=\frac{\sqrt{LC}}{RC} \\
+ &=\frac{1}{\omega_0 RC}
+\end{aligned}$$
 - A mechanical system:
   - [[File:Q_Factor_Mech.png]]
 
