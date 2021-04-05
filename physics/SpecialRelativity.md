@@ -1,11 +1,13 @@
+# Special Relativity
+
 <blockquote>
     <p>"Special Relativity describes the very fast."</p>
-    —Edwin F. Taylor & John Archibald Wheeler, <cite>[[Exploring Black Holes]]</cite>
+    —Edwin F. Taylor & John Archibald Wheeler, <cite>[Exploring Black Holes]</cite>
 </blockquote>
 <br />
 <blockquote cite="http://www.eftaylor.com/exploringblackholes/">
     <p>"The Physics of Special Relativity, in which it is shown that time is not the same for all observers."</p>
-    —Tevian Dray, <cite>[[The Geometry of Special Relativity]]</cite>
+    —Tevian Dray, <cite>[The Geometry of Special Relativity]</cite>
 </blockquote>
 
 ## Postulates
@@ -20,10 +22,12 @@
 </blockquote>
 
 ## Usage
-The power of Special Relativity is that it gives us a method for every observer to agree on the distance or time between events, irregardless of inertial reference frame. We derive the metric used to describe the separation between events by using hyperbola geometry.
+The power of Special Relativity is that it gives us a method for every observer to agree on the distance or time between events, irregardless of [inertial reference frame](/physics/IntertialReferenceFrame.md). We derive the metric used to describe the separation between events by using hyperbolic geometry.
 
 ### Spacetime Interval
-See [[Spacetime Interval]]. '''TODO:''' Add a concise description.
+See [Spacetime Interval](/physics/SpacetimeInterval.md)
+
+!> **TODO:** Add concise description
 
 ## Properties and Gedankenexperiments
 ### Time Dilation
