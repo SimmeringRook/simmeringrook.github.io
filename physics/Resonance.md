@@ -8,7 +8,7 @@ For systems with:
 - no damping
   - $\omega_f=\omega_0$
 - with damping:
-  - $\omega_f=\omega_1$
+  - $\omega_f=\sqrt{{\omega_0}^2-2{\beta}^2}\approx\omega_0$ (when $\beta\ll\omega_0$)
 
 ## Q Factor
 Also known as **quality factor**, this is describes the ratio between the natural frequency and the damping present in the system. This dimensionless value directly and quantitatively describes how underdamped an [oscillator](/physics/Oscillations.md) is.

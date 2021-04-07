@@ -1,9 +1,11 @@
 # Chapter 1: Speeding
+
+## Notes
 * [[Special Relativity]] is used to discuss objects moving very fast (in flat spacetime).
 
 $$ v < c $$
 
-## Spacetime
+### Spacetime
 
 Consider a rock floating by with a wristwatch affixed to it. Record the time and position of at the start of a clock tick and then at then of the clock tick.
 
@@ -16,7 +18,7 @@ We now have the frame spacetime coordinates recorded for these two events and ca
 This set of invariant coordinates of spacetime is called the [[Spacetime Interval|Spacetime Metric or Spacetime Interval]].
 <br />
 
-## Proper Time
+### Proper Time
 
 Equations:
 $$\tau^2 = t^2 - s^2$$
@@ -30,7 +32,7 @@ $$\tau^2 = (ct)^2 - s^2$$
 This form is more explicit and used in [[The Geometry of Special Relativity]].
 <br />
 
-## Proper Distance
+### Proper Distance
 
 Equations:
 $$\sigma^2 = s^2 - t^2$$
@@ -42,12 +44,12 @@ Similar to the previous section, the frame time $t$ is measured here in length. 
 $$\sigma^2 = s^2 - (ct)^2$$
 <br />
 
-### Proper Length
+#### Proper Length
 
 This property gives rise to a similar measurement, the length of an object. We still use the Proper distance formula to calculate this value, but the proper length <strong>can only be calculated in a frame where the object is at rest</strong>.
 <br />
 
-## Speed
+### Speed
 
 Given that we can now discuss the time or distance between any events (that are in an inertial reference frame), that means we can discuss the speed of an object that is causing these events:
 
@@ -60,12 +62,12 @@ This velocity is the speed at which the object is moving in its own frame. We ex
 $$s = t,\ \ v=\frac{s}{t}=1$$
 <br />
 
-## Principle of Extremal Aging
+### Principle of Extremal Aging
 
 <blockquote>The path a free object takes between two events in spacetime is the path for which the time lapse between these events, recorded on the object's wristwatch, is an extremum.</blockquote>
 <br />
 
-## Energy
+### Energy
 
 We can combine the [[Metric]] with the [[Principle of Extremal Aging]] to derive the relativistic expression of energy in flat spacetime. In general, the expression takes the form:
 
@@ -86,19 +88,19 @@ $$ E = mc^2 $$
 <blockquote>We use this equation to describe the energy of a particle at <strong>rest</strong>.</blockquote>
 <br />
 
-## Momentum
+### Momentum
 
 $$ \frac{p}{m} = \frac{ds}{d\tau} $$
 
 Seek [[Spacetime Physics]] Chapter 7 for more information.
 <br />
 
-## Mass
+### Mass
 
 Particle mass $m$ is invariant. We can find this value by measuring the momentum and energy of the particle (in an inertial reference frame) while observing from an inertial reference frame.
 <br />
 
-#### Derivation
+##### Derivation
 
 Take the timelike spacetime interval:
 
@@ -120,3 +122,5 @@ Substitute Energy and Momentum:
 
 $$ m^2 = E^2 - p^2$$
 <br />
+
+## Exercises
