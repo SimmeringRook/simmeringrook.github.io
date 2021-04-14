@@ -20,7 +20,7 @@ $$ds^2 = -\left(1-\frac{2M}{r}\right)dt^2 + \left(1-\frac{2M}{r}\right)^{-1} + r
     - $ds < dt$
       - for $r>2m$
 
-## Geodesics
+## Geodesics in Schwarzschild
 
 Typical Great Circles:
 - Equator
