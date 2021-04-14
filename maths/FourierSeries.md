@@ -36,7 +36,7 @@ $$\begin{aligned}
 As well as $\cos{(nx)}$ is orthogonal to $\cos{(mx)}$:
 
 $$\begin{aligned}
-\int_{0}^{T}{\left(\sqrt{\frac{2}{T}}\sin{(nx)}\right) \left(\sqrt{\frac{2}{T}}\sin{(mx)}\right) dx}
+\int_{0}^{T}{\left(\sqrt{\frac{2}{T}}\cos{(nx)}\right) \left(\sqrt{\frac{2}{T}}\cos{(mx)}\right) dx}
   &= \frac{2}{T}\left[\frac{m\sin{(mx)}\cos{(nx)} - n\cos{(mx)}\sin{(nx)}}{m^2 - n^2} \right]_{0}^{T} \\
   &= \frac{2}{T}\left[\frac{n(0)(1) - m(1)(0)}{m^2 - n^2} - 0\right] \\
   &= 0
@@ -50,6 +50,8 @@ $$\begin{aligned}
   &= \frac{2}{T}\left[\frac{n(0)(0) - m(0)(0)}{m^2 - n^2} - 0\right] \\
   &= 0
 \end{aligned}$$
+
+Since we didn't require that a relationship between $n$ and $m$, this works for all values and relations of $n$ to $m$, as long as both $n,m\in{\mathbb Z}^+$.
 
 #### Normal
 Requiring that $n\in{\mathbb Z}$ and $n>0$ we have that $\sin{(nx)}$ is parallel to itself:
