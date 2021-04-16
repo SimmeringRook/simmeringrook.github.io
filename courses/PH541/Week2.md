@@ -61,6 +61,7 @@ Consider $n_0$ moles of an ideal gas that occupies a volume $V_0$ and at the tem
 > Molar entropy is the entropy of one mole of this gas.
 
 Calculate the entropy $S(T,V,n)$ of the gas at $T$ and $V$.
+
 - start with first law
 - solve for dS
 - use $dE$ in terms of molar specific heat capcity
@@ -80,7 +81,9 @@ S(T,V,n) &= n\left(C_V\ln{(T)}+R\ln{(V)}+S_0(T_0,V_0)\right)
 \end{aligned}$$
 
 ### Day 3
+
 Today:
+
 - Investigate general relation for homogeneous substance
   - E.g., liquids, gases, solids
 - Derive Maxwell's Relations
@@ -232,8 +235,10 @@ $$\begin{aligned}
 ### SWBQ
 
 We've found the relations for:
+
 - $S,p$
 - $S,V$
 
 What about:
+
 - $T,V$?

@@ -20,19 +20,20 @@ $$
 Won't be asked to derive the Maxwell Relations again, but we may want to use them to answer questions asked that either don't provide an easy or straightforward avenue.
 
 Objectives:
- - Specific Heats
-  - heat capacity at constant volume
-    - $\newcommand\wrap[2]{\left( #1 \right)_{ #2 }}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
-    C_V = \wrap{\pder{Q}{T}}{V} = \wrap{\frac{TdS}{dT}}{V} = T\wrap{\pder{S}{T}}{V}$
-    - Alternatively: $\newcommand\wrap[2]{\left( #1 \right)_{ #2 }}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}C_V = \wrap{\pder{dE+pdV}{T}}{V} = \wrap{\pder{E}{T}}{V}$
-    - Molar specific heat: $c_V = \frac{C_V}{n}$
-  - heat capacity at constant pressure
-    - $\newcommand\wrap[2]{\left( #1 \right)_{ #2 }}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}C_p = \wrap{\frac{dQ}{dT}}{p} = T\wrap{\pder{S}{T}}{p}$
-    - Alternatively:
-  - $C_p - C_V = VT \frac{\alpha^2}{\kappa}$ where:
-    - $\newcommand\wrap[2]{\left( #1 \right)_{ #2 }}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\alpha\equiv \frac{1}{V}\wrap{\pder{V}{T}}{p}$ is the Volume coefficient of Expansion
-    - $\newcommand\wrap[2]{\left( #1 \right)_{ #2 }}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\kappa\equiv -\frac{1}{V}\wrap{\pder{V}{p}}{T}$ is Isothermal compressibility
- - Determine homogeneous substance undergoes a state change from macroscopic state A to macroscopic state B
+
+- Specific Heats
+- heat capacity at constant volume
+  - $\newcommand\wrap[2]{\left( #1 \right)_{ #2 }}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
+  C_V = \wrap{\pder{Q}{T}}{V} = \wrap{\frac{TdS}{dT}}{V} = T\wrap{\pder{S}{T}}{V}$
+  - Alternatively: $\newcommand\wrap[2]{\left( #1 \right)_{ #2 }}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}C_V = \wrap{\pder{dE+pdV}{T}}{V} = \wrap{\pder{E}{T}}{V}$
+  - Molar specific heat: $c_V = \frac{C_V}{n}$
+- heat capacity at constant pressure
+  - $\newcommand\wrap[2]{\left( #1 \right)_{ #2 }}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}C_p = \wrap{\frac{dQ}{dT}}{p} = T\wrap{\pder{S}{T}}{p}$
+  - Alternatively:
+- $C_p - C_V = VT \frac{\alpha^2}{\kappa}$ where:
+  - $\newcommand\wrap[2]{\left( #1 \right)_{ #2 }}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\alpha\equiv \frac{1}{V}\wrap{\pder{V}{T}}{p}$ is the Volume coefficient of Expansion
+  - $\newcommand\wrap[2]{\left( #1 \right)_{ #2 }}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\kappa\equiv -\frac{1}{V}\wrap{\pder{V}{p}}{T}$ is Isothermal compressibility
+- Determine homogeneous substance undergoes a state change from macroscopic state A to macroscopic state B
   - $\Delta S=S(T,V) - S(T_0, V_0)$
   - $\Delta E=E(T,V) - E(T_0, V_0)$
 
@@ -129,6 +130,7 @@ Page 171-175
 Entropy and Energy
 
 !> **Objective:** We want to develop an approach or formula to calculate:
+
 - $S(T,V)$ from $S(T_0, V_0)$
 - $E(T,V)$ from $E(T_0, V_0)$
 
@@ -153,6 +155,7 @@ dS(T,V) &= \wrap{\pder{S}{T}}{V} dT + \wrap{\pder{S}{V}}{T} dV \\
 Note that $C_V$ is a function of temperature itself, so if we were to integrate the above expression, we'd need to know what $C_V$ is, as the more longform way of writing this: $C_V (T,V)$.
 
 So, now we want/need to calculate $C_V (T,V)$, we state the following: If we know
+
   - The equation of state
   - $C_V(T,V_0)$
 
@@ -161,6 +164,7 @@ We can claim that we can calculate $C_V (T,V)$.
 #### Proof of finding Specific Heat at Constant Volume
 
 First, we want to know:
+
   - how $C_V$ varies in response to change in volume (at fixed T):
 
 $$
@@ -190,8 +194,6 @@ C_V(T,V) - C_V(T,V_0) &= \int_{V_0}^{V}{T \wrap{\pdersq{p}{T}}{V'} dV'}\\
 &= T \wrap{\pder{}{T}}{V} \wrap{\pder{p}{T}}{V} \\
 &= T \wrap{\pdersq{p}{T}}{V}
 \end{aligned}$$
-
-----
 
 Now that we have a method for finding $C_V (T,V)$, we can return to Entropy.
 
@@ -246,8 +248,8 @@ Example from page 173,
 Consider a Van der Waals gas that follows the equation of state:
 $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\wrap{p+\frac{a}{V^2}}{}\wrap{\frac{V}{n}-b}{}= RT$$
 
-- Calculate $\wrap{\pder{p}{T}}{V}$
-- Show: $\wrap{\pder{C_V}{V}}{T} = 0$
+- Calculate $\newcommand\dbar{đ}\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\newcommand\pdersq[2]{\frac{\partial^2 #1}{\partial {#2}^2}}\newcommand\mpder[3]{\frac{{\partial}^2 #1}{{\partial} #2 {\partial} #3}}\wrap{\pder{p}{T}}{V}$
+- Show: $\newcommand\dbar{đ}\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\newcommand\pdersq[2]{\frac{\partial^2 #1}{\partial {#2}^2}}\newcommand\mpder[3]{\frac{{\partial}^2 #1}{{\partial} #2 {\partial} #3}}\wrap{\pder{C_V}{V}}{T} = 0$
 - determine the molar entropy change:
   - $\Delta s = s(T,V) - s(T_0, V_0)$
 - determine the molar energy change:
