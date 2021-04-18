@@ -9,10 +9,10 @@
 
 ## Books
 - [Exploring Black Holes]
-  - [Ch. 1 Notes](/research/Exploring Black Holes/Ch1.md)
-  - [Ch. 2 Notes](/research/Exploring Black Holes/Ch2.md)
-  - [Project A](/research/Exploring_Black_Holes/)
-  - [Ch. 4 Exercises](/research/Exploring Black Holes/Ch4.md)
+  - [Ch. 1 Notes](/research/Exploring%20Black%20Holes/Ch1.md)
+  - [Ch. 2 Notes](/research/Exploring%20Black%20Holes/Ch2.md)
+  - [Project A](/research/Exploring%20Black%20Holes/)
+  - [Ch. 4 Exercises](/research/Exploring%20Black%20Holes/Ch4.md)
 
 ## Learning Projects
 *[[Gravitational Shifting of Transmissions to Juno]]
