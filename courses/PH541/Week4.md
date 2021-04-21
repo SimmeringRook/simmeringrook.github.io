@@ -135,4 +135,47 @@ $$
 
 ### Day 2
 
+Start of Statistical Mechanics
+
+Four ingredients of Statistical Mechanics:
+
+1. Specification of the state of the system
+$$\Psi=\psi(q_1, q_2,...,q_f)$$
+
+?>**Example 1:**
+?>A system that contains only one particle but is fixed in location in space, but has Spin-1/2; How do we describe the state of the system?
+?>
+?>$\qquad$ The spin quantum number: $m$. The state of the system is either $m=\frac{1}{2}$ or $m=-\frac{1}{2}$.
+
+?>**Example 2:**
+?>A system that contains $N$ particles that are fixed in location in space, but each has a Spin-1/2; How do we describe the state of the system?
+?>
+?>$\qquad$ We need the spin quantum number $m$ but for each particle, so a specific state is comprised of the information: $$(m_1, m_2, ..., m_N)$$
+
+2. Statistical Ensemble
+
+We are not necessarily concerned of an instance of the ensemble.
+
+The macroscopic state should be distributed.
+
+?>**Example:**
+?>A system with three fixed particles; each particle has a spin-1/2, each particle also has a magnetic moment $\mu$ along the $z$-axis. The entire system is placed in an external magnetic field $H$.
+
+| state index r | Quantum number | Total magnetic moment | Total Energy |
+| --- | --- | --- | --- |
+| 1 | +++ | 3$\mu$ | -3$\mu H$|
+| 2 | ++- | $\mu$ | -$\mu H$|
+| 3 | +-+ | $\mu$ | -$\mu H$|
+| 4 | -++ | $\mu$ | -$\mu H$|
+| 5 | +-- | -$\mu$ | $\mu H$|
+| 6 | --+ | -$\mu$ | $\mu H$|
+| 7 | -+- | -$\mu$ | $\mu H$|
+| 8 | --- | -3$\mu$ | 3$\mu H$|
+
+With the macroscopic constraint $E_{total} = -\mu H$, the states accessible to the system are:
+$$(++-),\ (+-+),\ (-++)$$
+
+3. Basic Postulates
+
+
 ### Day 3
