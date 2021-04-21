@@ -51,7 +51,7 @@ But is the temperature unchanged?
   - therefore, the temperature of the gas will decrease
 
 Joule coefficient:
-$$\alpha_J \equiv \wrap{\pder{T}{V}}{E}
+$$\alpha_J \equiv \wrap{\pder{T}{V}}{E}$$
 
 $$
 dE(T,V) = 0
