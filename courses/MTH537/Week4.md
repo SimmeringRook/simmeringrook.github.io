@@ -20,49 +20,56 @@ $$
 #### Radial Geodesics
 
 Recall:
-$$
-\theta = \frac{\pi}{2}
-\dot{\phi} = \frac{\ell}{r^2} \Rightarrow \ell = 0, \phi = constant
-\dot{t} = \frac{e}{\schwarzCurve}
-
+$$\newcommand\schwarzCurve{\left(1-\frac{2M}{r}\right)}
+\theta = \frac{\pi}{2}\\
+\dot{\phi} = \frac{\ell}{r^2} \Rightarrow \ell = 0, \phi = constant\\
+\dot{t} = \frac{e}{\schwarzCurve}\\
+\\
 \dot{r}^2 = e^2 - \schwarzCurve
 $$
 
 Suppose:
 $$
-\dot{r}|_{r=r_0} = 0
-\Rightarrow e^2 = 1-\frac{2M}{r_0}
-\Rightarrow r_0 = \frac{2m}{1-e^2}
+\dot{r}|_{r=r_0} = 0\\
+\Rightarrow e^2 = 1-\frac{2M}{r_0}\\
+\Rightarrow r_0 = \frac{2m}{1-e^2}$$
 
-We can note that \abs{e} \leq 1, and without loss of generality e is positive (e\geq 0).
+We can note that $|e| \leq 1$, and without loss of generality e is positive ($e\geq 0$).
 
 Cases:
-e=1 <-> r_0 = \infty
-0<e<1 <-> 2m < r_0 < \infty
-e = 0 <-> r_0 = 2m
 
-If we consider the cases where e=1, we have the category of geodesics:
+- $e=1 \leftrightarrow r_0 = \infty$
+- $0<e<1 \leftrightarrow 2m < r_0 < \infty$
+- $e = 0 \leftrightarrow r_0 = 2m$
 
+If we consider the cases where $e=1$, we have the category of geodesics:
+
+$$\newcommand\schwarzCurve{\left(1-\frac{2M}{r}\right)}
 \dot{r}^2 = \frac{2m}{r}
+\\
+\dot{r} = \sqrt{\frac{2m}{r}}\\
+\dot{t} = \frac{1}{\schwarzCurve}$$
 
-\dot{r} = \sqrt{\frac{2m}{r}}
-\dot{t} = \frac{1}{\schwarzCurve}
+For in-falling, $\dot{r} = -\sqrt{\frac{2m}{r}}$
 
-For infalling, \dot{r} = -\sqrt{\frac{2m}{r}}
 Far-away observer:
 
-speed = \frac{dr}{dt}
- = \frac{\dot{r}}{\dot{t}}
- = -\schwarzCurve\sqrt{\frac{2m}{r}}
+$$\newcommand\schwarzCurve{\left(1-\frac{2M}{r}\right)}\begin{aligned}
+speed &= \frac{dr}{dt}\\
+ &= \frac{\dot{r}}{\dot{t}}\\
+ &= -\schwarzCurve\sqrt{\frac{2m}{r}}
+\end{aligned}$$
 
-r-> 2M, \frac{dr}{dt} -> 0
+$$r\rightarrow 2M,\qquad \frac{dr}{dt} \rightarrow 0$$
 
 Shell-observer:
 
-speed = \frac{\frac{dr}{\sqrt{\schwarzCurve}}}{\sqrt{\schwarzCurve}dt}
- = \frac{\sigma^r}{\sigma^t}
- = \frac{1}{\schwarzCurve} \frac{\dot{r}}{\dot{t}}
- = - \sqrt{\frac{2M}{r}}
+$$\newcommand\schwarzCurve{\left(1-\frac{2M}{r}\right)}\begin{aligned}
+speed &= \frac{\frac{dr}{\sqrt{\schwarzCurve}}}{\sqrt{\schwarzCurve}dt}\\
+ &= \frac{\sigma^r}{\sigma^t}\\
+ &= \frac{1}{\schwarzCurve} \frac{\dot{r}}{\dot{t}}\\
+ &= - \sqrt{\frac{2M}{r}}
+\end{aligned}$$
 
 ### Day 2
 
