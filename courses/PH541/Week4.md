@@ -175,7 +175,102 @@ The macroscopic state should be distributed.
 With the macroscopic constraint $E_{total} = -\mu H$, the states accessible to the system are:
 $$(++-),\ (+-+),\ (-++)$$
 
+### Day 3
+
+Macroscopic state is specified by: $V$, $n$, $T$.
+
+There can by many micro states for one specific macro state.
+
 3. Basic Postulates
 
+!> Statistical Weight: $\Omega(E,V,N,\alpha)$
+The number of micro states corresponding to a macro state that is specified by $V$, $N$, $\alpha$, and having energy $E$ in a small interval $E$ to $E+\delta E$.
 
-### Day 3
+$$\alpha$$
+Represents a set of parameters that represent when the system is not in equilibrium.
+
+#### First Postulate
+
+Each micro state is compatible with the macroscopic state. It is reasonable to make the assumption that each micro state that is compatible with the macroscopic constraint is equally likely to occur.
+
+!> **For an isolated system**, All microscopic states that are compatible with the macroscopic constraints (i.e., $E$, $V$, $N$) are equally likely to occur.
+
+$P$ -> Probability
+
+$P(E, V, N, \alpha)\propto \Omega(E,V,N,\alpha)$
+
+
+#### Second Postulate
+
+!> Equilibrium corresponds to the value of $\alpha$ for which $\Omega(E,V,N,\alpha)$ reaches its maximum.
+
+#### Boltzmann's Definition of Entropy
+
+!> (Stat Mech) **Entropy** is defined as $S(E,V,N,\alpha) = k\ln{\Omega(E,V,N,\alpha)}$
+
+
+Note, if $\Omega$ is at a maximum, that implies $S$ is at a maximum as well, when the isolate system is in equilibrium.
+
+---
+
+Consider a chamber that is separated by a diathermal wall. Call the partition on the left $1$ and the right $2$. Confine the container inside a rigid wall that is thermally insulated. The systems are weakly interacting thermally, but the entire system is insulated from the "outside".
+
+$1$ is specified by $E_1$, $V_1$, $N_1$; $2$ is specified by $E_2$, $V_2$, $N_2$.
+
+The systems will exchange heat and eventually reach thermal equilibrium.
+
+$$E_1 + E_2 = E_{total} = constant$$
+
+$$V_1 + V_2 = V_{total} = constant$$
+
+$$N_1 + N_2 = N_{total} = constant$$
+
+Only heat exchange, no particle exchange.
+
+For example, assume the system starts in some non-equilibrium state. Let system 2 start at a slightly higher temperature and system 1 start at a slightly lower temperature.
+
+Let $S$ be the entropy of the entire system: $S_1 + S_2$. When we reach equilibrium, $S$ will reach its maximum (Second postulate).
+
+$$S(E_1, V_1, N_1, E_2, V_2, N_2)$$
+
+If only $E_1$ changes, how do we determine the maxima? Do the 'first derivative test':
+
+$$\wrap{\pder{S}{E_1}}{V, N, E, V_1, N_1} = 0$$
+
+Recall $S = S_1 + S_2$, so, we obtain:
+
+$$
+\wrap{\pder{S}{E_1}}{V, N, E, V_1, N_1} &= \wrap{\pder{S_1}{E_1}}{V_1, N_1} + \wrap{\pder{S_2}{E_2}}{V_2, N_2} \frac{dE_2}{dE_1} \\
+0 &= \wrap{\pder{S_1}{E_1}}{V_1, N_1} + \wrap{\pder{S_2}{E_2}}{V_2, N_2} \frac{dE_2}{dE_1}
+$$
+
+
+$$d(E)= d(E_1 + E_2)\\ 0 = dE_1 + dE_2 \\ \frac{dE_2}{dE_1}= -1$$
+
+$$
+0 &= \wrap{\pder{S_1}{E_1}}{V_1, N_1} + \wrap{\pder{S_2}{E_2}}{V_2, N_2}(-1)\\
+\wrap{\pder{S_2}{E_2}}{V_2, N_2} &= \wrap{\pder{S_1}{E_1}}{V_1, N_1}\\
+\frac{1}{T} &= \wrap{\pder{S_2}{E_2}}{V_2, N_2} = \wrap{\pder{S_1}{E_1}}{V_1, N_1}
+$$
+
+When the two systems are in equilibrium, they have the same energy. This is how temperature was introduced to microscopic. We can repeat the same process to introduce pressure, we just allow the partition to move. Repeating similar steps, we obtain:
+
+$$P_i = T_i \wrap{\pder{S_i}{V_i}}{E_i, N_i}$$
+
+#### Canonical distribution
+
+The probability of occurrence for a microscopic state is given by:
+
+$$P_r = \frac{\text{# of copies of the system in state r}}{n_0}$$
+
+---
+
+So, we're considering a system that is specified by three macroscopic parameters:
+
+$$A(V, N, T)$$
+
+And let it be in thermal contact with a thermal resivior (heat bath).
+
+We know that $A$ will have many microscopic states. Not all micro states will have the same energy, but they will have the same constant mean energy. Describe the microstates of $A$ by: $1,\ 2,\ 3,\ ...,\ n$. We then order the microstates such that they ordered: $E_1 \leq E_2 \leq ... \leq E_n$.
+
+Under what conditions of equilibrium, we ask what is the probability $P_r$ of finding the system in a particular micro state $r$ with Energy $E_r$
