@@ -73,4 +73,70 @@ speed &= \frac{\frac{dr}{\sqrt{\schwarzCurve}}}{\sqrt{\schwarzCurve}dt}\\
 
 ### Day 2
 
+$$\begin{aligned}
+\sigma^r = \frac{dr}{\sqrt{\schwarzCurve}} \qquad & \qquad \sigma^t = \sqrt{\schwarzCurve} dt \\
+\\
+\dot{r}^2 = -\sqrt{\frac{2m}{r}} \qquad & \qquad \dot{t} = \frac{1}{\schwarzCurve}\\
+\end{aligned}$$
+
 ### Day 3
+
+Rain coordinates continued:
+
+$$\begin{aligned}
+\sigma^T = dt+\frac{\sqrt{\frac{2m}{r}}}{\schwarzCurve} \qquad & \qquad \sigma^R = \frac{dr}{\schwarzCurve} + \sqrt{\frac{2m}{r}} dt \\
+\\
+\dot{r}^2 = -\sqrt{\frac{2m}{r}} \qquad & \qquad \dot{t} = \frac{1}{\schwarzCurve}\\
+\end{aligned}$$
+
+- $\sigma^T$ is exact, so we define $dT$ to satisify that relationship. $T$ is proper time along the geodesic.
+- $\sigma^R$ is inexact, but we can scale it such that it becomes an exact 1-form by multiplying by $\sqrt{\frac{2m}{r}}dR$.
+
+This provides us with the rain coordinates of $(T,R)$; this is a orthogonal coordinate system.
+
+A slight variation of this are the Painleve'-Gullstrand coordinates, which use $(T,r)$ (and is not an orthogonal coordinate system).
+
+Paul Painleve was a French Mathematician that also served as the Prime Minister for France.
+Gullstrand was a Swedish Ophthalmologist and also a Physicist. His ophthalmology writings were very mathematical and served on the Nobel committee for Physics. He was very opposed to the theory of General Relativity and most of his *contributions* were the result of trying to find problems in the theory.
+
+Line element in Rain coordinates:
+
+$$ds^2 = -dT^2 + \frac{2m}{r}dR^2$$
+
+in Painleve-Gullstrand:
+
+$$ds^2 = - \schwarzCurve dT^2 + 2\sqrt{\frac{2m}{r}} dT dr + dr^2$$
+
+Properties:
+
+- Same time symmetry as before
+- $T,r$ constant -> we have spherical symmetry again
+- No singularity at $r=2m$
+- Metric is not degenerate
+- $T = constant$ gives us the line element for spherical ${\mathbb E}^3$
+- still a problem at $r=0$
+
+What about a beam of light?
+
+Radial null-path:
+
+$$\begin{aligned}
+\sigma^T &= \pm \sigma^R\\
+\\
+\Rightarrow dT &= \pm (dr + \sqrt{\frac{2m}{r}} dT)
+\Rightarrow \pm dr &= (1 \mp \sqrt{\frac{2m}{r}}) dT
+\\
+\frac{dr}{dT} &= \pm \left(1\mp\sqrt{\frac{2m}{r}}\right)
+\end{aligned}$$
+
+When $r<2m$, $\frac{dr}{dT}$ is negative for both versions of this equation. This is the mathematical representation of light cannot escape the event horizon.
+
+
+---
+
+Office Hour questions:
+
+1. What does it mean to have a degenerate metric? An example?
+ - Non-degenerate metric means non-invertible
+ - This would cause a lot of problems for us.
+2. Doesn't the equivalence principle tell us all free-float frames think they are locally flat?
