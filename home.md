@@ -6,7 +6,7 @@
 - [Kinematics](/physics/Kinematics.md)
 - [Waves](/physics/Waves.md)
   - [Standing Waves/Oscillations](/physics/Oscillations.md)
-- [Thermodynamics](/physics/Thermo.md)
+- [Thermodynamics](/physics/Thermodynamics.md)
 
 ## Quantum Mechanics
 - [Quantum Mechanics](/physics/QuantumMechanics.md)
