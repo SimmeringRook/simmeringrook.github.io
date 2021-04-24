@@ -19,7 +19,7 @@ $$
 ### Day 2
 
 #### SWBQ from last class:
-Show that for an ideal gas that undergoes a adiabatic expansion or compression, the equation of state statisfies:
+Show that for an ideal gas that undergoes a adiabatic expansion or compression, the equation of state satisfies:
 
 $$\begin{aligned}
 pV^\gamma &= \text{constant} \\

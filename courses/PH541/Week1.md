@@ -291,7 +291,7 @@ S &= S(E,V) \\
  &= \left(\frac{\partial S}{\partial E}\right)_V dE + \left(\frac{\partial S}{\partial V}\right)_E dV
 \end{aligned}$$
 
-Because there is only one way to write the total derivative, we know the coefficients for the differntials are equal to the partial derivatives stated above:
+Because there is only one way to write the total derivative, we know the coefficients for the differentials are equal to the partial derivatives stated above:
 
 $$\frac{1}{T} = \left(\frac{\partial S}{\partial E}\right)_V$$
 
