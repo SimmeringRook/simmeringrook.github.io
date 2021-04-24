@@ -9,11 +9,11 @@ $$E(S,V)$$
 Internal energy $E$ is defined in terms of state variables $S$ and $V$, which leads to the standard parameterization of:
 
 $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
-\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
-dE(S,V) = \wrap{\pder{E}{S}}{V} dS + \wrap{\pder{E}{V}}{S} dV\\
+\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned}
+dE(S,V) &= \wrap{\pder{E}{S}}{V} dS + \wrap{\pder{E}{V}}{S} dV\\
 \\
-dE = T dS - p dV
-$$
+dE &= T dS - p dV
+\end{aligned}$$
 
 ## Enthalpy, $H$
 
@@ -23,9 +23,9 @@ $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
 \begin{aligned}
 TdS &= dE + pdV \\
-dE &= TdS - pdV - Vdp + Vdp\\
-dE &= TdS - d(pV) + Vdp\\
-dE + d(pV) &= TdS + Vdp\\
+dE &= TdS - pdV - Vdp + Vdp \\
+dE &= TdS - d(pV) + Vdp \\
+dE + d(pV) &= TdS + Vdp \\
 d(E+pV) &= TdS + Vdp\\
 dH &= TdS + Vdp\\
 \\
@@ -39,7 +39,8 @@ This gives us the following [Maxwell Relation](/physics/Thermodynamics/Maxwell.m
 
 $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
-\wrap{\pder{T}{p}}{S} &= \wrap{\pder{V}{S}}{p}$$
+\wrap{\pder{T}{p}}{S} = \wrap{\pder{V}{S}}{p}
+$$
 
 ## Helmholtz, $F$
 
@@ -64,7 +65,8 @@ This gives us the following [Maxwell Relation](/physics/Thermodynamics/Maxwell.m
 
 $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
-\wrap{\pder{S}{V}}{T} &= \wrap{\pder{p}{T}}{V}$$
+\wrap{\pder{S}{V}}{T} = \wrap{\pder{p}{T}}{V}
+$$
 
 ## Gibbs, $G$
 
@@ -91,7 +93,8 @@ This gives us the following [Maxwell Relation](/physics/Thermodynamics/Maxwell.m
 
 $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
--\wrap{\pder{S}{p}}{T} &= \wrap{\pder{V}{T}}{p}$$
+-\wrap{\pder{S}{p}}{T} = \wrap{\pder{V}{T}}{p}
+$$
 
 ---
 

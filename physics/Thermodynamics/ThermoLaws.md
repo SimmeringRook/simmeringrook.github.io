@@ -35,7 +35,7 @@ $$\newcommand\dbar{đ} dE = \dbar Q + \dbar W$$
 
 ## The Second
 
-?> We can quantify the macroscopic state of a system using [Entropy](/physics/Entropy.md).
+?> We can quantify the macroscopic state of a system using [Entropy](/physics/Thermodynamics/Entropy.md).
 For an isolated system: $$\Delta S_{system} \geq 0$$
 
 Entropy characterizes the direction of natural processes; E.g., heat cannot (naturally) transfer from a colder body to a hotter body.
@@ -47,7 +47,7 @@ $$\newcommand\dbar{đ}dS=\frac{\dbar Q}{T} \Leftrightarrow TdS=\dbar Q$$
 
 The limiting property of entropy:
 
-?> As the temperature of a system approaches absolute zero, all processes cease and the entropy of the system approaches a minimum value.  $T\rightarrow 0_+,\qquad S\rightarrow S_0 = 0$
+?> As the temperature of a system approaches absolute zero, all processes cease and the entropy of the system approaches a minimum value.  $$T\rightarrow 0_+,\qquad S\rightarrow S_0 = 0$$
 
 ---
 

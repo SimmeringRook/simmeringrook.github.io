@@ -39,7 +39,7 @@ E.g. A free-expansion of gas is a Quasistatic Irreversible process.
 
 E.g., A gas is compressed quasistatically by a piston inside an Thermally Insulated container. No heat is exchanged between the gas, container, or piston; but the compressed volume for the gas corresponds to an increase in temperature:
 
-$$\newcommand\dbar{đ}dE = 0\Rightarrow 0 = \dbar Q + \dbar W\Rightarrow TdS = pdV$$
+$$\newcommand\dbar{đ} dE = 0\Rightarrow 0 = \dbar Q + \dbar W\Rightarrow TdS = pdV$$
 
 ### Isentropic and Adiabatic
 
