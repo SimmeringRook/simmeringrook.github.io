@@ -10,7 +10,7 @@
 
 Quasistatic processes allow us to define functions of Work $W$ and Heat $Q$ such that $\newcommand\dbar{đ}\dbar W$ and $\newcommand\dbar{đ}\dbar Q$ become exact differentials in the [First Law](/physics/Thermodynamics/ThermoLaws#The-First.md), namely:
 
-$$\newcommand\dbar{đ}\dbar Q\equiv TdS\qquad\text{&}\qquad\dbar W\equiv -pdV$$
+$$\newcommand\dbar{đ}\dbar Q\equiv TdS\qquad\&\qquad\dbar W\equiv -pdV$$
 
 ## Reversible and Irreversible
 
