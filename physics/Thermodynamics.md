@@ -17,7 +17,7 @@
         - Pressure
     - Isothermal Compressibility
     - Isobaric Volumetric Expansion Coefficient
-    - Specific Heats
+    - Specific Heat Capacities
   - Models:
     - [Ideal Gas](/physics/Thermodynamics/IdealGas.md)
     - Van der Waals
