@@ -47,6 +47,8 @@ $$\newcommand\dbar{đ} dE = 0\Rightarrow 0 = \dbar Q + \dbar W\Rightarrow TdS = 
 
 E.g., a Reversible Adiathermal process.
 
+!> The definition of Adiabatic is not well agreed upon. The working definiton given for PH424 is that an Adiabatic process is one in which heat is not transfered.
+
 ### Isobaric
 
 ?> **Definition:** A process in which the Pressure does not change. $$p=constant$$
