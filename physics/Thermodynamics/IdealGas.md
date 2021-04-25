@@ -14,27 +14,27 @@ $$pV^\gamma = constant \qquad\text{or}\qquad V^{\gamma-1}T = constant$$
 
 ## Properties
 
-- The internal energy of an ideal gas only depends on its Temperature
+Summary:
 
-### Proof of $E\propto T$
+  - The internal energy of an ideal gas only depends on its Temperature
+  - Entropy stuff
 
-For an ideal gas, we can take the following statement:
-$E=E(T,V)$ and show that $E$ only depends on $T$: $E=E(T)$ which implies
-$$\left(\frac{\partial E}{ \partial V}\right)_T \equiv 0$$
+### Internal Energy
 
-First, we take the total derivative:
+?> The internal energy for an ideal gas depends only on the temperature: $$E(T)\rightarrow dE\propto T$$
 
-$$\newcommand\dbar{{đ}}
-\newcommand\wrap[2]{\left(#1\right)_{#2}}
+#### Proof
+
+Let us begin by describing the internal energy of a $n$ [moles](/chem/Moles.md) of gas with using by the two standard [state parameters](/physics/Thermodynamics/Systems#State-Parameters.md) $T$ and $V$. We can plausibly claim that there exists some function $E$ that describes the state of the gas using just $T$ and $V$: $E(T,V)$. Taking the [differential](/maths/Differentials.md) of this function, we obtain the following mathematical description:
+
+$$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
-\newcommand\pdersq[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
-\newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
 \begin{aligned}
 dE &= dE(T,V) \\
-&=\left(\frac{\partial E}{ \partial T}\right)_V dT + \left(\frac{\partial E}{ \partial V}\right)_T dV
+&=\wrap{\pder{E}{T}}{V} dT + \wrap{\pder{E}{V}}{T} dV
 \end{aligned}$$
 
-Then also consider the First Law of Thermo:
+We consider the change in each parameter under the lens of a [quasi-static](/physics/Thermodynamics/Processes#Quasistatic.md) process such that we can utilize the [thermodynamic identity](/physics/Thermodynamics/Functions#Thermodynamic-Identity.md) to write the heat and work as [exact differentials](/maths/Differentials#Exact.md). Solving this expression for [Entropy](/physics/Thermodynamics/Entropy.md), we not only obtain an expression which seems to describe the total differential of $S$, but that entropy can be described by the two state parameters $E$ and $V$:
 
 $$\newcommand\dbar{{đ}}
 \newcommand\wrap[2]{\left(#1\right)_{#2}}
@@ -42,34 +42,62 @@ $$\newcommand\dbar{{đ}}
 \newcommand\pdersq[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
 \newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
 \begin{aligned}
+\dbar Q = TdS, \qquad &\& \qquad \dbar W = -pdV\\
+dE &= TdS - pdV \\
+\\
 TdS &= dE + pdV \\
-dS &= \frac{1}{T}dE + \frac{p}{T}dV
+\\
+dS &= \frac{1}{T}dE + \frac{p}{T}dV\quad\Rightarrow S(E,V)
 \end{aligned}$$
 
-Note that because we can write the differential of entropy as a total derivative, this tells us that $dS$ is an exact differential, which means we can write:
+And if we can describe entropy as a function of internal energy and volume, we know what the [parital derivatives](/maths/PartialDerivatives.md) of entropy correspond to the coefficients infront of the differentials:
+
+$$\newcommand\dbar{{đ}}
+\newcommand\wrap[2]{\left(#1\right)_{#2}}
+\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
+\begin{aligned}
+dS(E,V) = \wrap{\pder{S}{E}}{V} dE &+ \wrap{\pder{S}{V}}{E} dV \\
+\\
+\wrap{\pder{S}{E}}{V} = \frac{1}{T}, \qquad &\& \qquad \wrap{\pder{S}{V}}{E} = p
+\end{aligned}$$
+
+Finally, recall that with mixed partial derivatives, we note that the order in which the derivatives are operated does not matter from [Clairaut's theorem on equality of mixed partial derivatives](/maths/PartialDerivatives#Clairaut's-Theorem.md). Stated mathematically, we have the following expression which allows us to construct our final series of statements to prove that $E$ does not depend on $V$:
+
+$$
+\newcommand\wrap[2]{\left(#1\right)_{#2}}
+\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
+\newcommand\pdersq[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
+\newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
+\begin{aligned}
+\mpder{S}{V}{E} &= \mpder{S}{E}{V}\\
+\\
+\wrap{\pder{}{V}}{E} \wrap{\pder{S}{E}}{V} = \mpder{S}{V}{E} &= \mpder{S}{E}{V} = \wrap{\pder{}{E}}{V} \wrap{\pder{S}{V}}{E}\\
+\\
+\wrap{\pder{}{V}}{E} \wrap{\pder{S}{E}}{V} &= \wrap{\pder{}{E}}{V} \wrap{\pder{S}{V}}{E}
+\end{aligned}$$
+
+We can then substitute in our expression for the total differential of $E$ in for the $dE$ in the differential of $S$ to rexpress the partial derivatives:
+
 $$\newcommand\dbar{{đ}}
 \newcommand\wrap[2]{\left(#1\right)_{#2}}
 \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
 \newcommand\pdersq[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
 \newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
 \begin{aligned}
-S &= S(E,V) \\
- &= \left(\frac{\partial S}{\partial E}\right)_V dE + \left(\frac{\partial S}{\partial V}\right)_E dV
+dS = \frac{1}{T}dE + \frac{p}{T}dV &= \frac{1}{T}\left[\wrap{\pder{E}{T}}{V} dT + \wrap{\pder{E}{V}}{T} dV\right] + \frac{p}{T}dV\\
+&= \frac{1}{T}\wrap{\pder{E}{T}}{V} dT + \left[\frac{1}{T}\wrap{\pder{E}{V}}{T} + \frac{p}{T}\right] dV\\
+\\
+\wrap{\pder{S}{T}}{V} = \frac{1}{T}\wrap{\pder{E}{T}}{V}, \qquad &\& \qquad \wrap{\pder{S}{V}}{T} = \frac{1}{T}\wrap{\pder{E}{V}}{T} + \frac{p}{T}\\
+\\
+\wrap{\pder{}{V}}{T} \wrap{\pder{S}{T}}{V} &= \wrap{\pder{}{T}}{V} \wrap{\pder{S}{V}}{T}\\
+\wrap{\pder{}{V} \frac{1}{T}\wrap{\pder{E}{T}}{V}}{T} &= \wrap{\pder{}{T}\wrap{\frac{1}{T}\wrap{\pder{E}{V}}{T} + \frac{p}{T}}{}}{V} \\
 \end{aligned}$$
 
-Because there is only one way to write the total derivative, we know the coefficients for the differentials are equal to the partial derivatives stated above:
+Before carrying out these partial derivatve operations, let us use the equation of state for an ideal gas, $pV=nRT$ to express $p/T$ in a simpler form:
 
-$$\frac{1}{T} = \left(\frac{\partial S}{\partial E}\right)_V$$
+$$\frac{p}{T} = \frac{nR}{V}$$
 
-- Which is the definition of temperature in macroscopic Thermodynamics
-
-$$\frac{p}{T} = \left(\frac{\partial S}{\partial V}\right)_E$$
-
-- Which is the definition of temperature without knowing Microscopic details
-
-Also recall that with mixed partial derivatives, the order of operations doesn't matter (Clauriet's Theorem):
-
-$$\frac{\partial ^2 S}{\partial V \partial E} = \frac{\partial ^2 S}{\partial E \partial V}$$
+Follwing the [chain rule](/maths/PartialDerivatives#Chain-Rule.md) and simplifying the results, we obtain our proof:
 
 $$\newcommand\dbar{{đ}}
 \newcommand\wrap[2]{\left(#1\right)_{#2}}
@@ -77,42 +105,16 @@ $$\newcommand\dbar{{đ}}
 \newcommand\pdersq[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
 \newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
 \begin{aligned}
-\mpder{S}{V}{E} &= \wrap{\pder{}{V}}{E} \wrap{\pder{S}{E}}{V} \\
-\mpder{S}{E}{V} &= \wrap{\pder{}{E}}{V} \wrap{\pder{S}{V}}{E}
+\frac{1}{T}\wrap{\mpder{E}{T}{V}}{} &= \left[-\frac{1}{T^2}\wrap{\pder{E}{V}}{T} + \frac{1}{T}\wrap{\mpder{E}{T}{V}}{} + 0 \right]\\
+0 &= -\frac{1}{T^2}\wrap{\pder{E}{V}}{T}
 \end{aligned}$$
 
-$$\newcommand\dbar{{đ}}
-\newcommand\wrap[2]{\left(#1\right)_{#2}}
-\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
-\newcommand\pdersq[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
-\newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
-\begin{aligned}
-dS &= \frac{1}{T}dE + \frac{p}{T}dV \\
-dE &= \wrap{\pder{E}{T}}{V} dT + \wrap{\pder{E}{V}}{T} dV \\
-\\
-dS &= \frac{1}{T} \left( \wrap{\pder{E}{T}}{V} dT + \wrap{\pder{E}{V}}{T} dV \right) + \frac{p}{T}dV \\
-&= \frac{1}{T}\wrap{\pder{E}{T}}{V} dT + \left(\frac{1}{T}\wrap{\pder{E}{V}}{T} + \frac{p}{T}\right)dV \\
-\\
-dS &= \wrap{\pder{S}{T}}{V} dT + \wrap{\pder{S}{V}}{T} dV \\
-\\
-\\
-\wrap{\pder{S}{T}}{V} &= \frac{1}{T} \wrap{\pder{E}{T}}{V} \\
-\wrap{\pder{S}{V}}{T} &= \left( \frac{1}{T} \wrap{\pder{E}{V}}{T} + \frac{p}{T} \right)
-\end{aligned}$$
+Noting that $T$ is non-zero, we remove the coefficients and find that the partial derivative of internal energy (for an ideal gas) with respect to volume at **constant** temperature is always $0$:
 
-Then:
+$$\newcommand\wrap[2]{\left(#1\right)_{#2}}
+\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\wrap{\pder{E}{V}}{T} = 0$$
 
-$$\newcommand\dbar{đ}
-\newcommand\wrap[2]{\left(#1\right)_{#2}}
-\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
-\newcommand\pdersq[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
-\newcommand\mpder[3]{\frac{{\partial}^2 #1}{{\partial} #2 {\partial} #3}}
-\begin{aligned}
-\wrap{\pder{}{V}}{T} \wrap{\pder{S}{T}}{V} &\equiv \wrap{\pder{}{T}}{V} \wrap{\pder{S}{V}}{T} \\
-\frac{1}{T} \wrap{\mpder{E}{V}{T}}{} &= \wrap{\pder{}{T}}{V} \left[\frac{1}{T}\wrap{\pder{E}{V}}{T} + \frac{p}{T}\right] \\
-\frac{1}{T} \wrap{\mpder{E}{V}{T}}{} &= \frac{1}{T} \wrap{\mpder{E}{V}{T}}{} + \frac{1}{T^2} \wrap{\pder{E}{V}}{T} \\
-0 &= \frac{1}{T^2} \wrap{\pder{E}{V}}{T}
-\end{aligned}$$
+Therefore, we conclude, for an ideal gas, the state of $E$ is completely specified (and solely dependent) on its absolute temperature $T$.
 
 ### Entropy
 
@@ -168,7 +170,10 @@ $$\begin{aligned}
 \left(\frac{\partial S}{\partial V}\right)_E &= \frac{p}{T}
 \end{aligned}$$
 
+
 ---
+
+# See Also
 
 ## External Resources
 

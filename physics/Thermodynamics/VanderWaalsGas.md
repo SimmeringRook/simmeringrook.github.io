@@ -1,4 +1,18 @@
-# Maxwell Relations of Thermodynamic Functions
+# Van der Vaals Gas (Thermodynamics)
+
+?> **Definition:**
+
+## Equation of State
+
+### General
+
+
+
+## Properties
+
+
+
+### Internal Energy
 
 ---
 
