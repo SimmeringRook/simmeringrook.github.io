@@ -90,7 +90,7 @@ dS = \frac{1}{T}dE + \frac{p}{T}dV &= \frac{1}{T}\left[\wrap{\pder{E}{T}}{V} dT 
 \wrap{\pder{S}{T}}{V} = \frac{1}{T}\wrap{\pder{E}{T}}{V}, \qquad &\& \qquad \wrap{\pder{S}{V}}{T} = \frac{1}{T}\wrap{\pder{E}{V}}{T} + \frac{p}{T}\\
 \\
 \wrap{\pder{}{V}}{T} \wrap{\pder{S}{T}}{V} &= \wrap{\pder{}{T}}{V} \wrap{\pder{S}{V}}{T}\\
-\wrap{\pder{}{V} \frac{1}{T}\wrap{\pder{E}{T}}{V}}{T} &= \pder{}{T}\left[\wrap{\frac{1}{T}\wrap{\pder{E}{V}}{T} + \frac{p}{T}}{}\right]_{V} \\
+\wrap{\pder{}{V} \frac{1}{T}\wrap{\pder{E}{T}}{V}}{T} &= \pder{}{T}\left[\frac{1}{T}\wrap{\pder{E}{V}}{T} + \frac{p}{T}\right]_{V} \\
 \end{aligned}$$
 
 Before carrying out these partial derivatve operations, let us use the equation of state for an ideal gas, $pV=nRT$ to express $p/T$ in a simpler form:
