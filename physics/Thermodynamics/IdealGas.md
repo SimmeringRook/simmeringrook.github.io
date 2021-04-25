@@ -90,12 +90,16 @@ dS = \frac{1}{T}dE + \frac{p}{T}dV &= \frac{1}{T}\left[\wrap{\pder{E}{T}}{V} dT 
 \wrap{\pder{S}{T}}{V} = \frac{1}{T}\wrap{\pder{E}{T}}{V}, \qquad &\& \qquad \wrap{\pder{S}{V}}{T} = \frac{1}{T}\wrap{\pder{E}{V}}{T} + \frac{p}{T}\\
 \\
 \wrap{\pder{}{V}}{T} \wrap{\pder{S}{T}}{V} &= \wrap{\pder{}{T}}{V} \wrap{\pder{S}{V}}{T}\\
-\wrap{\pder{}{V} \frac{1}{T}\wrap{\pder{E}{T}}{V}}{T} &= \wrap{\pder{}{T}\wrap{\frac{1}{T}\wrap{\pder{E}{V}}{T} + \frac{p}{T}}{}}{V} \\
+\wrap{\pder{}{V} \frac{1}{T}\wrap{\pder{E}{T}}{V}}{T} &= \pder{}{T}\left[\wrap{\frac{1}{T}\wrap{\pder{E}{V}}{T} + \frac{p}{T}}{}\right]_{V} \\
 \end{aligned}$$
 
 Before carrying out these partial derivatve operations, let us use the equation of state for an ideal gas, $pV=nRT$ to express $p/T$ in a simpler form:
 
-$$\begin{aligned}\frac{p}{T} &= \frac{nR}{V}\end{aligned}$$
+$$\newcommand\wrap[2]{\left(#1\right)_{#2}}
+\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
+\begin{aligned}
+\frac{p}{T} &= \frac{nR}{V}\Rightarrow \pder{}{T}\wrap{\frac{nR}{V}}{V}=0
+\end{aligned}$$
 
 Follwing the [chain rule](/maths/PartialDerivatives#Chain-Rule.md) and simplifying the results, we obtain our proof:
 
