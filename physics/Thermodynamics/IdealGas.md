@@ -95,7 +95,7 @@ dS = \frac{1}{T}dE + \frac{p}{T}dV &= \frac{1}{T}\left[\wrap{\pder{E}{T}}{V} dT 
 
 Before carrying out these partial derivatve operations, let us use the equation of state for an ideal gas, $pV=nRT$ to express $p/T$ in a simpler form:
 
-$$\frac{p}{T} = \frac{nR}{V}$$
+$$\begin{aligned}\frac{p}{T} &= \frac{nR}{V}\end{aligned}$$
 
 Follwing the [chain rule](/maths/PartialDerivatives#Chain-Rule.md) and simplifying the results, we obtain our proof:
 
@@ -111,8 +111,8 @@ $$\newcommand\dbar{{đ}}
 
 Noting that $T$ is non-zero, we remove the coefficients and find that the partial derivative of internal energy (for an ideal gas) with respect to volume at **constant** temperature is always $0$:
 
-$$\newcommand\wrap[2]{\left(#1\right)_{#2}}
-\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\wrap{\pder{E}{V}}{T} = 0$$
+$$\begin{aligned}\newcommand\wrap[2]{\left(#1\right)_{#2}}
+\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\wrap{\pder{E}{V}}{T} &= 0\end{aligned}$$
 
 Therefore, we conclude, for an ideal gas, the state of $E$ is completely specified (and solely dependent) on its absolute temperature $T$.
 
