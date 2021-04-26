@@ -24,11 +24,15 @@ In-depth Links:
 
 ### Thermodynamic [Functions](/physics/Thermodynamics/Functions.md)
 
-?> **[Identity](/physics/Thermodynamics/Functions#Thermodynamic-Identity.md)**: $$E(S,V)\Rightarrow dE = T dS - p dV$$
+**[Identity](/physics/Thermodynamics/Functions#Thermodynamic-Identity.md)**:
+
+> $$E(S,V)\Rightarrow dE = T dS - p dV$$
 
 <br />
 
-?> **[Enthalpy](/physics/Thermodynamics/Functions#Enthalpy.md)**: $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
+**[Enthalpy](/physics/Thermodynamics/Functions#Enthalpy.md)**:
+
+> $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned}
 H(S,V)\equiv E+pV\Rightarrow dH &= TdS + Vdp\\
 \\
@@ -37,7 +41,9 @@ H(S,V)\equiv E+pV\Rightarrow dH &= TdS + Vdp\\
 
 <br />
 
-?> **[Helmholtz](/physics/Thermodynamics/Functions#Helmholtz.md)**: $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
+**[Helmholtz](/physics/Thermodynamics/Functions#Helmholtz.md)**:
+
+> $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned}
 F(T,V)\equiv E - TS\Rightarrow dF &= - SdT - pdV\\
 \\
@@ -46,7 +52,9 @@ F(T,V)\equiv E - TS\Rightarrow dF &= - SdT - pdV\\
 
 <br />
 
-?> **[Gibbs](/physics/Thermodynamics/Functions#Gibbs.md)**: $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
+**[Gibbs](/physics/Thermodynamics/Functions#Gibbs.md)**:
+
+> $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned}
 G(T,p)\equiv E - TS + pV \Rightarrow dG &= - SdT + Vdp\\
 \\
@@ -57,10 +65,10 @@ G(T,p)\equiv E - TS + pV \Rightarrow dG &= - SdT + Vdp\\
 
 | Function (mixed Partials) | Partial to Coefficient Relation | Maxwell Relation |
 | --- | --- | --- |
-| $$\newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}\mpder{E}{S}{V}=\mpder{E}{V}{S}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned} \wrap{\pder{E}{S}}{V} &= T \\ \wrap{\pder{E}{V}}{S} &= -p\end{aligned}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned}\wrap{\pder{T}{V}}{S} &= -\wrap{\pder{p}{S}}{V}\end{aligned}$$ |
-| $$\newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}\mpder{H}{S}{p}=\mpder{H}{p}{S}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned} \wrap{\pder{H}{S}}{p} &= T \\ \wrap{\pder{H}{p}}{S} &= V\end{aligned}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned}\wrap{\pder{T}{p}}{S} &= \wrap{\pder{V}{S}}{p}\end{aligned}$$ |
-| $$\newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}\mpder{F}{V}{T}=\mpder{F}{T}{V}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned} \wrap{\pder{F}{V}}{T} &= -p \\ \wrap{\pder{F}{T}}{V} &= -S\end{aligned}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned}\wrap{\pder{S}{V}}{T} &= \wrap{\pder{p}{T}}{V}\end{aligned}$$ |
-| $$\newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}\mpder{G}{T}{p}=\mpder{G}{p}{T}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned} \wrap{\pder{G}{T}}{p} &= -S \\ \wrap{\pder{G}{p}}{T} &= V\end{aligned}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned}-\wrap{\pder{S}{p}}{T} &= \wrap{\pder{V}{T}}{p}\end{aligned}$$ |
+| $$\begin{aligned}\newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}\mpder{E}{S}{V}&=\mpder{E}{V}{S}\end{aligned}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned} \wrap{\pder{E}{S}}{V} &= T \\ \wrap{\pder{E}{V}}{S} &= -p\end{aligned}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned}\wrap{\pder{T}{V}}{S} &= -\wrap{\pder{p}{S}}{V}\end{aligned}$$ |
+| $$\newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}\begin{aligned}\mpder{H}{S}{p}&=\mpder{H}{p}{S}\end{aligned}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned} \wrap{\pder{H}{S}}{p} &= T \\ \wrap{\pder{H}{p}}{S} &= V\end{aligned}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned}\wrap{\pder{T}{p}}{S} &= \wrap{\pder{V}{S}}{p}\end{aligned}$$ |
+| $$\newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}\begin{aligned}\mpder{F}{V}{T}&=\mpder{F}{T}{V}\end{aligned}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned} \wrap{\pder{F}{V}}{T} &= -p \\ \wrap{\pder{F}{T}}{V} &= -S\end{aligned}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned}\wrap{\pder{S}{V}}{T} &= \wrap{\pder{p}{T}}{V}\end{aligned}$$ |
+| $$\newcommand\mpder[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}\begin{aligned}\mpder{G}{T}{p}&=\mpder{G}{p}{T}\end{aligned}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned} \wrap{\pder{G}{T}}{p} &= -S \\ \wrap{\pder{G}{p}}{T} &= V\end{aligned}$$ | $$\newcommand\wrap[2]{\left(#1\right)_{#2}}\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}\begin{aligned}-\wrap{\pder{S}{p}}{T} &= \wrap{\pder{V}{T}}{p}\end{aligned}$$ |
 
 ### Homogeneous Substances
 
