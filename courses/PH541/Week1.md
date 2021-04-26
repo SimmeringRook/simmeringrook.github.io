@@ -221,7 +221,7 @@ $$K_t\equiv -\frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_T$$
 
 - normalized with respect to the volume
 
-##### Isobaric Volumetric thermal expansion coefficient
+##### Volumetric thermal expansion coefficient
 
 $$\alpha \equiv \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_p$$
 

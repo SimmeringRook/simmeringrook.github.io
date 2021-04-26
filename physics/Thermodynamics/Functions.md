@@ -15,7 +15,7 @@ dE(S,V) &= \wrap{\pder{E}{S}}{V} dS + \wrap{\pder{E}{V}}{S} dV\\
 dE &= T dS - p dV
 \end{aligned}$$
 
-## Enthalpy, $H$
+## Enthalpy
 
 $$H(S,V)\equiv E+pV$$
 
@@ -42,7 +42,7 @@ $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \wrap{\pder{T}{p}}{S} = \wrap{\pder{V}{S}}{p}
 $$
 
-## Helmholtz, $F$
+## Helmholtz
 
 $$F(T,V)\equiv E - TS$$
 
@@ -68,7 +68,7 @@ $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \wrap{\pder{S}{V}}{T} = \wrap{\pder{p}{T}}{V}
 $$
 
-## Gibbs, $G$
+## Gibbs
 
 $$G(T,p)\equiv E - TS + pV$$
 
