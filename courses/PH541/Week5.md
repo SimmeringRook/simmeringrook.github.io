@@ -70,3 +70,7 @@ $$\bar{y} = \sum_{r}{P_r y_r} = \sum_{r}{\frac{e^{-\beta E_r}}{\sum_{r}{e^{-\bet
 
 
 ### Day 3
+
+#### Breakout Room Activity
+
+> 

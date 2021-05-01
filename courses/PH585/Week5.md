@@ -92,8 +92,116 @@ H' &= \sum_{i<j=1}^{N=87}{\frac{e^2}{4\pi\epsilon_0 r_{ij}}} - \sum_{i=1}^{N=87}
 V_{pseudo}(r_i) &= -\frac{Ze^2}{4\pi\epsilon_0 r_i} + \left\langle\sum_{i<j=1}^{N=87}{\frac{e^2}{4\pi\epsilon_0 r_{ij}}}\right\rangle
 \end{aligned}$$
 
-
-
 ### Day 2
 
 ### Day 3
+
+Coherent Matter Excitations
+
+Fox -> 9.3-9.4: "How can we resolve QM oscillations?"
+
+Question: Suppose you instead apply a constant E-field in the $\hat{z}$ direction.
+
+$$\vec{E} = E_0 \hat{z}$$
+
+Use our master equation:
+
+$$H = \frac{1}{2m} \left(\vec{p}-e\vec{A}\right)^2 -e\phi$$
+
+Consider a gauge transformation to be able to insert our $E$ field into this equation. In the Coloumb gague:
+$\vec{A}=-\pder{E}{t}$ implies that $\vec{A}=0$ since the $E$ field has no time dependence.
+
+Instead, let us look at the scalar potential:
+
+$$H' = - e\phi$$
+
+> Recalling from E&M, $\vec{E}\equiv-\nabla\phi = E_0\hat{z}$; $\Rightarrow\phi=-E_0 z$. (Might have seen this with the [Stark Effect](/physics/StarkEffect.md)
+
+So, our perturbation looks like:
+
+$$H' = eE_0z$$
+
+?> The [Stark Effect](/physics/StarkEffect.md), $H' = eE_0z$, looks like a dipole operator, how is it different?
+?>
+?> 1. No time dependence
+?> 2. The field is polarized in the direction of propagation, so the field can't impart angular momentum. The selection rule for Stark is $\Delta m_\ell = 0$ compared to the selection rule for Dipole: $\Delta m_\ell = \pm1$.
+
+Consider a 2-level System:
+
+$$H = \frac{1}{2m} \left(\vec{p}-e\vec{A}\right)^2 -e\phi + V_{Coulomb}$$
+
+Approximate $A^2\approx 0$, which gives us the perturbation as:
+
+$$H' \approx \frac{e}{m}\vec{A}\cdot\vec{p}$$
+
+In the dipole approximation, we get that $e^{i\vec{k}\cdot\vec{r}}\tilde{=}1$.
+
+$$H' = \frac{e}{m}\left[\frac{A_0}{2}\left(e^{i\omega t}+ e^{-i\omega t}\right)\right]\cdot(-i\hbar\nabla)$$
+
+$${H'}_{21}\equiv \braket{2}{H'}{1}= \frac{e^2}{m}\braket{2}{A(t)}{1}M_{21}$$
+
+> Recall: $$M_{21} = \frac{m\omega_{21}}{\hbar e}\braket{2}{\hat{\epsilon}\cdot\vec{r}_{1q}}{1} \tilde{=} \frac{m\omega_{21}}{\hbar e}\braket{2}{x}{1}$$
+
+?> $$A(t)=\frac{A_0}{2}\left[e^{i(\omega -\omega_{21})t}+e^{-i(\omega -\omega_{21})t}\right]$$ Remember in the Coulomb gauge: $$\vec{E}=-\pder{A}{t}\\ \pder{A}{t}\approx i\omega_{21} A(t) = \vec{E}(t)$$
+
+And we'll find that:
+
+$$H' = -i \frac{e E_0 x}{2} \left(e^{i\omega t}+e^{-i\omega t}\right)$$
+
+#### 2-state time dependent pertubation review
+
+$T_1$ describes $\ket{1}\rightarrow\ket{2}$
+$T_2$ describes $\ket{2}\rightarrow\ket{1}$
+
+So, our wavefunction is:
+
+$$\ket{\psi} = c_1 (t) e^{-i \frac{E_1}{\hbar}t} \ket{1} + c_2 (t) e^{-i \frac{E_2}{\hbar}t} \ket{2}$$
+
+And our Hamiltonian is:
+
+$$H = H_0 + H'(t)\\
+H'(t) = \frac{-eE_0x}{2}\left(e^{i\omega t}+e^{-i\omega t}\right)$$
+
+Step 1: Operate on both sides of $\ket{\psi}$ with Schrodinger's Equation.
+
+$$\left[\frac{i}{\hbar}\pder{}{t}-(H_0+H')\right]\ket{\psi}=0$$
+
+$$0 = \left[i\hbar\dot{c_1}-E_1+E_1-H'c_1(t)\right] e^{-i \frac{E_1}{\hbar}t} \ket{1} + \left[i\hbar\dot{c_2}-E_2+E_2-H'c_2(t)\right] c_2 (t) e^{-i \frac{E_2}{\hbar}t} \ket{2}$$
+
+$$0 = \left[i\hbar\dot{c_1}-H'c_1(t)\right] e^{-i \frac{E_1}{\hbar}t} \ket{1} + \left[i\hbar\dot{c_2}-H'c_2(t)\right] c_2 (t) e^{-i \frac{E_2}{\hbar}t} \ket{2}$$
+
+Step 2: Take the inner product with the final state.
+
+Final state is: $\bra{2}e^{i\frac{E_2}{\hbar}t}$.
+
+$$\omega_0 \equiv \frac{E_2 - E_1}{\hbar} = \omega_{21}$$
+
+$$0 = -\braket{2}{H'}{1}e^{i\omega_0 t} c_1(t)+i\hbar\dot{c_2}(t)\braket{2}{}{2}-\braket{2}{H'}{2} c_2(t)$$
+
+$$\dot{c_2}(t)=-\frac{i}{\hbar}\left({H'}_{21}e^{i\omega_0 t}c_1(t)-{H'}_{22}c_2(t)\right)$$
+
+?> To get $\dot{c_1}$, we do the same thing but with $\bra{1}e^{i\frac{E_1}{\hbar}t}$ leading to the equation: $$\dot{c_1}(t)=-\frac{i}{\hbar}\left({H'}_{12}e^{i\omega_0 t}c_2(t)-{H'}_{11}c_1(t)\right)$$
+
+In the **dipole approximation**, these imply $\Delta \ell =0$:
+$${H'}_{22}~\braket{2}{x}{2}=0$$
+$${H'}_{11}~\braket{1}{x}{1}=0$$
+
+Then:
+$$\dot{c_2}(t)=-\frac{i}{\hbar}{H'}_{21}e^{i\omega_0 t}c_1(t)$$
+$$\dot{c_1}(t)=-\frac{i}{\hbar}{H'}_{12}e^{i\omega_0 t}c_2(t)$$
+
+**Weak field** approximation:
+$$c_1(t=0)=1$$
+
+$$c_1(t)\approx1$$
+
+$$\dot{c_1}(t)=0$$
+$$\dot{c_2}(t)=-\frac{i}{\hbar}{H'}_{21}e^{i\omega_0 t}$$
+
+**Strong Coupling limit**:
+
+$$\dot{c_2}(t)=\frac{i\Omega_R}{2}(e^{-i(\omega-\omega_0)t}+e^{i(\omega-\omega_0)t})c_1(t)$$
+Rotating wave approximation.
+
+Rabi Frequency, $\Omega_R$:
+$$\Omega_R \equiv \frac{eE_0}{\hbar}\braket{2}{x}{1}$$
