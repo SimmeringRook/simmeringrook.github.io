@@ -4,6 +4,7 @@ Neutron Stars (NSs)
   - "densities beyond that of nuclear saturation"
 - hadronic to Strange Quark Matter (SQM)
   - hadronic -> hydrogenic?
+    - https://en.wikipedia.org/wiki/Hadron
   - SQM is the true ground state of strong-interacting matter
     - Bodmer-Witten's conjecture
 - subclasses

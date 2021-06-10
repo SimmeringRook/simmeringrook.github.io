@@ -49,6 +49,7 @@ $$\begin{aligned}\Omega_f (B, \mu_f, T) &= \Omega_f^{vac}(B, 0, 0) + \Omega_f^{s
 
 - Statistical contribution
   - COs have temperatures much less than the Fermi temperature of gases that compose them
+    - https://physics.stackexchange.com/questions/216207/what-is-the-significance-of-fermi-temperature
   - compute Thermodynamic potential in the degenerate limit $(T\rightarrow 0)$
     - $\Omega_f^{st} (B, \mu_f, 0) = - \frac{e_f d_f B}{2\pi^2} \int_{0}^{\infty}{dp_3 \sum_{\ell=0}^{\infty}{g_\ell \Theta(\mu_f - \mathcal{E}_{\ell f})}}$
       - $\Theta(\zeta)$ is the unit step function
@@ -81,4 +82,9 @@ P_\parallel &= - \sum_{f}{\Omega_f} - B_{bag} - \frac{B^2}{8\pi} \\
 P_\perp &= -\sum_{f}{[\Omega_f+ B\mathcal{M}_f]} + B_{bag} + \frac{B^2}{8\pi}
 \end{aligned}$$
 
-- $\mathcal{M}_f] = -\partial\Omega_f/\partial B$ is the magnetization 
+- $\mathcal{M}_f] = -\partial\Omega_f/\partial B$ is the magnetization
+- there are three main contributions to the EoS
+  1. thermodynamic quantities for each species
+  2. $\pm B_{bag}$
+  3. magnetic field pressures and energy density
+  
