@@ -4,27 +4,25 @@
 
 ### Background
 
-In general, we have a pretty good understanding of [Main Sequence Stars](link.html) and a description of their state and evolution through most of their lives. However, we are lacking a great descriptions for the extreme end events of [Neutron Stars](link.html). Neutron Stars are the leftover core of a star after it experiences [stellar collapse](link.html).
+Astrophysicists have a good understanding of the overview for the life of a star. Areas of interest and uncertainty currently focus on the formation of a star and the exotic end stages. The main stages of stellar evolution are divided (loosely) into the following sections:
 
-Being able to describe these types of stars brings us closer to understanding more about the climatic end and transition of main sequence stars as they collapse and then explode outward, ejecting material and light at vast high energies. These novae mark the end of the star and reveal the legacy of the progenitor (star):
+1. Early
+    - This covers the time period from the condensing of gas, most likely from a nebula, into the formation of a protostar and ultimately into a [Main Sequence Stars](link.html). The central discriminating feature of Main sequence stars are that they are primarily using Hydrogen to fuel the nuclear fusion occurring in the core. The Sun is still well within the hydrogen stage and is our local main sequence star.
+2. Post-Main Sequence
+    - As the hydrogen fuel begins to run out, this is the period where the mass (size) of the star starts to dramatically differentiate its life from the paths of others. As the hydrogen core is exhausted, these stars expand as the hydrogen above the now helium core feeds the fusion and the star transitions into a Red giant.
+3. Late
+    - There are a few branching paths that more massive stars can take as they either switch to different fuel sources for fusion. Stars that are not primarily convective can experience periods of instability as easier to fuse material is cycled internally causing the star to flare and flash, ejecting some of its stellar material (one form of creating a nebula).
+    - Other stars that live through this process ultimately run into the problem where silicon is fused into iron. Iron is a big problem for stars as the process requires energy, instead of producing energy. As the iron core grows, the star will eventually collapse producing a supernova. The explosion ejects the outer layers of the star and reveals the remnant of the core which is either a form of Neutron star or a Black Hole.
 
-- a slowly expanding cloud of hot gasses ([Nebula](link.hmtl)),
-- a small but compact and cool core ([Neutron Star](link.html)),
-- or an empty void that curves spacetime ([Black Hole](link.html))
+![ This is a HR (Hertzsprung–Russell) diagram which is used to visualize the corresponding Luminosity and Temperature as a function of mass (and as a prediction for the path of stellar evolution for a given star). Keeton, Page 337](HRDiagram.png)
 
-<br />
+The main focus of this paper is on the area of expanding our description and understanding of Neutron stars (NSs) and their cores. Neutron stars are primarily composed of their namesake: neutrons. Not only is a star comprised *solely* of subatomic particles interesting, but this extreme system requires the combination of some intense[^-1] fields of Physics :
 
-#### ELI15
+- General Relativity: because while extremely small and compact, the star has enough mass to curve spacetime.
+- Statistical Mechanics: degenerate neutron matter and strange quark matter can't be reasonably described by Classical Thermodynamics (in comparison to Main Sequence stars).
+- Quantum Mechanics (and Quantum Chromodynamics): to model and begin to describe the energy of a system comprised of quarks (elementary particles that make up the three subatomic particles: electrons, protons, and neutrons).
 
-We have a good understanding of the overview for the life of a star: it's birth and formation, it's life as it burns hotter and cooler, and it's climatic and cataclysmic end. When a star reaches the end of its life, it starts with an explosion of glorious bright light that causes what we see of the star in our night sky to shine brighter than any other star we can see.
-
-Three fascinating things can happen next:
-
-1. If the star wasn't much bigger than our Sun, the stuff that made up the star drifts apart through space, slowly expanding and eventually creating beautiful clouds we can see with our telescopes. One of the most common and astounding examples of these *star-stuff clouds* are known as the [Pillars of Creation](https://en.wikipedia.org/wiki/Pillars_of_Creation).
-
-2. If the star is a little bigger than our Sun, the star-stuff still drifts away and forms the beautiful clouds; but a smaller star is left behind. This smaller star is different from one the that created it because it consists solely of a single type of universal building block: neutrons. Neutron stars are almost a contradiction: they incredibly heavy but very small (compared to the original star) and the source of a vast amount of energy but very cold.
-
-3. Finally, if the star is much bigger than our Sun, a Neutron star is still created, but it is so heavy that this time, it collapses under its own weight and creates an object we call a Black Hole. The Black Hole has a force of gravity so strong, that light can't even escape its surface.
+[-1]: By "intense", I refer to need for something beyond Classical Mechanics. Normally, we can still approximate other features of a system with Newtonian Mechanics, but in this case, we need to replace each major portion of a Classical description for the problem with its corresponding modern counterpart.  
 
 <br />
 
@@ -100,3 +98,7 @@ There are four major topics of Physics present in this paper:
 
 - Need a metric that describes the physical situation more than the idealization
 - Axial symmetry, not spherical
+
+## External Resources
+
+*Principles of Astrophysics: Using Gravity and Stellar Physics to Explore the Cosmos* by Charles Keeton
