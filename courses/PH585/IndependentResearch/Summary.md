@@ -4,7 +4,7 @@
 
 ### Background
 
-Astrophysicists have a good understanding of the overview for the life of a star. Areas of interest and uncertainty currently focus on the formation of a star and the exotic end stages. The main stages of stellar evolution are divided (loosely) into the following sections:
+Astrophysicists have a good understanding of the overview for the life of a star. Areas of interest and uncertainty currently focus on the formation of a star and their exotic end stages. The main stages of stellar evolution are divided (loosely) into the following sections:
 
 1. Early
     - This covers the time period from the condensing of gas, most likely from a nebula, into the formation of a protostar and ultimately into a [Main Sequence Stars](link.html). The central discriminating feature of Main sequence stars are that they are primarily using Hydrogen to fuel the nuclear fusion occurring in the core. The Sun is still well within the hydrogen stage and is our local main sequence star.
@@ -14,15 +14,16 @@ Astrophysicists have a good understanding of the overview for the life of a star
     - There are a few branching paths that more massive stars can take as they either switch to different fuel sources for fusion. Stars that are not primarily convective can experience periods of instability as easier to fuse material is cycled internally causing the star to flare and flash, ejecting some of its stellar material (one form of creating a nebula).
     - Other stars that live through this process ultimately run into the problem where silicon is fused into iron. Iron is a big problem for stars as the process requires energy, instead of producing energy. As the iron core grows, the star will eventually collapse producing a supernova. The explosion ejects the outer layers of the star and reveals the remnant of the core which is either a form of Neutron star or a Black Hole.
 
-![ This is a HR (Hertzsprung–Russell) diagram which is used to visualize the corresponding Luminosity and Temperature as a function of mass (and as a prediction for the path of stellar evolution for a given star). Keeton, Page 337](HRDiagram.png)
+?> ![This is a HR (Hertzsprung–Russell) diagram which is used to visualize the corresponding Luminosity and Temperature as a function of mass (and as a prediction for the path of stellar evolution for a given star). Keeton, Page 337](HRDiagram.png) This is a HR (Hertzsprung–Russell) diagram which is used to visualize the corresponding Luminosity and Temperature as a function of mass (and as a prediction for the path of stellar evolution for a given star). Keeton, Page 337
 
-The main focus of this paper is on the area of expanding our description and understanding of Neutron stars (NSs) and their cores. Neutron stars are primarily composed of their namesake: neutrons. Not only is a star comprised *solely* of subatomic particles interesting, but this extreme system requires the combination of some intense[^-1] fields of Physics :
+
+The main focus of this paper is on the area of expanding our description and understanding of Neutron stars (NSs) and their cores. Neutron stars are primarily composed of their namesake: neutrons. Not only is a star comprised *solely* of subatomic particles interesting, but this extreme system requires the combination of some intense$^{1}$ fields of Physics :
 
 - General Relativity: because while extremely small and compact, the star has enough mass to curve spacetime.
 - Statistical Mechanics: degenerate neutron matter and strange quark matter can't be reasonably described by Classical Thermodynamics (in comparison to Main Sequence stars).
 - Quantum Mechanics (and Quantum Chromodynamics): to model and begin to describe the energy of a system comprised of quarks (elementary particles that make up the three subatomic particles: electrons, protons, and neutrons).
 
-[-1]: By "intense", I refer to need for something beyond Classical Mechanics. Normally, we can still approximate other features of a system with Newtonian Mechanics, but in this case, we need to replace each major portion of a Classical description for the problem with its corresponding modern counterpart.  
+>$^1\$ By *intense*, I refer to need for something beyond Classical Mechanics. Normally, we can still approximate other features of a system with Newtonian Mechanics, but in this case, we need to replace each major portion of a Classical description for the problem with its corresponding modern counterpart.  
 
 <br />
 
