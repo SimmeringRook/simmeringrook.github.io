@@ -6,11 +6,11 @@ Article title: [*Observables of spheroidal magnetized Strange Stars*](https://ar
 
 > Why did I choose this article?
 
-?> I choose this article because I am doing my undergrad Physics research in the context of General Relativity and wanted to try to find a paper that touches on content relevant to AMO and Astrophysics/General Relativity. Luckily, this paper was at the top of my search results and the title and abstract just immediately sold me on the concept of reading and trying to share this content with other people.
-?>
-?> Neutron Stars are as fascinating, if not more so, than black holes in that they mix together high densities, degeneracy pressures battling massive gravitational forces, and the interaction between those forces in a *compact* scale.
+I choose this article because I am doing my undergrad Physics research in the context of General Relativity and wanted to try to find a paper that touches on content relevant to AMO and Astrophysics/General Relativity. Luckily, this paper was at the top of my search results and the title and abstract just immediately sold me on the concept of reading and trying to share this content with other people.
 
-!> Notes taken while reading the article can be located [here](/courses/PH585/IndependentResearch/Notes.md).
+Neutron Stars are as fascinating, if not more so, than black holes in that they mix together high densities, degeneracy pressures battling massive gravitational forces, and the interaction between those forces in a *compact* scale.
+
+> Notes taken while reading the article can be located [here](/courses/PH585/IndependentResearch/Notes.md).
 
 ## Summary
 
