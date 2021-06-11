@@ -23,7 +23,7 @@ The main focus of this paper is on the area of expanding our description and und
 - Statistical Mechanics: degenerate neutron matter and strange quark matter can't be reasonably described by Classical Thermodynamics (in comparison to Main Sequence stars).
 - Quantum Mechanics (and Quantum Chromodynamics): to model and begin to describe the energy of a system comprised of quarks (elementary particles that make up the three subatomic particles: electrons, protons, and neutrons).
 
->$^1\$ By *intense*, I refer to need for something beyond Classical Mechanics. Normally, we can still approximate other features of a system with Newtonian Mechanics, but in this case, we need to replace each major portion of a Classical description for the problem with its corresponding modern counterpart.  
+> $^{1}$ By *intense*, I refer to need for something beyond Classical Mechanics. Normally, we can still approximate other features of a system with Newtonian Mechanics, but in this case, we need to replace each major portion of a Classical description for the problem with its corresponding modern counterpart.  
 
 <br />
 
