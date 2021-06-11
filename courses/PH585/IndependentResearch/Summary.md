@@ -1,5 +1,13 @@
 # Review of 'Observables of spheroidal magnetized Strange Stars'
 
+Article title: [*Observables of spheroidal magnetized Strange Stars*](https://arxiv.org/abs/2010.06514v1)
+
+> Why did I choose this article?
+
+I choose this article because I am doing my undergrad Physics research in the context of General Relativity and wanted to try to find a paper that touches on content relevant to AMO and Astrophysics/General Relativity. Luckily, this paper was at the top of my search results and the title and abstract just immediately sold me on the concept of reading and trying to share this content with other people.
+
+Neutron Stars are as fascinating, if not more so, than black holes in that they mix together high densities, degeneracy pressures battling massive gravitational forces, and the interaction between those forces in a *compact* scale.
+
 ## Summary
 
 ### Background
@@ -19,9 +27,9 @@ Astrophysicists have a good understanding of the overview for the life of a star
 
 The main focus of this paper is on the area of expanding our description and understanding of Neutron stars (NSs) and their cores. Neutron stars are primarily composed of their namesake: neutrons. Not only is a star comprised *solely* of subatomic particles interesting, but this extreme system requires the combination of some intense$^{1}$ fields of Physics :
 
-- General Relativity: because while extremely small and compact, the star has enough mass to curve spacetime.
-- Statistical Mechanics: degenerate neutron matter and strange quark matter can't be reasonably described by Classical Thermodynamics (in comparison to Main Sequence stars).
-- Quantum Mechanics (and Quantum Chromodynamics): to model and begin to describe the energy of a system comprised of quarks (elementary particles that make up the three subatomic particles: electrons, protons, and neutrons).
+- **General Relativity**: because while extremely small and compact, the star has enough mass to curve spacetime.
+- **Statistical Mechanics**: degenerate neutron matter and strange quark matter can't be reasonably described by Classical Thermodynamics (in comparison to Main Sequence stars).
+- **Quantum Mechanics** (and Quantum Chromodynamics): to model and begin to describe the energy of a system comprised of quarks (elementary particles that make up the three subatomic particles: electrons, protons, and neutrons).
 
 > $^{1}$ By *intense*, I refer to need for something beyond Classical Mechanics. Normally, we can still approximate other features of a system with Newtonian Mechanics, but in this case, we need to replace each major portion of a Classical description for the problem with its corresponding modern counterpart.  
 
