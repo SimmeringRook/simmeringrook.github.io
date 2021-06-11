@@ -67,17 +67,16 @@ While these results are promising, they are not the end; they only offer a promi
 There are three major topics of Physics present in this paper (excluding Astrophysics):
 
 1. Thermodynamics (and Statistical Mechanics)
-  - (Stable) Stars need to be in stellar equilibrium: if they are not, they will evolve to reach what will be the new equilibrium.
-    - this is what describes stellar evolution
-  - Equations of State let us discuss how changes of properties change the rest of the system
-  - We need Statistical Mechanics to describe the Microscopic contributions to the two separate pressure differentials.
+    - (Stable) Stars need to be in stellar equilibrium: if they are not, they will evolve to reach what will be the new equilibrium.
+    - Equations of State let us discuss how changes of properties change the rest of the system
+    - We need Statistical Mechanics to describe the Microscopic contributions to the two separate pressure differentials.
 2. Quantum Mechanics
-  - We describe (and limit) the energy of the quarks by using a model similar to *particle in a box*
+    - We describe (and limit) the energy of the quarks by using a model similar to *particle in a box*
     - [MIT-Bag Model](http://hyperphysics.phy-astr.gsu.edu/hbase/Particles/qbag.html)
     - quasi-free particles but with binding energy
 3. General Relativity
-  - Need a metric that describes the physical situation more than the idealization
-  - Axial symmetry, not spherical
+    - Need a metric that describes the physical situation more than the idealization
+    - Axial symmetry, not spherical
 
 ### Thermodynamics: Equations of State
 
