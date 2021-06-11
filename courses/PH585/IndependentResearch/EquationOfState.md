@@ -82,9 +82,8 @@ P_\parallel &= - \sum_{f}{\Omega_f} - B_{bag} - \frac{B^2}{8\pi} \\
 P_\perp &= -\sum_{f}{[\Omega_f+ B\mathcal{M}_f]} + B_{bag} + \frac{B^2}{8\pi}
 \end{aligned}$$
 
-- $\mathcal{M}_f] = -\partial\Omega_f/\partial B$ is the magnetization
+- $\mathcal{M}_f = -\partial\Omega_f/\partial B$ is the magnetization
 - there are three main contributions to the EoS
   1. thermodynamic quantities for each species
   2. $\pm B_{bag}$
   3. magnetic field pressures and energy density
-  
