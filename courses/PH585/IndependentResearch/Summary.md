@@ -58,7 +58,7 @@ Previous attempts to derive equations of state for magnetized Strange Stars arri
 
 The results of this can be seen in the figure below, as the authors plot possible (highly magnetized) Strange star candidates versus the allowed theoretical models. While the results are promising, they are not a complete description of the systems in question: the structure equations and equations of state are still very model dependent and the confining energy for the quark matter is still described as an external parameter (versus a property of the system).
 
-?> ![Figure 7, Page 14, Terrero et al. (2010)](Figure7.png "This is Figure 7, Page 14 of Terrero et al. (2010)")  Figure 7, Page 14, Terrero et al. (2010).
+?> ![Figure 7, Page 14, Terrero et al. (2010)](Figure7.png "This is Figure 7, Page 14 of Terrero et al. (2010)") <br /> Figure 7, Page 14, Terrero et al. (2010).
 
 <br />
 
