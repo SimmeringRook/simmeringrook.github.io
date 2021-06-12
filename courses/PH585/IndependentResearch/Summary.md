@@ -54,13 +54,11 @@ The study of Neutron Stars has renewed with increased interest over the past dec
 
 The authors of this paper make tremendous effort forward in deriving Equations of State (EoS) for these Strange Stars (SSs). What is notable about this physical system is that there are no solutions that provide the EoS for these SSs: either using exact calculations or perturbation theory in [Quantum Chromodynamics](https://en.wikipedia.org/wiki/Quantum_chromodynamics).
 
-Previous attempts to derive equations of state for magnetized Strange Stars arrive at two independent pressure equations. The independence of these equations prevent a coherent description of the macroscopic star and are highly dependent on the model.
+Previous attempts to derive equations of state for magnetized Strange Stars arrive at two independent pressure equations. The independence of these equations prevent a coherent description of the macroscopic star and are highly dependent on the model. This attempt uses the same concept as a launching point but derives a variation of the [Tolman-Oppenhimer-Volkoff](https://en.wikipedia.org/wiki/Tolman%E2%80%93Oppenheimer%E2%80%93Volkoff_equation) (TOV) equations by starting with an axially symmetric metric in spherical coordinates. From this, the Equations of State and Structure equations combine coherently to more accurately describe observed properties of highly magnetized Neutron stars.
 
-?> ![Figure 7, Page 14, Terrero et al. (2010)](Figure7.png "This is Figure 7, Page 14 of Terrero et al. (2010)") <br /> Figure 7, Page 14, Terrero et al. (2010).
+The results of this can be seen in the figure below, as the authors plot possible (highly magnetized) Strange star candidates versus the allowed theoretical models. While the results are promising, they are not a complete description of the systems in question: the structure equations and equations of state are still very model dependent and the confining energy for the quark matter is still described as an external parameter (versus a property of the system).
 
-This attempt uses the same concept as a launching point but derives a variation similar to the [Tolman-Oppenhimer-Volkoff](https://en.wikipedia.org/wiki/Tolman%E2%80%93Oppenheimer%E2%80%93Volkoff_equation) (TOV) equations by starting with an [axially symmetric metric](link.html) in spherical coordinates. These equations combine coherently to accurately describe observed properties of highly magnetized Neutron stars.
-
-While these results are promising, they are not the end; they only offer a promising path forward, as the equations are still very model dependent.
+?> ![Figure 7, Page 14, Terrero et al. (2010)](Figure7.png "This is Figure 7, Page 14 of Terrero et al. (2010)")  Figure 7, Page 14, Terrero et al. (2010).
 
 <br />
 
@@ -160,7 +158,7 @@ $$\begin{aligned}
 
 ### Quantum Mechanics: Binding Energy
 
-As the Neutron star is a bound system, we want the total energy of the star to be negative. This means that the confining energy, $B_{bag}$, must be greater than the magnetic field, as we can see from the first Equation of state (described [above](#Thermodynamics:-Equations-of-State))
+As the Neutron star is a bound system, we want the total energy of the star to be negative. This means that the confining energy, $B_{bag}$, must be greater than the magnetic field, as we can see from the first Equation of state (described [above](https://simmeringrook.github.io/#/courses/PH585/IndependentResearch/Summary?id=thermodynamics-equations-of-state))
 
 $$E = \sum_{f}{[\Omega_f+\mu_fN_f]} + B_{bag} + \frac{B^2}{8\pi}$$
 
