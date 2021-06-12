@@ -2,7 +2,7 @@
 
 # Review of 'Observables of spheroidal magnetized Strange Stars'
 
-Article title: [*Observables of spheroidal magnetized Strange Stars*](https://arxiv.org/abs/2010.06514v1)
+Article title: *Observables of spheroidal magnetized Strange Stars* ([arXiv](https://arxiv.org/abs/2010.06514v1))
 
 > Why did I choose this article?
 
@@ -55,6 +55,8 @@ The study of Neutron Stars has renewed with increased interest over the past dec
 The authors of this paper make tremendous effort forward in deriving Equations of State (EoS) for these Strange Stars (SSs). What is notable about this physical system is that there are no solutions that provide the EoS for these SSs: either using exact calculations or perturbation theory in [Quantum Chromodynamics](https://en.wikipedia.org/wiki/Quantum_chromodynamics).
 
 Previous attempts to derive equations of state for magnetized Strange Stars arrive at two independent pressure equations. The independence of these equations prevent a coherent description of the macroscopic star and are highly dependent on the model.
+
+?> ![Figure 7, Page 14, Terrero et al. (2010)](Figure7.png "This is Figure 7, Page 14 of Terrero et al. (2010)") Figure 7, Page 14, Terrero et al. (2010).
 
 This attempt uses the same concept as a launching point but derives a variation similar to the [Tolman-Oppenhimer-Volkoff](https://en.wikipedia.org/wiki/Tolman%E2%80%93Oppenheimer%E2%80%93Volkoff_equation) (TOV) equations by starting with an [axially symmetric metric](link.html) in spherical coordinates. These equations combine coherently to accurately describe observed properties of highly magnetized Neutron stars.
 
@@ -152,7 +154,15 @@ $$\begin{aligned}
 
 ### Quantum Mechanics: Binding Energy
 
+As the Neutron star is a bound system, we want the total energy of the star to be negative. This means that the confining energy, $B_{bag}$, must be greater than the magnetic field, as we can see from the first Equation of state (described [above](/courses/PH585/IndependentResearch/Summary#Thermodynamics:-Equations-of-State.md))
 
+$$E = \sum_{f}{[\Omega_f+\mu_fN_f]} + B_{bag} + \frac{B^2}{8\pi}$$
+
+The researchers discuss limiting the magnitude of the magnetic field, $\vec{B}$, through ensuring the Strange Star is stable. This stability (and derivation of the limiting value) is discussed in further detail on page 12 of the paper (Section 3, Subsection A), as it requires the use of the structure equations derived from the axially symmetric metric.
+
+?> The following figure, Figure 1 from Page 7 of Terrero et al. (2010), shows how the required confinement energy from the Bag must scale with the magnetic field's strength to ensure a stable star. The corresponding plot on the right then illustrates how the perpendicular pressure increases and causes the star to deform more (as $P_\perp > P_\parallel$)  ![Figure 1, Page 7, Terrero et al. (2010)](Figure1.png "This is Figure 1 from Page 7 of Terrero et al. (2010)")
+
+In short, we can use these relations to constrain the upper limit for the strength of a magnetic field inside a Strange Star that allows it to deform, but remain stable as resist tearing itself apart from rotations about its axis of symmetry (as angular momentum is conserved from the progenitor star).
 
 #### MIT-Bag Model ("Quark in a Bag")
 
@@ -161,3 +171,25 @@ The description for the energy of the quarks in the core of the star is done wit
 The particle is allowed to asymptotically move through out the cavity, but with increasing potential as the distance between quarks increases. A more complete description can be found in graduate (or advanced undergraduate) texts such as *Quantum Mechanics* by K.T. Hecht or on websites such as [HyperPhysics](http://hyperphysics.phy-astr.gsu.edu/hbase/Particles/qbag.html).
 
 ### General Relativity: TOV-like equations and Axially Symmetric Metric
+
+The structure equations for a star are typically derived by modeling the star as a spherically symmetric body in static gravitational equilibrium. The result is the [Tolman-Oppenheimer-Volkoff (TOV)](https://en.wikipedia.org/wiki/Tolman%E2%80%93Oppenheimer%E2%80%93Volkoff_equation) equation.
+
+The problem, as Terrero et al. (2010) discuss in the paper, is that the models strictly disagree with each other: The equations of state describe a non-spherically symmetric system (different pressure gradients), while TOV requires that extra level of symmetry. To resolve this, the researchers derive a metric that finds a middle ground between absolute spherical symmetry and just axial symmetry. Their resulting metric takes the following form$^2$:
+
+$$ds^2 = - \left( 1 - \frac{2M(r)}{r} \right)^{\gamma} dt^2 + \left( 1 - \frac{2M(r)}{r} \right)^{-\gamma} dr^2 + r^2\sin{\theta}d\phi^2 + r^2 d\theta^2$$
+
+> $^2$ This is given as Equation 11 on Page 8 of the paper, where $\gamma$ is the ratio of polar radius $z$ to equatorial radius $r$: $\gamma \equiv z/r$. I also note that there appears to be a typo: If we take the limiting case where $z=r$ and we should regain the [Schwarzschild metric](https://en.wikipedia.org/wiki/Schwarzschild_metric), which leads me to assume that $\sin{\theta}$ really should be $\sin^2{\theta}$.
+
+Using this metric to describe [curvature](https://en.wikipedia.org/wiki/Curvature) and the [stress-energy tensor](https://en.wikipedia.org/wiki/Stress%E2%80%93energy_tensor) for the magnetized star, Einstein's equations can be solved to find the following structure equations:
+
+$$\begin{aligned}
+\frac{dM}{dr} &= 4\pi r^2 \frac{E_\parallel + E_\perp}{2}\gamma\\
+\frac{dP_\parallel}{dz} &= - \frac{(E_\parallel + P_\parallel) \left(\frac{r}{2} + 4\pi r^3 P_\parallel - \frac{r}{2}\left( 1 - \frac{2M(r)}{r} \right)^{\gamma}\right) }{r^2 \left( 1 - \frac{2M(r)}{r} \right)^{\gamma}}\\
+\frac{dP_\perp}{dr} &= - \frac{(E_\perp + P_\perp) \left(\frac{r}{2} + 4\pi r^3 P_\perp - \frac{r}{2}\left( 1 - \frac{2M(r)}{r} \right)^{\gamma}\right) }{r^2 \left( 1 - \frac{2M(r)}{r} \right)^{\gamma}}
+\end{aligned}$$
+
+$\gamma$ is constrained to be $1>\gamma>0.8$ for the structure equations to still be valid. This constraint then reveals the upper limit for the magnetic field to be approximately $10^{18} G$, as shown in the comparison plot below of $\gamma$ vs energy density:
+
+?> ![Figure 4, Page 11, Terrero et al. (2010)](Figure4.png "This is Figure 4 from Page 11 of Terrero et al. (2010)") Note that both ( $B_{bag} = 65 Mev/fm^3$ and $B_{bag}=75 Mev/fm^3$) families of solutions (with a magnetic field of $B\simeq10^{18} G$) fail to even reach valid values of $\gamma$ before reaching the upper limit of energy density for the system of $930 Mev/fm^3$.
+
+The researchers also point out that having invalid solutions for $B\simeq10^{18}$ is consistent with results of other models and the limit established from the [Virial theorem](https://en.wikipedia.org/wiki/Virial_theorem).
