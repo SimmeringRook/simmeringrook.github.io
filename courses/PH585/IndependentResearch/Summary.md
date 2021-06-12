@@ -64,7 +64,7 @@ The results of this can be seen in the figure below, as the authors plot possibl
 
 ---
 
-## The Physics of this Paper
+# The Physics of this Paper
 
 There are three major topics of Physics present in this paper (excluding Astrophysics):
 
@@ -85,7 +85,7 @@ What follows below is only a survey of the concepts and models involved in this 
 
 <br />
 
-### Thermodynamics: Equations of State
+## Thermodynamics: Equations of State
 
 The setup for this physical model for pressure and energy densities assumes:
 
@@ -118,7 +118,7 @@ Notably, there are only three main contributions to the EoSs:
 
 <br />
 
-#### Thermodynamic Potential
+### Thermodynamic Potential
 
 The thermodynamic potential is then given in its most general form as
 
@@ -159,7 +159,7 @@ $$\begin{aligned}
 
 <br />
 
-### Quantum Mechanics: Binding Energy
+## Quantum Mechanics: Binding Energy
 
 As the Neutron star is a bound system, we want the total energy of the star to be negative. This means that the confining energy, $B_{bag}$, must be greater than the magnetic field, as we can see from the first Equation of state (described above)
 
@@ -173,7 +173,7 @@ In short, we can use these relations to constrain the upper limit for the streng
 
 <br />
 
-#### MIT-Bag Model ("Quark in a Bag")
+### MIT-Bag Model ("Quark in a Bag")
 
 The description for the energy of the quarks in the core of the star is done with Quantum Chromodynamics using what is intermittently referred to as the "MIT-Bag Model". In brief, this model is an extension of the *Infinite Square Well* (or "Particle in a box") quantum system from undergraduate QM courses. The main difference is that the particle is located inside a (generally spherical) cavity, with the cavity located inside the potential well.
 
@@ -181,7 +181,7 @@ The particle is allowed to asymptotically move through out the cavity, but with 
 
 <br />
 
-### General Relativity: TOV-like equations and Axially Symmetric Metric
+## General Relativity: TOV-like equations and Axially Symmetric Metric
 
 The structure equations for a star are typically derived by modeling the star as a spherically symmetric body in static gravitational equilibrium. The result is the [Tolman-Oppenheimer-Volkoff (TOV)](https://en.wikipedia.org/wiki/Tolman%E2%80%93Oppenheimer%E2%80%93Volkoff_equation) equation.
 
