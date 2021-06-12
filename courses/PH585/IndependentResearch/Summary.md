@@ -36,9 +36,9 @@ Astrophysicists have a good understanding of the overview for the life of a star
 
 The following figure offers a qualitative guide to the aforementioned stages of a star's life (before stellar collapse) through the use of a Hertzsprung–Russell diagram ([HR diagram](https://en.wikipedia.org/wiki/Hertzsprung%E2%80%93Russell_diagram)):
 
-?> ![By User:Rursus - Self made diagram, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2047079](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/HR-diag-w-text.svg/1024px-HR-diag-w-text.svg.png "By User:Rursus - Self made diagram, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2047079") Image courtesy of Wikipedia user: *Rursus*. [Source](https://commons.wikimedia.org/w/index.php?curid=2047079).
+?> ![By User:Rursus - Self made diagram, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2047079](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/HR-diag-w-text.svg/1024px-HR-diag-w-text.svg.png "By User:Rursus - Self made diagram, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2047079") <br /> Image courtesy of Wikipedia user: *Rursus*. [Source](https://commons.wikimedia.org/w/index.php?curid=2047079).
 
-?> This second figure, from Page 337 of Charles Keeton's *Principles of Astrophysics: Using Gravity and Stellar Physics to Explore the Cosmos*, demonstrates the quantitative uses of an HR diagram to visualize the corresponding Luminosity and Temperature as a function of mass (and as a prediction for the path of stellar evolution for a given star). ![This is a HR (Hertzsprung–Russell) diagram which is used to visualize the corresponding Luminosity and Temperature as a function of mass (and as a prediction for the path of stellar evolution for a given star). Keeton, Page 337](HRDiagram.png "This is a HR (Hertzsprung–Russell) diagram which is used to visualize the corresponding Luminosity and Temperature as a function of mass (and as a prediction for the path of stellar evolution for a given star). Keeton, Page 337")
+?> This second figure, from Page 337 of Charles Keeton's *Principles of Astrophysics: Using Gravity and Stellar Physics to Explore the Cosmos*, demonstrates the quantitative uses of an HR diagram to visualize the corresponding Luminosity and Temperature as a function of mass (and as a prediction for the path of stellar evolution for a given star). <br /> ![This is a HR (Hertzsprung–Russell) diagram which is used to visualize the corresponding Luminosity and Temperature as a function of mass (and as a prediction for the path of stellar evolution for a given star). Keeton, Page 337](HRDiagram.png "This is a HR (Hertzsprung–Russell) diagram which is used to visualize the corresponding Luminosity and Temperature as a function of mass (and as a prediction for the path of stellar evolution for a given star). Keeton, Page 337")
 
 <br />
 
@@ -56,7 +56,7 @@ The authors of this paper make tremendous effort forward in deriving Equations o
 
 Previous attempts to derive equations of state for magnetized Strange Stars arrive at two independent pressure equations. The independence of these equations prevent a coherent description of the macroscopic star and are highly dependent on the model.
 
-?> ![Figure 7, Page 14, Terrero et al. (2010)](Figure7.png "This is Figure 7, Page 14 of Terrero et al. (2010)") Figure 7, Page 14, Terrero et al. (2010).
+?> ![Figure 7, Page 14, Terrero et al. (2010)](Figure7.png "This is Figure 7, Page 14 of Terrero et al. (2010)") <br /> Figure 7, Page 14, Terrero et al. (2010).
 
 This attempt uses the same concept as a launching point but derives a variation similar to the [Tolman-Oppenhimer-Volkoff](https://en.wikipedia.org/wiki/Tolman%E2%80%93Oppenheimer%E2%80%93Volkoff_equation) (TOV) equations by starting with an [axially symmetric metric](link.html) in spherical coordinates. These equations combine coherently to accurately describe observed properties of highly magnetized Neutron stars.
 
@@ -81,6 +81,8 @@ There are three major topics of Physics present in this paper (excluding Astroph
 3. General Relativity
     - Need a metric that describes the physical situation more than the idealization
     - Axial symmetry, not spherical
+
+<br />
 
 ### Thermodynamics: Equations of State
 
@@ -112,6 +114,8 @@ Notably, there are only three main contributions to the EoSs:
 1. the thermodynamic quantities for each species (of quark)
 2. the binding energy ($\pm B_{bag}$)
 3. the magnetic field pressures and energy density
+
+<br />
 
 #### Thermodynamic Potential
 
@@ -152,23 +156,29 @@ $$\begin{aligned}
   - $I[z]$ denotes the integer part of $z$
   - $\ell_{max} = I \left[ \frac{\mu_f^2 - m_f^2}{2e_f B} \right]$
 
+<br />
+
 ### Quantum Mechanics: Binding Energy
 
-As the Neutron star is a bound system, we want the total energy of the star to be negative. This means that the confining energy, $B_{bag}$, must be greater than the magnetic field, as we can see from the first Equation of state (described [above](/courses/PH585/IndependentResearch/Summary#Thermodynamics:-Equations-of-State.md))
+As the Neutron star is a bound system, we want the total energy of the star to be negative. This means that the confining energy, $B_{bag}$, must be greater than the magnetic field, as we can see from the first Equation of state (described [above](#Thermodynamics:-Equations-of-State))
 
 $$E = \sum_{f}{[\Omega_f+\mu_fN_f]} + B_{bag} + \frac{B^2}{8\pi}$$
 
 The researchers discuss limiting the magnitude of the magnetic field, $\vec{B}$, through ensuring the Strange Star is stable. This stability (and derivation of the limiting value) is discussed in further detail on page 12 of the paper (Section 3, Subsection A), as it requires the use of the structure equations derived from the axially symmetric metric.
 
-?> The following figure, Figure 1 from Page 7 of Terrero et al. (2010), shows how the required confinement energy from the Bag must scale with the magnetic field's strength to ensure a stable star. The corresponding plot on the right then illustrates how the perpendicular pressure increases and causes the star to deform more (as $P_\perp > P_\parallel$)  ![Figure 1, Page 7, Terrero et al. (2010)](Figure1.png "This is Figure 1 from Page 7 of Terrero et al. (2010)")
+?> The following figure, Figure 1 from Page 7 of Terrero et al. (2010), shows how the required confinement energy from the Bag must scale with the magnetic field's strength to ensure a stable star. The corresponding plot on the right then illustrates how the perpendicular pressure increases and causes the star to deform more (as $P_\perp > P_\parallel$) <br /> ![Figure 1, Page 7, Terrero et al. (2010)](Figure1.png "This is Figure 1 from Page 7 of Terrero et al. (2010)")
 
 In short, we can use these relations to constrain the upper limit for the strength of a magnetic field inside a Strange Star that allows it to deform, but remain stable as resist tearing itself apart from rotations about its axis of symmetry (as angular momentum is conserved from the progenitor star).
+
+<br />
 
 #### MIT-Bag Model ("Quark in a Bag")
 
 The description for the energy of the quarks in the core of the star is done with Quantum Chromodynamics using what is intermittently referred to as the "MIT-Bag Model". In brief, this model is an extension of the *Infinite Square Well* (or "Particle in a box") quantum system from undergraduate QM courses. The main difference is that the particle is located inside a (generally spherical) cavity, with the cavity located inside the potential well.
 
 The particle is allowed to asymptotically move through out the cavity, but with increasing potential as the distance between quarks increases. A more complete description can be found in graduate (or advanced undergraduate) texts such as *Quantum Mechanics* by K.T. Hecht or on websites such as [HyperPhysics](http://hyperphysics.phy-astr.gsu.edu/hbase/Particles/qbag.html).
+
+<br />
 
 ### General Relativity: TOV-like equations and Axially Symmetric Metric
 
@@ -190,6 +200,6 @@ $$\begin{aligned}
 
 $\gamma$ is constrained to be $1>\gamma>0.8$ for the structure equations to still be valid. This constraint then reveals the upper limit for the magnetic field to be approximately $10^{18} G$, as shown in the comparison plot below of $\gamma$ vs energy density:
 
-?> ![Figure 4, Page 11, Terrero et al. (2010)](Figure4.png "This is Figure 4 from Page 11 of Terrero et al. (2010)") Note that both ( $B_{bag} = 65 Mev/fm^3$ and $B_{bag}=75 Mev/fm^3$) families of solutions (with a magnetic field of $B\simeq10^{18} G$) fail to even reach valid values of $\gamma$ before reaching the upper limit of energy density for the system of $930 Mev/fm^3$.
+?> ![Figure 4, Page 11, Terrero et al. (2010)](Figure4.png "This is Figure 4 from Page 11 of Terrero et al. (2010)") <br /> Note that both ( $B_{bag} = 65 Mev/fm^3$ and $B_{bag}=75 Mev/fm^3$) families of solutions (with a magnetic field of $B\simeq10^{18} G$) fail to even reach valid values of $\gamma$ before reaching the upper limit of energy density for the system of $930 Mev/fm^3$.
 
 The researchers also point out that having invalid solutions for $B\simeq10^{18}$ is consistent with results of other models and the limit established from the [Virial theorem](https://en.wikipedia.org/wiki/Virial_theorem).
