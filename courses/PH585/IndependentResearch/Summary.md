@@ -78,7 +78,10 @@ There are three major topics of Physics present in this paper (excluding Astroph
     - quasi-free particles but with binding energy
 3. General Relativity
     - Need a metric that describes the physical situation more than the idealization
+      - accounts for deformation and separate pressure gradients
     - Axial symmetry, not spherical
+
+What follows below is only a survey of the concepts and models involved in this paper and not an exhaustive derivation or explanation.
 
 <br />
 
@@ -158,7 +161,7 @@ $$\begin{aligned}
 
 ### Quantum Mechanics: Binding Energy
 
-As the Neutron star is a bound system, we want the total energy of the star to be negative. This means that the confining energy, $B_{bag}$, must be greater than the magnetic field, as we can see from the first Equation of state (described [above](https://simmeringrook.github.io/#/courses/PH585/IndependentResearch/Summary?id=thermodynamics-equations-of-state))
+As the Neutron star is a bound system, we want the total energy of the star to be negative. This means that the confining energy, $B_{bag}$, must be greater than the magnetic field, as we can see from the first Equation of state (described above)
 
 $$E = \sum_{f}{[\Omega_f+\mu_fN_f]} + B_{bag} + \frac{B^2}{8\pi}$$
 
