@@ -112,7 +112,7 @@
 - [MTH 434](/courses/MTH434.md)
 - [MTH 537](/courses/MTH537.md)
 
-<!-- div:home-title -->
+<!-- div:title-panel -->
 
 ---
 
