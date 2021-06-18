@@ -3,7 +3,7 @@
 
 # Physics
 
-<!-- div:home-left -->
+<!-- div:left-panel -->
 ## Topics
 
 ### Classical Mechanics
@@ -23,7 +23,7 @@
 - [Special Relativity](/physics/SpecialRelativity.md)
 - [General Relativity](/physics/GeneralRelativity.md)
 
-<!-- div:home-right -->
+<!-- div:right-panel -->
 
 ## Courses
 
@@ -65,7 +65,7 @@
 
 # Mathematics
 
-<!-- div:home-left -->
+<!-- div:left-panel -->
 
 ## Topics
 
@@ -93,7 +93,7 @@
 ### Calculus
 ### Linear Algebra
 
-<!-- div:home-right -->
+<!-- div:right-panel -->
 ## Courses
 
 ### 25X Series
@@ -122,7 +122,7 @@
 
 # Chemistry
 
-<!-- div:home-left -->
+<!-- div:left-panel -->
 
 ## Topics
 
@@ -131,7 +131,7 @@
   - [Molecules](/chem/Molecules.md)
   - [Mixtures](/chem/Mixtures.md)
 
-<!-- div:home-right -->
+<!-- div:right-panel -->
 
 ## Courses
 
