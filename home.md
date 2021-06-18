@@ -1,5 +1,5 @@
 <!-- panels:start -->
-<!-- div:home-title -->
+<!-- div:title-panel -->
 
 # Physics
 
@@ -57,7 +57,7 @@
 - [PH 455: Astrophysics](/courses/PH455.md)
 - [PH 585: Atomic, Molecular, and Optical Physics](/courses/PH585.md)
 
-<!-- div:home-title -->
+<!-- div:title-panel -->
 
 ---
 
@@ -91,7 +91,7 @@
 ### Calculus
 ### Linear Algebra
 
-<!-- div:right-panel -->
+<!-- div:title-panel -->
 ## Courses
 
 ### 25X Series
