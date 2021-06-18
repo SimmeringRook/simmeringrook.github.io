@@ -12,3 +12,17 @@ Mixtures can be further categorized by the distributions of their components:
 > E.g., before blending milk and eggs with dry pancake mix, the top layer contains some (or one) of the two liquids, whereas the bottom contains the dry pancake mix. For two samples taken from this bowl to contain the same components, we have constraints on where the second sample must be taken. At this stage, we would state the bowl contains a **Heterogeneous Mixture** (of milk, eggs, and pancake mix). Once we *sufficiently* blend the liquid ingredients with the dry ingredients, the bowl will then contains a **Homogeneous Mixture** (that we now call 'Pancake Batter').
 
 ## Separating
+
+While the substance has properties that are the result of the combined components' properties, the components still retain their own original properties. This allows the components of mixtures to be separated from the combined substance.
+
+### Decanting
+
+Heterogeneous mixtures (e.g. sand and water) can be separated by pouring the liquid into a separate container.
+
+### Distillation
+
+Homogeneous mixtures of liquids can be separated by boiling off the liquid that has a lower vaporization temperature.
+
+### Filtration
+
+A filter separates a solid from a liquid.
