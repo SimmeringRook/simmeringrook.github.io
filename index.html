@@ -20,16 +20,26 @@
     window.$docsify = {
       //General Settings
       name      : 'Invariant Subspace',
-      repo      : 'https://github.com/SimmeringRook/simmeringrook.github.io',
+      //repo      : 'https://github.com/SimmeringRook/simmeringrook.github.io',
       homepage  : 'home.md',
       //coverpage : 'cover.md',
       //onlyCover : false,
-
+      auto2top: true,
       //Themeable Plugin
       themeable: {
         readyTransition : true,
         responsiveTables: true,
-      }
+      },
+
+      formatUpdated: '{YY}/{MM}/{DD} {HH}:{mm}',
+
+      formatUpdated: function(time) {
+        // ...
+
+        return time;
+      },
+
+      notFoundPage: true
     };
   </script>
 
