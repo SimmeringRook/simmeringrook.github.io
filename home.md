@@ -91,7 +91,7 @@
 ### Calculus
 ### Linear Algebra
 
-<!-- div:title-panel -->
+<!-- div:right-panel -->
 ## Courses
 
 ### 25X Series
