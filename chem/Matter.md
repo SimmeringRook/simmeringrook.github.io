@@ -37,9 +37,9 @@ There are two main categories for properties of a substance:
 
 > E.g. color, flammability, acidity, etc
 
----
-
 <br />
+
+---
 
 ## States
 
