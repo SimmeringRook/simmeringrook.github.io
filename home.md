@@ -46,6 +46,8 @@
 
 <br />
 
+---
+
 # Courses
 ## Physics
 ### 21X Series
@@ -95,3 +97,7 @@
 - [MTH 231](/courses/MTH231.md)
 - [MTH 434](/courses/MTH434.md)
 - [MTH 537](/courses/MTH537.md)
+
+## Chemistry
+### Introduction Sequence
+- [CH 23X](/courses/CH23X.md)
