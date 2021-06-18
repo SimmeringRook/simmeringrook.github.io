@@ -45,7 +45,7 @@ There are two main categories for properties of a substance:
 
 ### Solid
 
-Molecules in a solid state correspond to rigid structures that preserve a fixed volume and shape. Individual molecules are allowed to vibrate in their space, but cannot move throughout the substance.
+Substances in a solid state correspond to rigid structures that preserve a **fixed volume and shape**. Individual molecules are allowed to vibrate in their space, but cannot move throughout the substance.
 
 > E.g. a physical model can be constructed by connecting masses (molecules) together with springs. The masses are allowed to move about their equilibrium location, but they cannot swap places with other masses.
 
@@ -60,6 +60,12 @@ Solids have two subcategories:
 
 ### Liquid
 
+Substances in a liquid state correspond to molecules that are compressed such that they preserve a **fixed volume** but are free to be move about and be repositioned internally and so the substance **does not** have a fixed **shape**.
 
+> E.g. cats.
 
 ### Gas
+
+Substances in the gaseous state are comprised of molecules that are only compressed through the result of their environment: the container dictates the shape and volume of the gas.
+
+> E.g. a ballon animal.
