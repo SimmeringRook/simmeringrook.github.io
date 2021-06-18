@@ -4,7 +4,7 @@
 
 Matter is composed of either [molecules](/chem/Molecules.md) or [atoms](/chem/Atoms.md) of either the same or different substances; the specific type of composition directly corresponds to nature of the physical and chemical properties of the greater whole.
 
-### Descriptors
+### Categories
 
 #### Elements
 
