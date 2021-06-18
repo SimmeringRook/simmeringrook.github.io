@@ -1,4 +1,10 @@
+<!-- panels:start -->
+<!-- div:title-panel -->
+
 # Physics
+
+<!-- div:left-panel -->
+
 ## Classical Mechanics
 
 - [Astrophysics](/physics/Astrophysics.md)
@@ -16,40 +22,10 @@
 - [Special Relativity](/physics/SpecialRelativity.md)
 - [General Relativity](/physics/GeneralRelativity.md)
 
-<br />
+<!-- div:right-panel -->
 
-# Mathematics
+## Courses
 
-## Calculus
-- [Single Variable Calculus](/maths/SingleVariableCalculus.md)
-- [Multivariable Calculus](/maths/MultivariableCalculus.md)
-- [Differential Equations](/maths/DifferentialEquations.md)
-
-## Linear Algebra
-- [Spaces](/maths/VectorSpaces.md)
-  - [Matrices](/maths/Matrices.md)
-  - [Vectors](/maths/Vectors.md)
-- [Maps/Transformations](/maths/Maps.md)
-  - [Eigenvalues](/maths/Eigenvalues.md)
-  - [Eigenvectors](/maths/Eigenvectors.md)
-
-## [Geometry](/maths/Geometry.md)
-- [Differential Geometry](/maths/DifferentialGeometry.md)
-- [Geometric Algebra](/maths/GeometricAlgebra.md)
-
-## Discrete Mathematics
-- [Graphs](/maths/Graphs.md)
-
-## List of Proofs
-### Calculus
-### Linear Algebra
-
-<br />
-
----
-
-# Courses
-## Physics
 ### 21X Series
 - [PH 211](/courses/PH211.md)
 - [PH 212](/courses/PH212.md)
@@ -80,7 +56,43 @@
 - [PH 455: Astrophysics](/courses/PH455.md)
 - [PH 585: Atomic, Molecular, and Optical Physics](/courses/PH585.md)
 
-## Mathematics
+<!-- panels:end -->
+
+<br />
+<!-- panels:start -->
+<!-- div:title-panel -->
+
+# Mathematics
+
+<!-- div:left-panel -->
+
+## Calculus
+- [Single Variable Calculus](/maths/SingleVariableCalculus.md)
+- [Multivariable Calculus](/maths/MultivariableCalculus.md)
+- [Differential Equations](/maths/DifferentialEquations.md)
+
+## Linear Algebra
+- [Spaces](/maths/VectorSpaces.md)
+  - [Matrices](/maths/Matrices.md)
+  - [Vectors](/maths/Vectors.md)
+- [Maps/Transformations](/maths/Maps.md)
+  - [Eigenvalues](/maths/Eigenvalues.md)
+  - [Eigenvectors](/maths/Eigenvectors.md)
+
+## [Geometry](/maths/Geometry.md)
+- [Differential Geometry](/maths/DifferentialGeometry.md)
+- [Geometric Algebra](/maths/GeometricAlgebra.md)
+
+## Discrete Mathematics
+- [Graphs](/maths/Graphs.md)
+
+## List of Proofs
+### Calculus
+### Linear Algebra
+
+<!-- div:right-panel -->
+## Courses
+
 ### 25X Series
 - [MTH 251](/courses/MTH251.md)
 - [MTH 252](/courses/MTH252.md)
@@ -98,6 +110,26 @@
 - [MTH 434](/courses/MTH434.md)
 - [MTH 537](/courses/MTH537.md)
 
-## Chemistry
+<!-- panels:end -->
+
+<br />
+<!-- panels:start -->
+<!-- div:title-panel -->
+
+# Chemistry
+
+<!-- div:left-panel -->
+
+Matter
+  - Atoms
+  - Molecules
+  - Mixtures
+
+<!-- div:right-panel -->
+
+## Courses
+
 ### Introduction Sequence
 - [CH 23X](/courses/CH23X.md)
+
+<!-- panels:end -->
