@@ -17,7 +17,7 @@ dE &= T dS - p dV
 
 ## Enthalpy
 
-$$H(S,V)\equiv E+pV$$
+$$H(S,p)\equiv E+pV$$
 
 $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
