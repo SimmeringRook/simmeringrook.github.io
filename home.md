@@ -4,8 +4,9 @@
 # Physics
 
 <!-- div:left-panel -->
+## Topics
 
-## Classical Mechanics
+### Classical Mechanics
 
 - [Astrophysics](/physics/Astrophysics.md)
 - [Electromagnetism](/physics/Electromagnetism.md)
@@ -14,11 +15,11 @@
   - [Standing Waves/Oscillations](/physics/Oscillations.md)
 - [Thermodynamics](/physics/Thermodynamics.md)
 
-## Quantum Mechanics
+### Quantum Mechanics
 - [Quantum Mechanics](/physics/QuantumMechanics.md)
 - [Statistical Mechanics](/physics/StatisticalMechanics.md)
 
-## Relativity
+### Relativity
 - [Special Relativity](/physics/SpecialRelativity.md)
 - [General Relativity](/physics/GeneralRelativity.md)
 
@@ -56,22 +57,20 @@
 - [PH 455: Astrophysics](/courses/PH455.md)
 - [PH 585: Atomic, Molecular, and Optical Physics](/courses/PH585.md)
 
-<!-- panels:end -->
-
-<br />
-<!-- panels:start -->
 <!-- div:title-panel -->
 
 # Mathematics
 
 <!-- div:left-panel -->
 
-## Calculus
+## Topics
+
+### Calculus
 - [Single Variable Calculus](/maths/SingleVariableCalculus.md)
 - [Multivariable Calculus](/maths/MultivariableCalculus.md)
 - [Differential Equations](/maths/DifferentialEquations.md)
 
-## Linear Algebra
+### Linear Algebra
 - [Spaces](/maths/VectorSpaces.md)
   - [Matrices](/maths/Matrices.md)
   - [Vectors](/maths/Vectors.md)
@@ -79,11 +78,11 @@
   - [Eigenvalues](/maths/Eigenvalues.md)
   - [Eigenvectors](/maths/Eigenvectors.md)
 
-## [Geometry](/maths/Geometry.md)
+### [Geometry](/maths/Geometry.md)
 - [Differential Geometry](/maths/DifferentialGeometry.md)
 - [Geometric Algebra](/maths/GeometricAlgebra.md)
 
-## Discrete Mathematics
+### Discrete Mathematics
 - [Graphs](/maths/Graphs.md)
 
 ## List of Proofs
@@ -107,23 +106,22 @@
 
 ### Other
 - [MTH 231](/courses/MTH231.md)
+- [MTH 355](/courses/MTH355.md)
 - [MTH 434](/courses/MTH434.md)
 - [MTH 537](/courses/MTH537.md)
 
-<!-- panels:end -->
-
-<br />
-<!-- panels:start -->
 <!-- div:title-panel -->
 
 # Chemistry
 
 <!-- div:left-panel -->
 
-Matter
-  - Atoms
-  - Molecules
-  - Mixtures
+## Topics
+
+[Matter](/chem/Matter.md)
+  - [Atoms](/chem/Atoms.md)
+  - [Molecules](/chem/Molecules.md)
+  - [Mixtures](/chem/Mixtures.md)
 
 <!-- div:right-panel -->
 
