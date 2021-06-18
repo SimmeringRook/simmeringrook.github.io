@@ -57,11 +57,9 @@
 - [PH 455: Astrophysics](/courses/PH455.md)
 - [PH 585: Atomic, Molecular, and Optical Physics](/courses/PH585.md)
 
----
-
-<br />
-
 <!-- div:home-title -->
+
+---
 
 # Mathematics
 
@@ -114,11 +112,9 @@
 - [MTH 434](/courses/MTH434.md)
 - [MTH 537](/courses/MTH537.md)
 
----
-
-<br />
-
 <!-- div:home-title -->
+
+---
 
 # Chemistry
 
