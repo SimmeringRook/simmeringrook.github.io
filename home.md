@@ -1,10 +1,12 @@
 <!-- panels:start -->
 <!-- div:title-panel -->
 
-<h1 align="center">Physics</h1>
+# Physics
 
 <!-- div:left-panel -->
-<h2 align="center">Topics</h2>
+## Topics
+
+<hr>
 
 ### Classical
 
@@ -29,7 +31,9 @@
 
 <!-- div:right-panel -->
 
-<h2 align="center">Courses</h2>
+## Courses
+
+<hr>
 
 ### 21X Series, Introductory Sequence
 
@@ -76,10 +80,13 @@
 
 <hr>
 
-<h1 align="center">Mathematics</h1>
+# Mathematics
 
 <!-- div:left-panel -->
-<h2 align="center">Topics</h2>
+
+## Topics
+
+<hr>
 
 ### Analysis
 
@@ -109,7 +116,9 @@
 - [Graphs](/maths/Graphs.md)
 
 <!-- div:right-panel -->
-<h2 align="center">Courses</h2>
+## Courses
+
+<hr>
 
 ### 25X Series
 - [MTH 251](/courses/MTH251.md)
@@ -133,10 +142,11 @@
 
 <hr>
 
-<h1 align="center">Chemistry</h1>
+# Chemistry
 
 <!-- div:left-panel -->
-<h2 align="center">Topics</h2>
+
+## Topics
 
 [Matter](/chem/Matter.md)
 
@@ -146,7 +156,7 @@
 
 <!-- div:right-panel -->
 
-<h2 align="center">Courses</h2>
+## Courses
 
 ### Introductory Sequence
 - [CH 23X](/courses/CH23X.md)
