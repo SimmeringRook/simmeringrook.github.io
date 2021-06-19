@@ -1,7 +1,7 @@
 <!-- panels:start -->
 <!-- div:title-panel -->
 
-# Physics
+<h1 align="center">Physics</h1>
 
 <!-- div:left-panel -->
 <h2 align="center">Topics</h2>
@@ -74,9 +74,9 @@
 
 <!-- div:title-panel -->
 
----
+<hr>
 
-# Mathematics
+<h1 align="center">Mathematics</h1>
 
 <!-- div:left-panel -->
 <h2 align="center">Topics</h2>
@@ -131,14 +131,15 @@
 
 <!-- div:title-panel -->
 
----
+<hr>
 
-# Chemistry
+<h1 align="center">Chemistry</h1>
 
 <!-- div:left-panel -->
 <h2 align="center">Topics</h2>
 
 [Matter](/chem/Matter.md)
+
   - [Atoms](/chem/Atoms.md)
   - [Molecules](/chem/Molecules.md)
   - [Mixtures](/chem/Mixtures.md)
