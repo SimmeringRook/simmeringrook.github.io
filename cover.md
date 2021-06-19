@@ -5,6 +5,6 @@
 
 > ![icon](/_media/background.gif "Source: https://svs.gsfc.nasa.gov/13326") A repository of knowledge learning while pursuing a B.S. in Physics at Oregon State University
 
-[Get to the Content](/home.md)
+[Physics](/home#Physics.md) [Mathematics](/home#Mathematics.md) [Chemistry](/home#Chemistry.md)
 
-![color](#03221d)
+![color](#f0f0f0)
