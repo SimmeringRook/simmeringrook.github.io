@@ -1,3 +1,7 @@
+# Week 1 Day 1: Recitation, Problem Set 1
+
+<br />
+
 # Question 1: Unit Conversion
 
 Convert the following quantities.
@@ -81,7 +85,7 @@ How many significant figures are in the following measurements?
 
 ## Part A
 
-?> $30.200\ m \\$
+?> $30.200\ m$
 
 $5$ significant figures: the two digits before the decimal and the three following.
 
@@ -89,7 +93,7 @@ $5$ significant figures: the two digits before the decimal and the three followi
 
 ## Part B
 
-?> $0.03020 kg\\$
+?> $0.03020\ kg$
 
 $4$ significant figures: $3.020$
 
@@ -98,7 +102,7 @@ $4$ significant figures: $3.020$
 
 ## Part C
 
-?> $3200\ lbs\\$
+?> $3200\ lbs$
 
 $2$ significant figures: $3.2$
 
@@ -106,7 +110,7 @@ $2$ significant figures: $3.2$
 
 ## Part D
 
-?> $3.2\times 10^3\ lbs\\$
+?> $3.2\times 10^3\ lbs$
 
 $2$ significant figures: $3.2$
 
@@ -114,7 +118,7 @@ $2$ significant figures: $3.2$
 
 ## Part E
 
-?> $3.200 \times 10^3\ lbs\\$
+?> $3.200 \times 10^3\ lbs$
 
 $4$ significant figures: $3.200$
 
@@ -128,7 +132,7 @@ What answer should be reported, with the correct number of significant figures, 
 
 ## Part A
 
-?> $7821.3+1.258\\$
+?> $7821.3+1.258$
 
 $4$ significant figures: $7823$
 
@@ -136,7 +140,7 @@ $4$ significant figures: $7823$
 
 ## Part B
 
-?> $256.975-25.2\\$
+?> $256.975-25.2$
 
 $3$ significant figures: $232$
 
@@ -144,7 +148,7 @@ $3$ significant figures: $232$
 
 ## Part C
 
-?> $6.347\times 7.25871\\$
+?> $6.347\times 7.25871$
 
 $4$ significant figures: $46.07$
 
@@ -152,7 +156,7 @@ $4$ significant figures: $46.07$
 
 ## Part D
 
-?> $25.00/5.0\\$
+?> $25.00/5.0$
 
 $2$ significant figures: $5.0$
 
@@ -160,7 +164,7 @@ $2$ significant figures: $5.0$
 
 ## Part E
 
-?> $(438.751-233.8)\times 11.700\\$
+?> $(438.751-233.8)\times 11.700$
 
 $4$ significant figures: $2398$
 
@@ -168,7 +172,7 @@ $4$ significant figures: $2398$
 
 ## Part F
 
-?> $5420.10/(25.578+247.4)\\$
+?> $5420.10/(25.578+247.4)$
 
 $4$ significant figures: $19.86$
 
@@ -178,7 +182,7 @@ $4$ significant figures: $19.86$
 
 # Question 5: Volume from Density
 
-Determine the volume of an object that has a mass of $455.6\ g$ and a density of $19.3\ g/cm^3$.
+?> Determine the volume of an object that has a mass of $455.6\ g$ and a density of $19.3\ g/cm^3$.
 
 $$\begin{aligned}
 V &= \frac{m}{d}\\
