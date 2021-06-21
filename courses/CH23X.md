@@ -4,9 +4,14 @@
 
 CH 231:
 
-  - Atomic Orbitals
-  - Periodic Table
-    - [Matter](/chem/Matter.md)
+- [Matter](/chem/Matter.md)
+  - Atoms
+    - Subatomic Particles
+      - Electron
+    - Atomic Orbitals
+    - Model
+- Periodic Table
+
 
 CH 232:
 
