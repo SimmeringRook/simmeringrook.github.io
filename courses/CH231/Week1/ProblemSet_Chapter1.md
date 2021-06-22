@@ -268,4 +268,4 @@ $$\frac{3.78\ g}{1}\cdot\frac{1\ mol}{107.87\ g}\cdot\frac{6.022\times 10^{23}\t
 | $P$ | $\frac{6\times 10^{23}\text{ atoms}}{30.97\ g}$ | 5.18 | $1.01\times 10^{23}$ |
 | $Hg$ | $\frac{6\times 10^{23}\text{ atoms}}{200.59\ g}$ | 2.26 | $6.78\times 10^{21}$ |
 | $Bi$ | $\frac{6\times 10^{23}\text{ atoms}}{208.98\ g}$ | 1.87 | $5.39\times 10^{21}$ |
-| $Sr$ | $\frac{6\times 10^{23}\text{ atoms}}{87.62\ g}$ | 0.082 | $5.64\times 10^{20}$ |
+| $Sr$ | $\frac{6\times 10^{23}\text{ atoms}}{87.62\ g}$ | 0.082 | $5.6\times 10^{20}$ |
