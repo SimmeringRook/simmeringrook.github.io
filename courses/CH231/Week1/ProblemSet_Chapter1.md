@@ -1,17 +1,4 @@
-# CH 231: Chapter E, Optional Problems
-
-Problems (by Topic):
-
-- Review Questions
-  - 6, 14-17, 19-22, 29, 34
-- 1.2 Classifying Matter
-  - 35, 42
-- 1.5 Atomic Theory
-  - 57, 64
-- 1.8 Subatomic Particles
-  - 67, 69
-- 1.10 Atoms and the Mole
-  - 85, 87, 89
+# CH 231: Chapter 1, Optional Problems
 
 <br />
 

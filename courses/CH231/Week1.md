@@ -36,4 +36,20 @@
 
 ## Day 3
 
+- Chapter 2
+  - The Nature of Light
+  - Atomic Spectroscopy and the Bohr Model
+  - The Wave Nature of Matter
+    - de Broglie Wavelength
+    - the Uncertainty Principle
+    - Indeterminacy
+
 ## Day 4
+
+- Chapter 2
+  - The Wave Nature of Matter
+    - de Broglie Wavelength
+    - the Uncertainty Principle
+    - Indeterminacy
+  - Quantum Mechanics and the Atom
+- [End-of-Chapter Problems](/courses/CH231/Week1/ProblemSet_Chapter2.md)

@@ -1,16 +1,5 @@
 # CH 231: Chapter E, Optional Problems
 
-Problems (by Topic):
-
-- Units of Measurement
-  - 20, 29, 33
-- Reliability of Measurement and Significant Figures
-  - 39, 41, 47, 49, 51
-- Density
-  - 57
-- Unit Conversions
-  - 61, 69
-
 <br />
 
 # E.2 Units of Measurement
