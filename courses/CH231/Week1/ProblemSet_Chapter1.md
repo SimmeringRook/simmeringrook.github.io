@@ -195,10 +195,10 @@ $$\ $$
 
 ?> Determine the number of protons and the number of neutrons in each isotope.
 
-> - $$\,_{7}^{14} N$$
-> - $$\,_{11}^{23} Na$$
-> - $$\,_{86}^{222} Rn$$
-> - $$\,_{82}^{208} Pb$$
+> - $\,_{7}^{14} N$
+> - $\,_{11}^{23} Na$
+> - $\,_{86}^{222} Rn$
+> - $\,_{82}^{208} Pb$
 
 | Isotope | Protons | Neutrons |
 | --- | --- | --- |
