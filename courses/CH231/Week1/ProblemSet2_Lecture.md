@@ -83,11 +83,11 @@ $$\begin{aligned}
 # Question 4: Dimensional Analysis
 
 ?> Using concepts from Chapter 1, come up with an estimate of the number of atoms in the universe. You may make the following assumptions:
-?>
-?> - All of the atoms in the universe are hydrogen atoms
-?> - The Sun is a typical star composed of pure hydrogen with a density of $1.4\ g/cm^3$ and a radius of $7\times 10^8\ m$.
-?> - Each of the roughly $100$ billion stars in the Milky Way galaxy contain the same number of atoms as our Sun.
-?> - Each of the $10$ billion galaxies in the visible universe contain the same number of atoms as our galaxy.
+
+ - All of the atoms in the universe are hydrogen atoms
+ - The Sun is a typical star composed of pure hydrogen with a density of $1.4\ g/cm^3$ and a radius of $7\times 10^8\ m$.
+ - Each of the roughly $100$ billion stars in the Milky Way galaxy contain the same number of atoms as our Sun.
+ - Each of the $10$ billion galaxies in the visible universe contain the same number of atoms as our galaxy.
 
 $$\begin{aligned}
 \frac{\text{atoms}}{\text{star}} &= \frac{1.4\ g}{cm^3}\cdot\frac{cm^3}{10^{-6}\ m^3}\cdot\frac{4\pi(7\times10^8\ m)^3}{3}\cdot\frac{6.022\times10^{23} \text{ atoms}}{1.008\ g}\\
