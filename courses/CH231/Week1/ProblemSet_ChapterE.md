@@ -218,7 +218,7 @@ Calculate to the correct number of significant figures.
 
 ### Part A
 
-?> $$\frac{9.15}{4.970}$$
+?> $\frac{9.15}{4.970}$
 
 Fewest Significant Figures: 3
 
@@ -226,7 +226,7 @@ $$\frac{9.15}{4.970} = 1.841... = 1.84$$
 
 ### Part B
 
-?> $$1.54\times 0.03060\times 0.69$$
+?> $1.54\times 0.03060\times 0.69$
 
 Fewest Significant Figures: 2
 
@@ -234,7 +234,7 @@ $$1.54\times 0.03060\times 0.69 = 0.03251556 = 3.3\times 10^{-2}$$
 
 ### Part C
 
-?> $$\frac{27.5\times 1.82}{100.04}$$
+?> $\frac{27.5\times 1.82}{100.04}$
 
 Fewest Significant Figures: 3
 
@@ -242,7 +242,7 @@ $$\frac{27.5\times 1.82}{100.04} = 0.0500299... = 5.00\times 10^{-2}$$
 
 ### Part D
 
-?> $$\frac{2.290\times 10^6}{6.7\times 10^4}$$
+?> $\frac{2.290\times 10^6}{6.7\times 10^4}$
 
 Fewest Significant Figures: 2
 
@@ -262,7 +262,7 @@ Calculate to the correct number of significant figures.
 
 ### Part A
 
-?> $$43.7-2.341$$
+?> $43.7-2.341$
 
 Fewest Significant Figures: 3
 
@@ -270,7 +270,7 @@ $$43.7-2.341 = 41.359 = 4.14\times 10$$
 
 ### Part B
 
-?> $$17.6+2.838+2.3+110.77$$
+?> $17.6+2.838+2.3+110.77$
 
 Fewest Significant Figures: 2
 
@@ -278,7 +278,7 @@ $$17.6+2.838+2.3+110.77 = 133.508 = 1.3\times 10^{2}$$
 
 ### Part C
 
-?> $$2.4-1.777$$
+?> $2.4-1.777$
 
 Fewest Significant Figures: 2
 
@@ -286,7 +286,7 @@ $$2.4-1.777 = 0.623 = 6.2\times 10^{-1}$$
 
 ### Part D
 
-?> $$5.99-5.572$$
+?> $5.99-5.572$
 
 Fewest Significant Figures: 3
 
@@ -301,7 +301,7 @@ Calculate to the correct number of significant figures.
 
 ### Part A
 
-?> $$(24.6681\times 2.38)+332.58$$
+?> $(24.6681\times 2.38)+332.58$
 
 Fewest Significant Figures: 3
 
@@ -309,7 +309,7 @@ $$(24.6681\times 2.38)+332.58 = 391.290078 = 3.91\times 10^2$$
 
 ### Part B
 
-?> $$\frac{85.3-21.489}{0.0059}$$
+?> $\frac{85.3-21.489}{0.0059}$
 
 Fewest Significant Figures: 3
 
@@ -317,7 +317,7 @@ $$\frac{85.3-21.489}{0.0059} = 10815.4237... = 1.08\times 10^{4}$$
 
 ### Part C
 
-?> $$\frac{512}{986.7}+5.44$$
+?> $\frac{512}{986.7}+5.44$
 
 Fewest Significant Figures: 2
 
@@ -325,7 +325,7 @@ $$\frac{512}{986.7}+5.44 = 5.958901... = 6.0$$
 
 ### Part D
 
-?> $$\frac{28.7\times 10^5}{48.533}+144.99$$
+?> $\frac{28.7\times 10^5}{48.533}+144.99$
 
 Fewest Significant Figures: 3
 
