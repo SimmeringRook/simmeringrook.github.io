@@ -165,5 +165,22 @@ $2s$, lower energy.
 
 # 2.3: Atomic Spectroscopy
 
+## Question 65
 
-  - 65, 67, 69c
+?> An electron in a hydrogen atom is excited with electrical energy to an excited state with $n=2$. The atom then emits a photon. What is the value of $n$ for the electron following the emission?
+
+An electron excited from the ground state ($n=1$) to the first excited state ($n=2$) will return to the ground state after emitting the photon.
+
+## Question 67
+
+?> According to the quantum-mechanical model for the hydrogen atom, which electron transition produces light with the longer wavelength? $2p\rightarrow 1s$ or $3p \rightarrow 1s$
+
+The energy level of the electron depends solely on $n$, so the $3p \rightarrow 1s$ transition will correspond to a photon emitted with a higher energy. Recalling that higher energy relates to a higher frequency and smaller wavelength ($E=h\nu=\frac{hc}{\lambda}$), the $2p\rightarrow 1s$ transition will correspond to a longer wavelength.
+
+## Question 69
+
+?> Calculate the wavelength of the light emitted when an electron in a hydrogen atom makes each transition and indicate the region of the electromagnetic spectrum (infrared, visible, ultraviolet, etc) where the light is found.
+
+The change in energy for an electron undergoing a transition is given by:
+
+$$\Delta E = (-2.18\times 10^{-18}\ J) \left(\frac{1}{{n_f}^2}-\frac{1}{{n_i}^2}\right)$$
