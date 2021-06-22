@@ -31,7 +31,7 @@
   - Atoms and the Mole
 - [Lecture Problem Set](/courses/CH231/Week1/ProblemSet2_Lecture.md)
 - [Recitation Problem Set](/courses/CH231/Week1/ProblemSet2_Recitation.md)
-- [End-of-Chapter Problems](/courses/CH231/Week1/ProblemSet_ChapterE.md)
+- [End-of-Chapter Problems](/courses/CH231/Week1/ProblemSet_Chapter1.md)
 
 
 ## Day 3
