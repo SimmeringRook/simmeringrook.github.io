@@ -206,33 +206,29 @@ $$\ $$
 
 ## Question 67
 
-Determine the number of protons and the number of neutrons in each isotope.
+?> Determine the number of protons and the number of neutrons in each isotope.
+?>  
+?> - $$\,_{7}^{14} N$$
+?> - $$\,_{11}^{23} Na$$
+?> - $$\,_{86}^{222} Rn$$
+?> - $$\,_{82}^{208} Pb$$
 
-### Part A
-
-?> $$\,_{7}^{14} N$$
-
-<br />
-
-### Part B
-
-?> $$\,_{11}^{23} Na$$
-
-<br />
-
-### Part C
-
-?> $$\,_{86}^{222} Rn$$
-
-<br />
-
-### Part D
-
-?> $$\,_{82}^{208} Pb$$
+| Isotope | Protons | Neutrons |
+| --- | --- | --- |
+| $\,_{7}^{14} N$ | 7 | 7 |
+| $\,_{11}^{23} Na$ | 11 | 12 |
+| $\,_{86}^{222} Rn$ | 86 | 136 |
+| $\,_{82}^{208} Pb$ | 82 | 126 |
 
 <br />
 
 ## Question 69
+
+?> The amount of carbon-14 in ancient artifacts and fossils is often used to establish their age. Determine the number of protons and the number of neutrons in a carbon-14 isotope and write its symbol in the form $\,_{Z}^A X$.
+
+| Isotope | Protons | Neutrons |
+| --- | --- | --- |
+| $\,_{6}^{14} C$ | 6 | 8 |
 
 <br />
 
@@ -243,6 +239,8 @@ Determine the number of protons and the number of neutrons in each isotope.
 $$\ $$
 
 ## Question 85
+
+?> What is the amount, in moles, of each elemental sample?
 
 <br />
 
