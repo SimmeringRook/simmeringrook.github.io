@@ -4,7 +4,7 @@
 
 # Review Questions
 
-$$\ $$
+$\text{ }$
 
 ## Question 6
 
@@ -22,7 +22,7 @@ For example, Hydrogen is an element and $H_2O$ (water) is a compound comprised o
 
 > "In a chemical reaction, matter is neither created nor destroyed."
 
-Chemical reactions cause a substance to change by either altering the state of the substance (boiling water: liquid $\rightarrow$ gas) or through changing the bonds of the comprising elements. The compounds and elements are either breaking apart ($H_2O\rightarrow2H+0$) or bonding together ($2Cu+0_2\rightarrow 2CuO$). These elements have to come from the surrounding system: we cannot heat copper powder in a vacuum (no oxygen) and create Copper oxide; we can seal copper power in a container with oxygen and remove all the oxygen through synthesizing copper oxide, but the resulting mass of the copper oxide will be equal to the sum of the initial masses.
+Chemical reactions cause a substance to change by either altering the state of the substance (boiling water: liquid $\rightarrow$ gas) or through changing the bonds of the comprising elements. The compounds and elements are either breaking apart ($H_2 O \rightarrow 2H+O$) or bonding together ($2Cu + O_2 \rightarrow 2CuO$). These elements have to come from the surrounding system: we cannot heat copper powder in a vacuum (no oxygen) and create Copper oxide; we can seal copper power in a container with oxygen and remove all the oxygen through synthesizing copper oxide, but the resulting mass of the copper oxide will be equal to the sum of the initial masses.
 
 <br />
 
