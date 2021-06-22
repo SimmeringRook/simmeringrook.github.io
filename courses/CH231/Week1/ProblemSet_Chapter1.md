@@ -175,11 +175,11 @@ Statements *a* and *d* violate Statement *b* and that 'atoms of one element cann
 ## Question 64
 
 ?> Which statements about subatomic particles are false?
-?>
-?> - a. Protons and electrons have charges of the same magnitude but opposite sign.
-?> - b. Protons have about the same mass as neutrons.
-?> - c. Some atoms don't have any protons.
-?> - d. Protons and neutrons have charges of the same magnitude but opposite signs.
+
+> - a. Protons and electrons have charges of the same magnitude but opposite sign.
+> - b. Protons have about the same mass as neutrons.
+> - c. Some atoms don't have any protons.
+> - d. Protons and neutrons have charges of the same magnitude but opposite signs.
 
 Statements *c* and *d* are false: Protons bind electrons to an *orbit* to create the simplest atom: hydrogen; Neutrons are neutrally charged (hence the name!).
 
@@ -194,11 +194,11 @@ $$\ $$
 ## Question 67
 
 ?> Determine the number of protons and the number of neutrons in each isotope.
-?>  
-?> - $$\,_{7}^{14} N$$
-?> - $$\,_{11}^{23} Na$$
-?> - $$\,_{86}^{222} Rn$$
-?> - $$\,_{82}^{208} Pb$$
+
+> - $$\,_{7}^{14} N$$
+> - $$\,_{11}^{23} Na$$
+> - $$\,_{86}^{222} Rn$$
+> - $$\,_{82}^{208} Pb$$
 
 | Isotope | Protons | Neutrons |
 | --- | --- | --- |
