@@ -242,10 +242,30 @@ $$\ $$
 
 ?> What is the amount, in moles, of each elemental sample?
 
+| Element | Conversion Factor | mass of sample (in $g$) | Amount (in $mol$) |
+| --- | --- | --- | --- |
+| $Ar$ | $\frac{1\ mol}{39.95\ g}$ | 11.8 | $0.295$ |
+| $Zn$ | $\frac{1\ mol}{65.38\ g}$ | 3.55 | $0.054$ |
+| $Ta$ | $\frac{1\ mol}{180.95\ g}$ | 26.1 | $0.144$ |
+| $Li$ | $\frac{1\ mol}{6.94\ g}$ | 0.211 | $0.030$ |
+
 <br />
 
 ## Question 87
 
+?> How many silver atoms are there in $3.78\ g$ of silver?
+
+$$\frac{3.78\ g}{1}\cdot\frac{1\ mol}{107.87\ g}\cdot\frac{6.022\times 10^{23}\text{ atoms}}{1\ mol} = 2.11\times 10^{22}\text{ atoms of Silver}$$
+
 <br />
 
-## Question 39
+## Question 89
+
+?> Calculate the number of atoms in each sample.
+
+| Element | Conversion Factor | mass of sample (in $g$) | Amount (in $atoms$) |
+| --- | --- | --- | --- |
+| $P$ | $\frac{6\times 10^{23}\text{ atoms}}{30.97\ g}$ | 5.18 | $1.01\times 10^{23}$ |
+| $Hg$ | $\frac{6\times 10^{23}\text{ atoms}}{200.59\ g}$ | 2.26 | $6.78\times 10^{21}$ |
+| $Bi$ | $\frac{6\times 10^{23}\text{ atoms}}{208.98\ g}$ | 1.87 | $5.39\times 10^{21}$ |
+| $Sr$ | $\frac{6\times 10^{23}\text{ atoms}}{87.62\ g}$ | 0.082 | $5.64\times 10^{20}$ |
