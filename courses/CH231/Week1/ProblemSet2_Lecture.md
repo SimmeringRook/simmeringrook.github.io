@@ -2,190 +2,124 @@
 
 <br />
 
-# Question 1: Unit Conversion
+# Question 1: Mass-to-Charge
 
-Convert the following quantities.
+Imagine a unit of charge called the *zorg*. A chemist performs the oil-drop experiment and measures the charge of each drop in zorgs.
+
+| Trial | Charge (zorgs) |
+| --- | --- |
+| 1 | $-4.8\times 10^{-12}$ |
+| 2 | $-9.6\times 10^{-12}$ |
+| 3 | $-6.4\times 10^{-12}$ |
+| 4 | $-1.3\times 10^{-11}$ |
 
 ## Part A
 
-?> $581 K$ to $\newcommand\degC{\,^{\circ}C}\degC$
-
-$$\newcommand\degC{\,^{\circ}C}\begin{aligned}
-\degC &\equiv K - 273.15\\
-&= 581 K - 273.15 K\\
-&= 307.85^{\circ}C \\
-&\Rightarrow 3.08 \times 10^2  \degC
-\end{aligned}$$
+?> Based on the results, what is the charge of the electron in zorgs?
 
 <br />
 
 ## Part B
 
-?> $235\ lbs$ to $g$
-
-$$\begin{aligned}
-1g &\equiv 0.002205\ lbs\\
-&= \frac{235\ lbs}{1}\frac{1g}{0.002205\ lbs}\\
-&= 106594 g \\
-&\Rightarrow 1.07 \times 10^5 g
-\end{aligned}$$
+?> How many electrons are in each of the drops that were measured?
 
 <br />
 
 ## Part C
 
-?> $75 ms$ to $ns$
-
-$$\begin{aligned}
-1 ms &\equiv 1\times 10^3 ns\\
-&= 7.5 \times 10^4 ns\\
-\end{aligned}$$
-
-<br />
-
-## Part D
-
-?> $54 m^2$ to $cm^2$
-
-$$\begin{aligned}
-(1 m)^2 &\equiv (100 cm)^2\\
-&= \frac{54 m^2}{1}\frac{(10^2 cm)^2}{1 m^2}\\
-&= 5.4 \times 10^5 cm^2
-\end{aligned}$$
-
-<br />
-
-## Part E
-
-?> $1250 cm^3$ to $L$
-
-$$\begin{aligned}
-1 L &\equiv 1000 cm^3\\
-&= \frac{1250 cm^3}{1}\frac{1 L}{1000 cm^3}\\
-&= 1.25 L
-\end{aligned}$$
+?> What is the numerical value (in Coulombs) of a zorg?
 
 <hr>
 
 <br />
 
-# Question 2: Accuracy and Precision
+# Question 2: Law of Conservation of Mass
 
-?> A student performs an experiment to determine the density of a sugar solution. They obtain the following results: $1.71\ g/mL$, $1.72 \ g/mL$, $1.69\ g/mL$, and $1.70\ g/mL$. The actual value for the density of the sugar solution is $1.80\ g/mL$. Are their experimental results accurate? Are their experimental results precise?
-
-Accuracy refers to how close the result is to the actual value, while precise refers to how tightly a series of measurements are grouped (reproducibility). Taking a quick average of the students measurements, we obtain a mean value of $1.71\ g/mL$; from this, we can see that the students measurements are precise. All of the student's measurements are below the expected actual value, so, we can say that they are inaccurate.
-
-<hr>
-
-<br />
-
-# Question 3: Significant Figures
-
-How many significant figures are in the following measurements?
-
-## Part A
-
-?> $30.200\ m$
-
-$5$ significant figures: the two digits before the decimal and the three following.
-
-<br />
-
-## Part B
-
-?> $0.03020\ kg$
-
-$4$ significant figures: $3.020$
-
-<br />
+?> Your ten-year-old niece wants to learn some chemistry. You decide to teach her about the law of conservation of mass. "Matter cannot be created or destroyed" you tell her. To show her this, you take $1.00$ g of pure copper powder, weigh it, arrange it in a variety of shapes, and shower her that the mass does not change. You then heat it over a flame for a few minutes and, to your surprise, you find that it then weighs $1.25$ g. To save face, explain what happened, and why the results doesn't violate the law of conservation of mass.
 
 
-## Part C
-
-?> $3200\ lbs$
-
-$2$ significant figures: $3.2$
-
-<br />
-
-## Part D
-
-?> $3.2\times 10^3\ lbs$
-
-$2$ significant figures: $3.2$
-
-<br />
-
-## Part E
-
-?> $3.200 \times 10^3\ lbs$
-
-$4$ significant figures: $3.200$
 
 <hr>
 
 <br />
 
-# Question 4: Significant Figures in Calculations
+# Question 3: Law of Multiple Proportions
 
-What answer should be reported, with the correct number of significant figures, for the following calculation?
+?> The following data was collected for different compounds of nitrogen and oxygen. Show how this data illustrates the Law of Multiple Proportions.
 
-## Part A
+| Compound | Mass of Nitrogen (in g) that combines with $1.0000$ g Oxygen |
+| --- | --- |
+| A | $1.750$ |
+| B | $0.8750$ |
+| C | $0.4375$ |
 
-?> $7821.3+1.258$
 
-$4$ significant figures: $7823$
 
-<br />
-
-## Part B
-
-?> $256.975-25.2$
-
-$3$ significant figures: $232$
+<hr>
 
 <br />
 
-## Part C
+# Question 4: Dimensional Analysis
 
-?> $6.347\times 7.25871$
-
-$4$ significant figures: $46.07$
-
-<br />
-
-## Part D
-
-?> $25.00/5.0$
-
-$2$ significant figures: $5.0$
-
-<br />
-
-## Part E
-
-?> $(438.751-233.8)\times 11.700$
-
-$4$ significant figures: $2398$
-
-<br />
-
-## Part F
-
-?> $5420.10/(25.578+247.4)$
-
-$4$ significant figures: $19.86$
+?> Using concepts from Chapter 1, come up with an estimate of the number of atoms in the universe. You may make the following assumptions:
+?>
+?> - All of the atoms in the universe are hydrogen atoms
+?> - The Sun is a typical star composed of pure hydrogen with a density of $1.4\ g/cm^3$ and a radius of $7\times 10^8\ m$.
+?> - Each of the roughly $100$ billion stars in the Milky Way galaxy contain the same number of atoms as our Sun.
+?> - Each of the $10$ billion galaxies in the visible universe contain the same number of atoms as our galaxy.
 
 <br />
 
 <hr>
 
-# Question 5: Volume from Density
+# Question 5: Chemical Symbols
 
-?> Determine the volume of an object that has a mass of $455.6\ g$ and a density of $19.3\ g/cm^3$.
+?> Write the chemical symbol for the isotope of radium, $Ra$, that has $138$ neutrons.
 
-$$\begin{aligned}
-V &= \frac{m}{d}\\
-&= \frac{455.6\ g}{1}\frac{1\ cm^3}{19.3\ g}\\
-&= 23.6\ cm^3
-\end{aligned}$$
+<br />
+
+<hr>
+
+# Question 6: Converting Mass to Number of Atoms
+
+?> How many atoms are there in a $15.3\ g$ sample of sodium, $Na$?
+
+<br />
+
+<hr>
+
+# Question 7: Converting Moles to Mass
+
+?> What is the mass of $3.0\times 10^{-9}\ mol$ xenon, $Xe$?
+
+<br />
+
+<hr>
+
+# Question 8: Converting Mass to Moles
+
+?> How many moles of aluminum, $Al$, are there in a typical aluminum can ($13\ g$)?
+
+<br />
+
+<hr>
+
+# Question 9: Atomic Mass Units
+
+?> What is the mass of a single atom of $Ne$?
+
+<br />
+
+<hr>
+
+# Question 10: Average Mass of an Element
+
+?> A fictitious element, $Fi$, has three naturally occurring isotopes with the masses and $\%$ abundances given here: $$\begin{aligned} Fi\text{-}31 & \quad 30.875\text{ amu} & 13.6\%\\ Fi\text{-}33 & \quad 32.954\text{ amu} & 43.0\%\\ Fi\text{-}34 & \quad 33.919\text{ amu} & 43.4\%\end{aligned}$$ What is the average atomic mass of $Fi$?
+
+<br />
+
+<hr>
+
+# Question 11: Abundance of Isotopes from Average Mass
+
+?> Another fake element, $Fk$, has an average atomic mass of $115.2\text{ amu}$, and also has three naturally occurring isotopes. Their masses and one of the $\%$ abundances are given below. Find the two missing abundances. $$\begin{aligned} Fk\text{-}113 & \quad 112.65\text{ amu} & 21.8\%\\ Fk\text{-}115 & \quad 114.82\text{ amu} & \,\\ Fk\text{-}118 & \quad 117.32\text{ amu} & \,\end{aligned}$$
