@@ -83,7 +83,7 @@ $$\begin{aligned}
 # Question 4: Dimensional Analysis
 
 ?> Using concepts from Chapter 1, come up with an estimate of the number of atoms in the universe. You may make the following assumptions:
-
+?> <p> </p>
  - All of the atoms in the universe are hydrogen atoms
  - The Sun is a typical star composed of pure hydrogen with a density of $1.4\ g/cm^3$ and a radius of $7\times 10^8\ m$.
  - Each of the roughly $100$ billion stars in the Milky Way galaxy contain the same number of atoms as our Sun.
