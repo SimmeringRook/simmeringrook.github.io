@@ -6,7 +6,11 @@
 
 ?> An isotope of an atom has an atomic number of 38 and mass number of 88. Find the number of protons, neutrons, and electrons in this isotope.
 
+$$Sr$$
 
+- $38$ protons
+- $50$ neutrons
+- $38$ electrons
 
 <br />
 
@@ -56,6 +60,7 @@ Because we are not given the chemical symbol, we begin by identifing the element
 
 ?> What element is defined by the following information? $$p^+=17 \qquad n^\circ=20 \qquad e^-=17$$
 
+$$\,_{17}^{37} Cl$$
 
 <br />
 
@@ -65,6 +70,8 @@ Because we are not given the chemical symbol, we begin by identifing the element
 
 ?> What species is represented by the following information? $$p^+=47 \qquad n^\circ=62 \qquad e^-=46$$
 
+$$\,_{47}^{109} Ag^{1-}$$
+
 <br />
 
 <hr>
@@ -72,6 +79,8 @@ Because we are not given the chemical symbol, we begin by identifing the element
 # Question 6
 
 ?> Calculate the atomic mass of element "X", if it has 2 naturally occurring isotopes with the following masses and natural abundances. $$\begin{aligned} \text{X-107} &\quad 106.90509\text{ amu} & 51.84\%\\ \text{X-109} &\quad 108.90476\text{ amu} & 48.46\% \end{aligned}$$
+
+$$(106.90509\text{ amu})(0.5184) + (108.90476\text{ amu})(0.4846) = 108.2\text{ amu}$$
 
 <br />
 
