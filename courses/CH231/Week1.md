@@ -81,6 +81,7 @@ E_{photon} = - \Delta E = \frac{hc}{\lambda} &= \big(2.18\times 10^{-18}\ J\big)
 \end{aligned}$$
 
 Which is actually how we derive Rydberg's Constant:
+
 ?> $$\begin{aligned}
 R &\equiv \frac{2.18\times 10^{-18}\ J}{(6.62606931\times 10^{-34}\ Js)(2.99792458\times 10^{8} \frac{m}{s}}\\
   & \qquad \qquad = 1.0973731568539 \times 10^7\ \frac{1}{m}\\
