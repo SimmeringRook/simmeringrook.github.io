@@ -139,7 +139,7 @@ $2s$, lower energy.
 
 ## Question 60
 
-?> What are the possible values of $m_\ell$ for each given value of $|ell$?
+?> What are the possible values of $m_\ell$ for each given value of $\ell$?
 
 | $\ell$ | $m_\ell$ |
 | --- | --- |
@@ -183,4 +183,19 @@ The energy level of the electron depends solely on $n$, so the $3p \rightarrow 1
 
 The change in energy for an electron undergoing a transition is given by:
 
-$$\Delta E = (-2.18\times 10^{-18}\ J) \left(\frac{1}{{n_f}^2}-\frac{1}{{n_i}^2}\right)$$
+$$\Delta E = (-2.18\times 10^{-18}\ J) \left(\frac{1}{{n_f}^2}-\frac{1}{{n_i}^2}\right), \qquad E_{photon} = -\Delta E$$
+
+The wavelength of the photon can be found by:
+
+$$E = \frac{hc}{\lambda} \Rightarrow \lambda = \frac{hc}{E}$$
+
+Combining these two formulae, we obtain the generalized expression:
+
+$$\lambda = \frac{hc}{(2.18\times 10^{-18}\ J) \left(\frac{1}{{n_f}^2}-\frac{1}{{n_i}^2}\right)} $$
+
+| $n_i$ | $n_f$ | $\lambda$ (in $nm$) | Region |
+| --- | --- | --- | --- |
+| $n=2$ | $n=1$ | $122$ | ultraviolet |
+| $n=3$ | $n=1$ | $103$ | ultraviolet |
+| $n=4$ | $n=2$ | $486$ | visible |
+| $n=5$ | $n=2$ | $434$ | visible |
