@@ -46,6 +46,7 @@
 
 ### Helpful Relations and Equations
 Wave relations:
+
 ?> $$\begin{aligned}
 c &= \nu\lambda \\
 \\
