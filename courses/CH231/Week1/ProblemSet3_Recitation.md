@@ -29,6 +29,8 @@
 - visible
 - ultraviolet
 
+X-ray, ultraviolet, visible, infrared
+
 <br />
 
 <hr>
