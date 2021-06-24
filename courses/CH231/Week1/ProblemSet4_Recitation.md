@@ -112,5 +112,5 @@ $$\begin{aligned}
 $$\begin{aligned}
 \Delta x &\geq \frac{h}{4\pi \Delta p} \\
 &\geq \frac{6.626\times 10^{-34}\ J\cdot s}{4\pi (0.05)(1.672\times 10^{-27}\ kg)(3.00\times 10^{6}\ m/s)}\\
-&\geq 1.1\times 10^{-14}\ m
+&\geq 2.1\times 10^{-13}\ m
 \end{aligned}$$
