@@ -84,7 +84,7 @@ Which is actually how we derive Rydberg's Constant:
 
 ?> $$\begin{aligned}
 R &\equiv \frac{2.18\times 10^{-18}\ J}{(6.62606931\times 10^{-34}\ Js)(2.99792458\times 10^{8} \frac{m}{s}}\\
-  & \qquad \qquad = 1.0973731568539 \times 10^7\ \frac{1}{m}\\
+  &= 1.0973731568539 \times 10^7\ \frac{1}{m}\\
 \\
 &\quad\Rightarrow \quad R^{-1} = 9.112\times 10^{-8}\ m
 \end{aligned}$$
