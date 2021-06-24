@@ -97,4 +97,6 @@ R &\equiv \frac{2.18\times 10^{-18}\ J}{(6.62606931\times 10^{-34}\ Js)(2.997924
     - the Uncertainty Principle
     - Indeterminacy
   - Quantum Mechanics and the Atom
+- [Lecture Problem Set](/courses/CH231/Week1/ProblemSet4_Lecture.md)
+- [Recitation Problem Set](/courses/CH231/Week1/ProblemSet4_Recitation.md)
 - [End-of-Chapter Problems](/courses/CH231/Week1/ProblemSet_Chapter2.md)
