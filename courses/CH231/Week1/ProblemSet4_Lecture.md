@@ -33,16 +33,17 @@ $$\Delta E = (-2.18\times 10^{-18}\ J) \left(\frac{1}{{n_f}^2} - \frac{1}{{n_i}^
 We are given the frequency of the photon that was emitting during the transition, so we know the value of $\Delta E$. We also know that the electron transitioned from a higher energy level down to $n_f=2$, in order to produce this photon. So, we symbolically solve for $n_i$:
 
 $$\begin{aligned}
-E_{photon} &= (-2.18\times 10^{-18}\ J) \left(\frac{1}{{n_f}^2} - \frac{1}{{n_i}^2}\right) \\
--\frac{E_{photon}}{2.18\times 10^{-18}\ J} &= \left(\frac{1}{{n_f}^2} - \frac{1}{{n_i}^2}\right)\\
+-E_{photon} &= (-2.18\times 10^{-18}\ J) \left(\frac{1}{{n_f}^2} - \frac{1}{{n_i}^2}\right) \\
+\frac{E_{photon}}{2.18\times 10^{-18}\ J} &= \left(\frac{1}{{n_f}^2} - \frac{1}{{n_i}^2}\right)\\
 \\
-\frac{1}{{n_i}^2} &= \frac{1}{{n_f}^2} + \frac{E_{photon}}{2.18\times 10^{-18}\ J} \\
-&= \frac{(2.18\times 10^{-18}\ J)+{n_f}^2E_{photon}}{{n_f}^2(2.18\times 10^{-18}\ J)}\\
+\frac{1}{{n_i}^2} &= \frac{1}{{n_f}^2} - \frac{E_{photon}}{2.18\times 10^{-18}\ J} \\
+&= \frac{(2.18\times 10^{-18}\ J)-{n_f}^2E_{photon}}{{n_f}^2(2.18\times 10^{-18}\ J)}\\
 \\
-{n_i}^2 &= \frac{{n_f}^2(2.18\times 10^{-18}\ J)}{(2.18\times 10^{-18}\ J)+{n_f}^2E_{photon}} \\
-n_i &= \sqrt{\frac{{n_f}^2(2.18\times 10^{-18}\ J)}{(2.18\times 10^{-18}\ J)+{n_f}^2E_{photon}}} \\
-&= \sqrt{\frac{{n_f}^2(2.18\times 10^{-18}\ J)}{(2.18\times 10^{-18}\ J)+{n_f}^2(h\nu)}} \\
-&= \sqrt{\frac{{2}^2(2.18\times 10^{-18}\ J)}{(2.18\times 10^{-18}\ J)+{2}^2(6.626\times 10^{-34}\ J\cdot s)(7.547\times 10^{14}\ Hz)}} \\
+{n_i}^2 &= \frac{{n_f}^2(2.18\times 10^{-18}\ J)}{(2.18\times 10^{-18}\ J)-{n_f}^2E_{photon}} \\
+n_i &= \sqrt{\frac{{n_f}^2(2.18\times 10^{-18}\ J)}{(2.18\times 10^{-18}\ J)-{n_f}^2E_{photon}}} \\
+&= \sqrt{\frac{{n_f}^2(2.18\times 10^{-18}\ J)}{(2.18\times 10^{-18}\ J)-{n_f}^2(h\nu)}} \\
+&= \sqrt{\frac{{2}^2(2.18\times 10^{-18}\ J)}{(2.18\times 10^{-18}\ J)-{2}^2(6.626\times 10^{-34}\ J\cdot s)(7.547\times 10^{14}\ Hz)}} \\
+&= 7
 \end{aligned}$$
 
 
@@ -52,7 +53,7 @@ n_i &= \sqrt{\frac{{n_f}^2(2.18\times 10^{-18}\ J)}{(2.18\times 10^{-18}\ J)+{n_
 
 # Question 4
 
-?> The laser used in CD players to read the disk uses an energy of $2.55\times 10^{-19}\ J/photon$. What is the wavelength of light utilized by this laser?
+?> Answer the following questions regarding the uncertainty principle.
 
 <br />
 
