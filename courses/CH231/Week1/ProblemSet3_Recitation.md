@@ -4,9 +4,8 @@
 
 # Question 1
 
-> Lasers are utilized in modern tattoo removal processes to lighten the appearance of unwanted tattoos. The most common tattoo removal laser utilizes light with a wavelength of $1064\ nm$. What is the energy and frequency of the laser?
+?> Lasers are utilized in modern tattoo removal processes to lighten the appearance of unwanted tattoos. The most common tattoo removal laser utilizes light with a wavelength of $1064\ nm$. What is the energy and frequency of the laser?
 
-**Recall**: $$c=\nu\lambda, \qquad E = h\nu = \frac{hc}{\lambda}$$
 
 <br />
 
@@ -14,17 +13,8 @@
 
 # Question 2
 
-> Laser light shows commonly utilize an emerald-green laser in performances, which has a wavelength of $532\ nm$. What is the energy of the laser? Would this laser have sufficient energy to eject an electron off of a calcium surface, which has a binding energy of $2.71\ eV$?
+?> Laser light shows commonly utilize an emerald-green laser in performances, which has a wavelength of $532\ nm$. What is the energy of the laser? Would this laser have sufficient energy to eject an electron off of a calcium surface, which has a binding energy of $2.71\ eV$?
 
-"X" is called the *chemical symbol*, it is the unique short hand for an element.
-
-| Element | Chemical Symbol |
-| --- | --- |
-| Mercury | $Hg$ |
-| Chlorine | $Cl$ |
-| Scandium | $Sc$ |
-| Bromine | $Br$ |
-| Selenium | $Se$ |
 
 <br />
 
@@ -32,21 +22,12 @@
 
 # Question 3
 
-?> Determine the number of protons, neutrons, and electrons in the following: $$\,_{29}^{65}X$$
+?> Arrange the following types of electromagnetic radiation in order of increasing wavelength:
 
-Recall that:
-
-$$\,_{Z}^A X \equiv \begin{cases}
-A &\rightarrow\text{ Mass number:} &\text{ number of protons + number of neutrons}\\
-Z &\rightarrow\text{ Atomic number:} &\text{ number of protons in nucleus}\\
-X &\rightarrow\text{ Chemical Symbol:} &\text{ the unique short hand for an element}
-\end{cases}$$
-
-Because we are not given the chemical symbol, we begin by identifing the element using the given atomic number ($Z$): $29$. Element $29$ on the Periodic table is $Cu$ (Copper) and has:
-
-- $29$ protons
-- $36$ neutrons
-- $29$ electrons
+> - infrared
+- X-ray
+- visible
+- ultraviolet
 
 <br />
 
@@ -54,9 +35,7 @@ Because we are not given the chemical symbol, we begin by identifing the element
 
 # Question 4
 
-?> What element is defined by the following information? $$p^+=17 \qquad n^\circ=20 \qquad e^-=17$$
-
-$$\,_{17}^{37} Cl$$
+?> The laser used in CD players to read the disk uses an energy of $2.55\times 10^{-19}\ J/photon$. What is the wavelength of light utilized by this laser?
 
 <br />
 
