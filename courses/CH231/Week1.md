@@ -43,6 +43,8 @@
     - de Broglie Wavelength
     - the Uncertainty Principle
     - Indeterminacy
+- [Lecture Problem Set](/courses/CH231/Week1/ProblemSet3_Lecture.md)
+- [Recitation Problem Set](/courses/CH231/Week1/ProblemSet3_Recitation.md)
 
 ### Helpful Relations and Equations
 Wave relations:
