@@ -1,10 +1,14 @@
-Thomas J. Knudson
-
-Physical Address
-
-knudsont@oregonstate.edu
-
-https://simmeringrook.github.io/#/
+---
+title: "Thomas J. Knudson"
+author:
+- "My Physical Address"
+- "knudsont@oregonstate.edu"
+- "https://simmeringrook.github.io/#/"
+header-includes: |
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead[CO,CE]{Knudson}
+---
 
 ## Education
 
@@ -81,70 +85,23 @@ The goal of this independent project was to find at what distance from a Black H
 
 ## Coursework
 
-### Physics
-
-*Graduate*
-
-* Statistical Mechanics
-* General Relativity
-* Atomic, Molecular, and Optical Physics
-* Mathematical Physics
-
-*Senior*
-
-* Electromagnetism
-* Quantum Mechanics
-* Thermodynamics and
-* Astrophysics
-* Electronics Lab
-* Physical Optics (and Lab)
-
-### Mathematics
-
-* Calculus
-* Linear Algebra
-* Differential Geometry
-* Differential Equations
-* Discrete Mathematics
-
-## Summary of Qualifications
-
-* Experience Mentor in guiding classmates and underclassmen in learning and understanding new topics
-* Organized and facilitated study groups and online collaborative spaces
-* 4th Year Undergraduate in Physics BS (with Mathematics Minor) at Oregon State University
+| Physics | Mathematics | Computer Science |
+| --- | --- | --- |
+| General Relativity | Differential & Integral Calculus (up through Multivariable & Vector) | Intermediate C# |
+| Atomic, Molecular, and Optical Physics | Linear Algebra | Data Structures & Algorithms |
+| Electromagnetism | Differential Geometry | C++ |
+| Quantum Mechanics | Differential Equations | Database Design |
+| Thermodynamics and Statistical Mechanics | Discrete Mathematics | Responsive Web Design |
+| Astrophysics | |
+| Electronics Lab | |
+| Physical Optics (w/ Lab) |
+| Computational Lab (Python)
 
 ## Skills and Proficiencies
 
-Operating Systems and Command Line
-
-* Windows 7-10
-* Linux
-* macOS
-
-<br />
-
-Typesetting and Document Creation
-
-* 10 years of experience with Microsoft Office
-* LaTeX, including custom environments
-* markdown, pandoc
-
-<br />
-
-Programming Languages
-
-* Java
-* C#
-* C++
-* Python
-  * VPython, Matplotlib, NumPy
-* HTML, CSS
-* PHP
-* Javascript
-
-<br />
-
-Other
-
+* Windows, Linux, and macOS Operating Systems and CLI
+* markdown, pandoc, and LaTeX (including custom environments)
+* Object Oriented Programming Languages: Java, C#, C++, Python
+* HTML, CSS, PHP
 * git
 * Mathematica
