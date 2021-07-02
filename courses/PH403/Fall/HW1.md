@@ -1,19 +1,17 @@
 ---
 title: "Differential Scattering of Neutrinos about a Schwarzschild Black Hole (Working Title)"
-author: Thomas Knudson
+author:
+  - Thomas Knudson `\\\\`{=latex} Department of Physics, OSU `\\\\`{=latex} knudsont@oregonstate.edu
+  - Dr. Kathryn Hadley (Research Advisor) `\\\\`{=latex} Department of Physics, OSU `\\\\`{=latex} Kathryn.Hadley@oregonstate.edu
+geometry:
+ - a4paper
+ - margin=2cm
 header-includes: |
     \usepackage{fancyhdr}
     \pagestyle{fancy}
     \fancyhead[RO,RE]{PH 403, HW 1}
     \fancyhead[CO,CE]{Knudson}
 ---
-
-## Advisor
-
-Dr. Kathryn Hadley
-
-* Department of Physics, Oregon State University
-* Kathryn.Hadley@oregonstate.edu
 
 ## Main Goal
 
@@ -49,6 +47,8 @@ A program (or script) that can take properties of an object (mass, angular momen
     * Facilitates quick porting from one document type to another: e.g. markdown to LaTeX
 * [GitHub](https://github.com/)
   * Version control software to serve as a external off-site backup and to facilitate copies of documents at/before major milestones.
+
+\pagebreak
 
 ## Timeline
 
@@ -124,7 +124,7 @@ $$\ $$
 
 $$\ $$
 
-##### Stage 6: Finalize
+#### Stage 6: Finalize
 
 * Duration
   * Winter 2022

@@ -4,6 +4,9 @@ author:
 - "My Physical Address"
 - "knudsont@oregonstate.edu"
 - "https://simmeringrook.github.io/#/"
+geometry:
+ - a4paper
+ - margin=2cm
 header-includes: |
     \usepackage{fancyhdr}
     \pagestyle{fancy}
