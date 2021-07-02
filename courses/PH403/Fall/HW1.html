@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>HW1</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="differential-scattering-of-neutrinos-about-a-schwarzschild-black-hole-working-title">Differential Scattering of Neutrinos about a Schwarzschild Black Hole (Working Title)</h1>
+<p>PH 403: Thesis, Homework 1</p>
+<p>Thomas Knudson</p>
+<h2 id="advisor">Advisor</h2>
+<p>Dr. Kathryn Hadley</p>
+<ul>
+<li>Department of Physics, Oregon State University</li>
+<li>Kathryn.Hadley@oregonstate.edu</li>
+</ul>
+<h3 id="main-goal">Main Goal</h3>
+<p>Determine if there exists (and where) a minimum stable orbit for Neutrinos above the event horizon of a Schwarzschild (non-rotating, uncharged) black hole. This will be accomplished through:</p>
+<ul>
+<li>Solving the geodesic equation(s) using parameters that describe the properties of Neutrinos</li>
+<li>Writing computer code to simulate and visualize the geodesics obtained</li>
+</ul>
+<h4 id="additionaloptional-goals">Additional/Optional Goals</h4>
+<p>Time permitting, the next series of goals involve examining similar orbits with different models of Black Holes and the inclusion of other low mass particles:</p>
+<ul>
+<li>Neutrinos and Kerr (rotating) black holes</li>
+<li>Charged particles and Reissner–Nordström (charged) black holes
+<ul>
+<li>Most likely requires familiarity with Relativistic Electrodynamics</li>
+</ul></li>
+<li>low mass particles and Kerr-Newman (rotating and charged) black holes</li>
+</ul>
+<h3 id="expected-outcome">Expected Outcome</h3>
+<p>A program (or script) that can take properties of an object (mass, angular momentum, energy, and charge) and model the possible orbits about a black hole.</p>
+<h3 id="materialsequipment">Materials/Equipment</h3>
+<ul>
+<li>Computer</li>
+<li>Plotting Software
+<ul>
+<li><a href="https://www.wolfram.com/mathematica/">Mathematica</a>
+<ul>
+<li>Requires license but can perform Computer Aided Algebra and provides an easier to read code file for interpretation of steps.</li>
+</ul></li>
+<li><a href="https://www.python.org/">Python 3</a> with <a href="https://matplotlib.org/">MatplotLib</a> and <a href="https://numpy.org/">NumPy</a>
+<ul>
+<li>Open source but equations and variables must be encoded using programming syntax (effects ease of readability).</li>
+</ul></li>
+</ul></li>
+<li><a href="https://atom.io/">Atom</a>/Text Editor
+<ul>
+<li>Most files will most likely be created as markdown documents. Emphasis on quick construction and words onto a page. Formatting and beautification can occur later. Also supports LaTeX rendering for easy to read mathematical expressions.</li>
+</ul></li>
+<li><a href="https://pandoc.org/">pandoc</a>
+<ul>
+<li>Facilitates quick porting from one document type to another: e.g. markdown to LaTeX</li>
+</ul></li>
+<li><a href="https://github.com/">GitHub</a>
+<ul>
+<li>Version control software to serve as a external off-site backup and to facilitate copies of documents at/before major milestones.</li>
+</ul></li>
+</ul>
+<h3 id="timeline">Timeline</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>Stage</th>
+<th>Status</th>
+<th>Goals</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Spring 2020 - July 2021</td>
+<td>Background Research</td>
+<td>Nearing Completion</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>July 2021</td>
+<td>Prototype Model</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>August 2021</td>
+<td>Use Model</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Fall 2021</td>
+<td>Draft Thesis</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Fall 2021 - Winter 2022</td>
+<td>Expand/Refine</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Winter 2022</td>
+<td>Finalize</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Spring 2022</td>
+<td>Present</td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="stage-1-background-research">Stage 1: Background Research</h5>
+<ul>
+<li>Duration
+<ul>
+<li>Spring 2020 - Present</li>
+<li>The project is currently at the end of Stage 1 and is expected to be completed by the second week of July.</li>
+</ul></li>
+<li>Goal(s)
+<ul>
+<li>Perform background research on General Relativity (to understand question and be able to interpret results)</li>
+<li>Literature
+<ul>
+<li>Main: <a href="https://www.eftaylor.com/exploringblackholes/"><em>Exploring Black Holes: An Introduction to General Relativity</em></a> by Edwin F. Taylor and John Archibald Wheeler</li>
+<li>Additional references:
+<ul>
+<li><em>Gravitation</em> by Misner, Thorne, and Wheeler</li>
+<li><em>Spacetime Geometry</em> by Sean Carroll</li>
+<li><em>Gravity: An Introduction to General Relativity</em> by James Hartle</li>
+<li><em>Differential Forms and the Geometry of General Relativity</em> by Tevian Dray</li>
+</ul></li>
+</ul></li>
+<li>Oregon State University
+<ul>
+<li>MTH 434: Differential Geometry
+<ul>
+<li>Further expansion of mathematical knowledge and prerequisite course for MTH 437/537</li>
+</ul></li>
+<li>MTH 547: General Relativity
+<ul>
+<li>Introduction to curved spacetime from understanding underlying geometry. Discusses both the static and maximally extended solutions to Einstein’s equations.</li>
+</ul></li>
+<li>PH 401: Research
+<ul>
+<li>Weekly/Bi-monthly meetings during the/each Term to discuss concepts and establish knowledge</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>A (remote) meeting will be set no later than 16 July to discuss the inclusion of the impact parameter in the Schwarzschild line element and its effect on the geodesics; the conclusion of this meeting will mark the transition from Stage 1 to Stage 2.</p>
+<p><br /></p>
+<h5 id="stage-2-prototype-model">Stage 2: Prototype Model</h5>
+<ul>
+<li>Duration
+<ul>
+<li>July 2021</li>
+</ul></li>
+<li>Goal(s)</li>
+<li>Solve equations for Light and verify model is consistent with known results and expectations</li>
+<li>Document construction method of model and capabilities</li>
+</ul>
+<p><br /></p>
+<ul>
+<li>Stage 3: Use Model [August 2021]
+<ul>
+<li>Obtain parameters for Neutrinos</li>
+<li>Analyze Results
+<ul>
+<li>Construct initial set of figures and caption</li>
+</ul></li>
+<li>Meet with Dr. Hadley
+<ul>
+<li>Present model and brief write up of findings</li>
+<li>Assess results and sense making</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Progression through Stage 2 and 3 is expected to be quick to allow maximal time for writing the Thesis. The meeting with Dr. Hadley to evaluate findings is key to occur before the start of Fall term to allow for pivot of project/project goal, if necessary.</p>
+<ul>
+<li>Stage 4: Draft of Thesis [Fall 2021]
+<ul>
+<li>Complete a Lab Report-like write up of model and findings</li>
+</ul></li>
+<li>Stage 5: Expand and Refine [Fall 2021 - Winter 2022]
+<ul>
+<li>Any additional research to provide background for the Thesis</li>
+<li>If before Winter Term: Begin progress towards Stretch Goals</li>
+<li>February 2022 will mark the freeze on new content (any outstanding additional goals will not be added to the draft)</li>
+</ul></li>
+</ul>
+<h5 id="stage-6-finalize-winter-2022">Stage 6: Finalize [Winter 2022]</h5>
+<ul>
+<li>Complete adjustments to Thesis</li>
+<li>Begin creation of PowerPoint presentation</li>
+</ul>
+</body>
+</html>
