@@ -15,11 +15,15 @@ CH 231:
 
 CH 232:
 
-  - Placeholder
+  - [Cumulative Reference Sheet](/courses/CH232/CumulativeReferenceSheet.md)
+  - Problem Solving Strategies
+    - [Thermochemistry](/courses/CH232/ThermochemistryProbelmSolving.md)
 
 CH 233:
 
-  - Placeholder
+  - Cumulative Reference Sheet
+  - Problem Solving Strategies
+    - Acids and Bases
 
 ## Course
 
