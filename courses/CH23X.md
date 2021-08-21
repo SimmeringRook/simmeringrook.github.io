@@ -17,7 +17,7 @@ CH 232:
 
   - [Cumulative Reference Sheet](/courses/CH232/CumulativeReferenceSheet.md)
   - Problem Solving Strategies
-    - [Thermochemistry](/courses/CH232/ThermochemistryProbelmSolving.md)
+    - [Thermochemistry](/courses/CH232/ThermochemistryProblemSolving.md)
 
 CH 233:
 
