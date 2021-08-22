@@ -32,10 +32,13 @@ Order of precedence is the order in which they are stated:
 > For elements that don't have their states described above, their states can be inferred from the application of the rules above and by resolving the other elements in the compound first.
 
 <br />
+<br />
 
->[!TIP] For simplicity, one can note that Rules 1 and 2 can be summarized inside Rule 3.
+>[!TIP] For simplicity, note that Rules 1 and 2 are summarized by Rule 3.
 
 <!-- div:title-panel -->
+
+<br />
 
 ## Oxidation and Reduction Review
 
@@ -48,35 +51,67 @@ First, recall what definitions for the terminology:
 | Oxidizing Agent | The substance that causes the oxidation of another substance. This substance will be reduced in the reaction: it gains electrons from the other substance. |
 | Reducing Agent | The substance that causes the reduction of another substance. This substance will be oxidized in the reaction: it losses electrons to the other substance. |
 
+<!-- div:left-panel -->
+
 Now, let's consider the simple Redox reaction that creates table salt ($NaCl$).
+
+<!-- div:right-panel -->
 
 $$2Na(s) + Cl_2(g) \rightarrow 2 NaCl(s)$$
 
+<!-- div:left-panel -->
+
 Beginning with the left side of the equation, we note that both reactants present are either free elements ($Cl_2$) or neutral monoatomic ions ($Na$):
+
+<!-- div:right-panel -->
 
 $$\underbrace{2Na(s)}_{0}, \qquad \underbrace{Cl_2(g)}_{0}$$
 
+<!-- div:left-panel -->
+
 After the reaction occurs, we note that the resulting product is neutral in charge (not an ion). By rule 3, the compound has an oxidation state of $0$. Then, applying rule 4 (the next applicable rule), $Na$ is a Group 1A metal in a compound and therefor has an oxidation state of $+1$.
+
+<!-- div:right-panel -->
 
 $$\underbrace{NaCl}_{0} = \underbrace{Na}_{+1} + \underbrace{Cl}_{-1}$$
 
+<!-- div:left-panel -->
+
 We can then rewrite the chemical equation with these oxidation states noted and verify we have a logical statement (each side is equal to the other):
+
+<!-- div:right-panel -->
 
 $$\underbrace{2Na(s)}_{0}+\underbrace{Cl_2(g)}_{0}\rightarrow 2 \underbrace{\underbrace{Na}_{+1}\underbrace{Cl}_{-1}}_{0}(s)$$
 
-> The combination of 2 moles of solid Sodium with 1 mole of Chlorine gas causes an Oxidation-Reduction reaction. Sodium gives up an electron to Chlorine when forming a bond. The sodium is oxidized while the chlorine is reduced to create sodium chloride.
+<!-- div:left-panel -->
+
+The combination of 2 moles of solid Sodium with 1 mole of Chlorine gas causes an Oxidation-Reduction reaction. Sodium gives up an electron to Chlorine when forming a bond. The sodium is oxidized while the chlorine is reduced to create sodium chloride.
+
+<!-- div:right-panel -->
 
 | Chemical Equation | Oxidized | Reduced | Oxidizing Agent | Reducing Agent |
 | -- | - | - | - | - |
 | $$2Na(s) + Cl_2(g) \rightarrow 2 NaCl(s)$$ | $$\underbrace{Na}_{0\rightarrow\ +1}$$ | $$\underbrace{Cl}_{0\rightarrow\ -1}$$ | $$\underbrace{Cl}_{\text{gains electron}}$$ | $$\underbrace{Na}_{\text{looses electron}}$$ |
 
+<!-- div:title-panel -->
+
+<br /> <hr>
+
 # Balancing Redox Equations
 
 In summary, these problems are just applying the Law of Mass Conservation alongside conservation of charge.
 
+<!-- div:left-panel -->
+
+The process of ensuring charge conservation is typically given in most of these situations (see example to the right/below and the previous section). Examining Redox of compounds inside aqueous solutions adds a complication: $H_2O(\ell)$ can disassociate into protons, $H^+$ (or Hydronium ions as $H_3O^+$, depending on preference), and Hydrogen Oxide, $OH^-$.
+
+<!-- div:right-panel -->
+
 >[!NOTE|label:Recall] Conservation of mass (Law of Mass Conservation) is just balancing a chemical equation. E.g. balance the following: $$Na + Cl_2 \rightarrow NaCl$$ Note two chlorines present on the left hand side; at a minimum, we need 2 $NaCl$ to ensure all chlorine atoms are accounted for. $$Na+Cl_2\rightarrow 2NaCl$$ Now that chlorine is resolved, we have too few $Na$ on the reactant side; increasing the amount of $Na$ accordingly, we obtain the balanced chemical equation (all atoms are accounted for): $$2Na + Cl_2 \rightarrow 2NaCl$$
 
-The process of ensuring charge conservation is typically given in most of these situations (see example above and the previous section). Examining Redox of compounds inside aqueous solutions adds a complication: $H_2O(\ell)$ can disassociate into protons, $H^+$ (or Hydronium ions as $H_3O^+$, depending on preference), and Hydrogen Oxide, $OH^-$.
+<!-- div:title-panel -->
+
+<br /> <hr>
 
 ## General Algorithm
 
