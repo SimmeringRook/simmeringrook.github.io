@@ -1,5 +1,7 @@
 # Identifying Ox-Redox Reactions, Oxidizing Agents, and Reducing Agents
 
+<br />
+
 ## Rules of Assigning Oxidation States
 
 Order of precedence is the order in which they are stated:
@@ -93,7 +95,7 @@ If the solution is non-obvious:
 
 <!-- div:title-panel -->
 
-#### Step 0
+>[!NOTE|style:flat|label:Step 0|iconVisibility:hidden]
 
 <!-- div:left-panel -->
 
@@ -105,9 +107,9 @@ First, we notice that solid Chromium is reacting with Hydronium ions contained i
 
 <!-- div:title-panel -->
 
-#### Step 1
+>[!NOTE|style:flat|label:Step 1|iconVisibility:hidden] Assign [oxidation states](#rules-of-assigning-oxidation-states).
 
-?> Assign [oxidation states](#rules-of-assigning-oxidation-states).
+<br />
 
 <!-- div:left-panel -->
 
@@ -124,9 +126,11 @@ Since the hydrogen decreases in oxidation states, it is reduced during the react
 
 <!-- div:title-panel -->
 
-#### Step 2
+<br />
 
-?> Classify and Split the chemical equation into two separate equations.
+>[!NOTE|style:flat|label:Step 2|iconVisibility:hidden] Classify and Split the chemical equation into two separate equations.
+
+<br />
 
 <!-- div:left-panel -->
 
@@ -144,12 +148,14 @@ Since the hydrogen decreases in oxidation states, it is reduced during the react
 
 >[!TIP|label:Aside] We can see that through mass conservation, the simple solution is to increase the coefficient on the Hydronium Ion to 2. $$2H^+ (aq) + Cr(s) \rightarrow H_2 (g) + Cr^{2+} (aq)$$ This would then balance the charges on each side of the reaction (as well as total oxidation states). Let's continue the example explicitly in order to verify this prediction.
 
-#### Step 3
+<br />
 
-?> Balance each equation, individually, with respect to mass:
+>[!NOTE|style:flat|label:Step 3|iconVisibility:hidden] Balance each equation, individually, with respect to mass:
     1. Balance everything not $H$ or $O$.
     2. Balance $O$ by adding $H_2O (\ell)$.
     3. Balance $H$ by adding $H^+$ (or $H_3O^+$, if desired)
+
+<br />
 
 <!-- div:left-panel -->
 
@@ -171,9 +177,7 @@ $$2H^+(aq) \rightarrow H_2 (g)$$
 
 <!-- div:title-panel -->
 
-#### Step 4
-
-?> Balance (each equation) with respect to charge by adding $e^-$.
+>[!NOTE|style:flat|label:Step 4|iconVisibility:hidden] Balance (each equation) with respect to charge by adding $e^-$.
 
 <!-- div:left-panel -->
 
@@ -201,18 +205,14 @@ $$\underbrace{2H^+(aq) + 2e^-}_{2(+1)-2=0}\rightarrow\underbrace{H_2 (g)}_{0}$$
 
 <!-- panels:end -->
 
-#### Step 5
-
-?> Scale each equation such that the number of $e^-$ in each equation are equal.
+>[!NOTE|style:flat|label:Step 5|iconVisibility:hidden] Scale each equation such that the number of $e^-$ in each equation are equal.
 
 By inspection, we can see that there are equal numbers of electrons, on each side, in each equation:
 
 $$Cr (s) \rightarrow Cr^{2+} (aq)+ 2e^-, \qquad 2H^+(aq) + 2e^-\rightarrow H_2 (g)$$
 
 
-#### Step 6
-
-?> Recombine equations and simplify. Verify.
+>[!NOTE|style:flat|label:Step 6|iconVisibility:hidden] Recombine equations and simplify. Verify.
 
 $$\begin{aligned}
 Cr (s) &\rightarrow Cr^{2+} (aq)+ 2e^-\\
