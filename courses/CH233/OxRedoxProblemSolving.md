@@ -2,7 +2,13 @@
 
 <br />
 
+<!-- panels:start -->
+
+<!-- div:title-panel -->
+
 ## Rules of Assigning Oxidation States
+
+<!-- div:left-panel -->
 
 Order of precedence is the order in which they are stated:
 
@@ -20,10 +26,16 @@ Order of precedence is the order in which they are stated:
     4. Group 6A $=-2$
     4. Group 5A $=-3$
 
+<!-- div:right-panel -->
+
 >[!ATTENTION|style:flat|label:The third rule must always be followed]
 > For elements that don't have their states described above, their states can be inferred from the application of the rules above and by resolving the other elements in the compound first.
 
+<br />
+
 >[!TIP] For simplicity, one can note that Rules 1 and 2 can be summarized inside Rule 3.
+
+<!-- div:title-panel -->
 
 ## Oxidation and Reduction Review
 
@@ -84,8 +96,6 @@ If the solution is non-obvious:
 5. Scale each equation such that the number of $e^-$ in each equation are equal.
 6. Recombine equations and simplify.
     - Verify.
-
-<!-- panels:start -->
 
 <!-- div:title-panel -->
 
