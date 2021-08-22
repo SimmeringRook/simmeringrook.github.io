@@ -21,7 +21,7 @@ The conceptual version of these problems revolve around answering where energy f
 | $\Delta W = 0$ | isobaric, isochoric |
 
 | System | Interpretation |
-| --- | --- |
+| - | ----- |
 | closed | Contents are constant; e.g. the number of particles or moles of the substance cannot change. |
 | open | Contents are not necessarily constant. E.g., liquid water doesn't change, but a gas will diffuse into the surroundings |
 | external | The surroundings most likely have an impact on the process: E.g., ".. the external atmospheric pressure .." will effect the amount of net work done by a process. |
@@ -39,7 +39,7 @@ $$\Delta E_{total} = \Delta E_{surroundings} + \Delta E_{system} = 0$$
 When these problems focus on the change in energy of the system, two of types of energy will be specified and the third unknown. This ultimately is just a Thermodynamic coating on the algebriac statement: $x = y + z$.
 
 | Goal | Given | Relation |
-| --- | --- | --- |
+| -- | - | - |
 | The heat absorbed/emitted by the system | $\Delta E$, $\Delta W$ | $\Delta Q = \Delta E - \Delta W$ |
 | The work done on/by the system | $\Delta E$, $\Delta Q$ | $\Delta W = \Delta E - \Delta Q$ |
 | The energy change of the system | $\Delta W$, $\Delta Q$ | $\Delta E = \Delta W + \Delta Q$ |
@@ -122,7 +122,7 @@ For questions involving only one substance present, everything is given except o
 $$ Q = m C \Delta T$$
 
 | Goal | Given | Relation |
-| --- | --- | --- |
+| -- | - | - |
 | The heat absorbed/emitted by the process | $m$, $C$, $\Delta T$ | $$Q = m C \Delta T$$ |
 | The specific heat of the substance | $Q$, $m$, $\Delta T$ | $$C = \frac{Q}{m\Delta T}$$ |
 | The finial temperature of the substance | $Q$, $m$, $C$, $T_i$ | $$T_f = \frac{Q}{mC}+T_i$$ |
