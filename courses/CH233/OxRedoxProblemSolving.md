@@ -18,9 +18,10 @@ Order of precedence is the order in which they are stated:
     4. Group 6A $=-2$
     4. Group 5A $=-3$
 
-!> **The third rule must always be followed.** For elements that don't have their states described above, their states can be inferred from the application of the rules above and by resolving the other elements in the compound first.
+>[!ATTENTION|style:flat|label:The third rule must always be followed]
+> For elements that don't have their states described above, their states can be inferred from the application of the rules above and by resolving the other elements in the compound first.
 
-?> For simplicity, one can note that Rules 1 and 2 can be summarized inside Rule 3.
+>[!TIP] For simplicity, one can note that Rules 1 and 2 can be summarized inside Rule 3.
 
 ## Oxidation and Reduction Review
 
@@ -59,7 +60,7 @@ $$\underbrace{2Na(s)}_{0}+\underbrace{Cl_2(g)}_{0}\rightarrow 2 \underbrace{\und
 
 In summary, these problems are just applying the Law of Mass Conservation alongside conservation of charge.
 
-> Recall that conservation of mass (Law of Mass Conservation) is just balancing a chemical equation. E.g. balance the following: $$Na + Cl_2 \rightarrow NaCl$$ Note two chlorines present on the left hand side; at a minimum, we need 2 $NaCl$ to ensure all chlorine atoms are accounted for. $$Na+Cl_2\rightarrow 2NaCl$$ Now that chlorine is resolved, we have too few $Na$ on the reactant side; increasing the amount of $Na$ accordingly, we obtain the balanced chemical equation (all atoms are accounted for): $$2Na + Cl_2 \rightarrow 2NaCl$$
+>[!NOTE|label:Recall] Conservation of mass (Law of Mass Conservation) is just balancing a chemical equation. E.g. balance the following: $$Na + Cl_2 \rightarrow NaCl$$ Note two chlorines present on the left hand side; at a minimum, we need 2 $NaCl$ to ensure all chlorine atoms are accounted for. $$Na+Cl_2\rightarrow 2NaCl$$ Now that chlorine is resolved, we have too few $Na$ on the reactant side; increasing the amount of $Na$ accordingly, we obtain the balanced chemical equation (all atoms are accounted for): $$2Na + Cl_2 \rightarrow 2NaCl$$
 
 The process of ensuring charge conservation is typically given in most of these situations (see example above and the previous section). Examining Redox of compounds inside aqueous solutions adds a complication: $H_2O(\ell)$ can disassociate into protons, $H^+$ (or Hydronium ions as $H_3O^+$, depending on preference), and Hydrogen Oxide, $OH^-$.
 
@@ -88,7 +89,7 @@ If the solution is non-obvious:
 
 ### Acidic Solution Example
 
-> **Statement:** Given the following reaction, ensure that it is balanced. $$H^+ (aq) + Cr(s) \rightarrow H_2 (g) + Cr^{2+} (aq)$$
+>[!NOTE|style:flat|label:Problem Statement|iconVisibility:hidden] Given the following reaction, ensure that it is balanced. $$H^+ (aq) + Cr(s) \rightarrow H_2 (g) + Cr^{2+} (aq)$$
 
 <!-- div:title-panel -->
 
@@ -100,7 +101,7 @@ First, we notice that solid Chromium is reacting with Hydronium ions contained i
 
 <!-- div:right-panel -->
 
-?> If not immediately clear from the problem statement, this step serves as a clue for more complex problem statements; E.g., the reactants and products are described by name (and not equation) and possibly done so that the pH or pOH of the aqueous solution needs to be determined before balancing of the equation can be completed.
+>[!TIP] If not immediately clear from the problem statement, this step serves as a clue for more complex problem statements; E.g., the reactants and products are described by name (and not equation) and possibly done so that the pH or pOH of the aqueous solution needs to be determined before balancing of the equation can be completed.
 
 <!-- div:title-panel -->
 
@@ -141,7 +142,7 @@ Since the hydrogen decreases in oxidation states, it is reduced during the react
 
 <!-- div:title-panel -->
 
-?> Aside: We can see that through mass conservation, the simple solution is to increase the coefficient on the Hydronium Ion to 2. $$2H^+ (aq) + Cr(s) \rightarrow H_2 (g) + Cr^{2+} (aq)$$ This would then balance the charges on each side of the reaction (as well as total oxidation states). Let's continue the example explicitly in order to verify this prediction.
+>[!TIP|label:Aside] We can see that through mass conservation, the simple solution is to increase the coefficient on the Hydronium Ion to 2. $$2H^+ (aq) + Cr(s) \rightarrow H_2 (g) + Cr^{2+} (aq)$$ This would then balance the charges on each side of the reaction (as well as total oxidation states). Let's continue the example explicitly in order to verify this prediction.
 
 #### Step 3
 
