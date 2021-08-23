@@ -273,6 +273,8 @@ Cr (s) &\rightarrow Cr^{2+} (aq)+ 2e^-\\
 
 First, we notice that solid Chromium (III) hydroxide is being dissolved into a Chlorine oxide aqueous solution. Seeing the presence of $OH^-$, we don't immediately omit Step 3.4 of our algorithm.
 
+<br />
+
 <!-- div:title-panel -->
 
 >[!NOTE|style:flat|label:Step 1|iconVisibility:hidden] Assign [oxidation states](#rules-of-assigning-oxidation-states).
