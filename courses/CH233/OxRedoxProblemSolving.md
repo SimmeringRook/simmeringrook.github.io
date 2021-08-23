@@ -95,7 +95,7 @@ The process of ensuring charge conservation is typically given in most of these 
 
 >[!NOTE|label:Recall] Conservation of mass (Law of Mass Conservation) is just balancing a chemical equation. E.g. balance the following: $$Na + Cl_2 \rightarrow NaCl$$ Note two chlorines present on the left hand side; at a minimum, we need 2 $NaCl$ to ensure all chlorine atoms are accounted for. $$Na+Cl_2\rightarrow 2NaCl$$ Now that chlorine is resolved, we have too few $Na$ on the reactant side; increasing the amount of $Na$ accordingly, we obtain the balanced chemical equation (all atoms are accounted for): $$2Na + Cl_2 \rightarrow 2NaCl$$
 
-<!-- div:title-panel -->
+<!-- panels:end -->
 
 <br /> <hr>
 
@@ -118,9 +118,13 @@ If the solution is non-obvious:
 6. Recombine equations and simplify.
     - Verify.
 
-<!-- div:title-panel -->
+### Examples
 
-### Acidic Solution Example
+<!-- tabs:start -->
+
+<!-- tab:Acidic Solution -->
+
+<!-- panels:start -->
 
 >[!NOTE|style:flat|label:Problem Statement|iconVisibility:hidden] Given the following reaction, ensure that it is balanced. $$H^+ (aq) + Cr(s) \rightarrow H_2 (g) + Cr^{2+} (aq)$$
 
@@ -171,7 +175,7 @@ Since the hydrogen decreases in oxidation states, it is reduced during the react
 
 | Reduction Equation | Reduced | Oxidizing Agent |
 | --- | --- | --- |
-| $$H^+(aq) \rightarrow H_2 (g)$$ | $$\underbrace{H^+(aq)}_{+1}\rightarrow\underbrace{H_2 (g)}_{0}$$ |  $$\underbrace{H^+(aq)}_{\text{looses electrons}}$$ |
+| $$H^+(aq) \rightarrow H_2 (g)$$ | $$\underbrace{H^+(aq)}_{+1}\rightarrow\underbrace{H_2 (g)}_{0}$$ |  $$\underbrace{H^+(aq)}_{\text{gains electrons}}$$ |
 
 <!-- div:right-panel -->
 
@@ -234,7 +238,7 @@ $$ x + 2 = 0 \rightarrow x=-2$$
 
 $$\underbrace{2H^+(aq) + 2e^-}_{2(+1)-2=0}\rightarrow\underbrace{H_2 (g)}_{0}$$
 
-<!-- panels:end -->
+<!-- div:title-panel -->
 
 >[!NOTE|style:flat|label:Step 5|iconVisibility:hidden] Scale each equation such that the number of $e^-$ in each equation are equal.
 
@@ -242,6 +246,7 @@ By inspection, we can see that there are equal numbers of electrons, on each sid
 
 $$Cr (s) \rightarrow Cr^{2+} (aq)+ 2e^-, \qquad 2H^+(aq) + 2e^-\rightarrow H_2 (g)$$
 
+<br />
 
 >[!NOTE|style:flat|label:Step 6|iconVisibility:hidden] Recombine equations and simplify. Verify.
 
@@ -251,3 +256,143 @@ Cr (s) &\rightarrow Cr^{2+} (aq)+ 2e^-\\
 \hline
 2H^+(aq) + Cr(s) &\rightarrow Cr^{2+} (aq) + H_2 (g)
 \end{aligned}$$
+
+<!-- panels:end -->
+
+<!-- tab:Basic Solution -->
+
+<!-- panels:start -->
+
+>[!NOTE|style:flat|label:Problem Statement|iconVisibility:hidden] Given the following reaction, ensure that it is balanced. $$Cr(OH)_3 (s) + ClO^- (aq) \rightarrow {CrO_4}^{2-} (aq) + Cl_2 (g)$$
+
+<!-- div:title-panel -->
+
+>[!NOTE|style:flat|label:Step 0|iconVisibility:hidden]
+
+<!-- div:left-panel -->
+
+First, we notice that solid Chromium (III) hydroxide is being dissolved into a Chlorine oxide aqueous solution. Seeing the presence of $OH^-$, we don't immediately omit Step 3.4 of our algorithm.
+
+<!-- div:right-panel -->
+
+<!-- div:title-panel -->
+
+>[!NOTE|style:flat|label:Step 1|iconVisibility:hidden] Assign [oxidation states](#rules-of-assigning-oxidation-states).
+
+<br />
+
+<!-- div:left-panel -->
+
+| Substance | Oxidation State | Reasoning |
+| - | - | -- |
+| $$OH^-$$ | $$\underbrace{\bigg(\underbrace{O}_{-2}\underbrace{H}_{+1}\bigg)^-}_{-2+1=-1}$$ | Rule 3: The sum of oxidation states must be the charge of the ion. Rule 5: Hydrogen is present, therefore it is given the state $+1$. |
+| $$Cr(OH)_3$$ | $$\underbrace{\underbrace{Cr}_{+3}(\underbrace{OH}_{-1})_3}_{+3+3(-1)=0}$$ | Rule 3: The charge of compound is neutral. Using the oxidation state of $OH^-$, we find the oxidation state required of $Cr$. |
+| $$ClO^-$$ | $$\underbrace{\bigg(\underbrace{Cl}_{+1}\underbrace{O}_{-2}\bigg)^-}_{+1-2=-1}$$ | Rule 3: Charge of compound is $-1$. Rule 5: $O$ has oxidation state of $-2$. |
+| $${CrO_4}^{2-}$$ | $$\underbrace{\bigg(\underbrace{Cr}_{6}\underbrace{O_4}_{4(-2)}\bigg)^{2-}}_{6-8=-2}$$ | Rule 3: Ionized compound with charge $-2$. Rule 5: $O$ has oxidation state of $-2$. |
+| $$Cl_2$$ | $$0$$ | Rule 3: Neutral compound |
+
+<!-- div:right-panel -->
+
+$$\underbrace{Cr}_{+3}(OH)_3(s) + \underbrace{Cl}_{-1}O^- (aq) \rightarrow {\underbrace{Cr}_{+6}O_4}^{2-} (aq) + \underbrace{Cl_2 (g)}_{0}$$
+
+Since the chlorine decreases in oxidation states, it is reduced during the reaction from $ClO^- (aq)$ to $Cl_2 (g)$. Similarly, Chromium increases in oxidation states, which corresponds to being oxidized in the transition from $Cr(OH)_3(s)$ to ${CrO_4}^{2-} (aq)$.
+
+<!-- div:title-panel -->
+
+<br />
+
+>[!NOTE|style:flat|label:Step 2|iconVisibility:hidden] Classify and Split the chemical equation into two separate equations.
+
+<br />
+
+<!-- div:left-panel -->
+
+| Oxidation Equation | Oxidized | Reducing Agent |
+| --- | --- | --- |
+| $$Cr(OH)_3 (s) \rightarrow {CrO_4}^{2-} (aq)$$ | $$\underbrace{Cr}_{+3}(OH)_3(s)\rightarrow{\underbrace{Cr}_{+6}O_4}^{2-} (aq)$$ |  $$\underbrace{Cr}_{\text{looses electrons}}$$ |
+
+<!-- div:right-panel -->
+
+| Reduction Equation | Reduced | Oxidizing Agent |
+| --- | --- | --- |
+| $$ClO^- (aq) \rightarrow Cl_2 (g)$$ | $$\underbrace{Cl}_{-1}O^- (aq) \rightarrow \underbrace{Cl_2 (g)}_{0}$$ |  $$\underbrace{Cl}_{\text{gains electrons}}$$ |
+
+<!-- div:title-panel -->
+
+<br />
+
+>[!NOTE|style:flat|label:Step 3|iconVisibility:hidden] Balance each equation, individually, with respect to mass:
+>    1. Balance everything not $H$ or $O$.
+>    2. Balance $O$ by adding $H_2O (\ell)$.
+>    3. Balance $H$ by adding $H^+$ (or $H_3O^+$, if desired)
+
+<br />
+
+<!-- div:left-panel -->
+
+**Oxidation**
+
+$$Cr(OH)_3 (s) \rightarrow {CrO_4}^{2-} (aq)$$
+
+We have equal amounts of Chromium on both sides and there's no $O$ or $H$ to balance.
+
+<!-- div:right-panel -->
+
+**Reduction**
+
+$$ClO^- (aq) \rightarrow Cl_2 (g)$$
+
+We only have $H$ present, so we balance by increasing the number of $H^+$ on the left such that the total amount of hydrogen is equal on both sides of the reduction reaction.
+
+$$2H^+(aq) \rightarrow H_2 (g)$$
+
+<!-- div:title-panel -->
+
+>[!NOTE|style:flat|label:Step 4|iconVisibility:hidden] Balance (each equation) with respect to charge by adding $e^-$.
+
+<!-- div:left-panel -->
+
+**Oxidation**
+
+$$\underbrace{Cr (s)}_{0}\rightarrow\underbrace{Cr^{2+} (aq)}_{+2}$$
+
+Since the left-hand side of the oxidation reaction is neutral, we need to make the right-hand side neutral by adding 2 $e^-$:
+
+$$ 0 = 2 + x \rightarrow x=-2$$
+
+$$\underbrace{Cr (s)}_{0}\rightarrow\underbrace{Cr^{2+} (aq)+ 2e^-}_{+2-2=0}$$
+
+<!-- div:right-panel -->
+
+**Reduction**
+
+$$\underbrace{2H^+(aq)}_{2(+1)}\rightarrow\underbrace{H_2 (g)}_{0}$$
+
+This is the opposite case of the oxidation reaction: we have 2 positive charges on the reactant side of the reduction reaction and a neutral charge on the products; therefore, we need to add $2e^-$ to the reactant side to balance charges.
+
+$$ x + 2 = 0 \rightarrow x=-2$$
+
+$$\underbrace{2H^+(aq) + 2e^-}_{2(+1)-2=0}\rightarrow\underbrace{H_2 (g)}_{0}$$
+
+<!-- div:title-panel -->
+
+>[!NOTE|style:flat|label:Step 5|iconVisibility:hidden] Scale each equation such that the number of $e^-$ in each equation are equal.
+
+By inspection, we can see that there are equal numbers of electrons, on each side, in each equation:
+
+$$Cr (s) \rightarrow Cr^{2+} (aq)+ 2e^-, \qquad 2H^+(aq) + 2e^-\rightarrow H_2 (g)$$
+
+<br />
+
+>[!NOTE|style:flat|label:Step 6|iconVisibility:hidden] Recombine equations and simplify. Verify.
+
+$$\begin{aligned}
+Cr (s) &\rightarrow Cr^{2+} (aq)+ 2e^-\\
+2H^+(aq) + 2e^- &\rightarrow H_2 (g)\\
+\hline
+2H^+(aq) + Cr(s) &\rightarrow Cr^{2+} (aq) + H_2 (g)
+\end{aligned}$$
+
+<!-- panels:end -->
+
+<!-- tabs:end -->
