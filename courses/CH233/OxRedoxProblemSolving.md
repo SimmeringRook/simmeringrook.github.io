@@ -51,47 +51,33 @@ First, recall what definitions for the terminology:
 | Oxidizing Agent | The substance that causes the oxidation of another substance. This substance will be reduced in the reaction: it gains electrons from the other substance. |
 | Reducing Agent | The substance that causes the reduction of another substance. This substance will be oxidized in the reaction: it losses electrons to the other substance. |
 
-<!-- div:left-panel -->
+<br />
 
 Now, let's consider the simple Redox reaction that creates table salt ($NaCl$).
 
-<!-- div:right-panel -->
-
 $$2Na(s) + Cl_2(g) \rightarrow 2 NaCl(s)$$
-
-<!-- div:left-panel -->
 
 Beginning with the left side of the equation, we note that both reactants present are either free elements ($Cl_2$) or neutral monoatomic ions ($Na$):
 
-<!-- div:right-panel -->
-
 $$\underbrace{2Na(s)}_{0}, \qquad \underbrace{Cl_2(g)}_{0}$$
-
-<!-- div:left-panel -->
 
 After the reaction occurs, we note that the resulting product is neutral in charge (not an ion). By rule 3, the compound has an oxidation state of $0$. Then, applying rule 4 (the next applicable rule), $Na$ is a Group 1A metal in a compound and therefor has an oxidation state of $+1$.
 
-<!-- div:right-panel -->
-
 $$\underbrace{NaCl}_{0} = \underbrace{Na}_{+1} + \underbrace{Cl}_{-1}$$
 
-<!-- div:left-panel -->
-
 We can then rewrite the chemical equation with these oxidation states noted and verify we have a logical statement (each side is equal to the other):
-
-<!-- div:right-panel -->
 
 $$\underbrace{2Na(s)}_{0}+\underbrace{Cl_2(g)}_{0}\rightarrow 2 \underbrace{\underbrace{Na}_{+1}\underbrace{Cl}_{-1}}_{0}(s)$$
 
 <!-- div:left-panel -->
 
-The combination of 2 moles of solid Sodium with 1 mole of Chlorine gas causes an Oxidation-Reduction reaction. Sodium gives up an electron to Chlorine when forming a bond. The sodium is oxidized while the chlorine is reduced to create sodium chloride.
-
-<!-- div:right-panel -->
-
 | Chemical Equation | Oxidized | Reduced | Oxidizing Agent | Reducing Agent |
 | -- | - | - | - | - |
 | $$2Na(s) + Cl_2(g) \rightarrow 2 NaCl(s)$$ | $$\underbrace{Na}_{0\rightarrow\ +1}$$ | $$\underbrace{Cl}_{0\rightarrow\ -1}$$ | $$\underbrace{Cl}_{\text{gains electron}}$$ | $$\underbrace{Na}_{\text{looses electron}}$$ |
+
+<!-- div:right-panel -->
+
+The combination of 2 moles of solid Sodium with 1 mole of Chlorine gas causes an Oxidation-Reduction reaction. Sodium gives up an electron to Chlorine when forming a bond. The sodium is oxidized while the chlorine is reduced to create sodium chloride.
 
 <!-- div:title-panel -->
 
@@ -99,9 +85,9 @@ The combination of 2 moles of solid Sodium with 1 mole of Chlorine gas causes an
 
 # Balancing Redox Equations
 
-In summary, these problems are just applying the Law of Mass Conservation alongside conservation of charge.
-
 <!-- div:left-panel -->
+
+In summary, these problems are just applying the Law of Mass Conservation alongside conservation of charge.
 
 The process of ensuring charge conservation is typically given in most of these situations (see example to the right/below and the previous section). Examining Redox of compounds inside aqueous solutions adds a complication: $H_2O(\ell)$ can disassociate into protons, $H^+$ (or Hydronium ions as $H_3O^+$, depending on preference), and Hydrogen Oxide, $OH^-$.
 
@@ -183,22 +169,22 @@ Since the hydrogen decreases in oxidation states, it is reduced during the react
 | --- | --- | --- |
 | $$Cr(s) \rightarrow Cr^{2+} (aq)$$ | $$\underbrace{Cr (s)}_{0}\rightarrow\underbrace{Cr^{2+} (aq)}_{+2}$$ |  $$\underbrace{Cr(s)}_{\text{looses electrons}}$$ |
 
-<!-- div:right-panel -->
-
 | Reduction Equation | Reduced | Oxidizing Agent |
 | --- | --- | --- |
 | $$H^+(aq) \rightarrow H_2 (g)$$ | $$\underbrace{H^+(aq)}_{+1}\rightarrow\underbrace{H_2 (g)}_{0}$$ |  $$\underbrace{H^+(aq)}_{\text{looses electrons}}$$ |
 
-<!-- div:title-panel -->
+<!-- div:right-panel -->
 
 >[!TIP|label:Aside] We can see that through mass conservation, the simple solution is to increase the coefficient on the Hydronium Ion to 2. $$2H^+ (aq) + Cr(s) \rightarrow H_2 (g) + Cr^{2+} (aq)$$ This would then balance the charges on each side of the reaction (as well as total oxidation states). Let's continue the example explicitly in order to verify this prediction.
+
+<!-- div:title-panel -->
 
 <br />
 
 >[!NOTE|style:flat|label:Step 3|iconVisibility:hidden] Balance each equation, individually, with respect to mass:
-    1. Balance everything not $H$ or $O$.
-    2. Balance $O$ by adding $H_2O (\ell)$.
-    3. Balance $H$ by adding $H^+$ (or $H_3O^+$, if desired)
+>    1. Balance everything not $H$ or $O$.
+>    2. Balance $O$ by adding $H_2O (\ell)$.
+>    3. Balance $H$ by adding $H^+$ (or $H_3O^+$, if desired)
 
 <br />
 
