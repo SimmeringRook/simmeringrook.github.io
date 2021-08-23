@@ -269,11 +269,9 @@ Cr (s) &\rightarrow Cr^{2+} (aq)+ 2e^-\\
 
 >[!NOTE|style:flat|label:Step 0|iconVisibility:hidden]
 
-<!-- div:left-panel -->
+<br />
 
 First, we notice that solid Chromium (III) hydroxide is being dissolved into a Chlorine oxide aqueous solution. Seeing the presence of $OH^-$, we don't immediately omit Step 3.4 of our algorithm.
-
-<!-- div:right-panel -->
 
 <!-- div:title-panel -->
 
@@ -334,7 +332,17 @@ Since the chlorine decreases in oxidation states, it is reduced during the react
 
 $$Cr(OH)_3 (s) \rightarrow {CrO_4}^{2-} (aq)$$
 
-We have equal amounts of Chromium on both sides and there's no $O$ or $H$ to balance.
+We already have equal amounts of Chromium on both sides. There's one less oxygen atom on the left, so we add one $H2_O (\ell)$ to the left-hand side:
+
+$$Cr(OH)_3 (s) +H_2O(\ell)\rightarrow {CrO_4}^{2-} (aq)$$
+
+Now $O$ is balanced, we see $5$ hydrogen on the left and none on the right:
+
+$$Cr(OH)_3 (s) +H_2O(\ell)\rightarrow {CrO_4}^{2-} (aq) + 5H^+(aq)$$
+
+And now because our solution is basic, we add $OH^-(aq)$ to both sides to neutralize the added $H^+ (aq)$:
+
+$$Cr(OH)_3 (s) + H_2O(\ell) + 5OH^- (aq)\rightarrow {CrO_4}^{2-} (aq) + 5H^+(aq) + 5OH^- (aq)$$
 
 <!-- div:right-panel -->
 
@@ -342,11 +350,29 @@ We have equal amounts of Chromium on both sides and there's no $O$ or $H$ to bal
 
 $$ClO^- (aq) \rightarrow Cl_2 (g)$$
 
-We only have $H$ present, so we balance by increasing the number of $H^+$ on the left such that the total amount of hydrogen is equal on both sides of the reduction reaction.
+Prioritizing non-oxygen or non-hydrogen, we see that the ratio of chlorine atoms is off.
 
-$$2H^+(aq) \rightarrow H_2 (g)$$
+$$2ClO^- (aq) \rightarrow Cl_2 (g)$$
+
+Now we need to add 2 $H_2O(\ell)$ to the right-hand side such that oxygen is balanced.
+
+$$2ClO^- (aq) \rightarrow Cl_2 (g) + 2H_2O(\ell)$$
+
+Similarly, we now need $4H^+ (aq)$ on the left to bring hydrogen back into balance.
+
+$$2ClO^- (aq) + 4H^+ (aq) \rightarrow Cl_2 (g) + 2H_2O(\ell)$$
+
+Finally, we neutralize the added $H^+ (aq)$ with equal amounts of $OH^-(aq)$ to both sides (solution is basic).
+
+$$2ClO^- (aq) + 4H^+ (aq) + 4OH^-(aq) \rightarrow Cl_2 (g) + 2H_2O(\ell) + 4 OH^-(aq)$$
 
 <!-- div:title-panel -->
+
+<br />
+
+>[!TIP] It might be advantageous to simplify quantities of $H^+$ and $OH^-$ on each side of the reactions before proceeding to Step 4. This example delays that process until the end of Step 5 as an example of how unwieldy these reaction equations can become.
+
+<br />
 
 >[!NOTE|style:flat|label:Step 4|iconVisibility:hidden] Balance (each equation) with respect to charge by adding $e^-$.
 
@@ -354,44 +380,68 @@ $$2H^+(aq) \rightarrow H_2 (g)$$
 
 **Oxidation**
 
-$$\underbrace{Cr (s)}_{0}\rightarrow\underbrace{Cr^{2+} (aq)}_{+2}$$
+$$\underbrace{Cr(OH)_3}_{0} (s) + \underbrace{H_2O}_{0}(\ell) + \underbrace{5OH^-}_{-5} (aq)\rightarrow \underbrace{{CrO_4}^{2-}}_{-2} (aq) + \underbrace{5H^+}_{+5}(aq) + \underbrace{5OH^-}_{-5}$$
 
-Since the left-hand side of the oxidation reaction is neutral, we need to make the right-hand side neutral by adding 2 $e^-$:
+Summing the charges on each side, we see the left has a $-5$ charge while the right only has a $-2$ charge; therefore we need to add $3e^-$ to the right such that the charges are balanced.
 
-$$ 0 = 2 + x \rightarrow x=-2$$
-
-$$\underbrace{Cr (s)}_{0}\rightarrow\underbrace{Cr^{2+} (aq)+ 2e^-}_{+2-2=0}$$
+$$Cr(OH)_3 (s) + H_2O(\ell) + 5OH^- (aq)\rightarrow {CrO_4}^{2-} (aq) + 5H^+(aq) + 5OH^- (aq) + 3e^-$$
 
 <!-- div:right-panel -->
 
 **Reduction**
 
-$$\underbrace{2H^+(aq)}_{2(+1)}\rightarrow\underbrace{H_2 (g)}_{0}$$
+$$\underbrace{2ClO^-}_{-2} (aq) + \underbrace{4H^+}_{+4} (aq) + \underbrace{4OH^-}_{-4} (aq) \rightarrow \underbrace{Cl_2}_{0} (g) + \underbrace{2H_2O}_{0}(\ell) + \underbrace{4OH^-}_{-4}$$
 
-This is the opposite case of the oxidation reaction: we have 2 positive charges on the reactant side of the reduction reaction and a neutral charge on the products; therefore, we need to add $2e^-$ to the reactant side to balance charges.
+In this case, we see the left sums to $-2$ while the right sums to $-4$. Adding $2e^-$ to the left, we balance charges:
 
-$$ x + 2 = 0 \rightarrow x=-2$$
-
-$$\underbrace{2H^+(aq) + 2e^-}_{2(+1)-2=0}\rightarrow\underbrace{H_2 (g)}_{0}$$
+$$2ClO^- (aq) + 4H^+ (aq) + 4OH^-(aq) + 2e^- \rightarrow Cl_2 (g) + 2H_2O(\ell) + 4 OH^-(aq)$$
 
 <!-- div:title-panel -->
 
 >[!NOTE|style:flat|label:Step 5|iconVisibility:hidden] Scale each equation such that the number of $e^-$ in each equation are equal.
 
-By inspection, we can see that there are equal numbers of electrons, on each side, in each equation:
+Recalling that we added $3e^-$ to one equation and $2e^-$ to the other, we note that the least common multiple is $6$; therefore, we scale each equation by the corresponding factor:
 
-$$Cr (s) \rightarrow Cr^{2+} (aq)+ 2e^-, \qquad 2H^+(aq) + 2e^-\rightarrow H_2 (g)$$
+<!-- div:left-panel -->
+
+**Oxidation**
+
+$$2\bigg[Cr(OH)_3 (s) + H_2O(\ell) + 5OH^- (aq)\rightarrow {CrO_4}^{2-} (aq) + 5H^+(aq) + 5OH^- (aq) + 3e^-\bigg]$$
+
+$$2Cr(OH)_3 (s) + 2H_2O(\ell) + 10OH^- (aq)\rightarrow 2{CrO_4}^{2-} (aq) + 10H^+(aq) + 10OH^- (aq) + 6e^-$$
+
+Before moving forward, let's take a moment to simplify some of the compounds present, as the length of these equations are getting unwieldy. Combining the $H^+$ and $OH^-$ on the right, we obtain $10 H_2O$. Subtracting the $H_2O$ from the left, we further simplify and end with the following expression:
+
+$$2Cr(OH)_3 (s) + 10OH^- (aq)\rightarrow 2{CrO_4}^{2-} (aq) + 8H_2O(\ell) + 6e^-$$
+
+<!-- div:right-panel -->
+
+**Reduction**
+
+$$3\bigg[2ClO^- (aq) + 4H^+ (aq) + 4OH^-(aq) + 2e^- \rightarrow Cl_2 (g) + 2H_2O(\ell) + 4 OH^-(aq)\bigg]$$
+
+$$6ClO^- (aq) + 12H^+ (aq) + 12OH^-(aq) + 6e^- \rightarrow 3Cl_2 (g) + 6H_2O(\ell) + 12 OH^-(aq)$$
+
+Applying a similar simplification as done for the Oxidation equation, we combine the $H^+$ and $OH^-$ and subtract the smaller quantity of $H_2O$ to obtain:
+
+$$6ClO^- (aq) + 6H_2O(\ell) + 6e^- \rightarrow 3Cl_2 (g) + 12 OH^-(aq)$$
+
+<!-- div:title-panel -->
 
 <br />
 
 >[!NOTE|style:flat|label:Step 6|iconVisibility:hidden] Recombine equations and simplify. Verify.
 
 $$\begin{aligned}
-Cr (s) &\rightarrow Cr^{2+} (aq)+ 2e^-\\
-2H^+(aq) + 2e^- &\rightarrow H_2 (g)\\
+2Cr(OH)_3 (s) + 10OH^- (aq) &\rightarrow 2{CrO_4}^{2-} (aq) + 8H_2O(\ell) + 6e^-\\
+6ClO^- (aq) + 6H_2O(\ell) + 6e^- &\rightarrow 3Cl_2 (g) + 12 OH^-(aq)\\
 \hline
-2H^+(aq) + Cr(s) &\rightarrow Cr^{2+} (aq) + H_2 (g)
+2Cr(OH)_3 (s) + 6ClO^- (aq) &\rightarrow 2{CrO_4}^{2-} (aq) + 3Cl_2 (g) + 2H_2O(\ell) + 2 OH^- (aq)
 \end{aligned}$$
+
+This equation can be simplified by omiting the $H_2O(\ell)$, since each compound is in aqueous solution:
+
+$$2Cr(OH)_3 (s) + 6ClO^- (aq) \rightarrow 2{CrO_4}^{2-} (aq) + 3Cl_2 (g) + 2 OH^-(aq)$$
 
 <!-- panels:end -->
 
