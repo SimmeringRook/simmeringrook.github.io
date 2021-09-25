@@ -230,3 +230,88 @@ $$\begin{aligned}
 \int_{0}^{2\pi}{\sin^2{x}\sin{2x}dx} &= 0\\
 \int_{0}^{2\pi}{\cos^2{x}\sin{2x}dx} &= 0
 \end{aligned}$$
+
+\pagebreak
+
+# Question 3
+
+> Consider the two states $\ket{\psi} = 3i\ket{\phi_1}+\ket{\phi_2}$ and $\ket{\chi} = \frac{1}{\sqrt{2}} \bigg( i\ket{\phi_1}+\ket{\phi_2} \bigg)$, where $\ket{\phi_1}$ and $\ket{\phi_2}$ form a complete and orthonormal basis.
+
+## Part A
+
+> Calculate $\braket{\psi}{\psi}$, $\braket{\psi}{\psi}$, $\braket{\chi}{\psi}$, $\braket{\psi}{\chi}$, and $\braket{\chi}{\chi}$. Are the scalar products of $\braket{\chi}{\psi}$ and $\braket{\psi}{\chi}$ equal?
+
+$$\begin{aligned}
+\braket{\psi}{\psi} &= 3i^2 \braket{\phi_1}{\phi_1} + \braket{\phi_2}{\phi_2}\\
+&= -3 + 1 = -2
+\end{aligned}$$
+
+$$\begin{aligned}
+\braket{\chi}{\psi} &= \frac{3i^2}{\sqrt{2}} + \frac{1}{\sqrt{2}}\\
+&= \frac{-3 + 1}{\sqrt{2}} = -\sqrt{2}
+\end{aligned}$$
+
+$$\begin{aligned}
+\braket{\psi}{\chi} &= \frac{(-3i)(-i)}{\sqrt{2}} + \frac{1}{\sqrt{2}}\\
+&= \frac{3i^2 + 1}{\sqrt{2}} = -\sqrt{2}
+\end{aligned}$$
+
+$$\begin{aligned}
+\braket{\chi}{\chi} &= \frac{(-i)(i)}{2} + \frac{1}{2}\\
+&= \frac{1+1}{2} = 1
+\end{aligned}$$
+
+The scalar products of $\braket{\chi}{\psi}$ and $\braket{\psi}{\chi}$ are equal in this case because the result is a real number and taking the conjugate of a pure real number leaves it unchanged: $\braket{\chi}{\psi}=\braket{\psi}{\chi}^*=-\sqrt{2}$.
+
+## Part B
+
+> Calculate $\braket{\psi+\chi}{\psi+\chi}$.
+
+$$\begin{aligned}
+\ket{\psi}+\ket{\chi} &= \left(3i-\frac{i}{\sqrt{2}}\right)\ket{\phi_1} + \frac{\sqrt{2}+1}{\sqrt{2}}\ket{\phi_2}\\
+&=i\frac{3\sqrt{2}-1}{\sqrt{2}}\ket{\phi_1} + \frac{\sqrt{2}+1}{\sqrt{2}}\ket{\phi_2}\\
+&=\frac{1}{2}\left(i(6-\sqrt{2})\ket{\phi_1} + (2+\sqrt{2})\ket{\phi_2}\right)
+\end{aligned}$$
+
+$$\begin{aligned}
+\braket{\psi+\chi}{\psi+\chi} &= \left[\frac{1}{2}\left(i(6-\sqrt{2})\ket{\phi_1} + (2+\sqrt{2})\ket{\phi_2}\right)\right]^* \left[\frac{1}{2}\left(i(6-\sqrt{2})\ket{\phi_1} + (2+\sqrt{2})\ket{\phi_2}\right)\right]\\
+&= \frac{1}{4} \left[-i^2(6-\sqrt{2})^2+(2+\sqrt{2})^2\right] \\
+&= \frac{1}{4} \left[(36-12\sqrt{2}+2)+(4+4\sqrt{2}+2)\right]\\
+&= \frac{1}{2} \left[(18+1+2+1)+(-6+2)\sqrt{2}\right] \\
+&= \frac{1}{2} \left[22-4\sqrt{2}\right] \\
+&= 11-2\sqrt{2}
+\end{aligned}$$
+
+## Part C
+
+> Calculate $\ket{\psi}\bra{\chi}$ and $\ket{\chi}\bra{\psi}$. Are they equal?
+
+Since the outer product does not result in a scalar value, the two outer products will not be equal as they are Hermitian Adjoints of eachother: not only is the product the complex conjugate, it is also the transpose.
+
+$$\begin{aligned}
+\ket{\psi}\bra{\chi} &= \frac{1}{\sqrt{2}} \bigg(3i^2\ket{\phi_1}\bra{\phi_1} + 3i\ket{\phi_1}\bra{\phi_2} + i\ket{\phi_2}\bra{\phi_1} + \ket{\phi_2}\bra{\phi_2}\bigg)\\
+&\dot{=} \begin{pmatrix}
+-3 & 3i \\
+i & 1
+\end{pmatrix}
+\end{aligned}$$
+
+$$\begin{aligned}
+\ket{\chi}\bra{\psi} &= \frac{1}{\sqrt{2}} \bigg((-3i)(-i)\ket{\phi_1}\bra{\phi_1} -i\ket{\phi_1}\bra{\phi_2} - 3i\ket{\phi_2}\bra{\phi_1} + \ket{\phi_2}\bra{\phi_2}\bigg)\\
+&\dot{=} \begin{pmatrix}
+-3 & -i \\
+-3i & 1
+\end{pmatrix}
+\end{aligned}$$
+
+$$\ket{\psi}\bra{\chi}\neq\ket{\chi}\bra{\psi}, \qquad \ket{\psi}\bra{\chi}=(\ket{\chi}\bra{\psi})^{\dagger}$$
+
+## Part D
+
+> Show that the states $\ket{\psi}$ and $\ket{\chi}$ satisfy the triangle inequality.
+
+
+
+## Part E
+
+> Show that the states $\ket{\psi}$ and $\ket{\chi}$ satisfy the Schwarz inequality.
