@@ -243,7 +243,9 @@ $$\begin{aligned}
 \newcommand{\ket}[1]{{\left|#1\right\rangle}}
 \newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\psi}{\psi}$, $\newcommand{\bra}[1]{{\left\langle#1\right|}}
 \newcommand{\ket}[1]{{\left|#1\right\rangle}}
-\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\psi}{\psi}$, $\braket{\chi}{\psi}$, $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\psi}{\psi}$, $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\chi}{\psi}$, $\newcommand{\bra}[1]{{\left\langle#1\right|}}
 \newcommand{\ket}[1]{{\left|#1\right\rangle}}
 \newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\psi}{\chi}$, and $\newcommand{\bra}[1]{{\left\langle#1\right|}}
 \newcommand{\ket}[1]{{\left|#1\right\rangle}}
@@ -295,9 +297,9 @@ The scalar products of $\newcommand{\bra}[1]{{\left\langle#1\right|}}
 \newcommand{\ket}[1]{{\left|#1\right\rangle}}
 \newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}} \braket{\psi+\chi}{\psi+\chi}$.
 
-$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+$$
 \newcommand{\ket}[1]{{\left|#1\right\rangle}}
-\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\begin{aligned}
+\begin{aligned}
 \ket{\psi}+\ket{\chi} &= \left(3i-\frac{i}{\sqrt{2}}\right)\ket{\phi_1} + \frac{\sqrt{2}+1}{\sqrt{2}}\ket{\phi_2}\\
 &=i\frac{3\sqrt{2}-1}{\sqrt{2}}\ket{\phi_1} + \frac{\sqrt{2}+1}{\sqrt{2}}\ket{\phi_2}\\
 &=\frac{1}{2}\left(i(6-\sqrt{2})\ket{\phi_1} + (2+\sqrt{2})\ket{\phi_2}\right)
@@ -316,11 +318,15 @@ $$\newcommand{\bra}[1]{{\left\langle#1\right|}}
 
 ## Part C
 
-> Calculate $\ket{\psi}\bra{\chi}$ and $\ket{\chi}\bra{\psi}$. Are they equal?
+> Calculate $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\psi}\bra{\chi}$ and $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\chi}\bra{\psi}$. Are they equal?
 
 Since the outer product does not result in a scalar value, the two outer products will not be equal as they are Hermitian Adjoints of eachother: not only is the product the complex conjugate, it is also the transpose.
 
-$$\begin{aligned}
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\begin{aligned}
 \ket{\psi}\bra{\chi} &= \frac{1}{\sqrt{2}} \bigg(3i^2\ket{\phi_1}\bra{\phi_1} + 3i\ket{\phi_1}\bra{\phi_2} + i\ket{\phi_2}\bra{\phi_1} + \ket{\phi_2}\bra{\phi_2}\bigg)\\
 &\dot{=} \begin{pmatrix}
 -3 & 3i \\
@@ -328,7 +334,9 @@ i & 1
 \end{pmatrix}
 \end{aligned}$$
 
-$$\begin{aligned}
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\begin{aligned}
 \ket{\chi}\bra{\psi} &= \frac{1}{\sqrt{2}} \bigg((-3i)(-i)\ket{\phi_1}\bra{\phi_1} -i\ket{\phi_1}\bra{\phi_2} - 3i\ket{\phi_2}\bra{\phi_1} + \ket{\phi_2}\bra{\phi_2}\bigg)\\
 &\dot{=} \begin{pmatrix}
 -3 & -i \\
@@ -336,14 +344,16 @@ $$\begin{aligned}
 \end{pmatrix}
 \end{aligned}$$
 
-$$\ket{\psi}\bra{\chi}\neq\ket{\chi}\bra{\psi}, \qquad \ket{\psi}\bra{\chi}=\big(\ket{\chi}\bra{\psi}\big)^{\dagger}$$
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\ket{\psi}\bra{\chi}\neq\ket{\chi}\bra{\psi}, \qquad \ket{\psi}\bra{\chi}=\big(\ket{\chi}\bra{\psi}\big)^{\dagger}$$
 
 ## Part D
 
-> Show that the states $\ket{\psi}$ and $\ket{\chi}$ satisfy the triangle inequality.
+> Show that the states $\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\psi}$ and $\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\chi}$ satisfy the triangle inequality.
 
 
 
 ## Part E
 
-> Show that the states $\ket{\psi}$ and $\ket{\chi}$ satisfy the Schwarz inequality.
+> Show that the states $\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\psi}$ and $\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\chi}$ satisfy the Schwarz inequality.
