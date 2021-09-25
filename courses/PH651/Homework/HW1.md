@@ -75,3 +75,58 @@ Therefore, the set $S_2$ is linearly independent over $\mathbb{C}^3$.
 ## $S_3$
 
 > $$S_3 \equiv \{(0,\ 4,\ 0),\ (i,\ -3i,\ i),\ (2,\ 0,\ 1)\}$$
+
+We begin with a similar approach to the $S_1$ by constructing the equation that describes the condition of linear independence. This time, after decomposing into a system of linear equations, we represent this information in (augmented) matrix form.
+
+$$c_1(0,\ 4,\ 0) + c_2(i,\ -3i,\ i) + c_3(2,\ 0,\ 1) = (0,\ 0,\ 0)$$
+
+$$
+\begin{pmatrix}
+  0 &  i  & 2 &\bigm| & 0 \\
+  4 & -3i & 0 &\bigm| & 0 \\
+  0 &  i  & 1 &\bigm| & 0 \\
+\end{pmatrix}
+$$
+
+Then using Gaussian Elimination, this augmented matrix can be shown in row reduced form to either reveal the underlying linear independence of the vectors or their dependence.
+
+$$
+\begin{array}{rcl}
+R_1 &\leftrightarrow & R_2 \\
+(new)\ R_2 &\leftrightarrow & R_3 \\
+\end{array}
+\quad\rightarrow\quad
+\begin{pmatrix}
+  4 & -3i & 0 &\bigm| & 0 \\
+  0 &  i  & 1 &\bigm| & 0 \\
+  0 &  i  & 2 &\bigm| & 0 \\
+\end{pmatrix}
+$$
+
+$$
+\begin{array}{rcl}
+R_3 - R_2 &\rightarrow & R_3 \\
+\frac{R_1}{4} &\rightarrow &R_1 \\
+\end{array}
+\quad\rightarrow\quad
+\begin{pmatrix}
+  1 & \frac{-3}{4}i & 0 &\bigm| & 0 \\
+  0 &  i  & 1 &\bigm| & 0 \\
+  0 &  0  & 1 &\bigm| & 0 \\
+\end{pmatrix}
+$$
+
+$$
+\begin{array}{rcl}
+R_2 - R_3 &\rightarrow &R_2 \\
+R_1 + (new)\ \frac{3}{4}R_2 &\rightarrow &R_1 \\
+\end{array}
+\quad\rightarrow\quad
+\begin{pmatrix}
+  1 & 0 & 0 &\bigm| & 0 \\
+  0 &  i  & 0 &\bigm| & 0 \\
+  0 &  0  & 1 &\bigm| & 0 \\
+\end{pmatrix}
+$$
+
+Noting that all columns are pivot columns, we conclude that $S_3$ is a  linearly independent set over $\mathbb{C}^3$.
