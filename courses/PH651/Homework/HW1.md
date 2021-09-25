@@ -307,7 +307,8 @@ $$
 
 $$\newcommand{\bra}[1]{{\left\langle#1\right|}}
 \newcommand{\ket}[1]{{\left|#1\right\rangle}}
-\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\begin{aligned}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}
+\begin{aligned}
 \braket{\psi+\chi}{\psi+\chi} &= \left[\frac{1}{2}\left(i(6-\sqrt{2})\ket{\phi_1} + (2+\sqrt{2})\ket{\phi_2}\right)\right]^* \left[\frac{1}{2}\left(i(6-\sqrt{2})\ket{\phi_1} + (2+\sqrt{2})\ket{\phi_2}\right)\right]\\
 &= \frac{1}{4} \left[-i^2(6-\sqrt{2})^2+(2+\sqrt{2})^2\right] \\
 &= \frac{1}{4} \left[(36-12\sqrt{2}+2)+(4+4\sqrt{2}+2)\right]\\
