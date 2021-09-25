@@ -235,7 +235,7 @@ $$\begin{aligned}
 
 # Question 3
 
-> Consider the two states $\ket{\psi} = 3i\ket{\phi_1}+\ket{\phi_2}$ and $\ket{\chi} = \frac{1}{\sqrt{2}} \bigg( i\ket{\phi_1}+\ket{\phi_2} \bigg)$, where $\ket{\phi_1}$ and $\ket{\phi_2}$ form a complete and orthonormal basis.
+> Consider the two states $\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\psi} = 3i\ket{\phi_1}+\ket{\phi_2}$ and $\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\chi} = \frac{1}{\sqrt{2}} \bigg( i\ket{\phi_1}+\ket{\phi_2} \bigg)$, where $\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\phi_1}$ and $\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\phi_2}$ form a complete and orthonormal basis.
 
 ## Part A
 
