@@ -130,3 +130,103 @@ R_1 + (new)\ \frac{3}{4}R_2 &\rightarrow &R_1 \\
 $$
 
 Noting that all columns are pivot columns, we conclude that $S_3$ is a  linearly independent set over $\mathbb{C}^3$.
+
+\pagebreak
+
+# Question 2
+
+> Are the following sets of functions linearly independent or dependent? $$\begin{aligned}
+S_1 &\equiv \{2+x^2,\ 3-x+4x^3,\ 2x+3x^2-8x^3\}\\
+S_2 &\equiv \{\sinh^2{x},\ 1,\ \cosh^2{x}\}\\
+S_3 &\equiv \{x,\ (x-1)^2,\ (x+1)^2\}\\
+S_4 &\equiv \{\sin^2{x},\ \cos^2{x},\ \sin{2x}\}
+\end{aligned}$$
+
+## $S_1$
+
+> $$S_1 \equiv \{2+x^2,\ 3-x+4x^3,\ 2x+3x^2-8x^3\}$$
+
+$$c_1(2+x^2) + c_2(3-x+4x^3) + c_3(2x+3x^2-8x^3) = 0$$
+
+This can then be written as the following system of linear equations:
+
+$$\begin{aligned}
+x^0(2c_1 + 3 c_2) &= 0 \\
+x(-c_2 + 2c_3) &= 0 \\
+x^2(c_1 + 3c_3) &= 0 \\
+x^3(4c_2 - 8c_3) &= 0
+\end{aligned}$$
+
+We can immediately recognize some similarity between the second and fourth equation in the system, and by simplifying each expression, we can see that they provide the same constraint on the coefficients, $c_2 = 2c_3$. This would normally be cause for concern, but recalling that $S_1$ contains only 3 functions, we should expect that a fourth equation in our system would show the same information as another. Removing the extra equation, we can then note a similarity with the two unchanged equations.
+
+$$\begin{aligned}
+c_2 &= 2c_3 \\
+\\
+2c_1 + 3 c_2 &= 0 \\
+c_1 + 3c_3 &= 0\\
+\end{aligned}$$
+
+Solving both for $c_1$ and then equating, we have another relation for $c_2$ to $c_3$. If we substitute in $c_2= 2c_3$ and obtain a contradictory statement, then $S_1$ will be linearly independent but we will see that this is not the case.
+
+$$\begin{aligned}
+c_1 &= -\frac{3}{2} c_2 \\
+c_1 &= -3c_3\\
+\\
+-\frac{3}{2} c_2 &= -3 c_3 \\
+-\frac{3}{2} (2c_3) &= -3 c_3\\
+-3 c_3 &= -3 c_3
+\end{aligned}$$
+
+This result means there is a nontrivial solution to the original equation and therefore $S_1$ is linearly dependent.
+
+## $S_2$
+
+> $$S_2 \equiv \{\sinh^2{x},\ 1,\ \cosh^2{x}\}$$
+
+Without calculation, we can recall the fact that $1$ can be expressed by a linear combination of $\sinh^2{x}$ and $\cosh^2{x}$ through a similar form of Euler's identity:
+
+$$\begin{aligned}
+\sinh^2{x} &= \left(\frac{1}{2}(e^x - e^{-x})\right)^2 \\
+&= \frac{1}{4}(e^{2x}-2+e^{-2x})
+\end{aligned}$$
+
+$$\begin{aligned}
+\cosh^2{x} &= \left(\frac{1}{2}(e^x + e^{-x})\right)^2 \\
+&= \frac{1}{4}(e^{2x}+2+e^{-2x})
+\end{aligned}$$
+
+And by subtracting $\sinh^2{x}$ from $\cosh^2{x}$ we obtain $1$ and thereby show $S_2$ is linearly dependent.
+
+$$\begin{aligned}
+\cosh^2{x} - \sinh^2{x} &= \frac{1}{4}(e^{2x}+2+e^{-2x}) - \frac{1}{4}(e^{2x}-2+e^{-2x})\\
+&= \frac{1}{4}\bigg[ (e^{2x}-e^{2x}) + \big(2- (-2)\big) + (e^{-2x} - e^{-2x}) \bigg]\\
+1 &= \frac{4}{4}
+\end{aligned}$$
+
+## $S_3$
+
+> $$S_3 \equiv \{x,\ (x-1)^2,\ (x+1)^2\}$$
+
+Similar to $S_2$, we can see that by subtracting $(x-1)^2$ from $(x+1)^2$ and scaling by an overall factor of $1/4$, we will obtain $x$. Therefore $S_3$ is linearly dependent.
+
+$$\begin{aligned}
+(x+1)^2 - (x-1)^2 &= (x^2 +2x +1) - (x^2 -2x + 1) \\
+&= 4x\\
+\\
+\therefore
+\frac{1}{4}\bigg((x+1)^2 - (x-1)^2\bigg) &= x
+\end{aligned}$$
+
+## $S_4$
+
+> $$S_4 \equiv \{\sin^2{x},\ \cos^2{x},\ \sin{2x}\}$$
+
+Recall that the Fourier series can expresses any periodic function as a linear combination of $\sin$ and $\cos$ and that the two trigonometric functions are not only linearly independent of each other, but also orthogonal to each other (via the "Harmonic Integrals"). From this, we can infer that the squares of the functions maintain the orthogonal relationship as we consider the orthogonality between polynomials of different order. From this, we can make a stronger statement about $S_4$ than just linear independence, but that the set is also orthogonal.
+
+$$To\ Do: \text{ show scalar product between functions evaluates to 0}$$
+
+$$\begin{aligned}
+\int_{0}^{2\pi}{\sin^2{x}\cos^2{x}dx} &= 0\\
+\int_{0}^{2\pi}{\sin^2{x}\sin{2x}dx} &= 0\\
+\int_{0}^{2\pi}{\cos^2{x}\sin{2x}dx} &= 0
+\end{aligned}$$
