@@ -239,41 +239,73 @@ $$\begin{aligned}
 
 ## Part A
 
-> Calculate $\braket{\psi}{\psi}$, $\braket{\psi}{\psi}$, $\braket{\chi}{\psi}$, $\braket{\psi}{\chi}$, and $\braket{\chi}{\chi}$. Are the scalar products of $\braket{\chi}{\psi}$ and $\braket{\psi}{\chi}$ equal?
+> Calculate $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\psi}{\psi}$, $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\psi}{\psi}$, $\braket{\chi}{\psi}$, $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\psi}{\chi}$, and $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\chi}{\chi}$. Are the scalar products of $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\chi}{\psi}$ and $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\psi}{\chi}$ equal?
 
-$$\begin{aligned}
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\begin{aligned}
 \braket{\psi}{\psi} &= 3i^2 \braket{\phi_1}{\phi_1} + \braket{\phi_2}{\phi_2}\\
 &= -3 + 1 = -2
 \end{aligned}$$
 
-$$\begin{aligned}
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\begin{aligned}
 \braket{\chi}{\psi} &= \frac{3i^2}{\sqrt{2}} + \frac{1}{\sqrt{2}}\\
 &= \frac{-3 + 1}{\sqrt{2}} = -\sqrt{2}
 \end{aligned}$$
 
-$$\begin{aligned}
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\begin{aligned}
 \braket{\psi}{\chi} &= \frac{(-3i)(-i)}{\sqrt{2}} + \frac{1}{\sqrt{2}}\\
 &= \frac{3i^2 + 1}{\sqrt{2}} = -\sqrt{2}
 \end{aligned}$$
 
-$$\begin{aligned}
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\begin{aligned}
 \braket{\chi}{\chi} &= \frac{(-i)(i)}{2} + \frac{1}{2}\\
 &= \frac{1+1}{2} = 1
 \end{aligned}$$
 
-The scalar products of $\braket{\chi}{\psi}$ and $\braket{\psi}{\chi}$ are equal in this case because the result is a real number and taking the conjugate of a pure real number leaves it unchanged: $\braket{\chi}{\psi}=\braket{\psi}{\chi}^*=-\sqrt{2}$.
+The scalar products of $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\chi}{\psi}$ and $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\psi}{\chi}$ are equal in this case because the result is a real number and taking the conjugate of a pure real number leaves it unchanged: $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\braket{\chi}{\psi}=\braket{\psi}{\chi}^*=-\sqrt{2}$.
 
 ## Part B
 
-> Calculate $\braket{\psi+\chi}{\psi+\chi}$.
+> Calculate $\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}} \braket{\psi+\chi}{\psi+\chi}$.
 
-$$\begin{aligned}
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\begin{aligned}
 \ket{\psi}+\ket{\chi} &= \left(3i-\frac{i}{\sqrt{2}}\right)\ket{\phi_1} + \frac{\sqrt{2}+1}{\sqrt{2}}\ket{\phi_2}\\
 &=i\frac{3\sqrt{2}-1}{\sqrt{2}}\ket{\phi_1} + \frac{\sqrt{2}+1}{\sqrt{2}}\ket{\phi_2}\\
 &=\frac{1}{2}\left(i(6-\sqrt{2})\ket{\phi_1} + (2+\sqrt{2})\ket{\phi_2}\right)
 \end{aligned}$$
 
-$$\begin{aligned}
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\begin{aligned}
 \braket{\psi+\chi}{\psi+\chi} &= \left[\frac{1}{2}\left(i(6-\sqrt{2})\ket{\phi_1} + (2+\sqrt{2})\ket{\phi_2}\right)\right]^* \left[\frac{1}{2}\left(i(6-\sqrt{2})\ket{\phi_1} + (2+\sqrt{2})\ket{\phi_2}\right)\right]\\
 &= \frac{1}{4} \left[-i^2(6-\sqrt{2})^2+(2+\sqrt{2})^2\right] \\
 &= \frac{1}{4} \left[(36-12\sqrt{2}+2)+(4+4\sqrt{2}+2)\right]\\
@@ -304,7 +336,7 @@ $$\begin{aligned}
 \end{pmatrix}
 \end{aligned}$$
 
-$$\ket{\psi}\bra{\chi}\neq\ket{\chi}\bra{\psi}, \qquad \ket{\psi}\bra{\chi}=(\ket{\chi}\bra{\psi})^{\dagger}$$
+$$\ket{\psi}\bra{\chi}\neq\ket{\chi}\bra{\psi}, \qquad \ket{\psi}\bra{\chi}=\big(\ket{\chi}\bra{\psi}\big)^{\dagger}$$
 
 ## Part D
 
