@@ -258,8 +258,8 @@ $$\begin{aligned}
 $$\newcommand{\bra}[1]{{\left\langle#1\right|}}
 \newcommand{\ket}[1]{{\left|#1\right\rangle}}
 \newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}\begin{aligned}
-\braket{\psi}{\psi} &= 3i^2 \braket{\phi_1}{\phi_1} + \braket{\phi_2}{\phi_2}\\
-&= -3 + 1 = -2
+\braket{\psi}{\psi} &= (-3)(3)i^2 \braket{\phi_1}{\phi_1} + \braket{\phi_2}{\phi_2}\\
+&= 9 + 1 = 10
 \end{aligned}$$
 
 $$\newcommand{\bra}[1]{{\left\langle#1\right|}}
@@ -353,7 +353,44 @@ $$\newcommand{\bra}[1]{{\left\langle#1\right|}}
 
 > Show that the states $\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\psi}$ and $\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\chi}$ satisfy the triangle inequality.
 
+Recall the triangle inequality states that the norm of the sum of two vectors is less than or equal to the sum of the norm between the two vectors:
 
+$$\lVert\vec{x}+\vec{y}\rVert \leq \lVert\vec{x}\rVert + \lVert\vec{y}\rVert$$
+
+Applying this to the two states in question, we obtain the expression:
+
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}
+\lVert\braket{\psi+\chi}{\psi+\chi}\rVert \leq \lVert\braket{\psi}{\psi}\rVert + \lVert\braket{\chi}{\chi}\rVert$$
+
+Substituting in these values calculated in previous parts, we can square both sides of the equation and simplify to obtain a true statement.
+
+$$\begin{aligned}
+\sqrt{11-\sqrt{2}} &\leq \sqrt{10} + \sqrt{1}\\
+11-\sqrt{2} &\leq (\sqrt{10} + 1)^2\\
+11-\sqrt{2} &\leq 11+2\sqrt{10}
+\end{aligned}$$
+
+---
+
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}
+\begin{aligned}
+\lVert\braket{\psi}{\psi}\rVert &\leq \lVert3i\braket{\phi_1}{\phi_1}\rVert + \lVert\braket{\phi_2}{\phi_2}\rVert\\
+\sqrt{(-3i)(3i)+1} &\leq \sqrt{(-i^2)(3^2)} + \sqrt{1}\\
+\sqrt{10} &\leq 3+1
+\end{aligned}$$
+
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}
+\begin{aligned}
+\lVert\braket{\psi}{\psi}\rVert & \bigg( i\ket{\phi_1}+\ket{\phi_2} \bigg) \lVert\frac{i}{\sqrt{2}}\braket{\phi_1}{\phi_1}\rVert + \lVert\braket{\phi_2}{\phi_2}\rVert\\
+\sqrt{\frac{1}{2}\left((-i)i+1\right)} &\leq \sqrt{\frac{-i^2}{2}} + \sqrt{\frac{1}{2}}\\
+\sqrt{10} &\leq 3+1
+\end{aligned}$$
 
 ## Part E
 
