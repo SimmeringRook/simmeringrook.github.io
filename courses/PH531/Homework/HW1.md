@@ -221,3 +221,31 @@ V_{inside} &= - \int_{\infty}^{r}{\vec{E}\cdot d\vec{\ell}} = - \int_{\infty}^{r
 &= \frac{q}{4\pi\epsilon_0} \left( \frac{2R^2-r^2+R^2}{2R^3}\right) \\
 &= \frac{q}{4\pi\epsilon_0} \left( \frac{3R^2-r^2}{2R^3}\right)
 \end{aligned}$$
+
+Note that $r$ only denotes the radial distance from the origin, and in principle is a dummy variable. Since $V$ is a scalar and has no notion of direction, we can choose to relabel this variable back to $z$ to be consistent with the coordinate system that the field was introduced with.
+
+$$\vec{E}(\vec{r}) = -\vec{\nabla} V(r)$$
+
+$$\newcommand\wrap[2]{\left(#1\right)_{#2}}
+\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
+\begin{aligned}
+\vec{E}(\vec{r}) &= - \wrap{\pder{}{x}\hat{x}+\pder{}{y}\hat{y}+\pder{}{z}\hat{z}}{} V_{outside}\\
+&= -\wrap{\pder{}{z}\hat{z}}{} \left(\frac{1}{4\pi\epsilon_0} \frac{q}{z}\right)\\
+&= -\frac{q}{4\pi\epsilon_0} \left(\frac{-1}{z^2}\right)\hat{z} \\
+&= \frac{q}{4\pi\epsilon_0} \frac{\hat{z}}{z^2}
+\end{aligned}$$
+
+$$\newcommand\wrap[2]{\left(#1\right)_{#2}}
+\newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
+\begin{aligned}
+\vec{E}(\vec{r}) &= - \wrap{\pder{}{x}\hat{x}+\pder{}{y}\hat{y}+\pder{}{z}\hat{z}}{} V_{inside}\\
+&= -\wrap{\pder{}{z}\hat{z}}{} \frac{q}{4\pi\epsilon_0} \left( \frac{3R^2-z^2}{2R^3}\right)\\
+&= -\frac{q}{4\pi\epsilon_0}\frac{1}{2R^3}\wrap{\pder{}{z}\hat{z}}{}\left(\frac{3}{R} -z^2\right) \\
+&= -\frac{q}{4\pi\epsilon_0} \frac{1}{2R^3}\left(0 - 2z\right)\hat{z} \\
+&= \frac{1}{4\pi\epsilon_0} \left(\frac{z}{R^3}q\right)\hat{z} \\
+&= \frac{1}{4\pi\epsilon_0}\left(\frac{\rho \frac{4}{3}\pi z^3}{\rho \frac{4}{3}\pi R^3}q\right)\frac{\hat{z}}{z^2}
+\end{aligned}$$
+
+\pagebreak
+
+# Problem 2.38
