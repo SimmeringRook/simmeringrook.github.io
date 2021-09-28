@@ -311,3 +311,22 @@ V(r=0) &= - \int_{\infty}^{r}{\vec{E}\cdot d\vec{\ell}} = - \int_{\infty}^{r}{\v
 ## Part C
 
 > Now the outer surface is touched to a grounding wire, which drains off charge and lowers its potential to zero (same as at infinity). How do your answers to Part A and B change?
+
+If the grounding wire is serving as a mechanism to remove the charge from the outer shell, then once at equilibrium, there will no longer be any surface charge density: $\sigma_b = 0$. The rest of Part A remains the same as $\sigma_a$ is nonzero due to the presence of $\sigma_R$, and those only change if $q$ or $a$ and $R$ were to also change.
+
+We update our piecewise expression for the electric field and note that this is equivalent to setting the integrand for $r\in(b,\infty)$ to zero.
+
+$$\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\hat{r} \begin{cases}
+0 \quad & r \in (a,\infty) \\
+1 \quad & r \in (R,a) \\
+0 \quad & r \in (0,R)
+\end{cases}$$
+
+Carrying out the calculation more explicitly:
+
+$$\begin{aligned}
+V(r=0) &= -\frac{q}{4\pi\epsilon_0} \int_{\infty}^{0}{\frac{\hat{z}}{z^2}\cdot dz\hat{z}}\\
+&= -\frac{q}{4\pi\epsilon_0} \left( \int_{\infty}^{a}{0} + \int_{a}^{R}{\frac{1}{z^2}dz} + \int_{R}^{0}{0}\right) \\
+&= -\frac{q}{4\pi\epsilon_0} \left( -\frac{1}{z}\bigg\rvert_{a}^{R} \right) \\
+&= \frac{q}{4\pi\epsilon_0} \left(\frac{1}{R} - \frac{1}{a}\right)
+\end{aligned}$$
