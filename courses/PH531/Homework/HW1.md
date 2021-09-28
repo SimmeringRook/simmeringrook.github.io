@@ -138,7 +138,7 @@ $$
 
 # Problem 2.8
 
-> Use your results from the electric field for a spherical shell to find the field outside and inside a solid sphere, still with total charge $q$, a radius of $R$, and a uniform volume charge density $\rho$.
+> Use your results from the electric field for a spherical shell to find the field outside and inside a solid sphere, still with total charge $q$, a radius of $R$, and a uniform volume charge density $\rho$. Draw a graph of $|E|$ as a function of distance from the center.
 
 Since both the total charge and spherical symmetry remain unchanged, we know through Gauss's Law that the electric field outside the (now) solid sphere is the same:
 
