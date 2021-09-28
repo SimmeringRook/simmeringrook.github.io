@@ -191,3 +191,33 @@ Once again, having confirmed our findings from Gauss's Law, we then unfix $z$ fr
 $$
 \vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon_0}\left(\frac{\rho \frac{4}{3}\pi r^3}{\rho \frac{4}{3}\pi R^3}q\right)\frac{\hat{r}}{r^2}
 $$
+
+\pagebreak
+
+# Problem 2.21
+
+> Find the potential inside and outside a uniformly charged solid sphere whose radius is $R$ and total charge is $q$. Use infinity at your reference point. Then compute the gradient of $V$ in each region and check that it yields the correct field. Sketch $V(r)$.
+
+Recalling that the potential in electrostatics is a line integral from our reference point to the area in question, we gather our results from Problem 2.8. There's not much to explain or justify in this problem, as it is just a very straightforward calculation and verification of results by leveraging the relationships between $V$ and $\vec{E}$.
+
+$$V(r) - V(\infty)=-\int_{\infty}^{r}{\vec{E}\cdot d\vec{\ell}}$$
+
+$$\begin{aligned}
+V_{outside} &= - \int_{\infty}^{r}{\vec{E}\cdot d\vec{\ell}} = - \int_{\infty}^{r}{\vec{E}\cdot dz\hat{z}}\\
+&=  -\frac{1}{4\pi\epsilon_0} \int_{\infty}^{r}{\left(\frac{\rho \frac{4}{3}\pi R^3}{\rho \frac{4}{3}\pi R^3}q\right)\frac{\hat{z}}{z^2}\cdot dz\hat{z}}\\
+&= -\frac{q}{4\pi\epsilon_0} \int_{\infty}^{r}{\frac{1}{z^2}dz} \\
+&= -\frac{q}{4\pi\epsilon_0} \left( -\frac{1}{z}\bigg\rvert_{\infty}^{r}\right) \\
+&= \frac{q}{4\pi\epsilon_0} \left( \frac{1}{r} - \frac{1}{\infty}\right) \\
+&= \frac{1}{4\pi\epsilon_0} \frac{q}{r}
+\end{aligned}$$
+
+$$\begin{aligned}
+V_{inside} &= - \int_{\infty}^{r}{\vec{E}\cdot d\vec{\ell}} = - \int_{\infty}^{r}{\vec{E}\cdot dz\hat{z}}\\
+&=  -\frac{1}{4\pi\epsilon_0} \int_{\infty}^{r}{\left(\frac{\rho \frac{4}{3}\pi z^3}{\rho \frac{4}{3}\pi R^3}q\right)\frac{\hat{z}}{z^2}\cdot dz\hat{z}}\\
+&= -\frac{1}{4\pi\epsilon_0} \left( \int_{\infty}^{R}{\left(\frac{\rho \frac{4}{3}\pi R^3}{\rho \frac{4}{3}\pi R^3}q\right)\frac{1}{z^2}dz} + \int_{R}^{r}{\left(\frac{\rho \frac{4}{3}\pi z^3}{\rho \frac{4}{3}\pi R^3}q\right)\frac{1}{z^2}dz} \right) \\
+&= -\frac{q}{4\pi\epsilon_0} \left( \int_{\infty}^{R}{\frac{1}{z^2}dz} + \frac{1}{R^3}\int_{R}^{r}{zdz} \right) \\
+&= -\frac{q}{4\pi\epsilon_0} \left( -\frac{1}{z}\bigg\rvert_{\infty}^{R} + \frac{z^2}{2R^3}\bigg\rvert_{R}^{r} \right) \\
+&= \frac{q}{4\pi\epsilon_0} \left( \frac{1}{R} - \frac{1}{\infty} - \frac{r^2}{2R^3} + \frac{R^2}{2R^3} \right) \\
+&= \frac{q}{4\pi\epsilon_0} \left( \frac{2R^2-r^2+R^2}{2R^3}\right) \\
+&= \frac{q}{4\pi\epsilon_0} \left( \frac{3R^2-r^2}{2R^3}\right)
+\end{aligned}$$
