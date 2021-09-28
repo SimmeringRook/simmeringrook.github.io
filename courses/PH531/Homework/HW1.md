@@ -249,3 +249,65 @@ $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \pagebreak
 
 # Problem 2.38
+
+> A metal sphere of radius $R$, carrying charge $q$, is surrounded by a thick concentric metal shell (inner radius $a$, outer radius $b$, as in Fig. 2.48). The shell carries no net charge.
+
+## Part A
+
+> Find the surface charge density $\sigma$ at $R$, $a$, and $b$.
+
+Since this is electrostatics, we can safely assume that the system has reached equilibrium and that all electrons inside the idealized conductor have spaced out in response to the presence of the inner sphere. Let's find the surface charge densities by working our way outwards.
+
+The metal sphere at a charge of $q$ and radius of $R$. Since no constraints were provided on $q$ in terms of position, we can safely assume that the charge of $q$ is uniformly spread out over the metal sphere itself.
+
+$$\begin{aligned}
+q &= \int_{S}{\sigma R^2 dA}\\
+\sigma_{R} &= \frac{q}{4\pi R^2}
+\end{aligned}$$
+
+This surface charge will create the electric field that we are very familiar with in this problem set, which will induce a charge on the inner surface of the concentric shell. For the sake of illustration, if we assume $q$ to be positive, all the free $e^{-}$ in the conductor will have relocated to the inner surface in response to that field and match its charge magnitude (the same concept applies for the $-q$ case).
+
+$$\begin{aligned}
+-q &= \int_{S}{\sigma a^2 dA}\\
+\sigma_{a} &= \frac{-q}{4\pi a^2}
+\end{aligned}$$
+
+And because the electric field is $0$ inside an idealized conductor, we need the outer surface of the shell to have an equivalent charge such that the fields cancel out with superposition.
+
+$$\begin{aligned}
+-(-q) &= \int_{S}{\sigma b^2 dA}\\
+\sigma_{b} &= \frac{q}{4\pi b^2}
+\end{aligned}$$
+
+## Part B
+
+> Find the potential at the center using infinity as the reference point.
+
+$$\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\hat{r} \begin{cases}
+1 \quad & r \in (b,\infty) \\
+0 \quad & r \in (a,b) \\
+1 \quad & r \in (R,a) \\
+0 \quad & r \in (0,R)
+\end{cases}$$
+
+When we observe the field outside the shell, we are unable to determine that the *true* source of the charge is from inside the shell, so all we can measure is the typical electric field for a point charge with magnitude $q$. Inside the conducting shell, we have the case stated in Part A: the two surface charge densities $\sigma_a$ and $\sigma_b$ negate each other and there's no field inside. Then, as we move from the inner radius towards the metal sphere, we observe the same field as we did before: its still spherically symmetric in nature, and we would be unaware of the presence of the outer shell as its own fields have canceled each other. Finally, since $\sigma_R$ is a surface charge density, the field inside the metal solid sphere itself is $0$, as there is no charge on the inside[^4].
+
+[^4]: This can be explicitly verified with Gauss's Law, but I think we have sufficiently demonstrated this property by now.
+
+$$V(r) - V(\infty)=-\int_{\infty}^{r}{\vec{E}\cdot d\vec{\ell}}$$
+
+Now, we simply integrate as in Problem 2.21:
+
+$$\begin{aligned}
+V(r=0) &= - \int_{\infty}^{r}{\vec{E}\cdot d\vec{\ell}} = - \int_{\infty}^{r}{\vec{E}\cdot dz\hat{z}}\\
+&= -\frac{q}{4\pi\epsilon_0} \int_{\infty}^{0}{\frac{\hat{z}}{z^2}\cdot dz\hat{z}}\\
+&= -\frac{q}{4\pi\epsilon_0} \left( \int_{\infty}^{b}{\frac{1}{z^2}dz} + \int_{b}^{a}{0} + \int_{a}^{R}{\frac{1}{z^2}dz} + \int_{R}^{0}{0}\right) \\
+&= -\frac{q}{4\pi\epsilon_0} \left( -\frac{1}{z}\bigg\rvert_{\infty}^{b} -\frac{1}{z}\bigg\rvert_{a}^{R} \right) \\
+&= \frac{q}{4\pi\epsilon_0} \left(\frac{1}{z}\bigg\rvert_{\infty}^{b} + \frac{1}{z}\bigg\rvert_{a}^{R} \right) \\
+&= \frac{q}{4\pi\epsilon_0} \left(\frac{1}{b} - \frac{1}{\infty} + \frac{1}{R} - \frac{1}{a} \right) \\
+&= \frac{q}{4\pi\epsilon_0} \left(\frac{1}{b} + \frac{1}{R} - \frac{1}{a}\right)
+\end{aligned}$$
+
+## Part C
+
+> Now the outer surface is touched to a grounding wire, which drains off charge and lowers its potential to zero (same as at infinity). How do your answers to Part A and B change?
