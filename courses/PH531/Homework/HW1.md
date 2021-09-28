@@ -133,3 +133,61 @@ $$
 \vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon_0}\begin{cases} \frac{q}{r^2}\hat{r} \quad & |r| > |R| \\ 0 \quad & |r| < |R|
 \end{cases}
 $$
+
+\pagebreak
+
+# Problem 2.8
+
+> Use your results from the electric field for a spherical shell to find the field outside and inside a solid sphere, still with total charge $q$, a radius of $R$, and a uniform volume charge density $\rho$.
+
+Since both the total charge and spherical symmetry remain unchanged, we know through Gauss's Law that the electric field outside the (now) solid sphere is the same:
+
+$$\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\hat{r}$$
+
+The verification is simple, as we just place our Gaussian sphere outside the solid sphere $(r > R)$ and note that the enclosed charge is equivalent to the total charge.
+
+$$\begin{aligned}
+\int_{S}{\lvert\vec{E}\rvert dA} &= \frac{Q_{enc}}{\epsilon_0}\\
+\lvert\vec{E}\rvert\left(\int^{\phi=2\pi}_{\phi=0}{\int_{\theta=0}^{\theta=\pi}{r^2\sin{\theta}d\theta d\phi}}\right) &= \frac{Q_{enc}}{\epsilon_0}\\
+\lvert\vec{E}\rvert 4\pi r^2 &= \frac{Q_{enc}}{\epsilon_0}\\
+\vec{E} &= \frac{1}{4\pi \epsilon_0}\frac{q}{r^2}\hat{r} \quad (r > R)
+\end{aligned}$$
+
+Both this problem and the previous problem are perfect examples of how charges with spherical symmetry are indistinguishable from each other and act like point charges when creating their electric field. The more interesting case is what occurs inside the sphere: We can either be aware of [Newton's Shell theorem](https://en.wikipedia.org/wiki/Shell_theorem) or happen to watch a standup Mathematician's YouTube channel for inspiration on how to treat the solid sphere case. We can reuse all the work from our previous Gauss's Law calculation, but note that $q_{enc}$ is no longer equal to $q$. Implicitly, we know the field has to be weaker, but the question is by what proportionality?
+
+Having watch Matt Parker's two videos regarding ["How to mathematically calculate a fall through the Earth"](https://www.youtube.com/watch?v=s94Gojs3Ags), let us reconsider the solid sphere as just a series of concentric spherical shells[^3]. If we remove the outermost shell, we won't have violated our symmetry, and so we expect the same functional form for the electric field, but just weaker by some $\Delta q$.
+
+[^3]: Alternatively: an [onion](https://www.youtube.com/watch?v=-FtCTW2rVFM).
+
+From the previous problem, we know explicitly that there is no electric field inside that outer shell that we've removed, and so we're in an equivalent situation to falling through the center of the Earth: As we pass (or remove) each shell, the remaining field we observe is weaker, and the field from any layers *above* us cancels itself out. We can show this explicitly by picking up where we left off in 2.7 after simplifying the last integral.
+
+$$\begin{aligned}
+\vec{E}(\vec{r}) &= \frac{\sigma 2\pi R^2}{4\pi\epsilon_0} \frac{\text{sgn}(z-R) + \text{sgn}(z+R)}{z^2} \hat{z} \\
+&= \frac{1}{4\pi\epsilon_0}\begin{cases} \pm 4\pi R^2 \sigma \frac{\hat{z}}{z^2} \quad & |z| > |R| \\ 0 \quad & |z| < |R|
+\end{cases}
+\end{aligned}$$
+
+The immediate difference is that we need to swap $\sigma$ for $\rho$ and change our $dA$ at the beginning to $dV$. The more subtle difference is that there are two cases present here, and so we must integrate the field across two regions of $dr'$:
+
+$$\begin{aligned}
+\vec{E}(\vec{r}) &= \frac{\rho 2\pi}{4\pi\epsilon_0}\frac{\hat{z}}{z^2} \int_{0}^{R}{(\text{sgn}(z-r') + \text{sgn}(z+r'))({r'}^2 dr')} \\
+&= \frac{\rho 2\pi}{4\pi\epsilon_0}\frac{\hat{z}}{z^2} \left(\underbrace{\int_{0}^{z}{(\text{sgn}(z-r') + \text{sgn}(z+r'))({r'}^2 dr')}}_{\text{inner shells}} + \underbrace{\int_{z}^{R}{(\text{sgn}(z-r') + \text{sgn}(z+r'))({r'}^2 dr')}}_{\text{outer shells}}\right) \\
+\end{aligned}$$
+
+For the inner shells, $r'<z$ causing both signum functions to evaluate to $+1$ across the interval. The outer shells, like perviously show, $r' > z$, and so we obtain a $0$ contribution from that field.
+
+$$\begin{aligned}
+\vec{E}(\vec{r}) &= \frac{\rho 2\pi}{4\pi\epsilon_0}\frac{\hat{z}}{z^2} \left(\underbrace{2\int_{0}^{z}{{r'}^2 dr'}}_{\text{inner shells}} + \underbrace{\int_{z}^{R}{0}}_{\text{outer shells}}\right) \\
+&= \frac{\rho 4\pi}{4\pi\epsilon_0}\frac{\hat{z}}{z^2} \frac{{r'}^3}{3}\bigg\rvert_{r'=0}^{r'=z} \\
+&= \frac{1}{4\pi\epsilon_0}\left(\rho \frac{4}{3}\pi z^3\right)\frac{\hat{z}}{z^2}
+\end{aligned}$$
+
+Now to express this electric field in terms of the total charge $q$, we use the fact that $q=\int_{V}{\rho dV}$ to introduce a clever form of one.
+
+$$\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon_0}\left(\frac{\rho \frac{4}{3}\pi z^3}{\rho \frac{4}{3}\pi R^3}q\right)\frac{\hat{z}}{z^2}$$
+
+Once again, having confirmed our findings from Gauss's Law, we then unfix $z$ from the $z$-axis as only the radial distance from the origin matters and we can express the field in its more common form:
+
+$$
+\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon_0}\left(\frac{\rho \frac{4}{3}\pi r^3}{\rho \frac{4}{3}\pi R^3}q\right)\frac{\hat{r}}{r^2}
+$$
