@@ -367,9 +367,9 @@ $$\newcommand{\bra}[1]{{\left\langle#1\right|}}
 Substituting in these values calculated in previous parts, we can square both sides of the equation and simplify to obtain a true statement.
 
 $$\begin{aligned}
-\sqrt{11-\sqrt{2}} &\leq \sqrt{10} + \sqrt{1}\\
-11-\sqrt{2} &\leq (\sqrt{10} + 1)^2\\
-11-\sqrt{2} &\leq 11+2\sqrt{10}
+\sqrt{11-2\sqrt{2}} &\leq \sqrt{10} + \sqrt{1}\\
+11-2\sqrt{2} &\leq (\sqrt{10} + 1)^2\\
+11-2\sqrt{2} &\leq 11+2\sqrt{10}
 \end{aligned}$$
 
 ---
