@@ -192,6 +192,17 @@ $$
 \vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon_0}\left(\frac{\rho \frac{4}{3}\pi r^3}{\rho \frac{4}{3}\pi R^3}q\right)\frac{\hat{r}}{r^2}
 $$
 
+```Mathematica
+R = 1;
+q = 1;
+Subscript[\[Epsilon], 0] = 1;
+Plot[Piecewise[{{(r*q)/Subscript[\[Epsilon], 0], r <= R}, {q/(
+    Subscript[\[Epsilon], 0] r^2), r > R}}], {r, 0, 5 R},
+ AxesLabel -> {"Distance", "|E|"}, ImageSize -> Large]
+```
+
+![Plot of the magnitude of the electric field due to a solid sphere with uniform volumetric charge density as a function of radial distance from the origin.](531_HW1_Q2.png)
+
 \pagebreak
 
 # Problem 2.21
@@ -245,6 +256,17 @@ $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 &= \frac{1}{4\pi\epsilon_0} \left(\frac{z}{R^3}q\right)\hat{z} \\
 &= \frac{1}{4\pi\epsilon_0}\left(\frac{\rho \frac{4}{3}\pi z^3}{\rho \frac{4}{3}\pi R^3}q\right)\frac{\hat{z}}{z^2}
 \end{aligned}$$
+
+```Mathematica
+R = 1;
+q = 1;
+Subscript[\[Epsilon], 0] = 1;
+Plot[Piecewise[{{q/Subscript[\[Epsilon], 0] ((3 R^2 - r^2)/(2 R^3)),
+    r <= R}, {q/(Subscript[\[Epsilon], 0] r), r > R}}], {r, 0, 5 R},
+ AxesLabel -> {"Distance (in m)", "V(r) (in V)"}, ImageSize -> Large]
+```
+
+![Plot of the potential caused by a uniformly charged solid sphere as a function of radial distance from the origin. Note the inflection point at r=R (where R = 1 m) as the potential matches that created due to a point charge.](531_HW1_Q4.png)
 
 \pagebreak
 
