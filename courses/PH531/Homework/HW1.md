@@ -7,6 +7,9 @@ papersize: a4
 geometry: margin=2cm
 linkcolor: blue
 header-includes: |
+    \usepackage{pgfplots}
+    \usepackage{hyperref}
+    \usepackage{tikz-3dplot}
     \usepackage{fancyhdr}
     \pagestyle{fancy}
     \fancyhead[RO,RE]{PH 531, Fall 2021}
@@ -27,46 +30,126 @@ $$\begin{aligned}
 \vec{E} &= \frac{1}{4\pi \epsilon_0}\frac{q}{r^2}\Theta(r-R)\hat{r}
 \end{aligned}$$
 
-Alternatively, instead of just citing [Newton's Shell theorem](https://en.wikipedia.org/wiki/Shell_theorem) or symmetry, we can verify the results of Gauss's Law are true by integrating the electric field as measured at $z$. Without loss of generality, let us set the spherical shell centered on the origin and the point of interest at length $z$ away. Due to the spherical nature of the physical situation, we can define our position vectors in spherical coordinates.
+Alternatively, instead of just citing [Newton's Shell theorem](https://en.wikipedia.org/wiki/Shell_theorem) or symmetry, we can verify the results of Gauss's Law are true by integrating the electric field as measured at $z$. Without loss of generality, let us set the spherical shell centered on the origin and the point of interest at length $z$ away. Due to the spherical nature of the physical situation, we can define our position vectors in spherical coordinates.[^5]
 
-$$\vec{r}=z\hat{r}, \qquad \vec{r}'=R\hat{r}'$$
+$$\vec{r}=z\hat{r}, \qquad \vec{r'}=R\hat{r}'$$
+
+\begin{figure}
+   \centering
+   \tdplotsetmaincoords{60}{115}
+   \pgfplotsset{compat=newest}
+
+   \begin{tikzpicture}[tdplot_main_coords, scale = 2.5]
+
+   % Create a point (SpacePoint)
+   \coordinate (SpacePoint) at (0,0,1.5);
+
+   % Create a point (SourcePoint)
+   \coordinate (SourcePoint) at ({1/sqrt(3)},{1/sqrt(3)},{1/sqrt(3)});
+
+   % Draw shaded circle
+   \shade[ball color = lightgray,
+       opacity = 0.25
+   ] (0,0,0) circle (1cm);
+
+   % draw arcs
+   \tdplotsetrotatedcoords{0}{0}{0};
+   \draw[dashed,
+       tdplot_rotated_coords,
+       gray
+   ] (0,0,0) circle (1);
+
+   \tdplotsetrotatedcoords{90}{90}{90};
+   \draw[dashed,
+       tdplot_rotated_coords,
+       gray
+   ] (1,0,0) arc (0:180:1);
+
+   \tdplotsetrotatedcoords{0}{90}{90};
+   \draw[dashed,
+       tdplot_rotated_coords,
+       gray
+   ] (1,0,0) arc (0:180:1);
+
+   % Projection of the SourcePoint on X and y axes
+   \draw[thin, dashed] (SourcePoint) --++ (0,0,{-1/sqrt(3)});
+   \draw[thin, dashed] ({1/sqrt(3)},{1/sqrt(3)},0) --++
+   (0,{-1/sqrt(3)},0);
+   \draw[thin, dashed] ({1/sqrt(3)},{1/sqrt(3)},0) --++
+   ({-1/sqrt(3)},0,0);
+
+   % Axes in 3 d coordinate system
+   \draw[-stealth] (0,0,0) -- (2,0,0)
+       node[below left] {$\hat{x}$};
+
+   \draw[-stealth] (0,0,0) -- (0,1.5,0)
+       node[below right] {$\hat{y}$};
+
+   \draw[-stealth] (0,0,0) -- (0,0,2)
+       node[above] {$\hat{z}$};
+
+   \draw[dashed, gray] (0,0,0) -- (-1,0,0);
+   \draw[dashed, gray] (0,0,0) -- (0,-1,0);
+
+   % Line from the origin to (SpacePoint)
+   \draw[thick, -stealth] (0,0,0) -- (SpacePoint) node[midway, left] {$\vec{r}$};
+
+   % Line from the origin to (SpacePoint)
+   \node at (SpacePoint) [above, left]  {$z$};
+
+   % Line from the origin to (SourcePoint)
+   \node at (SourcePoint) [right]  {$dq$};
+
+   % Line from the origin to (SourcePoint)
+   \draw[thick, -stealth] (0,0,0) -- (SourcePoint) node[midway, below] {$\vec{r'}$};
+
+   % Line from the SourcePoint to (SpacePoint)
+   \draw[thick, -stealth] (SourcePoint) -- (SpacePoint) node[midway, right] {$\vec{r} - \vec{r'}$};
+
+   \end{tikzpicture}
+
+  \caption{A visual representation of the vector describing the distance and direction from $dq$ to the point in question: $z$ (placed outside for reduction of visual noise).}
+
+\end{figure}
 
 Recalling that $\hat{r}$ doesn't always point in the same direction as $\hat{r}'$, we can convert these vectors[^1] to a coordinate system that has constant directions across all space: Cartesian.
 
-$$\vec{r}=z(\sin{\theta}\cos{\phi}\hat{x}+\sin{\theta}\sin{\phi}\hat{y}+\cos{\theta}\hat{z}), \qquad \vec{r}'=R(\sin{\theta'}\cos{\phi'}\hat{x}+\sin{\theta'}\sin{\phi'}\hat{y}+\cos{\theta'}\hat{z})$$
+[^5]: The figure was made by using this [tutorial](https://latexdraw.com/draw-a-sphere-in-latex-using-tikz/) as a template and then adjusting to match the physical situation. The LaTeX code used to generate it can be found at https://simmeringrook.github.io/#/latex/figures/Sphere.
+
+$$\vec{r}=z(\sin{\theta}\cos{\phi}\hat{x}+\sin{\theta}\sin{\phi}\hat{y}+\cos{\theta}\hat{z}), \qquad \vec{r'}=R(\sin{\theta'}\cos{\phi'}\hat{x}+\sin{\theta'}\sin{\phi'}\hat{y}+\cos{\theta'}\hat{z})$$
 
 [^1]: Here, we leverage the endpages of Griffth's 4th Edition in which he kindly provides the basis vectors for Cartesian, Cylindrical, and Spherical coordinate systems in terms of each other.
 
 Using the fact that as we change the angle $\phi$ and $\theta$ of $\vec{r}$, the charge distribution observed by the point of interest a distance $z$ from the origin looks the same, we conclude that the field cannot depend on the $\phi$ or $\theta$ coordinates of $\vec{r}$. Similarly, we can repeat this process inside the sphere and be unable to tell if the sphere has been rotated about $\vec{r}$ in $\phi'$ or $\theta'$ or if $\vec{r}$ itself has been rotated ($\phi$, $\theta$) as the charge density is uniform. We then leverage this to remove all $\phi$ and $\phi'$ from consideration in our calculations by choosing the convent value of $\phi=\phi'=0$.
 
-$$\vec{r}=z(\sin{\theta}\hat{x}+\cos{\theta}\hat{z}), \qquad \vec{r}'=R(\sin{\theta'}\hat{x}+\cos{\theta'}\hat{z})$$
+$$\vec{r}=z(\sin{\theta}\hat{x}+\cos{\theta}\hat{z}), \qquad \vec{r'}=R(\sin{\theta'}\hat{x}+\cos{\theta'}\hat{z})$$
 
 Both inside and outside the shell, we note that $\theta$ does not impact the charge distribution observed from $\vec{r}$, and so we again choose the extremely convenient value of $\theta=0$, which is the equivalent of lining up $\hat{r}$ parallel to the $z$-axis (and which makes the most logical sense given the arbitrary name for the distance in question).
 
-$$\vec{r}=z\hat{z}, \qquad \vec{r}'=R(\sin{\theta'}\hat{x}+\cos{\theta'}\hat{z})$$
+$$\vec{r}=z\hat{z}, \qquad \vec{r'}=R(\sin{\theta'}\hat{x}+\cos{\theta'}\hat{z})$$
 
-The same cannot be said for $\vec{r}'$, however, as we consider each bit of $dq$ on the $S^2$. Intuitively, this small dependence on $\theta'$ makes sense as the total distance from $z$ to the *North* pole ($\theta'=0$) is the minimum (implicitly assuming $z>R>0$ at this moment) with a total distance of $z-R$ and that the total distance from $z$ to the *South* pole ($\theta'=\pi$) is the maximum with $z+R$. Now that our position vectors are happily sharing the same basis vectors, we can subtract them to find the distance between each bit of $dq$ and $z$.
+The same cannot be said for $\vec{r'}$, however, as we consider each bit of $dq$ on the $S^2$. Intuitively, this small dependence on $\theta'$ makes sense as the total distance from $z$ to the *North* pole ($\theta'=0$) is the minimum (implicitly assuming $z>R>0$ at this moment) with a total distance of $z-R$ and that the total distance from $z$ to the *South* pole ($\theta'=\pi$) is the maximum with $z+R$. Now that our position vectors are happily sharing the same basis vectors, we can subtract them to find the distance between each bit of $dq$ and $z$.
 
-$$\vec{r}-\vec{r}'=(-R\sin{\theta'})\hat{x}+(z-R\cos{\theta'})\hat{z}$$
+$$\vec{r}-\vec{r'}=(-R\sin{\theta'})\hat{x}+(z-R\cos{\theta'})\hat{z}$$
 
 We now all the components required to sum up all of the $d\vec{E}$ contributions from each bit of $dq$[^2]:
 
 [^2]: Recall that $q=\int{\lambda dr}=\int_{S}{\sigma dA}=\int_{V}{\rho dV}$ and therefore, $dq=\sigma dA = \sigma {r'}^2 \sin{\theta'}d\phi'd\theta'$
 
 $$\begin{aligned}
-d\vec{E}(\vec{r}) &= \frac{dq}{4\pi\epsilon_0}\frac{\vec{r}-\vec{r}'}{{\lvert \vec{r}-\vec{r}'\rvert}^3}\\
-&= \frac{\sigma}{4\pi\epsilon_0}\frac{\vec{r}-\vec{r}'}{{\lvert \vec{r}-\vec{r}'\rvert}^3}R^2 \sin{\theta'}d\phi'd\theta'
+d\vec{E}(\vec{r}) &= \frac{dq}{4\pi\epsilon_0}\frac{\vec{r}-\vec{r'}}{{\lvert \vec{r}-\vec{r'}\rvert}^3}\\
+&= \frac{\sigma}{4\pi\epsilon_0}\frac{\vec{r}-\vec{r'}}{{\lvert \vec{r}-\vec{r'}\rvert}^3}R^2 \sin{\theta'}d\phi'd\theta'
 \end{aligned}$$
 
 Now we finish the substitution and recall that nothing in the integrand depends on $\phi'$:
 
 $$\begin{aligned}
-\vec{E}(\vec{r}) &= \frac{\sigma}{4\pi\epsilon_0}\int_{\phi'=0}^{\phi'=2\pi}{ \int_{\theta'=0}^{\theta'=\pi}{ \frac{\vec{r}-\vec{r}'}{{\lvert \vec{r}-\vec{r}'\rvert}^3}R^2 \sin{\theta'}d\phi'd\theta' } } \\
+\vec{E}(\vec{r}) &= \frac{\sigma}{4\pi\epsilon_0}\int_{\phi'=0}^{\phi'=2\pi}{ \int_{\theta'=0}^{\theta'=\pi}{ \frac{\vec{r}-\vec{r'}}{{\lvert \vec{r}-\vec{r'}\rvert}^3}R^2 \sin{\theta'}d\phi'd\theta' } } \\
 &= \frac{\sigma 2\pi}{4\pi\epsilon_0} \int_{\theta'=0}^{\theta'=\pi}{ \frac{(-R\sin{\theta'})\hat{x}+(z-R\cos{\theta'})\hat{z}}{(z^2 + R^2 (\sin^2{\theta'}+\cos^2{\theta'}) - 2zR\cos{\theta'})^{(3/2)}}R^2 \sin{\theta'}d\theta' } \\
 &= \frac{\sigma 2\pi}{4\pi\epsilon_0} \int_{\theta'=0}^{\theta'=\pi}{ \frac{(-R\sin{\theta'})\hat{x}+(z-R\cos{\theta'})\hat{z}}{(z^2 + R^2 - 2zR\cos{\theta'})^{(3/2)}}R^2 \sin{\theta'}d\theta' }
 \end{aligned}$$
 
-Note that an alternate derivation of $\vec{r}$ and $\vec{r}'$ could have required Griffith's hint to use the Law of Cosines to simplify the denominator, but we avoided that complication by involving the $x$-component in $\vec{r}'$. I will now argue from the symmetry expressed earlier, that the only directional component that matters for $\vec{E}$ is the $\hat{z}$, as all non-$\hat{z}$ components will cancel each other out as we walk $S^2$. We can then recall the advantage (or necessity) of using Cartesian directions: they are constant throughout all space (and time), and so we may move them outside the integral without problem. Next, we can work on cleaning up this integral into something more reasonable with a u-substitution, Let:
+Note that an alternate derivation of $\vec{r}$ and $\vec{r'}$ could have required Griffith's hint to use the Law of Cosines to simplify the denominator, but we avoided that complication by involving the $x$-component in $\vec{r'}$. I will now argue from the symmetry expressed earlier, that the only directional component that matters for $\vec{E}$ is the $\hat{z}$, as all non-$\hat{z}$ components will cancel each other out as we walk $S^2$. We can then recall the advantage (or necessity) of using Cartesian directions: they are constant throughout all space (and time), and so we may move them outside the integral without problem. Next, we can work on cleaning up this integral into something more reasonable with a u-substitution, Let:
 
 $$u=\cos{\theta'}, \qquad du = -\sin{\theta'}d\theta'$$
 $$\theta'=\pi \mapsto u=-1, \qquad theta'=0 \mapsto u=1$$
