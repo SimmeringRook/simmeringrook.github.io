@@ -372,26 +372,15 @@ $$\begin{aligned}
 11-2\sqrt{2} &\leq 11+2\sqrt{10}
 \end{aligned}$$
 
----
-
-$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
-\newcommand{\ket}[1]{{\left|#1\right\rangle}}
-\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}
-\begin{aligned}
-\lVert\braket{\psi}{\psi}\rVert &\leq \lVert3i\braket{\phi_1}{\phi_1}\rVert + \lVert\braket{\phi_2}{\phi_2}\rVert\\
-\sqrt{(-3i)(3i)+1} &\leq \sqrt{(-i^2)(3^2)} + \sqrt{1}\\
-\sqrt{10} &\leq 3+1
-\end{aligned}$$
-
-$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
-\newcommand{\ket}[1]{{\left|#1\right\rangle}}
-\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}
-\begin{aligned}
-\lVert\braket{\psi}{\psi}\rVert & \bigg( i\ket{\phi_1}+\ket{\phi_2} \bigg) \lVert\frac{i}{\sqrt{2}}\braket{\phi_1}{\phi_1}\rVert + \lVert\braket{\phi_2}{\phi_2}\rVert\\
-\sqrt{\frac{1}{2}\left((-i)i+1\right)} &\leq \sqrt{\frac{-i^2}{2}} + \sqrt{\frac{1}{2}}\\
-\sqrt{10} &\leq 3+1
-\end{aligned}$$
-
 ## Part E
 
 > Show that the states $\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\psi}$ and $\newcommand{\ket}[1]{{\left|#1\right\rangle}}\ket{\chi}$ satisfy the Schwarz inequality.
+
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}
+\begin{aligned}
+{\lvert\braket{\chi}{\psi}\rvert}^2 &\leq \braket{\psi}{\psi}\braket{\chi}{\chi}\\
+2 &\leq (10)(1)\\
+2 &\leq 10
+\end{aligned}$$
