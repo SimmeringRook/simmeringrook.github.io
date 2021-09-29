@@ -6,7 +6,7 @@ header-includes: |
 
 Template: https://latexdraw.com/draw-a-sphere-in-latex-using-tikz/
 
-\tdplotsetmaincoords{60}{115}
+$$\text{boop}\tdplotsetmaincoords{60}{115}
 \pgfplotsset{compat=newest}
 
 \begin{tikzpicture}[tdplot_main_coords, scale = 2.5]
@@ -76,10 +76,10 @@ Template: https://latexdraw.com/draw-a-sphere-in-latex-using-tikz/
 % Line from the SourcePoint to (SpacePoint)
 \draw[thick, -stealth] (SourcePoint) -- (SpacePoint) node[midway, right] {$\vec{r} - \vec{r'}$};
 
-\end{tikzpicture}
+\end{tikzpicture}$$
 
 ```
-LaTeX
+TeX
 \tdplotsetmaincoords{60}{115}
 \pgfplotsset{compat=newest}
 
