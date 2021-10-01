@@ -221,15 +221,11 @@ $$\begin{aligned}
 
 > $$S_4 \equiv \{\sin^2{x},\ \cos^2{x},\ \sin{2x}\}$$
 
-Recall that the Fourier series can expresses any periodic function as a linear combination of $\sin$ and $\cos$ and that the two trigonometric functions are not only linearly independent of each other, but also orthogonal to each other (via the "Harmonic Integrals"). From this, we can infer that the squares of the functions maintain the orthogonal relationship as we consider the orthogonality between polynomials of different order. From this, we can make a stronger statement about $S_4$ than just linear independence, but that the set is also orthogonal.
+Recall that the Fourier series can expresses any periodic function as a linear combination of $\sin$ and $\cos$ and that the two trigonometric functions are not only linearly independent of each other, but also orthogonal to each other (via the "Harmonic Integrals"). From this, we can infer that the squares of the functions maintain the orthogonal relationship as we consider the orthogonality between functions of different order. From this, we can make a stronger statement about $S_4$ than just linear independence, but that the set is also orthogonal.
 
-$$To\ Do: \text{ show scalar product between functions evaluates to 0}$$
+Linearly independence can be shown just by writing the equation and noting that no solution other than the trivial solution is valid:
 
-$$\begin{aligned}
-\int_{0}^{2\pi}{\sin^2{x}\cos^2{x}dx} &= 0\\
-\int_{0}^{2\pi}{\sin^2{x}\sin{2x}dx} &= 0\\
-\int_{0}^{2\pi}{\cos^2{x}\sin{2x}dx} &= 0
-\end{aligned}$$
+$$a_1 \sin^2{x} + a_2 \cos^2{x} + a_3 \sin{2x} = 0$$
 
 \pagebreak
 
