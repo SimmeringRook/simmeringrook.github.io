@@ -39,7 +39,10 @@ And the resulting object is a bra.
 
 $$\newcommand{\bra}[1]{{\left\langle#1\right|}}
 \newcommand{\ket}[1]{{\left|#1\right\rangle}}
-(\bra{\psi''}\alpha)^{\dagger} = \alpha^*\ket{\psi''}
+\begin{aligned}
+(\bra{\psi''}\alpha)^{\dagger} &= \alpha^*\ket{\psi''} \\
+&= \alpha^* B^\dagger A^\dagger \ket{\psi}
+\end{aligned}
 $$
 
 ## Part B
