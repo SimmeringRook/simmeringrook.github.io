@@ -27,7 +27,7 @@ The object is a bra. We can evaluate this two ways:
 
 $$\newcommand{\bra}[1]{{\left\langle#1\right|}}
 \newcommand{\ket}[1]{{\left|#1\right\rangle}}
-\underbrace{\braket{\psi A}{\varphi}}_{scalar}\bra{\varphi}\quad\text{or}\quad\bra{\psi}\  \underbrace{\ket{A \varphi}\bra{\varphi}}_{operator}=\bra{\psi '}$$
+\underbrace{\braket{\psi A}{\varphi}}_{scalar}\bra{\varphi}\quad\text{or}\quad\bra{\psi}\  \underbrace{A\ket{\varphi}\bra{\varphi}}_{operator}=\bra{\psi '}$$
 
 ## Part B
 
@@ -108,6 +108,35 @@ $$\newcommand{\bra}[1]{{\left\langle#1\right|}}
 ## Part A
 
 > Show that $A$ is Hermitian.
+
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}
+\begin{aligned}
+\bra{\varphi}(iX)^{\dagger}\ket{\psi} &= \int_{-\infty}^{\infty}{\varphi^*(x)(-iX)\psi(x)dx}\\
+&= \left(-i\int_{-\infty}^{\infty}{\varphi^*(x)X\psi(x)dx}\right)^*\\
+&= i\int_{-\infty}^{\infty}{\psi^*(x)X\varphi(x)dx}\\
+&= \bra{\psi}iX\ket{\varphi}\\
+&= \bra{\varphi}iX\ket{\psi}^*
+\end{aligned}$$
+
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}
+\begin{aligned}
+\bra{\varphi}A\ket{\psi} &= \bra{\varphi}\left(i(X^2 + 1)\frac{d}{dx} +iX\right)\ket{\psi}\\
+&= i\bra{\varphi}(X^2 + 1)\frac{d}{dx}\ket{\psi} + i \bra{\varphi}X\ket{\psi}\\
+&= i\int_{-\infty}^{\infty}{\varphi^*(x)(X^2 + 1)\frac{d}{dx}\psi(x)dx} + i\int_{-\infty}^{\infty}{\varphi^*(x)X\psi(x)dx}\\
+\end{aligned}$$
+
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}
+\newcommand{\braket}[2]{{\left\langle #1 \middle| #2 \right\rangle}}
+\begin{aligned}
+\bra{\varphi}A\ket{\psi} &= \bra{\varphi}\left(i(X^2 + 1)\frac{d}{dx} +iX\right)\ket{\psi}\\
+&= i\bra{\varphi}(X^2 + 1)\frac{d}{dx}\ket{\psi} + i \bra{\varphi}X\ket{\psi}\\
+&= i\int_{-\infty}^{\infty}{\varphi^*(x)(X^2 + 1)\frac{d}{dx}\psi(x)dx} + i\int_{-\infty}^{\infty}{\varphi^*(x)X\psi(x)dx}\\
+\end{aligned}$$
 
 ## Part B
 
