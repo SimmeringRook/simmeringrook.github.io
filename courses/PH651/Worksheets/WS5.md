@@ -19,10 +19,11 @@ header-includes: |
 Recall that unitary operators are classified by their inverse being the adjoint of itself: $U^{-1}=U^\dagger$. We can then use this to show that the product of unitary operators is itself unitary:
 
 $$\begin{aligned}
-(ABC)(ABC)^{\dagger} &= I \\
-(ABC)(C^\dagger B^\dagger A^\dagger) &= I \\
-(ABC)(C^{-1} B^{-1} A^{-1}) &= I \\
-I &= I
+D&=(ABC)\\
+D(ABC)^{\dagger} &= (ABC)(ABC)^{\dagger} \\
+D(C^\dagger B^\dagger A^\dagger) &= (ABC)(C^\dagger B^\dagger A^\dagger) \\
+D(C^{-1} B^{-1} A^{-1}) &= (ABC)(C^{-1} B^{-1} A^{-1}) \\
+DD^{-1} &= I
 \end{aligned}$$
 
 # Question 2
@@ -40,11 +41,15 @@ $$B^{\dagger} A^{\dagger} = BA$$
 Let's now investigate the commutator of $A$ and $B$:
 
 $$\begin{aligned}
-[A,B] &= AB - BA\\
+\left[A,\ B\right] &= AB - BA\\
 &= AB - (B^{\dagger} A^{\dagger})\\
 &= AB - (AB)^{\dagger}\\
 &= AB - AB \\
 &= 0
 \end{aligned}$$
 
-Therefore, we can conclude that if the product of two Hermitian operators is itself Hermitian, then both operators commute with each other.
+Therefore, we can conclude that:
+
+| | |
+| --- | --- |
+| **if** the product of two Hermitian operators is itself Hermitian, | **then** both operators commute with each other. |
