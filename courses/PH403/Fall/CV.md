@@ -3,7 +3,7 @@ title: "Thomas J. Knudson"
 author:
 - "My Physical Address"
 - "knudsont@oregonstate.edu"
-- "https://simmeringrook.github.io/#/"
+- "https://simmeringrook.github.io/"
 geometry:
  - a4paper
  - margin=2cm
