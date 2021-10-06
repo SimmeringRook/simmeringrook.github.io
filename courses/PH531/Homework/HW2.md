@@ -123,6 +123,34 @@ V(x,y,z) = \frac{\lambda}{2\pi\epsilon_0} \ln{\frac{\sqrt{(y-a)^2 + z^2}}{\sqrt{
 
 > For any equipotential $V$, define the constant $K = \exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)}$ and prove that the equipotentials are cylinders centered on $y_0 = \pm a \frac{K+1}{K-1}$ with radius $R = 2 a\frac{\sqrt{K}}{\lvert K-1 \rvert}$
 
+What we know (in general):
+
+And we also know that linear combinations of $e^x$ and $e^{-x}$ can be rewritten as factors of $\sinh{x}$ and $\cosh{x}$.
+
+$$e^x = \sinh(x) + \cosh(x)$$
+
+$$e^x - 1 = \frac{2}{\coth{(x/2)}-1}, \qquad e^x +1 = 2+\frac{2}{\coth{(x/2)}-1}$$
+
+$$\frac{e^x + 1}{e^x -1} = \coth{\frac{x}{2}}$$
+
+Recall the fact from Vector Calculus that the gradient is perpendicular to level curves (equipotentials) and due to the cylindrical symmetry of each wire (when $|y|<|a|$) and of the combined system (when $\lvert y\rvert \gg \pm a$), we expect these equipotential surfaces to respect that same symmetry.
+
+$$y_0 = \pm a \frac{\exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)}+1}{\exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)}-1}$$
+
+We know the general equation for a circle has the form of:
+
+$$(z-h)^2 + (y-k)^2 = R^2$$
+
+---
+
+Playing around:
+
+$$R = 2a \frac{\sqrt{\exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)}}}{\lvert \exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)} - 1 \rvert}$$
+
+$$R = 2a \frac{\sqrt{ \sinh{x}+\cosh{x} }}{\lvert \frac{2}{\coth{(x/2)}-1} \rvert}$$
+
+$$R = 2a \frac{\sqrt{ e^x }}{ \sqrt{(e^x -1)^2} } \Rightarrow R^2 = 4a^2 \frac{e^x}{(e^x -1)^2}$$
+
 \pagebreak
 
 # Problem 3.3
