@@ -81,8 +81,54 @@ C &= \frac{Q}{V} \\
 
 > Show weird Stuff
 
+\pagebreak
+
 # Problem 3.3
 
+> Find the general solution to Laplace's equation in spherical coordinates, for the case where $V$ depends only on $r$. Do the same for cylindrical coordinates, assuming $V$ depends only on $s$.
 
+Recall Laplace's Equation:
+
+\begin{equation}
+\nabla^2 V = 0
+\end{equation}
+
+### Spherical
+
+Since Laplace's equation must be true for all values of $r$, we can conclude that the derivative with respect to $r$ of $r^2 \frac{dV}{dr}$ must be 0. This implies that this quantity must be some constant and without loss of generality:
+
+$$\begin{aligned}
+\frac{1}{r^2} \frac{d}{dr} \left(r^2 \frac{dV}{dr}\right) &= 0\\
+\frac{d}{dr} \left(r^2 \frac{dV}{dr}\right) &= 0\\
+r^2 \frac{dV}{dr} &= c, \quad c\in\mathbb{R} \\
+dV &= \frac{c}{r^2} dr \\
+V &= - \frac{c}{r} + \xi
+\end{aligned}$$
+
+\begin{equation}
+V(r) = - \frac{c}{r} + \xi, \qquad c,\xi\in\mathbb{R}
+\end{equation}
+
+### Cylindrical
+
+Using the same logic, we obtain a similar potential for cylindrical coordinates.
+
+$$\begin{aligned}
+\frac{1}{s} \frac{d}{ds} \left(s \frac{dV}{ds}\right) &= 0\\
+\frac{d}{ds} \left(s \frac{dV}{ds}\right) &= 0\\
+s \frac{dV}{ds} &= c, \quad c\in\mathbb{R} \\
+dV &= \frac{c}{s} ds \\
+V &= c\ln{s} + \xi
+\end{aligned}$$
+
+\begin{equation}
+V(s) = c\ln{s} + \xi, \qquad c,\xi\in\mathbb{R}
+\end{equation}
+
+\pagebreak
 
 # Problem 3.12
+
+> Two long, straight copper pipes, each of radius $R$, are held a distance $2d$ apart. One is at potential $V_0$, the other at $-V_0$. Find the potential everywhere.
+
+Using Griffith's Hint of exploiting Problem 2.52...
