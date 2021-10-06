@@ -5,6 +5,4 @@ _site
 vendor
 
 *.pdf
-.DS_Store
-courses/.DS_Store
-research/.DS_Store
+*.DS_Store
