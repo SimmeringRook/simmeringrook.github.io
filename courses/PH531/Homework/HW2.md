@@ -77,6 +77,46 @@ C &= \frac{Q}{V} \\
 
 > Find the potential at any point $(x,y,z)$, using the origin as your reference.
 
+Using our work from Problem 2.43, we can see that the electric field for each individual wire (in isolation) is the same:
+
+\begin{equation}
+\vec{E}(s) = \frac{Q}{2\pi\epsilon_0 L} \frac{1}{s} \hat{s} = \frac{\pm\lambda}{2\pi\epsilon_0}\frac{1}{s}\hat{s}, \qquad s\in(a,b)
+\end{equation}
+
+And so, the potential for $+\lambda$ is:
+
+$$\begin{aligned}
+V_{+} &= - \int_{a}^{s}{\vec{E}(s)\cdot d\vec{\ell}}\\
+&= - \frac{\lambda}{2\pi\epsilon_0} \int_{a}^{s}{\frac{1}{s}ds}\\
+&= - \frac{\lambda}{2\pi\epsilon_0}\ln{\frac{s}{a}}\\
+\end{aligned}$$
+
+And so we'd expect the opposite result for $-\lambda$:
+
+$$\begin{aligned}
+V_{-} &= - \int_{a}^{s}{\vec{E}(s)\cdot d\vec{\ell}}\\
+&= - \frac{-\lambda}{2\pi\epsilon_0} \int_{a}^{s}{\frac{1}{s}ds}\\
+&= + \frac{\lambda}{2\pi\epsilon_0}\ln{\frac{s}{a}}\\
+\end{aligned}$$
+
+Then, utilizing superposition, we sum the two potentials to find a generalized form of the potential *almost* anywhere in $\mathbb{R}$:
+
+$$\begin{aligned}
+V_{tot} &= V_{+} + V_{-} \\
+&= \frac{\lambda}{2\pi\epsilon_0} \left(\ln{\frac{s_+}{a}} - \ln{\frac{s_-}{a}}\right)\\
+&= \frac{\lambda}{2\pi\epsilon_0} \ln{\frac{s_+}{s_-}}
+\end{aligned}$$
+
+Recalling that the $s$-coordinate corresponds to the *radial* distance away from the axis of symmetry and that the $x$-axis is the axis parallel to both wires, each $s_\pm$ coordinate then must correspond to the $y$ and $z$ coordinates away from each respective wire. For the case of one wire positioned at $x=0$, we would define the coordinate transformation of $s$ to be the distance away from $x=0$ in the $y$-$z$ plane: $\sqrt{(y)^2 + (z)^2}$. Applied to this physical situation, the $s_\pm$ distance just needs to be offset by the respective wire's $y'$ value of $\mp a$:
+
+$$s_+ = \sqrt{(y-a)^2 + z^2}, \qquad s_- = \sqrt{(y+a)^2 + z^2}$$
+
+Our final step is to substitute these coordinate transformations into the superposition of potential and we will obtain an expression for determining the potential at any $(x,y,z)$:
+
+\begin{equation}
+V(x,y,z) = \frac{\lambda}{2\pi\epsilon_0} \ln{\frac{\sqrt{(y-a)^2 + z^2}}{\sqrt{(y+a)^2 + z^2}}}
+\end{equation}
+
 ## Part B
 
 > For any equipotential $V$, define the constant $K = \exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)}$ and prove that the equipotentials are cylinders centered on $y_0 = \pm a \frac{K+1}{K-1}$ with radius $R = 2 a\frac{\sqrt{K}}{\lvert K-1 \rvert}$
