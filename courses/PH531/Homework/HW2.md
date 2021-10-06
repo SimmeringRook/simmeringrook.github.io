@@ -83,7 +83,7 @@ Using our work from Problem 2.43, we can see that the electric field for each in
 \vec{E}(s) = \frac{Q}{2\pi\epsilon_0 L} \frac{1}{s} \hat{s} = \frac{\pm\lambda}{2\pi\epsilon_0}\frac{1}{s}\hat{s}, \qquad s\in(a,b)
 \end{equation}
 
-And so, the potential for $+\lambda$ is:
+The potential for $+\lambda$ is:
 
 $$\begin{aligned}
 V_{+} &= - \int_{a}^{s}{\vec{E}(s)\cdot d\vec{\ell}}\\
@@ -91,7 +91,7 @@ V_{+} &= - \int_{a}^{s}{\vec{E}(s)\cdot d\vec{\ell}}\\
 &= - \frac{\lambda}{2\pi\epsilon_0}\ln{\frac{s}{a}}\\
 \end{aligned}$$
 
-And so we'd expect the opposite result for $-\lambda$:
+And so we would then expect the opposite result for $-\lambda$:
 
 $$\begin{aligned}
 V_{-} &= - \int_{a}^{s}{\vec{E}(s)\cdot d\vec{\ell}}\\
@@ -99,7 +99,7 @@ V_{-} &= - \int_{a}^{s}{\vec{E}(s)\cdot d\vec{\ell}}\\
 &= + \frac{\lambda}{2\pi\epsilon_0}\ln{\frac{s}{a}}\\
 \end{aligned}$$
 
-Then, utilizing superposition, we sum the two potentials to find a generalized form of the potential *almost* anywhere in $\mathbb{R}$:
+Next, by utilizing the principle of superposition, we sum the two potentials to find a generalized form of the potential *almost* anywhere in $\mathbb{R}^3$:
 
 $$\begin{aligned}
 V_{tot} &= V_{+} + V_{-} \\
@@ -116,6 +116,8 @@ Our final step is to substitute these coordinate transformations into the superp
 \begin{equation}
 V(x,y,z) = \frac{\lambda}{2\pi\epsilon_0} \ln{\frac{\sqrt{(y-a)^2 + z^2}}{\sqrt{(y+a)^2 + z^2}}}
 \end{equation}
+
+\pagebreak
 
 ## Part B
 
