@@ -42,10 +42,47 @@ $$\begin{aligned}
 \lvert\vec{E}\rvert &= \frac{+Q}{2\pi L s\epsilon_0} \\
 \end{aligned}$$
 
+\begin{equation}
+\vec{E}(s) = \frac{Q}{2\pi\epsilon_0 L} \frac{1}{s} \hat{s}, \qquad s\in(a,b)
+\end{equation}
+
+Now that we have the electric field, finding the capacitance is trivial when using the relation: $C=Q/V$. Since the electric field is $0$ for $s\notin(a,b)$, when integrating across the domain of $s$, the only non-zero integrand in inside that interval[^1].
+
+$$\begin{aligned}
+V &= - \int_{b}^{a}{\vec{E}(s)\cdot d\vec{\ell}}\\
+&= - \frac{Q}{2\pi\epsilon_0 L} \int_b^a{\frac{ds}{s}} \\
+&= - \frac{Q}{2\pi\epsilon_0 L} \ln{\frac{a}{b}} \\
+&= \frac{Q}{2\pi\epsilon_0 L} \ln{\frac{b}{a}}
+\end{aligned}$$
+
+[^1]: While not necessary to change the order in this case, it is prudent to verify that the potential described is that form the view point of the positive conductor, per page 105 of Griffiths.
+
+$$\begin{aligned}
+C &= \frac{Q}{V} \\
+&= \frac{Q}{\frac{Q}{2\pi\epsilon_0 L} \ln{\frac{b}{a}}} \\
+&= \frac{2\pi\epsilon_0 L}{\ln{\frac{b}{a}}}\\
+\end{aligned}$$
+
+\begin{equation}
+\frac{C}{L} = \frac{2\pi\epsilon_0}{\ln{\frac{b}{a}}}
+\end{equation}
+
+\pagebreak
+
 # Problem 2.52
+
+> Two infinitely long wires running parallel to the $x$ axis carry uniform charge densities $+\lambda$ and $-\lambda$.
+
+## Part A
+
+> Find the potential at any point $(x,y,z)$, using the origin as your reference.
+
+## Part B
+
+> Show weird Stuff
 
 # Problem 3.3
 
-# Problem 3.12
 
-# Problem 3.16
+
+# Problem 3.12
