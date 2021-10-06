@@ -79,7 +79,7 @@ C &= \frac{Q}{V} \\
 
 ## Part B
 
-> Show weird Stuff
+> For any equipotential $V$, define the constant $K = \exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)}$ and prove that the equipotentials are cylinders centered on $y_0 = \pm a \frac{K+1}{K-1}$ with radius $R = 2 a\frac{\sqrt{K}}{\lvert K-1 \rvert}$
 
 \pagebreak
 
