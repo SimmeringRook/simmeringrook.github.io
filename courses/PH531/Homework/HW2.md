@@ -2,7 +2,7 @@
 title: Homework 2
 subtitle: PH531, Fall 2021
 author: Thomas Knudson
-date: Wednesday, September 29, 2021
+date: Wednesday, October 6, 2021
 papersize: a4
 geometry: margin=2cm
 linkcolor: blue
@@ -80,7 +80,7 @@ C &= \frac{Q}{V} \\
 Using our work from Problem 2.43, we can see that the electric field for each individual wire (in isolation) is the same:
 
 \begin{equation}
-\vec{E}(s) = \frac{Q}{2\pi\epsilon_0 L} \frac{1}{s} \hat{s} = \frac{\pm\lambda}{2\pi\epsilon_0}\frac{1}{s}\hat{s}, \qquad s\in(a,b)
+\vec{E}(s) = \frac{Q}{2\pi\epsilon_0 L} \frac{1}{s} \hat{s} = \frac{\pm\lambda}{2\pi\epsilon_0}\frac{1}{s}\hat{s}
 \end{equation}
 
 The potential for $+\lambda$ is:
@@ -99,12 +99,12 @@ V_{-} &= - \int_{a}^{s}{\vec{E}(s)\cdot d\vec{\ell}}\\
 &= + \frac{\lambda}{2\pi\epsilon_0}\ln{\frac{s}{a}}\\
 \end{aligned}$$
 
-Next, by utilizing the principle of superposition, we sum the two potentials to find a generalized form of the potential *almost* anywhere in $\mathbb{R}^3$:
+Next, by utilizing the principle of superposition, we subtract the lower potential, $V_+$, from the  higher, $V_-$, to find a generalized form of the potential *almost* anywhere in $\mathbb{R}^3$:
 
 $$\begin{aligned}
-V_{tot} &= V_{+} + V_{-} \\
-&= \frac{\lambda}{2\pi\epsilon_0} \left(\ln{\frac{s_+}{a}} - \ln{\frac{s_-}{a}}\right)\\
-&= \frac{\lambda}{2\pi\epsilon_0} \ln{\frac{s_+}{s_-}}
+V_{tot} &= V_{-} - V_{+}  \\
+&= \frac{\lambda}{2\pi\epsilon_0} \left(\ln{\frac{s_-}{a}} - \ln{\frac{s_+}{a}}\right)\\
+&= \frac{\lambda}{2\pi\epsilon_0} \ln{\frac{s_-}{s_+}}
 \end{aligned}$$
 
 Recalling that the $s$-coordinate corresponds to the *radial* distance away from the axis of symmetry and that the $x$-axis is the axis parallel to both wires, each $s_\pm$ coordinate then must correspond to the $y$ and $z$ coordinates away from each respective wire. For the case of one wire positioned at $x=0$, we would define the coordinate transformation of $s$ to be the distance away from $x=0$ in the $y$-$z$ plane: $\sqrt{(y)^2 + (z)^2}$. Applied to this physical situation, the $s_\pm$ distance just needs to be offset by the respective wire's $y'$ value of $\mp a$:
@@ -114,7 +114,7 @@ $$s_+ = \sqrt{(y-a)^2 + z^2}, \qquad s_- = \sqrt{(y+a)^2 + z^2}$$
 Our final step is to substitute these coordinate transformations into the superposition of potential and we will obtain an expression for determining the potential at any $(x,y,z)$:
 
 \begin{equation}
-V(x,y,z) = \frac{\lambda}{2\pi\epsilon_0} \ln{\frac{\sqrt{(y-a)^2 + z^2}}{\sqrt{(y+a)^2 + z^2}}}
+V(x,y,z) = \frac{\lambda}{2\pi\epsilon_0} \ln{\frac{\sqrt{(y+a)^2 + z^2}}{\sqrt{(y-a)^2 + z^2}}}
 \end{equation}
 
 \pagebreak
@@ -125,21 +125,12 @@ V(x,y,z) = \frac{\lambda}{2\pi\epsilon_0} \ln{\frac{\sqrt{(y-a)^2 + z^2}}{\sqrt{
 
 What we know (in general):
 
-And we also know that linear combinations of $e^x$ and $e^{-x}$ can be rewritten as factors of $\sinh{x}$ and $\cosh{x}$.
-
-$$e^x = \sinh(x) + \cosh(x)$$
-
-$$e^x - 1 = \frac{2}{\coth{(x/2)}-1}, \qquad e^x +1 = 2+\frac{2}{\coth{(x/2)}-1}$$
-
-$$\frac{e^x + 1}{e^x -1} = \coth{\frac{x}{2}}$$
-
-Recall the fact from Vector Calculus that the gradient is perpendicular to level curves (equipotentials) and due to the cylindrical symmetry of each wire (when $|y|<|a|$) and of the combined system (when $\lvert y\rvert \gg \pm a$), we expect these equipotential surfaces to respect that same symmetry.
-
-$$y_0 = \pm a \frac{\exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)}+1}{\exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)}-1}$$
-
-We know the general equation for a circle has the form of:
-
-$$(z-h)^2 + (y-k)^2 = R^2$$
+- Linear combinations of $e^x$ and $e^{-x}$ can be rewritten as factors of $\sinh{x}$ and $\cosh{x}$. $$e^x = \sinh(x) + \cosh(x)$$
+- WolframAlpha can provide inside into alternate formations of the $K+1$ and $K-1$ quantities: $$e^x - 1 = \frac{2}{\coth{(x/2)}-1}, \qquad e^x +1 = 2+\frac{2}{\coth{(x/2)}-1}$$ $$\frac{e^x + 1}{e^x -1} = \coth{\frac{x}{2}}$$
+- From Vector Calculus: the gradient is perpendicular to level curves (equipotentials) and due to the cylindrical symmetry of each wire (when $|y|,|z|<|a|$) and of the combined system (when $\lvert y\rvert ,|z| \gg \pm a$), we expect these equipotential surfaces to respect that same symmetry.
+  - Our potential function from Part A has no dependence on the $x$-coordinate, so if we can demonstrate that a circle about the wire as the same value of potential $V$ along it, we will have created our equipotential (cylindrical) surface
+- The equation for a circle has the form: $$(z-z_0)^2 + (y-y_0)^2 = R^2, \qquad z_0,y_0 \text{ describe the center}$$
+  - $z_0=0$, $y_0 = \pm a \frac{\exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)}+1}{\exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)}-1}$
 
 ---
 
@@ -179,6 +170,8 @@ V &= - \frac{c}{r} + \xi
 V(r) = - \frac{c}{r} + \xi, \qquad c,\xi\in\mathbb{R}
 \end{equation}
 
+$$\ $$
+
 ### Cylindrical
 
 Using the same logic, we obtain a similar potential for cylindrical coordinates.
@@ -201,4 +194,15 @@ V(s) = c\ln{s} + \xi, \qquad c,\xi\in\mathbb{R}
 
 > Two long, straight copper pipes, each of radius $R$, are held a distance $2d$ apart. One is at potential $V_0$, the other at $-V_0$. Find the potential everywhere.
 
-Using Griffith's Hint of exploiting Problem 2.52...
+Using Griffith's Hint of exploiting Problem 2.52, we have:
+
+- The electric field due to an infinitely long wire, $\vec{E}(s) = \frac{Q}{2\pi\epsilon_0 L} \frac{1}{s} \hat{s}$
+  - The field inside each pipe (caused by its own charge density), is $0$ by Gauss's Law.
+- The potential everywhere in space, $V(x,y,z) = \frac{\lambda}{2\pi\epsilon_0} \ln{\frac{\sqrt{(y+a)^2 + z^2}}{\sqrt{(y-a)^2 + z^2}}}$
+- The distance between wires, $2a$, is equivalent to the distance between the two pipes and their radii, $2(d+R)$.
+
+> Upon further reflection of the problem statement, I've found the wording to be a bit ambiguous: From what points of reference on the pipes is the $2d$ distance measured? Practically, I would assume that you would measure the *exterior* distance between each pipe, and so the total distance between the centers of each pipe would correspond to: $R+d+d+R$. This is the setup I will proceed with (opposed to $-R+2d-R$ being the distance from the exterior of one pipe to the other).
+
+Without imposing unusual expectations, we can consider the physical situation extremely similar to Problem 2.52 and treat our pipes as being infinitely long hollow cylinders with their length parallel to the $x$-axis. Then, the $y$-coordinate offset for each pipe can directly be mapped to $|a|\mapsto |d+R|$ and center each pipe along the $y$-axis. Substituting these changes into the potential function, we obtain the following:
+
+$$V(x,y,z) = \frac{\lambda}{2\pi\epsilon_0} \ln{\frac{\sqrt{(y+(d+R))^2 + z^2}}{\sqrt{(y-(d+R))^2 + z^2}}}$$
