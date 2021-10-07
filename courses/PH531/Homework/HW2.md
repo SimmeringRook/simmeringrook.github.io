@@ -132,15 +132,31 @@ What we know (in general):
 - The equation for a circle has the form: $$(z-z_0)^2 + (y-y_0)^2 = R^2, \qquad z_0,y_0 \text{ describe the center}$$
   - $z_0=0$, $y_0 = \pm a \frac{\exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)}+1}{\exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)}-1}$
 
----
+If we then plot the equation for the circle on Desmos, using the given values of $y_0$ and $R$, with WolframAlpha's suggested alternative expressions (the $\text{csch}$ and $\coth{}$), we can see that this gives the equipotential surface (cylinder) for the specified potential:
 
-Playing around:
+![Desmos plot of the equipotential described by: $z^2 + (y-y_0)^2 = R^2$. Changing the value of $a$ corresponds to correctly changing the offset of the $y$ component. ](desmos.png)
 
-$$R = 2a \frac{\sqrt{\exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)}}}{\lvert \exp{\left(4 \pi \epsilon_0 \frac{V}{\lambda}\right)} - 1 \rvert}$$
+For further proof, we can then take our result from Part A and plot it in Mathematica to obtain a few different Contour and Density plots demonstrating the expected symmetry and equipotential surfaces.
 
-$$R = 2a \frac{\sqrt{ \sinh{x}+\cosh{x} }}{\lvert \frac{2}{\coth{(x/2)}-1} \rvert}$$
+```Mathematica
+Subscript[\[Epsilon], 0] = 8.85*10^-12;
+\[Lambda] = 7;
+a = 3;
+ContourPlot3D[\[Lambda]/(2*\[Pi]*Subscript[\[Epsilon], 0])*
+  Log[Sqrt[(y + a)^2 + z^2]/Sqrt[(y - a)^2 + z^2]], {x, -5,
+  5}, {y, -5, 5}, {z, -5, 5}, AxesLabel -> Automatic]
+Show[%81, ViewPoint -> {1.3, -2.4, 2.}]
+DensityPlot3D[\[Lambda]/(2*\[Pi]*Subscript[\[Epsilon], 0])*
+  Log[Sqrt[(y + a)^2 + z^2]/Sqrt[(y - a)^2 + z^2]], {x, -5,
+  5}, {y, -5, 5}, {z, -5, 5}, AxesLabel -> Automatic,
+ ColorFunction -> "SunsetColors", PlotLegends -> Automatic]
+```
 
-$$R = 2a \frac{\sqrt{ e^x }}{ \sqrt{(e^x -1)^2} } \Rightarrow R^2 = 4a^2 \frac{e^x}{(e^x -1)^2}$$
+![ContourPlot3D showing three extreme equipotential surfaces: $-V$, $V=0$, $V$.](contour3D.png)
+
+![Tilted view of the previous ContourPlot3D showing three extreme equipotential surfaces: $-V$, $V=0$, $V$.](contour3D_tilt.png)
+
+![DensityPlot3D showing more surfaces between the two extremes of: $-V$ and $V$.](density3D.png)
 
 \pagebreak
 
