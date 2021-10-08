@@ -76,9 +76,10 @@ $$\newcommand{\bra}[1]{{\left\langle#1\right|}}
 &= \sum_{i,j,k}{\bra{\varphi_i}A\ket{\varphi_j}\bra{\varphi_k}C\ket{\varphi_i}\bra{\varphi_j}B\ket{\varphi_k}}
 \end{aligned}$$
 
-Fix:
+> Finish detailing:
 
-$$\sum_{j,k}{\ket{\varphi_j}\bra{\varphi_k}} \neq \mathbb{I}$$
+$$\newcommand{\bra}[1]{{\left\langle#1\right|}}
+\newcommand{\ket}[1]{{\left|#1\right\rangle}}\sum_{j,k}{\ket{\varphi_j}\bra{\varphi_k}} \neq \mathbb{I}$$
 
 And so, we cannot resolve the reordering in this method, as we're unable to collapse the outer product back to the Identity operator: The only way we can equate $Tr(ABC) = Tr(ACB)$ is to require $[B,C]=0$ and then use commutivity in the step prior to introducing the completeness relations.
 
