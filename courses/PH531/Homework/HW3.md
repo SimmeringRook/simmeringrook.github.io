@@ -20,6 +20,7 @@ header-includes: |
 # Problem 3.9
 
 
+
 \pagebreak
 
 # Problem 3.16
@@ -99,7 +100,7 @@ And with that, we obtain our solution for inside the box:
 
 $$V(x,y,z) = \sum_{n,m\in\\ (2\mathbb{Z^+}+1)}^{\infty}{ \left(\frac{16V_0}{nm\pi^2}\right)\frac{ \sin{\left(\frac{n\pi}{a}x\right)} \sin{\left(\frac{m\pi}{a}y\right)} \text{sinh}\left(\frac{\pi}{a}\sqrt{n^2 + m^2}z\right) }{\text{sinh}\left(\pi\sqrt{n^2 + m^2}\right)}}$$
 
-Implementing this in Mathematica, we use the following code:
+Implementing this in Mathematica, we use the following code: $$\ $$
 
 ```Mathematica
 NumberOfSteps = 3;
@@ -111,7 +112,56 @@ a = 1; V[x_, y_, z_] :=
 N[V[a/2, a/2, a/2]]
 ```
 
+$$\ $$
+
 And obtain the numeric approximated value of $1.\bar{6}V_0$ which is equivalent to $V_0/6$.
+
+$$\ $$
+
+**Sense Making**: We know that Laplace's Equation "only tolerates extrema" at the boundaries, as so we expect that as $z$ transitions from $0\rightarrow a$ (with constant $x$, $y$), $V$ will increase monotonically from $0$ to $V_0$. Tweaking the previous Mathematica code slightly, we can plot several cut outs of this 3-D function to confirm our expectations:
+
+![This is a plot of $V\left(\frac{a}{2},\frac{a}{2},z\right)$ in order to highlight the expected $1/6$-th of $V_0$ and monotonic increasing behavior.](PotentialCube_Flat.png)
+
+![This is a plot of $V\left(\frac{a}{2},y,z\right)$ on the intervals: $y\in[a/4,3a/4]$ and $z\in[0,a]$ in an attempt to show the monotonic increasing behavior with 3 dimensions.](PotentialCube_3D.png)
+
+Code for Figure 1:
+
+```Mathematica
+Subscript[V, 0] = 1;
+Plot[
+ V[a/2, a/2, z], {z, 0, a},
+ AxesLabel -> Automatic,
+ Ticks -> {{0, {a/4, "\!\(\*FractionBox[\(a\), \(4\)]\)"}, {a/2,
+     "\!\(\*FractionBox[\(a\), \(2\)]\)"}, {(3 a)/4,
+     "\!\(\*FractionBox[\(3  a\), \(4\)]\)"}, {a,
+     "a"}}, {0, {Subscript[V, 0]/6,
+     "\!\(\*FractionBox[SubscriptBox[\(V\), \(0\)], \(6\)]\)"}, \
+{Subscript[V, 0], "\!\(\*SubscriptBox[\(V\), \(0\)]\)"}}},
+ PlotRange -> {{0, a}, {0, Subscript[V, 0]}},
+ GridLines -> {{a/2}, {Subscript[V, 0]/6}}
+ ]
+```
+
+$$\ $$
+
+Code for Figure 2:
+
+```Mathematica
+Plot3D[
+ V[a/2, y, z], {y, a/4, (3 a)/4}, {z, 0, a},
+ AxesLabel -> Automatic, Ticks -> {
+   {0, {a/4, "\!\(\*FractionBox[\(a\), \(4\)]\)"}, {a/2,
+     "\!\(\*FractionBox[\(a\), \(2\)]\)"}, {(3 a)/4,
+     "\!\(\*FractionBox[\(3  a\), \(4\)]\)"}, {a, "a"}}, {0, {a/4,
+     "\!\(\*FractionBox[\(a\), \(4\)]\)"}, {a/2,
+     "\!\(\*FractionBox[\(a\), \(2\)]\)"}, {(3 a)/4,
+     "\!\(\*FractionBox[\(3  a\), \(4\)]\)"}, {a, "a"}},
+   {0, {Subscript[V, 0]/6,
+     "\!\(\*FractionBox[SubscriptBox[\(V\), \(0\)], \(6\)]\)"}, \
+{Subscript[V, 0], "\!\(\*SubscriptBox[\(V\), \(0\)]\)"}}},
+  PlotRange -> {{0, a}, {0, Subscript[V, 0]}}
+ ]
+```
 
 \pagebreak
 
