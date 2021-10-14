@@ -259,14 +259,15 @@ Now we proceed with the $u$-subsitution inspired by Table 3.1:
 
 $$x=\cos{\theta}, \quad \begin{cases} x = \cos{0} = 1 \text{,} & \theta=0 \\
 x = \cos{\pi/2} = 0 \text{,} & \theta=\pi/2 \\
-x = \cos{\pi} = -1 \text{,} & \theta=\pi  \end{cases} \\
-A_{\ell} = \frac{\sigma_0}{2\epsilon_0 R^{\ell - 1}}\left(\int_{0}^{1}{P_{\ell} (x)dx} - \int_{-1}^{0}{ P_{\ell} (x)dx}\right)$$
+x = \cos{\pi} = -1 \text{,} & \theta=\pi  \end{cases}$$
+
+$$A_{\ell} = \frac{\sigma_0}{2\epsilon_0 R^{\ell - 1}}\left(\int_{0}^{1}{P_{\ell} (x)dx} - \int_{-1}^{0}{ P_{\ell} (x)dx}\right)$$
 
 We can also note the trend in the provided polynomials that even values of $\ell$ correspond to even powers of $x$ and that odd values of $\ell$ give odd powers of $x$. With this, we can reflect the interval of integration on the second integral through a sneaky $u$-sub: Let $-u=x$, $-du=dx$:
 
-$$\text{Let } -u=x,\ -du=dx \\
--u=-1,\ -u=0 \quad\rightarrow u\in[0,1]\\
-\int_{-1}^{0}{ P_{\ell} (x)dx} = \int_{1}^{0}{ P_{\ell} (-u)(-du)} = +\int_{0}^{1}{ (-1)^\ell P_{\ell} (u)du}$$
+$$\text{Let } -u=x,\ -du=dx, \qquad -u=-1,\ -u=0 \quad\rightarrow u\in[0,1]$$
+
+$$\int_{-1}^{0}{ P_{\ell} (x)dx} = \int_{1}^{0}{ P_{\ell} (-u)(-du)} = +\int_{0}^{1}{ (-1)^\ell P_{\ell} (u)du}$$
 
 And since $u$ is a "dummy variable", we can rename it back to $x$ to make comparisons with the other integrand simpler.
 
@@ -276,24 +277,34 @@ And finally, we end up at a very simple pattern. By factoring the integral out t
 
 $$A_{\ell} = \frac{\sigma_0}{2\epsilon_0 R^{\ell - 1}}\left(1 - (-1)^\ell\right)\int_{0}^{1}{P_{\ell} (x)dx} = \frac{\sigma_0}{2\epsilon_0 R^{\ell - 1}}\left\{\begin{array}{ll} 0, \qquad & \text{if }\ell\in 2\mathbb{Z^+} \\ 2, &  \text{if }\ell\in (2\mathbb{Z^+} +1)  \end{array}\right\}\int_{0}^{1}{P_{\ell} (x)dx}$$
 
-\pagebreak
-
 All even values of $\ell$ cause our $A_\ell$ and $B_\ell$ coefficients to evaluate to $0$ (recall Equation \ref{Bcoeff}), and so we only have to truly integrate 3 of the Legendre Polynomials:
 
 | $$\ell$$ | $$\int_{0}^{1}{P_{\ell} (x)dx}$$ | $$A_{\ell} = \frac{\sigma_0}{\epsilon_0 R^{\ell - 1}}\int_{0}^{1}{P_{\ell} (x)dx}$$ | $$B_\ell = A_{\ell} R^{2\ell + 1}$$ |
 | - | --- | -- | -- |
-| $$0$$ | $$-$$ | $$0$$ | $$0$$ |
 | $$1$$ | $$\int_{0}^{1}{xdx}=\frac{1}{2}$$ | $$\frac{\sigma_0}{2\epsilon_0}$$ | $$\frac{\sigma_0}{2\epsilon_0}R$$ |
-| $$2$$ | $$-$$ | $$0$$ | $$0$$ |
 | $$3$$ | $$\int_{0}^{1}{\frac{5x^3 - 3x}{2}dx}=-\frac{1}{8}$$ | $$-\frac{\sigma_0}{8\epsilon_0 R^{3-1}}$$ | $$-\frac{\sigma_0 R^{2(3)+1}}{8\epsilon_0 R^{2}}$$ |
-| $$4$$ | $$-$$ | $$0$$ | $$0$$ |
 | $$5$$ | $$\int_{0}^{1}{\frac{63x^5-70x^3+15x}{8}dx}=\frac{1}{16}$$ | $$\frac{\sigma_0}{16\epsilon_0 R^{5-1}}$$ | $$\frac{\sigma_0 R^{2(5)+1}}{16\epsilon_0 R^{4}}$$ |
-| $$6$$ | $$-$$ | $$0$$ | $$0$$ |
 
-Finally, putting it all together, we obtain the potential everywhere in space:
+Edit: The following statement is incorrect and the correct solution is on the following page: *Finally, putting it all together, we obtain the potential everywhere in space,*
 
 $$V(r,\theta) = \frac{\sigma_0}{\epsilon_0} \left\{
 \begin{array}{lc}
 \frac{1}{2} - \frac{1}{8 R^2} + \frac{1}{16 R^4} & r \leq R \\
 \frac{R}{2} - \frac{R^5}{8} + \frac{R^7}{16} & r \geq R
 \end{array}\right\} + \sum_{\ell=7}^{\infty}{\begin{cases} \frac{\sigma_0}{\epsilon_0 R^{\ell - 1}}\int_{0}^{1}{P_{\ell} (x)dx} & r \leq R \\ \frac{\sigma_0 R^{2\ell + 1}}{\epsilon_0 R^{\ell - 1}}\int_{0}^{1}{P_{\ell} (x)dx} & r \geq R \end{cases}}$$
+
+$$\ $$
+
+> **Note:** After consulting with Abbie Glickman and Dominic Daprano, I realized that the above statement is false: I focused too much on having $A_\ell$ and $B_\ell$, I forgot to actually add them back into the actual function. Notably, there's no $\theta$ dependence on the potential, which we better have because the surface charge changes sign depending on what $\theta$ we are! $$\ $$
+
+The $\ell$-th coefficients are given by, $A_{\ell} = \frac{\sigma_0}{\epsilon_0 R^{\ell - 1}}\int_{0}^{1}{P_{\ell} (x)dx}$ and $B_\ell = A_{\ell} R^{2\ell + 1}$, which gives the potential as:
+
+$$\begin{aligned}
+r \leq R & \\
+V(r,\theta) &= \frac{\sigma_0}{\epsilon_0} \left(\frac{r}{2}P_1 (\cos{\theta}) - \frac{r^3}{8 R^2}P_3 (\cos{\theta}) + \frac{r^5}{16 R^4}P_5 (\cos{\theta}) \right) + \sum_{\ell=7}^{\infty}{ \underbrace{\left({R^{\ell - 1}} \int_{0}^{1}{P_{\ell} (x)dx}\right)}_{A_\ell} r^\ell P_\ell (\cos{\theta})}
+\end{aligned}$$
+
+$$\begin{aligned}
+r \geq R & \\
+V(r,\theta) &= \frac{\sigma_0}{\epsilon_0} \left(\frac{R}{2r^2}P_1 (\cos{\theta}) - \frac{R^5}{8r^4}P_3 (\cos{\theta}) + \frac{R^7}{16r^6}P_5 (\cos{\theta})\right) + \sum_{\ell=7}^{\infty}{ \underbrace{\left( R^{2\ell + 1} \int_{0}^{1}{P_{\ell} (x)dx}\right)}_{B_\ell} \frac{P_\ell (\cos{\theta})}{r^{\ell + 1}} }
+\end{aligned}$$
