@@ -21,7 +21,96 @@ header-includes: |
 
 # Problem 3.16
 
+> A cubical box (sides of length $a$) consists of five metal plates, which are welded together and grounded. The top is made of a separate sheet of metal, insulated from the others, and held at a constant potential $V_0$. Find the potential inside the box.
 
+Consider the boundary conditions for this physical situation:
+
+$$
+\begin{array}{llcl}
+(i) & V = 0 &\qquad & x = 0 \\
+(ii) & V = 0 &\quad & x = a \\
+(iii) & V = 0 &\quad & y = 0 \\
+(iv) & V = 0 &\quad & y = a \\
+(v) & V = 0 &\quad & z = 0 \\
+(vi) & V = V_0(x,y) &\quad & z = a \\
+\end{array}
+$$
+
+Recalling from pervious experience, we have a handful of patterns for inspiring our Ansatz:
+
+- If: the boundary conditions are symmetric, the general solution to the second order ODE is a linear combination of sine and cosine
+  - If: the boundary is 0 on both ends, the sine function is the correct description.
+  - Else: the boundary is the same on both ends (and non-zero), the cosine function will correctly describe the physical situation.
+- Else: the general solution is going to be a linear combination of real valued exponentials
+
+Using this information, we consider a solution to Laplace's equation that is comprised of the product from three functions, each only dependent on one unique spatial variable: $V(x,y,z) = X(x)Y(y)Z(z)$. From this, we note that we are able to isolate each coordinate and its dependent function with the corresponding second (partial) derivative. From this, we note that changes to one variable cannot effect the values of the other derivatives, and so each second partial derivative must be equal to some constant.
+
+$$\frac{1}{X(x)}\frac{\partial^2 X(x)}{\partial x^2} + \frac{1}{Y(y)}\frac{\partial^2 Y(y)}{\partial y^2} + \frac{1}{Z(z)}\frac{\partial^2 Z(z)}{\partial z^2} = C_1 + C_2 + C_3 = 0$$
+
+$$\frac{1}{X(x)}\frac{d^2 X(x)}{dx^2} = C_1, \quad \frac{1}{Y(y)}\frac{d^2 Y(y)}{dy^2} = C_2, \quad \frac{1}{Z(z)}\frac{d^2 Z(z)}{dz^2}= C_3$$
+
+Again, leveraging past experience (as mentioned above), we can see that $X(x)$ and $Y(y)$ will take negative values for their constant for the sine and cosine solutions, and that $C_3$ will be the additive inverse of $C_1$ and $C_2$:
+
+$$\frac{d^2 X(x)}{dx^2} = -k^2 X(x), \quad \frac{d^2 Y(y)}{dy^2} = -\ell^2 Y(y), \quad \frac{d^2 Z(z)}{dz^2}= (k^2 +\ell^2) Z(z)$$
+
+$$\begin{aligned}
+X(x) &= \alpha_1 \sin{kx} + \alpha_2 \cos{kx}\\
+Y(y) &= \beta_1 \sin{\ell y} + \beta_2 \cos{\ell y}\\
+Z(z) &= \gamma_1 e^{\sqrt{k^2 +\ell^2}z} + \gamma_2 e^{-\sqrt{k^2 +\ell^2}z}
+\end{aligned}$$
+
+Applying boundary conditions in quick succession, we can see that $\alpha_2=\beta_2=0$ as neither cosine function are valid (using $(i)$ and $(iii)$). Then with $(ii)$ and $(iv)$, $k$ and $\ell$ must be integer multiples of $\pi/a$ such that when the corresponding coordinate value reaches $a$, the argument reduces to an integer multiple of $\pi$. Finally, since neither real exponential go to $0$ at $z=0$, $\gamma_1$ and $\gamma_2$ must be additive inverses of each other.
+
+$$\begin{aligned}
+X(x) &= \alpha_1 \sin{\left(\frac{n\pi}{a}x\right)}\\
+Y(y) &= \beta_1 \sin{\left(\frac{m\pi}{a}y\right)}\\
+Z(z) &= 2\gamma_1 \text{sinh}\left(\frac{\pi}{a}\sqrt{n^2 + m^2}z\right)
+\end{aligned}$$
+
+This means our solution for the potential inside this box currently has the form:
+
+$$V(x,y,z) = \sum_{n,m}{(2\alpha_n\beta_m\gamma_{n,m}) \sin{\left(\frac{n\pi}{a}x\right)}\sin{\left(\frac{m\pi}{a}y\right)} \text{sinh}\left(\frac{\pi}{a}\sqrt{n^2 + m^2}z\right)}$$
+
+Using our final boundary condition, we wrap all the remaining constants inside $C_{n,m}$ and evaluate $(vi)$:
+
+$$V(x,y, z=a) = \sum_{n,m}{(2\alpha_n\beta_m\gamma_{n,m}) \sin{\left(\frac{n\pi}{a}x\right)}\sin{\left(\frac{m\pi}{a}y\right)} \text{sinh}\left(\frac{\pi}{a}\sqrt{n^2 + m^2}a\right)} = V_0(x,y)$$
+
+Remembering that sine functions are orthogonal to other sine functions (Fourier Series), we can take the inner product of both sides to eliminate the summation and solve for $C_{n,m}$ generally:
+
+$$\begin{aligned}
+V_0(x,y) &= \sum_{n,m}{C_{n,m} \sin{\left(\frac{n\pi}{a}x\right)}\sin{\left(\frac{m\pi}{a}y\right)} \text{sinh}\left(\pi\sqrt{n^2 + m^2}\right)} \\
+\int_{0}^{a}{\int_{0}^{a}{V_0(x,y)\sin{\left(\frac{n'\pi}{a}x\right)}\sin{\left(\frac{m'\pi}{a}y\right)}dx}dy} &= \sum_{n,m}{C_{n,m}\text{sinh}\left(\pi\sqrt{n^2 + m^2}\right)\left(\frac{a}{2}\delta_{m,m'}\right)\left(\frac{a}{2}\delta_{n,n'}\right)} \\
+C_{n,m} &= \frac{4 V_0}{a^2 \text{sinh}\left(\pi\sqrt{n^2 + m^2}\right)} \int_{0}^{a}{sin{\left(\frac{n\pi}{a}x\right)} dx}\int_{0}^{a}{\sin{\left(\frac{m\pi}{a}y\right)}dy}\\
+C_{n,m} &= \frac{4 V_0}{a^2 \text{sinh}\left(\pi\sqrt{n^2 + m^2}\right)} \left(\frac{a}{m\pi}(1-\cos{m\pi})\right)\left(\frac{a}{n\pi}(1-\cos{n\pi})\right)
+\end{aligned}$$
+
+Note the two possible outcomes:
+
+$$\begin{array}{llc} m,n & \qquad even \qquad & 0 \\ m,n & \qquad odd &  \frac{4}{nm\pi^2}\end{array}$$
+
+Applying this simplification:
+
+$$C_{n,m} = \left(\frac{16V_0}{nm\pi^2}\right)\frac{1}{\text{sinh}\left(\pi\sqrt{n^2 + m^2}\right)}$$
+
+And with that, we obtain our solution for inside the box:
+
+$$V(x,y,z) = \sum_{n,m\in\\ (2\mathbb{Z^+}+1)}^{\infty}{ \left(\frac{16V_0}{nm\pi^2}\right)\frac{ \sin{\left(\frac{n\pi}{a}x\right)} \sin{\left(\frac{m\pi}{a}y\right)} \text{sinh}\left(\frac{\pi}{a}\sqrt{n^2 + m^2}z\right) }{\text{sinh}\left(\pi\sqrt{n^2 + m^2}\right)}}$$
+
+Implementing this in Mathematica, we use the following code:
+
+```Mathematica
+NumberOfSteps = 3;
+a = 1; V[x_, y_, z_] :=
+ Sum[(16 Subscript[V, 0])/(n*m*\[Pi]^2)*Sin[(n*\[Pi])/a x]*
+   Sin[(m*\[Pi])/a y]*Sinh[\[Pi]/a*Sqrt[n^2 + m^2]*z]/
+   Sinh[\[Pi] Sqrt[n^2 + m^2]], {n, 1, 2*NumberOfSteps + 1, 2}, {m, 1,
+    2*NumberOfSteps + 1, 2}]
+N[V[a/2, a/2, a/2]]
+```
+
+And obtain the numeric approximated value of $1.\bar{6}V_0$ which is equivalent to $V_0/6$.
+
+\pagebreak
 
 # Problem 3.23
 
@@ -56,9 +145,9 @@ $$\begin{aligned}
 V_{in}(R,\theta) &= V_{out}(R,\theta)\\
 \sum_{\ell=0}^{\infty}{A_{\ell} R^{\ell} P_\ell (\cos{\theta})} &= \sum_{\ell=0}^{\infty}{ \frac{B_\ell}{r^{\ell+1}}P_\ell (\cos{\theta})} \\
 \left(\sum_{\ell=0}^{\infty}{A_{\ell} R^{\ell} P_\ell (\cos{\theta})}\right) \left(\sum_{\ell^{\prime}=0}^{\infty}{P_{\ell^{\prime}} (\cos{\theta})}\sin{\theta}\right) &= \left(\sum_{\ell=0}^{\infty}{ \frac{B_\ell}{r^{\ell+1}}P_\ell (\cos{\theta})}\right) \left(\sum_{\ell^{\prime}=0}^{\infty}{P_{\ell^{\prime}} (\cos{\theta})}\sin{\theta}\right) \\
-\sum_{\ell, \ell^{\prime}}^{\infty}{ \int_{0}^{\theta}{A_{\ell} R^{\ell} P_\ell (\cos{\theta})P_{\ell^{\prime}} (\cos{\theta})\sin{\theta} d\theta} } &= \sum_{\ell, \ell^{\prime}}^{\infty}{ \int_{0}^{\theta}{\frac{B_\ell}{R^{\ell+1}} P_\ell (\cos{\theta})P_{\ell^{\prime}} (\cos{\theta})\sin{\theta} d\theta} } \\
+\sum_{\ell, \ell^{\prime}}^{\infty}{ \int_{0}^{\pi}{A_{\ell} R^{\ell} P_\ell (\cos{\theta})P_{\ell^{\prime}} (\cos{\theta})\sin{\theta} d\theta} } &= \sum_{\ell, \ell^{\prime}}^{\infty}{ \int_{0}^{\pi}{\frac{B_\ell}{R^{\ell+1}} P_\ell (\cos{\theta})P_{\ell^{\prime}} (\cos{\theta})\sin{\theta} d\theta} } \\
 \\
-\int_{0}^{\theta}{P_\ell (\cos{\theta})P_{\ell^{\prime}} (\cos{\theta})\sin{\theta} d\theta} &= \delta_{\ell,{\ell^{\prime}}} \\
+\int_{0}^{\pi}{P_\ell (\cos{\theta})P_{\ell^{\prime}} (\cos{\theta})\sin{\theta} d\theta} &= \delta_{\ell,{\ell^{\prime}}} \\
 \\
 A_{\ell} R^{\ell} &=\frac{B_\ell}{R^{\ell+1}}
 \end{aligned}
@@ -137,13 +226,13 @@ $$A_{\ell} = \frac{\sigma_0}{2\epsilon_0 R^{\ell - 1}}\left(1 - (-1)^\ell\right)
 All even values of $\ell$ cause our $A_\ell$ and $B_\ell$ coefficients to evaluate to $0$ (recall Equation \ref{Bcoeff}), and so we only have to truly integrate 3 of the Legendre Polynomials:
 
 | $$\ell$$ | $$\int_{0}^{1}{P_{\ell} (x)dx}$$ | $$A_{\ell} = \frac{\sigma_0}{\epsilon_0 R^{\ell - 1}}\int_{0}^{1}{P_{\ell} (x)dx}$$ | $$B_\ell = A_{\ell} R^{2\ell + 1}$$ |
-| - | --- | - | - |
+| - | --- | -- | -- |
 | $$0$$ | $$-$$ | $$0$$ | $$0$$ |
 | $$1$$ | $$\int_{0}^{1}{xdx}=\frac{1}{2}$$ | $$\frac{\sigma_0}{2\epsilon_0}$$ | $$\frac{\sigma_0}{2\epsilon_0}R$$ |
 | $$2$$ | $$-$$ | $$0$$ | $$0$$ |
-| $$3$$ | $$\int_{0}^{1}{\frac{5x^3 - 3x}{2}dx}=\frac{1}{2}\left(\frac{5}{4}-\frac{3}{2}\right)=-\frac{1}{8}$$ | $$-\frac{\sigma_0}{8\epsilon_0 R^{3-1}}$$ | $$-\frac{\sigma_0 R^{2(3)+1}}{8\epsilon_0 R^{2}}$$ |
+| $$3$$ | $$\int_{0}^{1}{\frac{5x^3 - 3x}{2}dx}=-\frac{1}{8}$$ | $$-\frac{\sigma_0}{8\epsilon_0 R^{3-1}}$$ | $$-\frac{\sigma_0 R^{2(3)+1}}{8\epsilon_0 R^{2}}$$ |
 | $$4$$ | $$-$$ | $$0$$ | $$0$$ |
-| $$5$$ | $$\int_{0}^{1}{\frac{63x^5-70x^3+15x}{8}dx}=\frac{1}{8}\left(\frac{63}{6}-\frac{70}{4}+\frac{15}{2}\right)=\frac{1}{16}$$ | $$\frac{\sigma_0}{16\epsilon_0 R^{5-1}}$$ | $$\frac{\sigma_0 R^{2(5)+1}}{16\epsilon_0 R^{4}}$$ |
+| $$5$$ | $$\int_{0}^{1}{\frac{63x^5-70x^3+15x}{8}dx}=\frac{1}{16}$$ | $$\frac{\sigma_0}{16\epsilon_0 R^{5-1}}$$ | $$\frac{\sigma_0 R^{2(5)+1}}{16\epsilon_0 R^{4}}$$ |
 | $$6$$ | $$-$$ | $$0$$ | $$0$$ |
 
 Finally, putting it all together, we obtain the potential everywhere in space:
