@@ -19,6 +19,9 @@ header-includes: |
 
 # Problem 3.9
 
+
+\pagebreak
+
 # Problem 3.16
 
 > A cubical box (sides of length $a$) consists of five metal plates, which are welded together and grounded. The top is made of a separate sheet of metal, insulated from the others, and held at a constant potential $V_0$. Find the potential inside the box.
@@ -222,6 +225,8 @@ $$A_{\ell} = \frac{\sigma_0}{2\epsilon_0 R^{\ell - 1}}\left(\int_{0}^{1}{P_{\ell
 And finally, we end up at a very simple pattern. By factoring the integral out to the right, we're left with a very simple expression that can be evaluated based on the odd/evenness of $\ell$:
 
 $$A_{\ell} = \frac{\sigma_0}{2\epsilon_0 R^{\ell - 1}}\left(1 - (-1)^\ell\right)\int_{0}^{1}{P_{\ell} (x)dx} = \frac{\sigma_0}{2\epsilon_0 R^{\ell - 1}}\left\{\begin{array}{ll} 0, \qquad & \text{if }\ell\in 2\mathbb{Z^+} \\ 2, &  \text{if }\ell\in (2\mathbb{Z^+} +1)  \end{array}\right\}\int_{0}^{1}{P_{\ell} (x)dx}$$
+
+\pagebreak
 
 All even values of $\ell$ cause our $A_\ell$ and $B_\ell$ coefficients to evaluate to $0$ (recall Equation \ref{Bcoeff}), and so we only have to truly integrate 3 of the Legendre Polynomials:
 
