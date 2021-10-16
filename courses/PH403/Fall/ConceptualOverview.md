@@ -26,7 +26,7 @@
 
 - Helper Math functions:
   - Differential Scattering Cross-Section
-  - Metric
+  - [Metric](/courses/PH401/Physics/Metric.md)
     - Euclidean
     - Minkowski
     - Schwarzschild
