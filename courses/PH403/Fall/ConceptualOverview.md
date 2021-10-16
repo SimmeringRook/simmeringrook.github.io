@@ -14,8 +14,8 @@
 - Create base framework:
   - Lattice -> Node
   - [Lattice](/courses/PH401/Computational/Latticework.md)
-    - 3-D (4D?) representation of spacetime
-    - 2D (3D?) collection of [Nodes]
+    - 3-D (4D?) representation of [spacetime](/courses/PH401/Physics/Spacetime.md)
+    - 2D (3D?) collection of Nodes
   - [Node](/courses/PH401/Computational//Node.md)
     - coordinate location in spacetime
     - x,y,z,t
@@ -27,7 +27,7 @@
 - Helper Math functions:
   - Differential Scattering Cross-Section
   - Metric
-    - Euclidian
+    - Euclidean
     - Minkowski
     - Schwarzschild
   - Geodesic Equations of Motion
