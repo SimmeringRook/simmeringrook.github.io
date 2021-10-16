@@ -1,6 +1,6 @@
 # Latticework
 
-The `Latticework` object is a collection of [`Nodes`](/courses/PH401/Computational/Node.md) of [spacetime](/courses/PH401/Physics/Spacetime.md). The name is inspired from [Taylor and Wheeler]'s discussion of a "latticework of rods and clocks" used to map out and record events in spacetime. Functionally, this will be implemented as a [multi-dimensional array] of `Nodes`, and will be aware of the underlying geometry of spacetime implemented.
+The `Latticework` object is a collection of [`Nodes`](/courses/PH401/Computational/Node.md) of [spacetime](/courses/PH401/Physics/Spacetime.md). The name is inspired from [Taylor and Wheeler]'s discussion of a "latticework of rods and clocks" used to map out and record events in spacetime. Functionally, this will be implemented as a [multi-dimensional array] of `Nodes`, and will be aware of the underlying geometry of spacetime, [`SpacetimeGeometry`](/courses/PH401/Computational/SpacetimeGeometry.md), implemented.
 
 ## Creation
 
