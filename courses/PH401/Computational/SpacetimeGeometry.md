@@ -30,8 +30,10 @@ d\vec{r} \cdot d\vec{r} &= g(\sigma^i \hat{e}_i , \sigma^j \hat{e}_j ) \\
 
 ```Python
 def Metric(pForm1, pForm2):
-  return (self.latticeX, self.latticeY, self.latticeZ, self.latticeT)
+  return actedOnPForm
 ```
+
+To do this programmatically, we'll need to implement the concept of a `pform`.
 
 ### GetLineElementOf
 
@@ -42,5 +44,11 @@ def GetLineElementOf(drVector1):
   return self.Metric(drVector1, drVector1)
 ```
 
+### ConvertCoordinateSystem
+
+```python
+def ConvertCoordinateSystem(currentCoordinateSystem, desiredSystem):
+  return transformedCoordinateSystem
+```
 
 ## Geometric vs Physical Coordinates
