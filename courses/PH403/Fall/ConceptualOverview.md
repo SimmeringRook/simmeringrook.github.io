@@ -9,18 +9,14 @@
     - shell
 - Use time as additional dimension for visualizations ?
 
-# Breakdown:
-
 ## Computational
 
 - Create base framework:
-  - Lattice -> Slice -> Node
-  - Lattice:
+  - Lattice -> Node
+  - [Lattice](/courses/PH401/Computational/Latticework.md)
     - 3-D (4D?) representation of spacetime
-    - collection of 2D (3D?) slices
-  - Slice
-    - 2D (3D?) plane of spacetime
-  - Node
+    - 2D (3D?) collection of [Nodes]
+  - [Node](/courses/PH401/Computational//Node.md)
     - coordinate location in spacetime
     - x,y,z,t
     - Nearest Neighbors:
