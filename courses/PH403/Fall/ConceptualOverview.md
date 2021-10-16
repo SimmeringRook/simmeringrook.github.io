@@ -1,3 +1,5 @@
+Last Updated: 10/16/2021 11:10 AM
+
 # Key Concepts:
 
 - Create visualizations for:
@@ -9,16 +11,21 @@
     - shell
 - Use time as additional dimension for visualizations ?
 
+<!-- tabs:start -->
+
+<!-- tab:Computational -->
+
 ## Computational
 
-- Create base framework:
-  - Lattice -> Node
-  - [Lattice](/courses/PH401/Computational/Latticework.md)
+Lattice $\rightarrow$ Node
+
+  - [`Latticework`](/courses/PH401/Computational/Latticework.md)
     - 3-D (4D?) representation of [spacetime](/courses/PH401/Physics/Spacetime.md)
-    - 2D (3D?) collection of Nodes
-  - [Node](/courses/PH401/Computational/Node.md)
-    - coordinate location in spacetime
-    - x,y,z,t
+    - 2D (3D?) collection of `Nodes`
+    - [`SpacetimeGeometry`](/courses/PH401/Computational/SpacetimeGeometry.md)
+  - [`Node`](/courses/PH401/Computational/Node.md)
+    - coordinate location in `Latticework`
+      - x,y,z,t
     - Nearest Neighbors:
       - geometric,
       - local,
@@ -53,6 +60,8 @@
     - Differential Scattering Cross-section heat map
   - Animations?
 
+<!-- tab:Physics -->
+
 ## Physics
 
 - General Relativity
@@ -77,3 +86,5 @@
 - Differential Scattering Cross-section
   - method for discussing how much an object is deflected from original trajectory
   - Rutherford's alpha particles and gold foil for determining the nucleus of an atom
+
+<!-- tabs:end -->
