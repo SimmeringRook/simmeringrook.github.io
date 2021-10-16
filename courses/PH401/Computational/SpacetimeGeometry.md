@@ -28,7 +28,7 @@ d\vec{r} \cdot d\vec{r} &= g(\sigma^i \hat{e}_i , \sigma^j \hat{e}_j ) \\
 &= ds^2
 \end{aligned}$$
 
-```Python
+```python
 def Metric(pForm1, pForm2):
   return actedOnPForm
 ```
@@ -39,7 +39,7 @@ To do this programmatically, we'll need to implement the concept of a `pform`.
 
 Most likely, we will want to use the Metric to describe the distance between two [`Nodes`](/courses/PH401/Computational/Node.md):
 
-```Python
+```python
 def GetLineElementOf(drVector1):
   return self.Metric(drVector1, drVector1)
 ```

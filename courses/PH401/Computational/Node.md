@@ -14,7 +14,7 @@ Possible useful functions to be able to ask a `Node`:
 
 If for whatever reason we're addressing a `Node` saved or passed by reference, it'll be pretty useful to be able to ask for a [tuple](https://www.w3schools.com/python/python_tuples.asp) that contains the $x$, $y$, and $z$ position in the `Latticework`, e.g.:
 
-```Python
+```python
 def GetCoordinatesInLatticework():
   return (self.latticeX, self.latticeY, self.latticeZ, self.latticeT)
 ```
@@ -23,7 +23,7 @@ def GetCoordinatesInLatticework():
 
 Since we have the `Node.GetCoordinatesInLatticework()` functionality, the `Latticework` could pass down a collection of nearest neighbors as determined by the geometry of the spacetime. In general, this should be equivalent to the collection of geometric neighbors.
 
-```Python
+```python
 
 def SetListOfLocalNeighbors(localNeighbors):
   self.localNeighbors = localNeighbors
