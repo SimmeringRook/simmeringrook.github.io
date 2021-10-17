@@ -65,7 +65,7 @@
   - Required
     - [PH 315: Contemporary Challenges](/courses/PH315.md)
     - [PH 335: Theoretical Mechanics](/courses/PH335.md)
-    - [PH 401: Research](/courses/PH401.md)
+    - [PH 401/3: Research/Thesis](/courses/PH403.md)
   - Electives
     - [PH 455: Astrophysics](/courses/PH455.md)
     - [PH 585: Atomic, Molecular, and Optical Physics](/courses/PH585.md)
