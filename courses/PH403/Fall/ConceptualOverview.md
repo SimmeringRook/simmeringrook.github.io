@@ -1,10 +1,12 @@
-Last Updated: 10/16/2021 11:25 AM
+Last Updated: 10/18/2021 12:45 PM
 
 ## Goals
 
 Create a visualization toolset for increasing the accessibility and understandability for trajectories moving through spacetime. This toolset will be able to produce vector field plots for trajectories of objects moving throughout non-Euclidian space through solved geodesic equations of motion. Also, the toolset will be able to generate the corresponding differential scattering cross section for a particle with specified parameters of Energy and (Orbital) angular momentum.
 
 Time permitting, the codebase will be refined to be modular and well documented, with a particular addition focus on extendibility. This framework is intended to be integrated into similar codebases, such as either the Stardisk or Chimera projects. The underlying latticework of grid points will be implemented without assumptions of the underlying properties for the geometry of spacetime to facilitate straightforward modular extension for more complicated spacetimes such as the Reissner-Nordström or Kerr geometries.
+
+![Implementation Timeline](/courses/PH403/Project_Gnatt.png)
 
 # Key Concepts:
 
