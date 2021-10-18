@@ -1,4 +1,4 @@
-Last Updated: 10/18/2021 12:45 PM
+Last Updated: 10/18/2021 12:47 PM
 
 ## Goals
 
@@ -6,7 +6,7 @@ Create a visualization toolset for increasing the accessibility and understandab
 
 Time permitting, the codebase will be refined to be modular and well documented, with a particular addition focus on extendibility. This framework is intended to be integrated into similar codebases, such as either the Stardisk or Chimera projects. The underlying latticework of grid points will be implemented without assumptions of the underlying properties for the geometry of spacetime to facilitate straightforward modular extension for more complicated spacetimes such as the Reissner-Nordström or Kerr geometries.
 
-![Implementation Timeline](/courses/PH403/Project_Gnatt.png)
+![Implementation Timeline](Project_Gnatt.png)
 
 # Key Concepts:
 
