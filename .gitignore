@@ -1,3 +1,4 @@
+# Ignore
 _site
 .sass-cache
 .jekyll-cache
@@ -6,3 +7,6 @@ vendor
 
 *.pdf
 *.DS_Store
+
+# Allow
+!/courses/PH403/Fall/PH403_Proposal_Knudson.pdf
