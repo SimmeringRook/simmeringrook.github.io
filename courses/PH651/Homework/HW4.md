@@ -76,6 +76,9 @@ When measuring the energy corresponding to $\ket{\psi}$, the only two possible v
 
 > Calculate the expectation value of the Hamiltonian in both ways: Using the results of Part A and by using the definition of an expectation value and given matrix $H$ and the initial state.
 
+$$\left\langle H \right\rangle = -\epsilon_0 \frac{2}{3} +  0 \frac{1}{3} + 0(2\epsilon_0) = -\frac{2}{3}\epsilon_0$$
+
+$$\frac{\bra{\psi}H\ket{\psi}}{\braket{\psi}{\psi}} = \frac{\bra{\psi} H\bigg( \frac{\sqrt{2}}{\sqrt{3}}\ket{-\epsilon_0} + \frac{1}{\sqrt{3}}\ket{0\epsilon_0}\bigg)}{1} = \bra{\psi}\bigg( -\frac{\sqrt{2}}{\sqrt{3}}\epsilon_0\ket{-\epsilon_0} \bigg)= - \frac{2}{3}\epsilon_0$$
 
 \pagebreak
 
@@ -133,20 +136,22 @@ Since $H$ has the exact same definition as in Question 1, the three possible ene
 $$\begin{aligned}
 H\ket{\psi} &= \ket{-\epsilon_0}\\
 A\ket{-\epsilon_0} &= \braket{0a_0}{-\epsilon_0}\ket{0_a0} + \braket{\sqrt{17}a_0}{-\epsilon_0}\ket{\sqrt{17}_a0} + \braket{-\sqrt{17}a_0}{-\epsilon_0}\ket{-\sqrt{17}_a0} \\
-&= \frac{4}{\sqrt{18}}\ket{0a_0} + \frac{1}{\sqrt{18}}\ket{\sqrt{17}_a0} - \frac{1}{\sqrt{18}}\ket{-\sqrt{17}_a0}\\
+&= \frac{4\sqrt{2}}{\sqrt{34}}\ket{0a_0} + \frac{1}{\sqrt{34}}\ket{\sqrt{17}_a0} - \frac{1}{\sqrt{34}}\ket{-\sqrt{17}_a0}\\
 \end{aligned}$$
 
 Since none of the eigenvalues are degenerate, we can just read off the norm square of the coefficients. The following are the corresponding probabilities for the possible values of $A$ we could measure:
 
 $$\begin{aligned}
-\mathcal{P}_{0a_0} &= \frac{16}{18}\\
-\mathcal{P}_{\sqrt{17}a_0} &= \frac{1}{18}\\
-\mathcal{P}_{-\sqrt{17}a_0} &= \frac{1}{18}\\
+\mathcal{P}_{0a_0} &= \frac{32}{34}\\
+\mathcal{P}_{\sqrt{17}a_0} &= \frac{1}{34}\\
+\mathcal{P}_{-\sqrt{17}a_0} &= \frac{1}{34}\\
 \end{aligned}$$
 
 ## Part C
 
 > What is the expectation value of $A$?
+
+$$\left\langle A \right\rangle = 0\cdot \frac{32}{34} +  \frac{1}{34}(-\sqrt{17} + \sqrt{17}) = 0$$
 
 \pagebreak
 
