@@ -164,3 +164,112 @@ $$\begin{aligned}
 &= -\frac{q}{4\pi\epsilon_0} \left(\left(\frac{1}{\magv{r}^2} - \frac{2a\cos{\theta}}{\magv{r}^3}\right) \hat{r} + \frac{-a\sin{\theta}}{\magv{r}^3} \hat{\theta} \right)\\
 &= \frac{1}{4\pi\epsilon_0} \frac{q}{\magv{r}^2}\left(-\hat{r} + \frac{a}{\magv{r}}\left(2\cos{\theta}\hat{r} + \sin{\theta}\hat{\theta} \right) \right)\\
 \end{aligned}$$
+
+\pagebreak
+
+# Problem 3.52
+
+## Part A
+
+> Show that the quadrupole term in the multipole expansion can be written $$V_{quad} (\vec{r}) = \frac{1}{4\pi\epsilon_0} \frac{1}{r^3} \sum_{i,j=1}^{3}{\hat{r}_i \hat{r}_j Q_{ij}}$$ where $$Q_{ij} \equiv \frac{1}{2} \int{\left(3{\rprime}_i{\rprime}_j-(\rprime)^2 \delta_{ij}\right)\rho(\vrprime)d\tau^{\prime}}$$
+
+Recall that $\cos{\alpha}$ is the result of the inner product between $\hat{r}$ and $\hat{\rprime}$:
+
+$$\cos{\alpha} = \frac{\vec{r}\cdot\vrprime}{\magv{r}\magv{\rprime}} = \sum_{i=1}^{3}{\hat{r}_i \hat{\rprime}_i}$$
+
+Where the summation notation is just a compact way of instructing us to take the corresponding components (assuming orthonormal basis) and multiply them together and sum the result. Armed with this, let us work backwards until the given form of $V_{quad}$ looks like the one from the generalized expansion:
+
+$$\begin{aligned}
+V_{quad} (\vec{r}) &= \frac{1}{4\pi\epsilon_0} \frac{1}{r^3} \sum_{i,j=1}^{3}{\hat{r}_i \hat{r}_j \frac{1}{2} \int{\left(3{\rprime}_i{\rprime}_j-(\rprime)^2 \delta_{ij}\right)\rho(\vrprime)d\tau^{\prime}}} \\
+&= \frac{1}{4\pi\epsilon_0} \frac{1}{r^3} \sum_{i,j=1}^{3}{\int{(\rprime)^2 \hat{r}_i \hat{r}_j \frac{1}{2} \left(3\hat{\rprime}_i \hat{\rprime}_j- \delta_{ij}\right)\rho(\vrprime)d\tau^{\prime}}} \\
+&= \frac{1}{4\pi\epsilon_0} \frac{1}{r^3} \sum_{i,j=1}^{3}{\int{(\rprime)^2  \frac{1}{2} \left(3\hat{r}_i \hat{\rprime}_i \hat{r}_j\hat{\rprime}_j- \hat{r}_i \hat{r}_j\delta_{ij}\right)\rho(\vrprime)d\tau^{\prime}}} \\
+&= \frac{1}{4\pi\epsilon_0} \frac{1}{r^3} \sum_{i=1}^{3}{\int{(\rprime)^2  \frac{1}{2} \left(3\hat{r}_i \hat{\rprime}_i \cos{\alpha} - \hat{r}_i \hat{r}_i\right)\rho(\vrprime)d\tau^{\prime}}} \\
+&= \frac{1}{4\pi\epsilon_0} \frac{1}{r^3} \int{(\rprime)^2  \frac{1}{2} \left(3\cos{\alpha}\cos{\alpha} - 1\right)\rho(\vrprime)d\tau^{\prime}} \\
+&= \frac{1}{4\pi\epsilon_0} \frac{1}{r^3} \int{(\rprime)^2  P_2(\cos{\alpha})\rho(\vrprime)d\tau^{\prime}} \\
+\end{aligned}$$
+
+## Part B
+
+> Find all nine components of $Q_{ij}$ for the configuration in Figure 3.30 (assume the square has side $a$ and lies in the $xy$ plane, cenetered at the origin).
+
+For the four charges, we have the following $\vrprime$:
+
+- $\vrprime_1 = \frac{a}{2} \left(\hat{x} +\hat{y}\right)$
+  - ${\vrprime_x}_1 = \frac{a}{2}$
+  - ${\vrprime_y}_1 = \frac{a}{2}$
+- $\vrprime_2 = \frac{a}{2} \left(\hat{x} -\hat{y}\right)$
+  - ${\vrprime_x}_2 = \frac{a}{2}$
+  - ${\vrprime_y}_2 = -\frac{a}{2}$
+- $\vrprime_3 = -\frac{a}{2} \left(\hat{x} +\hat{y}\right)$
+  - ${\vrprime_x}_3 = -\frac{a}{2}$
+  - ${\vrprime_y}_3 = -\frac{a}{2}$
+- $\vrprime_4 = \frac{a}{2} \left(-\hat{x} +\hat{y}\right)$
+  - ${\vrprime_x}_4 = -\frac{a}{2}$
+  - ${\vrprime_y}_4 = \frac{a}{2}$
+
+Also note that $\rho(\vrprime)d\tau^{\prime}$ is just the point charge at $(-1)^{k-1} q\delta\left(x^{\prime}\mp\frac{a}{2}\right)\delta\left(y^{\prime}\mp\frac{a}{2}\right)\delta(z^{\prime})dx^{\prime}dy^{\prime}dz^{\prime}$ and so our integrals just resolve to factors of $q$, as all of the $\vrprime$ are constant with respect to the integrand.
+
+$$\begin{aligned}
+{Q_{ij}}_k &= \frac{1}{2} \int{\left(3{\rprime}_i{\rprime}_j-(\rprime)^2 \delta_{ij}\right)\rho(\vrprime)d\tau^{\prime}}\\
+&= \frac{1}{2} \left(3{\rprime}_i{\rprime}_j-(\rprime)^2 \delta_{ij}\right) (-1)^{k-1} q \\
+&= \frac{1}{2} \left(3{\rprime}_i{\rprime}_j-\frac{a^2}{2} \delta_{ij}\right) (-1)^{k-1} q
+\end{aligned}$$
+
+Where we also used the fact that $\magv{\rprime}$:
+
+$$\magv{\rprime} = \sqrt{\frac{a^2}{4}+\frac{a^2}{4}} = \frac{a}{\sqrt{2}}$$
+
+Let's try an off-diagonal term to see what happens:
+
+$$\begin{aligned}
+Q_{xy} &= \frac{1}{2} \left(3{\rprime}_x{\rprime}_y - \frac{a^2}{2}\delta_{xy}\right)q \\
+&= \frac{3}{2} \left(\frac{a}{2}\right) \left(\frac{a}{2}\right) q \\
+\text{Generalized beyond } &k=1: \\
+{Q_{xy}}_k &= \frac{3}{2} (-1)^{k-1} \left(\frac{a}{2}\right)^2 (-1)^{k-1} q \\
+\sum_{k=1}^{4}{{Q_{xy}}_k} &= \frac{3}{2}\left(\frac{a}{2}\right)^2 \sum_{k=1}^{4}{(-1)^{k-1}  (-1)^{k-1} q} \\
+&= \frac{3}{2}\left(\frac{a}{2}\right)^2  (q + (-1)(-q) + q + (-1)(-q)) \\
+&= \frac{3a^2}{8} 4q = \frac{3a^2q}{2}
+\end{aligned}$$
+
+Noting the pattern, let's transfer this to $Q$ as a whole and just do all $9$ at once:
+
+$$
+\begin{aligned}
+Q &= \frac{3}{2}
+\begin{pmatrix}
+{\rprime}_x{\rprime}_x & {\rprime}_x{\rprime}_y & {\rprime}_x{\rprime}_z \\
+{\rprime}_y{\rprime}_x & {\rprime}_y{\rprime}_y & {\rprime}_y{\rprime}_z \\
+{\rprime}_z{\rprime}_x & {\rprime}_z{\rprime}_y & {\rprime}_z{\rprime}_z \\
+\end{pmatrix}(-1)^{k-1} q - \frac{a^2}{2}\mathbb{I}(-1)^{k-1} q \\
+&= \frac{3}{2}\frac{a^2}{4}
+\begin{pmatrix}
+1 & (-1)^{k-1} & 0 \\
+(-1)^{k-1} & 1 & 0 \\
+0 & 0 & 0 \\
+\end{pmatrix}(-1)^{k-1} q - \frac{a^2}{2}\mathbb{I}(-1)^{k-1} q \\
+&= \frac{3}{8}a^2
+\begin{pmatrix}
+0 & (-1)^{k-1} & 0 \\
+(-1)^{k-1} & 0 & 0 \\
+0 & 0 & -2 \\
+\end{pmatrix}(-1)^{k-1} q\\
+&= \frac{3}{8}a^2 q
+\begin{pmatrix}
+0 & (-1)^{2k-2} & 0 \\
+(-1)^{2k-21} & 0 & 0 \\
+0 & 0 & -2^k \\
+\end{pmatrix}\\
+&= \frac{3}{8}a^2 q
+\begin{pmatrix}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & -2^k \\
+\end{pmatrix}\\
+\end{aligned}
+$$
+
+Where we used the fact that $2k-2$ is always an even integer, and $-1$ raised to an even power is always $1$. Now, we just need to sum up the effects of the 4 charges noting that $Q$ is a symmetric matrix and so $Q_{xy}=Q_{yx}$ for each charge and since $\sum_{k=1}^{4}{-1^k}=0$, $Q_{xy}=Q_{yx}$ are our only two non-zero components.
+
+$$Q_{xx} = Q_{xz} = Q_{zx} = Q_{yy} = Q_{yz} = Q_{zy} = Q_{zz} = 0$$
+
+$$Q_{xy} = Q_{yz} = 4 \left(\frac{3}{8}a^2 q\right) = \frac{3}{2}a^2 q$$
