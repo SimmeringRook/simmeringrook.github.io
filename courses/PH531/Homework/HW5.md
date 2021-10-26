@@ -30,9 +30,9 @@ Per Griffith's recommendation, we will heavily use the results from Example 5.6.
 
 $$B(z) = \frac{\mu_0 I}{2\pi} \left( \frac{\cos{\theta}}{\mathfrak{r}^2}\right)2\pi R$$
 
-where $\cos{\theta}$ was the angle of $\vec{\mathfrak{r}}$ from the $xy$ plane to an arbritary point along the axis of symmetry of the ring. Note that $R$ was given as the radius of this ring of steady current $I$ with assumed direction of counter-clockwise flow about the ring: the $+\hat{\phi}$ direction.
+where $\cos{\theta}$ was the angle of $\vec{\mathfrak{r}}$ from the $xy$ plane to an arbritary point along the axis of symmetry of the ring. Note that $R$ was given as the radius of this ring of steady current $I$ with assumed direction of counter-clockwise flow about the ring: the $+\hat{\phi}$ direction. Given that our solenoid has a radius of $a$, we perform this substitution and then assume the 1-D loop can be approximated has having a thickness of $dz$. As shown in Figure 1, in this physical situation, $\cos{\theta}$ is $z/\sqrt{z^2+a^2}$, using $\mathfrak{r}=\sqrt{z^2 + a^2}$. 
 
-Given that our solenoid has a radius of $a$, we perform this substitution and then assume the 1-D loop can be approximated has having a thickness of $dz$.
+
 
 \begin{figure}
     \centering
@@ -69,4 +69,5 @@ Given that our solenoid has a radius of $a$, we perform this substitution and th
     \caption{A visual representation of the angle, $\theta$, from the edge of the solenoid (approximated as ring of current $\vec{I}=I\hat{\phi}$ with thickness $dz$) to the point $P$ located on the axis of symmetry.}
 \end{figure}
 
+From this, we can see that $\tan{\theta}=\frac{a}{z}$ which means $z=a\tan{\theta}$. Also from this, we see that $\mathfrak{r}=\sqrt{z^2 + a^2}$.
 
