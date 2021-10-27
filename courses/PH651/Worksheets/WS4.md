@@ -42,8 +42,7 @@ $$\newcommand{\bra}[1]{{\left\langle#1\right|}}
 \begin{aligned}
 (\bra{\psi''}\alpha)^{\dagger} &= \alpha^*\ket{\psi''} \\
 &= \alpha^* B^\dagger A^\dagger \ket{\psi}
-\end{aligned}
-$$
+\end{aligned}$$
 
 ## Part B
 
@@ -58,5 +57,4 @@ Recall that $(AB)^{\dagger} = B^{\dagger}A^{\dagger}$, therefore:
 
 $$\newcommand{\bra}[1]{{\left\langle#1\right|}}
 \newcommand{\ket}[1]{{\left|#1\right\rangle}}
-(\ket{\psi}\bra{\varphi})^{\dagger} = \bra{\varphi}^{\dagger}\ket{\psi}^{\dagger} = \ket{\varphi}\bra{\psi}
-$$
+(\ket{\psi}\bra{\varphi})^{\dagger} = \bra{\varphi}^{\dagger}\ket{\psi}^{\dagger} = \ket{\varphi}\bra{\psi}$$
