@@ -1,3 +1,14 @@
+
+```YAML
+---
+header-includes: |
+    \usepackage{pgfplots}
+    \usepackage{tikz,tikz-3dplot} 
+    \usepackage{tkz-euclide}
+---
+```
+
+```TeX
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -39,3 +50,4 @@
     \end{tikzpicture}
     \caption{A visual representation of the angle, $\theta$, from the edge of the solenoid (approximated as ring of current $\vec{I}=I\hat{\phi}$ with thickness $dz$) to the point $P$ located on the axis of symmetry.}
 \end{figure}
+```
