@@ -107,3 +107,80 @@ If we so wanted, we could take the liberty to discuss $I$ as being proportional 
 
 > The current is uniformly distributed over the outside surface of the wire.
 
+We align our origin and cyldrincal coordiate axes to match that of the wire and so $\vec{I}=I\hat{z}$. Using the right-hand rule, with the current flowing in the positive $z$ direction, that implies the field will be curling about the wire in the positive $\phi$ direction. We place our Amperian Loop with its normal vector parallel to $\hat{z}$:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1.25]
+
+    % create coordinates
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (0,1.25);
+    \coordinate (P) at (4,0);
+
+    % Create the cylinder on it's side
+    \draw (3,0) ellipse (0.5 and 1.25);
+    \draw (3,1.25) -- (-3,1.25);
+    \draw (-3,1.25) arc (90:270: 0.5 and 1.25);
+    \draw (-3,-1.25) -- (3,-1.25);
+
+    % Label the radius
+    \draw[dashed] (3,0) -- (3,1.25) node [midway, left] {$a$};
+
+    % Draw z axis and label
+    \draw[stealth-, gray] (-4,0) -- (0,0);
+    \draw[-stealth, gray] (0,0) -- (5,0);
+    \node at (5,0) [below] {$+\hat{z}$};
+    \node at (-2,0) [above] {$\vec{I}=I\hat{z}$};
+
+    % Create the Amperian loop
+    \draw[dashed] (0,0) ellipse (0.5 and 1.5);
+    \draw[-stealth] (0,0) -- (1,0);
+    \node at (1,0.1) [right, above, fill=white] {$d\vec{A}=sd\phi\hat{z}$};
+
+    % Label the radius
+    \draw[dashed] (0,0) -- (0,1.5) node [midway, left] {$s$};
+
+    \end{tikzpicture}
+    \caption{A recreation of Figure 5.40 from Griffiths giving a visual indication for the placement of the Amperian Loop with respect to current and the wire.}
+\end{figure}
+
+And from here, we just walk around our loop in the direciton of the field and find the magnetic field from the wire:
+
+$$\begin{aligned}
+\oint{\vec{B}\cdot d\vec{\ell}} &= \mu_0 I_{enc} \\
+2\pi s B &= \mu_0 I_{enc} \\
+B &= \frac{\mu_0}{2\pi s} I_{enc}
+\end{aligned}$$
+
+By inspection, we see that for radial distances of $s>a$, the enclosed current is just the given current from the problem statement: $I_{enc}=I$. For $s<a$, there is no current enclosed from the wire as it flows only on the surface, and so $I_{enc}=0$. 
+
+$$\vec{B} = \begin{cases} \frac{\mu_0}{2\pi s} I \hat{\phi} & s>a \\ \vec{0} & s<a \end{cases}$$
+
+\pagebreak
+
+## Part B
+
+>The current is distributed in such a way that $J$ is proportional to $s$, the distance from the axis.
+
+For this case, we can draw inspiration from Example 5.4, in which we introduce a variable $k$ to represent the proportionality: $J\equiv ks$. Keeping everything else the same, we can begin with our general results from Part A, but we must integrate $J$ to find a description for $k$ in terms of $I$:
+
+$$\begin{aligned}
+I &= \int_{0}^{a}{(ks^{\prime})(2\pi s^{\prime}ds^{\prime})}\\
+&= 2\pi k \int_{0}^{a}{{s^{\prime}}^2 ds^{\prime})}\\
+&= \frac{2\pi k a^3}{3}\\
+k &= \frac{3}{2\pi a^3}I
+\end{aligned}$$
+
+For our loop when $s>a$, the current density has reached its maximum value and $I_{enc}=I$. In contrast to Part A, our current density now also exists below $s=a$, and so $I_{enc}$ for $s<a$, we use our result from above but substitute $s$ in for $a$:
+
+$$\begin{aligned}
+I_{enc} &= \frac{2\pi s^3}{3}k \\
+&= \frac{2\pi s^3}{3}\frac{3}{2\pi a^3}I \\
+&= \frac{s^3}{a^3}I
+\end{aligned}$$
+
+$$\vec{B} = \frac{\mu_0}{2\pi s}\begin{cases} 
+I  & s>a \\ 
+\frac{s^3}{a^3}I & s<a 
+\end{cases} \hat{\phi}$$
