@@ -4,7 +4,7 @@ subtitle: PH531, Fall 2021
 author: Thomas Knudson
 date: Saturday, October 23, 2021
 papersize: a4
-geometry: margin=1.7cm
+geometry: margin=1.75cm
 linkcolor: blue
 header-includes: |
     \usepackage{pgfplots}
@@ -79,23 +79,25 @@ z &= a\cot{\theta} \\
 dz &= -\frac{a}{\sin^2{\theta}}d\theta
 \end{aligned}$$
 
-Substituting all these values in, and integrating the resulting contribution as we extrude from a 1-D ring of current (with infinitesimal thickness) to a 2-D tube, we can find the field due to a finite solenoid:
+Before substituting all these values in and integrating the resulting contribution as we extrude from a 1-D ring of current (with infinitesimal thickness) to a 2-D tube, we have one more consideration. As a singular ring of current, there were no 'turns' of the coil, but as we *stretch* the length of the ring into a finite solenoid, we need to scale the current $I$ by the number of turns per unit length $n$. 
+
+$$\underbrace{I}_{\text{1D ring}} \rightarrow \underbrace{nI}_{\text{2D coil of rings}}$$
 
 $$\begin{aligned}
 \vec{B}(z) &= \int{d\vec{B}} \\
-&= \frac{\mu_0 I}{4\pi}2\pi \hat{z}\int{\frac{a^2}{\mathfrak{r}^3} dz} \\
-&= \frac{\mu_0 I}{4\pi}2\pi \hat{z}\int_{\theta_1}^{\theta_2}{\frac{a^2}{\sqrt{(a\cot{\theta})^2 + a^2}^3} \left(-\frac{a}{\sin^2{\theta}}\right) d\theta} \\
-&= \frac{\mu_0 I}{4\pi}2\pi \hat{z}\int_{\theta_1}^{\theta_2}{\frac{a^2}{a^3\sqrt{\cot^2{\theta} + 1}^3} \left(-\frac{a}{\sin^2{\theta}}\right) d\theta} \\
-&= \frac{\mu_0 I}{4\pi}2\pi \hat{z}\int_{\theta_1}^{\theta_2}{\frac{-1}{\csc^3{\theta}\sin^2{\theta}} d\theta} \\
-&= \frac{\mu_0 I}{4\pi}2\pi \hat{z}\int_{\theta_1}^{\theta_2}{\sin{\theta} d\theta} \\
-&= \frac{\mu_0 I}{4\pi}2\pi \bigg(\cos{\theta_2} - \cos{\theta_1}\bigg)\hat{z}
+&= \frac{\mu_0 nI}{4\pi}2\pi \hat{z}\int{\frac{a^2}{\mathfrak{r}^3} dz} \\
+&= \frac{\mu_0 nI}{4\pi}2\pi \hat{z}\int_{\theta_1}^{\theta_2}{\frac{a^2}{\sqrt{(a\cot{\theta})^2 + a^2}^3} \left(-\frac{a}{\sin^2{\theta}}\right) d\theta} \\
+&= \frac{\mu_0 nI}{4\pi}2\pi \hat{z}\int_{\theta_1}^{\theta_2}{\frac{a^2}{a^3\sqrt{\cot^2{\theta} + 1}^3} \left(-\frac{a}{\sin^2{\theta}}\right) d\theta} \\
+&= \frac{\mu_0 nI}{4\pi}2\pi \hat{z}\int_{\theta_1}^{\theta_2}{\frac{-1}{\csc^3{\theta}\sin^2{\theta}} d\theta} \\
+&= \frac{\mu_0 nI}{4\pi}2\pi \hat{z}\int_{\theta_1}^{\theta_2}{\sin{\theta} d\theta} \\
+&= \frac{\mu_0 nI}{4\pi}2\pi \bigg(\cos{\theta_2} - \cos{\theta_1}\bigg)\hat{z}
 \end{aligned}$$
 
 Now, consulting Figure 5.25 (page 229 of Griffiths), we can see that $\theta_1$ is the angle from *below* $P$ to the start of our finite solenoid, and $\theta_2$ follows the same set up but for the end. Thus, we the solenoid extends out to be infinitely long $\theta_1$ goes from $>0$ to $\pi$ and $\theta_2$ will *squish* down to $0$ as the end of the solenoid explodes away to $z\rightarrow -\infty$:
 
-$$\vec{B}(z) = \frac{\mu_0 I}{4\pi}2\pi \bigg(\cos{(\theta_2 = 0)} - \cos{(\theta_1 = \pi)}\bigg)\hat{z} = \frac{\mu_0 I}{4\pi}4\pi\hat{z}$$
+$$\vec{B}(z) = \frac{\mu_0 nI}{4\pi}2\pi \bigg(\cos{(\theta_2 = 0)} - \cos{(\theta_1 = \pi)}\bigg)\hat{z} = \frac{\mu_0 nI}{4\pi}4\pi\hat{z}$$
 
-If we so wanted, we could take the liberty to discuss $I$ as being proportional to *how tightly* the coil is wrapped in terms of *turns per unit Length*: E.g. the steady current $I'\equiv nI$, and with simplifications, our answer matches Griffith's solution to Example 5.9 (Field inside a solenoid using Ampere's Law), $\vec{B}(z) = \mu_0 nI\hat{z}$.
+As expected, our answer matches Griffith's solution to Example 5.9 (Field inside a solenoid using Ampere's Law), $\vec{B}(z) = \mu_0 nI\hat{z}$.
 
 \pagebreak
 
@@ -174,13 +176,119 @@ k &= \frac{3}{2\pi a^3}I
 
 For our loop when $s>a$, the current density has reached its maximum value and $I_{enc}=I$. In contrast to Part A, our current density now also exists below $s=a$, and so $I_{enc}$ for $s<a$, we use our result from above but substitute $s$ in for $a$:
 
+$$I_{enc} = \frac{2\pi s^3}{3}k = \frac{2\pi s^3}{3}\frac{3}{2\pi a^3}I = \frac{s^3}{a^3}I$$
+
+$$\vec{B}(s) = \frac{\mu_0}{2\pi s} I \hat{\phi} \begin{cases} & s>a \\ 
+\frac{s^3}{a^3} & s<a \end{cases}$$
+
+\pagebreak
+
+# Problem 5.16
+
+> Two long coaxial solenoids each carry current $I$, but in opposite directions, as shown in Figure 5.42. The inner solenoid (radius $a$) has $n_1$ turns per unit length, and the outer one (radius $b$) has $n_2$. Find $\vec{B}$ in each region.
+
+The solution to this problem is straightforward. Recall that from Example 5.9 (and Problem 5.11), the magnetic field outside a solenoid is $\vec{0}$ and inside it is $\mu_0 n I$. Also recall that magnetic fields obey the principle of superposition. In summary the only work to be done is to determine from the figure in the book the intended direction of current flowing: since the arrows *curl down* for the outer solenoid, the right-hand rule indicates that the sign of the $\vec{B}$ should be in the positive $z$ direction and opposite for the inner solenoid.
+
+| Region | $$\vec{B}_{inner}$$ | $$\vec{B}_{outer}$$ | $$\vec{B}_{net}$$ |
+| --- | --- | --- | --- |
+| $$b<s$$ | $$\vec{0}$$ | $$\vec{0}$$ | $$\vec{0}$$ |
+| $$a<s<b$$ | $$\vec{0}$$ | $$\mu_0 n_2 I \hat{z}$$ | $$\mu_0 n_2 I \hat{z}$$ |
+| $$s<a$$ | $$-\mu_0 n_1 I \hat{z}$$ | $$\mu_0 n_2 I \hat{z}$$ | $$\mu_0 (n_2-n_1) I \hat{z}$$ |
+
+\pagebreak
+
+# Problem 5.39
+
+> Analyze the motion of a particle (charge $q$, mass $m$) in the magnetic field of a long straight wire carrying a steady current $I$.
+
+## Part A
+
+> Is kinetic energy conserved?
+
+Recall that from Equation 5.11, a magnetic field cannot do work, therefore kinetic energy is conserved. $$\ $$
+
+## Part B
+
+> Find the force on the particle, in cylindrical coordinates, with $I$ along the $z$ axis.
+
+We shall use the Lorentz Force Law, Equation 5.1, without an $\vec{E}$ as we don't know how to calculate the $\vec{E}$ from the moving charge in the wire. Recall in Problem 5.14A, we found the $\vec{B}$ outside a wire. If we shrink the radius down from $a$ to something infinitesimally small, we can make this wire 1-D and then we have the $\vec{B}$ over all space:
+
+$$\vec{B} = \frac{\mu_0}{2\pi s} I \hat{\phi}$$
+
+Now we just need to find the arbritrary velocity vector for particle in cylindrical coordinates. Starting with the time derivative of the basis vectors:
+
 $$\begin{aligned}
-I_{enc} &= \frac{2\pi s^3}{3}k \\
-&= \frac{2\pi s^3}{3}\frac{3}{2\pi a^3}I \\
-&= \frac{s^3}{a^3}I
+\hat{s} &= \cos{\phi}\hat{x} + \sin{\phi}\hat{y}\\
+\dot{\hat{s}} &= (\underbrace{-\sin{\phi}\hat{x} + \cos{\phi}\hat{y}}_{\hat{\phi}}) \dot{\phi} \\
+&= \dot{\phi}\hat{\phi}
+\end{aligned} \qquad\qquad \begin{aligned}
+\hat{\phi} &= -\sin{\phi}\hat{x} + \cos{\phi}\hat{y}\\
+\dot{\hat{\phi}} &= -(\underbrace{\cos{\phi}\hat{x} + \sin{\phi}\hat{y}}_{\hat{s}}) \dot{\phi}\\
+&= -\dot{\phi}\hat{s}
 \end{aligned}$$
 
-$$\vec{B} = \frac{\mu_0}{2\pi s}\begin{cases} 
-I  & s>a \\ 
-\frac{s^3}{a^3}I & s<a 
-\end{cases} \hat{\phi}$$
+And since we will need the general acceleration, we might as well find $\dot{\vec{r}}$ and $\ddot{\vec{r}}$ at the same time:
+
+$$\begin{aligned}
+\vec{r} &= s\hat{s} + z\hat{z}\\
+\\
+\dot{\vec{r}} &= \dot{s}\hat{s} + s\dot{\hat{s}} + \dot{z}\hat{z}\\
+&= \dot{s}\hat{s} + s\dot{\phi}\hat{\phi} + \dot{z}\hat{z}\\
+\\
+\ddot{\vec{r}} &= (\ddot{s}\hat{s} + \dot{s}\dot{\hat{s}}) + (\dot{s}\dot{\phi}+s\ddot{\phi})\hat{\phi} + s\dot{\phi}\dot{\hat{\phi}} + \ddot{z}\hat{z} \\
+&= (\ddot{s} - s\dot{\phi}^2)\hat{s} + (2\dot{s}\dot{\phi} + s\ddot{\phi})\hat{\phi} + \ddot{z}\hat{z}
+\end{aligned}$$
+
+Now we have each quantity in the Lorentz Force Law, we just need to carry out the cross product:
+
+$$\begin{aligned} \vec{F} &= q(\dot{\vec{r}}\times\vec{B}) \\ &= q(\dot{s}\hat{s} + s\dot{\phi}\hat{\phi} + \dot{z}\hat{z})\times\frac{\mu_0}{2\pi s} I \hat{\phi} \\ \hat{s} \times \hat{\phi} = \hat{z} &\qquad \hat{z} \times \hat{\phi} = -\hat{s} \\ &= q\frac{\mu_0}{2\pi s} I (-\dot{z}\hat{s}+\dot{s}\hat{z})\end{aligned}$$
+
+\pagebreak
+
+## Part C
+
+> Obtain the equations of motion.
+
+Assuming that Newton's Second Law $\vec{F} = m \ddot{\vec{r}}$ is applicible to this situation, we obtain the following system of equations:
+
+$$\begin{aligned}
+(\ddot{s} - s\dot{\phi}^2) &= - \frac{q}{m}\frac{\mu_0}{2\pi} I \frac{1}{s} & \leftarrow\hat{s}\\
+(2\dot{s}\dot{\phi} + s\ddot{\phi}) &= 0 & \leftarrow\hat{\phi}\\
+\ddot{z} &= \frac{q}{m}\frac{\mu_0}{2\pi} I \frac{\dot{s}}{s} & \leftarrow\hat{z}
+\end{aligned}$$
+
+## Part D
+
+> Suppose $\dot{z}$ is constant. Describe the motion
+
+For the moment, let us introduce $\alpha\equiv \frac{q}{m}\frac{\mu_0}{2\pi} I$ to reveal the coupled nature better:
+
+$$\begin{aligned}
+s\ddot{s} - s^2\dot{\phi}^2 &= - \alpha\\
+\dot{\phi}^2 &= \frac{1}{s^2}\alpha + \frac{\ddot{s}}{s}
+\end{aligned} \qquad
+\begin{aligned}
+2\dot{s}\dot{\phi} + s\ddot{\phi} &= 0\\
+s\ddot{\phi} &= 2\dot{s}\dot{\phi} \\
+\frac{\ddot{\phi}}{\dot{\phi}} &= 2\frac{\dot{s}}{s}
+\end{aligned}
+\qquad
+\begin{aligned}
+\ddot{z} &= \alpha \frac{\dot{s}}{s}
+\end{aligned}$$
+
+Now using $\dot{z}$ constant, $\ddot{z}=0$. $\alpha$ is inherently non-zero, and if $s=0$, $\ddot{z}$ would be exploding towards infinity. Therefore $\dot{s}$ must also be identically $0$:
+
+$$\ddot{z} = \alpha \frac{\dot{s}}{s} \Rightarrow \dot{s} = 0$$
+
+Given that $\dot{s}=0$, we then note the $\ddot{\phi}$ equation faces a similar outcome: $\ddot{\phi}$ must be $0$ and $\dot{\phi} = constant$. 
+
+$$\frac{\ddot{\phi}}{\dot{\phi}} = 2\frac{\dot{s}}{s} \Rightarrow \ddot{\phi} = 0$$
+
+Finally, we examine the last equation: If $s$ is constant from $\dot{s}=0$, then $\ddot{s}$ must also be $0$ and our system of couple ODEs reduces to a simple first order linear ODE:
+
+$$\dot{\phi}^2 = \frac{\alpha}{s^2}$$
+
+$$\phi(t) = \frac{\sqrt{\alpha}}{s}t + \phi_0 = \frac{t}{s}\sqrt{\frac{q}{m}\frac{\mu_0}{2\pi} I} + \phi_0$$
+
+The motion of this charged particle, once we restrict it to constant $\dot{z}$, becomes helical: any previous inward/outward motion with respect to $s$ stops and the particle just rotates cyclically about the wire as it moves in the $z$ direction.
