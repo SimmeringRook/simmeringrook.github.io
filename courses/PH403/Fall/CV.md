@@ -68,7 +68,7 @@ The goal of this independent project was to find at what distance from a Black H
 
 ## Employment
 
-**Undergraduate Learning Assistant**
+**Undergraduate Teaching Assistant**
 
 *2020 - Present*
 
