@@ -42,11 +42,15 @@ where $\cos{\theta}$ was the portion of the magnetic field *felt* at an arbirtra
     \coordinate (A) at (0,1.25);
     \coordinate (P) at (4,0);
 
+
     % Create the cylinder on it's side
     \draw (0,0) ellipse (0.5 and 1.25);
+
     \draw (0,1.25) -- (-0.5,1.25) node [above] {$dz$};
-    \draw (-0.5,1.25) arc (90:270: 0.5 and 1.25);
     \draw (-0.5,-1.25) -- (0,-1.25);
+
+    \draw (-0.5,1.25) arc (90:270: 0.5 and 1.25);
+
 
     % Label the radius
     \draw[dashed] (0,0) -- (0,1.25) node [midway, right] {$a$};
