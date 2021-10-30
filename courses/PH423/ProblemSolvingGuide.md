@@ -2,6 +2,8 @@
 
 ## Algorithm
 
+## Algorithm
+
 ### 1. Reading The Problem Statement
 
 - What are we asked to find?
@@ -11,24 +13,29 @@
 
 ### 2. Start with the First Law
 
-- $U=Q+W$ is always true, so let's talk about (in broad strokes) how energy is transferred (or not) in this system
-    - Equation of State can also influence how/what changes the internal energy
-- If the processes **are** quasistatic:
-    - $đQ$ and $đW$ are now exact differentials (This means we can now integrate them!)
-        - $đQ \rightarrow dQ = TdS$
-        - $đW \rightarrow dW = -pdV$
-    - If $U(S,V)$ isn't a helpful state function, we can use Legendre transforms to obtain a different thermodynamic identity
-        - $F = U(T,V) = U(S,V) - TS \rightarrow dF = -SdT - pdV$
-        - $H = U(S,p) = U(S,V) + pV \rightarrow dH = TdS + Vdp$
-        - $G = U(T,p) = U(S,V) - TS + pV \rightarrow dG = -SdT + Vdp$
-    - This is where the keywords or process names from Step 1 should really shine: eliminating differentials in what ever thermodynamic identity fits the situation.
-- If the processes **are not** quasistatic:
-    - We want to get out of this stage very quickly: All we have is $dU = đQ + đW$ and we **cannot** do anythin with this!
-        - $đQ$ and $đW$ being inexact differentials means that we don't know what they are: $Q$ and $W$ are not functions.
-        - **You cannot do anything with inexact differentials**
-    - The ultimate goal here is to justify why we can approximate the process that is occurring with a similar one that is quasistatic.
-        - Use the same initial and final conditions with the same state variables and functions
-        - Then follow the steps for a quasistatic process
+$U=Q+W$ is always true, so let's talk about (in broad strokes) how energy is transferred (or not) in this system.
+
+- Equation of State can also influence how/what changes the internal energy
+
+If the processes **are** quasistatic:
+
+- $đQ$ and $đW$ are now exact differentials (This means we can now integrate them!)
+    - $đQ \rightarrow dQ = TdS$
+    - $đW \rightarrow dW = -pdV$
+- If $U(S,V)$ isn't a helpful state function, we can use Legendre transforms to obtain a different thermodynamic identity
+    - $F = U(T,V) = U(S,V) - TS \rightarrow dF = -SdT - pdV$
+    - $H = U(S,p) = U(S,V) + pV \rightarrow dH = TdS + Vdp$
+    - $G = U(T,p) = U(S,V) - TS + pV \rightarrow dG = -SdT + Vdp$
+- This is where the keywords or process names from Step 1 should really shine: eliminating differentials in what ever thermodynamic identity fits the situation.
+
+If the processes **are not** quasistatic:
+
+- We want to get out of this stage very quickly: All we have is $dU = đQ + đW$ and we **cannot** do anythin with this!
+    - $đQ$ and $đW$ being inexact differentials means that we don't know what they are: $Q$ and $W$ are not functions.
+    - **You cannot do anything with inexact differentials**
+- The ultimate goal here is to justify why we can approximate the process that is occurring with a similar one that is quasistatic.
+    - Use the same initial and final conditions with the same state variables and functions
+    - Then follow the steps for a quasistatic process
 
 ### 3. Use the Second Law
 
