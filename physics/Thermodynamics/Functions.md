@@ -39,8 +39,7 @@ This gives us the following [Maxwell Relation](/physics/Thermodynamics/Maxwell.m
 
 $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
-\wrap{\pder{T}{p}}{S} = \wrap{\pder{V}{S}}{p}
-$$
+\wrap{\pder{T}{p}}{S} = \wrap{\pder{V}{S}}{p}$$
 
 ## Helmholtz
 
@@ -65,8 +64,7 @@ This gives us the following [Maxwell Relation](/physics/Thermodynamics/Maxwell.m
 
 $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
-\wrap{\pder{S}{V}}{T} = \wrap{\pder{p}{T}}{V}
-$$
+\wrap{\pder{S}{V}}{T} = \wrap{\pder{p}{T}}{V}$$
 
 ## Gibbs
 
@@ -93,8 +91,7 @@ This gives us the following [Maxwell Relation](/physics/Thermodynamics/Maxwell.m
 
 $$\newcommand\wrap[2]{\left(#1\right)_{#2}}
 \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
--\wrap{\pder{S}{p}}{T} = \wrap{\pder{V}{T}}{p}
-$$
+-\wrap{\pder{S}{p}}{T} = \wrap{\pder{V}{T}}{p}$$
 
 ---
 
