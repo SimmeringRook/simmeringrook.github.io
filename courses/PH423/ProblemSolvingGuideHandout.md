@@ -1,5 +1,6 @@
 ---
-title: "Thermodynamics Problem Solving Guide"
+title: "Problem Solving Guide: Macroscopic Thermodynamics"
+subtitle: "For use with PH423 and PH441/541"
 author: Thomas Knudson
 papersize: a4
 geometry: margin=2cm
