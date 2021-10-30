@@ -29,7 +29,7 @@ G &= U(T,p) &= U(S,V) - TS + pV &\rightarrow dG = -SdT + Vdp
 
 If the processes **are not** quasistatic:
 
-- We want to get out of this stage very quickly: All we have is $dU = đQ + đW$ and we **cannot** do anythin with this!
+- We want to get out of this stage very quickly: All we have is $dU = đQ + đW$ and we **cannot** do anything with this!
     - $đQ$ and $đW$ being inexact differentials means that we don't know what they are: $Q$ and $W$ are not functions.
     - **You cannot do anything with inexact differentials!**
 - The ultimate goal here is to justify why we can approximate the process that is occurring with a similar one that is quasistatic.
