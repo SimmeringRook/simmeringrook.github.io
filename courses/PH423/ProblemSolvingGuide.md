@@ -2,8 +2,6 @@
 
 ## Algorithm
 
-## Algorithm
-
 ### 1. Reading The Problem Statement
 
 - What are we asked to find?
