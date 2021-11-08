@@ -245,3 +245,44 @@ A spin-1/2 system where the Hamiltonian describes spin with respect to a uniform
 # Question 4
 
 > Consider a particle of mass $m$ in the 1-D potential well given by $V(x) = 0$ if $\lvert x \rvert <a$ and $V(x) = +\infty$ if $\lvert x \rvert > a$. Let's say that the particle is in the ground state (i.e. in the state with the lowest energy). Suddenly, the well symmetrically expands to twice its size. What is the probability to find the particle in the ground state of this new well?
+
+Recall the ground state for the infinite square well with width $2a$ is given as:
+
+$$\varphi_1 (x) = \sqrt{\frac{2}{2a}}\sin{\left(\frac{\pi x}{2a}\right)}$$
+
+If we assume that the symmetric expansion of the well doesn't effect the wave function other than as a projection into a slightly different energy basis, then we can find the resulting superposition of energy eigenfunctions through the completeness relation for the new basis.
+
+$$\begin{aligned}
+\ket{\psi} &= \ket{\varphi_1} \\
+\ket{\psi^\prime} &= \left(\sum_{m=1}^{\infty}{\ket{{\varphi_m}^\prime}\bra{{\varphi_m}^\prime}}\right) \ket{\psi}
+\end{aligned}$$
+
+$$\begin{aligned}
+\braket{{\varphi_m}^\prime}{\varphi_1} &= \int_{-2a}^{2a}{ \left(\sqrt{\frac{2}{4a}}\sin{\left(\frac{m\pi x}{4a}\right)}\right)\left(\sqrt{\frac{2}{2a}}\sin{\left(\frac{\pi x}{2a}\right)}\right) dx} \\
+&= \frac{1}{a}\sqrt{\frac{4}{8}} \int_{-2a}^{2a}{ \sin{\left(\frac{m\pi x}{4a}\right)} \sin{\left(\frac{\pi x}{2a}\right)} dx} \\
+\\
+\text{let } u &= \frac{\pi x}{4a} \Rightarrow du = \frac{\pi}{4a}dx \\
+u &\in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right] \\
+\\
+&= \frac{4a}{a\pi}\sqrt{\frac{4}{8}} \int_{-\pi/2}^{\pi/2}{ \sin{(mu)} \sin{(2u)} du}
+\end{aligned}$$
+
+Consulting the integral table at the back of D. McIntyre's *Quantum Mechanics*, we find Equation F.1:
+
+$$\int{\sin{mx}\sin{nx} dx} = \frac{\sin{((m-n)x)}}{2(m-n)} - \frac{\sin{((m+n)x)}}{2(m+n)}, \quad m^2 \neq n^2$$
+
+Using this result for $m^2 \neq 4$:
+
+$$\begin{aligned}
+\braket{{\varphi_m}^\prime}{\varphi_1} &= \frac{4a}{a\pi}\sqrt{\frac{4}{8}} \left[ \frac{\sin{((m-2)u)}}{2(m-2)} - \frac{\sin{((m+2)u)}}{2(m+2)} \right]_{u=-\pi/2}^{u=\pi/2} \\
+&= \frac{4}{\pi}\sqrt{\frac{1}{2}} \left[ \left(\frac{\sin{\left(\frac{\pi m}{2} - \pi \right)}}{2m-4} - \frac{\sin{\left(\frac{\pi m}{2} + \pi \right)}}{2m+4}\right) - \left(\frac{\sin{\left(-\frac{\pi m}{2} + \pi \right)}}{2m-4} - \frac{\sin{\left(-\frac{\pi m}{2} - \pi \right)}}{2m+4}\right) \right] \\
+&= \frac{4}{\pi}\sqrt{\frac{1}{2}} \left[ \frac{\sin{\left(\frac{\pi m}{2} - \pi \right)}}{2m-4} - \frac{\sin{\left(\frac{\pi m}{2} + \pi \right)}}{2m+4} - \left(-\frac{\sin{\left(\frac{\pi m}{2} - \pi \right)}}{2m-4} + \frac{\sin{\left(\frac{\pi m}{2} + \pi \right)}}{2m+4}\right) \right] \\
+&= -\frac{4}{\pi}\sqrt{\frac{1}{2}} \left[ \frac{\sin{\left(\frac{\pi m}{2}\right)}}{m-2} - \frac{\sin{\left(\frac{\pi m}{2}\right)}}{m+2} \right] \\
+&= -\frac{ 8\sqrt{2} }{ \pi(m^2-4) } \sin{\left(\frac{\pi m}{2}\right)} \\
+\text{for } &\begin{cases} m\in(2\mathbb{Z}), & \sin{((\mathbb{Z})\pi)} = 0 \\ m\in(2\mathbb{Z} +1), & \sin{\left((\mathbb{Z})\frac{\pi}{2}\right)} = 1 \end{cases}\\
+\end{aligned}$$
+
+$$\braket{{\varphi_m}^\prime}{\varphi_1} = -\frac{ 8\sqrt{2} }{ \pi(m^2-4) }, \qquad m\in(2\mathbb{Z} +1)$$
+
+And now we need to handle the case for $m=2$ ($m^2 = 4$) separately:
+
