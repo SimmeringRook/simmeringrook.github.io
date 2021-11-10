@@ -8,7 +8,7 @@ geometry: margin=2cm
 output:
   pdf_document:
     toc: true
-    toc_depth: 3
+    toc_depth: 2
 header-includes: |
     \usepackage{fancyhdr}
     \pagestyle{fancy}
@@ -225,14 +225,16 @@ P_{a^\pprime} &= \bigg(\ket{a^\pprime}\bra{a^\pprime}\bigg)\ket{\psi;t} \\
 \\
 &= \sqrt{\frac{1}{2}} \left(\exp{\left(-\frac{i \delta t}{\hbar}\right)}\braket{a^\pprime}{+\delta} + \exp{\left(\frac{i \delta t}{\hbar}\right)}\braket{a^\pprime}{-\delta}\right)\ket{a^\pprime} \\
 &= \frac{1}{2} \left(\exp{\left(-\frac{i \delta t}{\hbar}\right)} - \exp{\left(\frac{i \delta t}{\hbar}\right)}\right)\ket{a^\pprime} \\
-&= - \underbrace{\frac{1}{2} \left(\exp{\left(\frac{i \delta t}{\hbar}\right)} + \exp{\left(\frac{-i \delta t}{\hbar}\right)}\right)}_{ \cos{\left(\frac{\delta t}{\hbar}\right)} }\ket{a^\pprime} \\
-&= \underbrace{- \cos{\left(\frac{\delta t}{\hbar}\right)}}_{\text{cosine is even}} \ket{a^\pprime} \\
-&= \cos{\left(\frac{\delta t}{\hbar}\right)} \ket{a^\pprime}\end{aligned}$$
+&= - \underbrace{\frac{1}{2} \left(\exp{\left(\frac{i \delta t}{\hbar}\right)} - \exp{\left(\frac{-i \delta t}{\hbar}\right)}\right)}_{ i\sin{\left(\frac{\delta t}{\hbar}\right)} }\ket{a^\pprime} \\
+&= - i\sin{\left(\frac{\delta t}{\hbar}\right)} \ket{a^\pprime}
+\end{aligned}$$
 
 $$\begin{aligned}
 \mathcal{P}_{a^\pprime} &= {\left\lvert \braket{a^\pprime}{\psi ;t} \right\rvert}^2 \\
-&= \cos^2{\left(\frac{\delta t}{\hbar}\right)}
+&= \sin^2{\left(\frac{\delta t}{\hbar}\right)}
 \end{aligned}$$
+
+At $t=0$, we recover the initial state of $\ket{a^\prime}$ as expected.
 
 ## Part D
 
@@ -246,43 +248,142 @@ A spin-1/2 system where the Hamiltonian describes spin with respect to a uniform
 
 > Consider a particle of mass $m$ in the 1-D potential well given by $V(x) = 0$ if $\lvert x \rvert <a$ and $V(x) = +\infty$ if $\lvert x \rvert > a$. Let's say that the particle is in the ground state (i.e. in the state with the lowest energy). Suddenly, the well symmetrically expands to twice its size. What is the probability to find the particle in the ground state of this new well?
 
-Recall the ground state for the infinite square well with width $2a$ is given as:
+Recall the ground state for the infinite square well with width $2a$ and centered about the origin is given as:
 
-$$\varphi_1 (x) = \sqrt{\frac{2}{2a}}\sin{\left(\frac{\pi x}{2a}\right)}$$
+$$\varphi_1 (x) = \frac{1}{\sqrt{a}}\sin{\left(\frac{\pi (x+a)}{2a}\right)}$$
 
-If we assume that the symmetric expansion of the well doesn't effect the wave function other than as a projection into a slightly different energy basis, then we can find the resulting superposition of energy eigenfunctions through the completeness relation for the new basis.
+If we assume that the symmetric expansion of the well doesn't effect the wave function other than as a projection into a slightly different energy basis, then we can find the resulting superposition of energy eigenfunctions through the completeness relation for the new basis[^2] and the addition of two Heaviside functions to the original ground state.
+
+$${\varphi_m}^\prime (x) = \frac{1}{\sqrt{2a}}\sin{\left(\frac{m\pi (x+2a)}{4a}\right)}$$
+$$\varphi_1 (x) = \frac{1}{\sqrt{a}}\sin{\left(\frac{\pi (x+a)}{2a}\right)}\bigg(\Theta(x+a)-\Theta(x-a)\bigg)$$
+
+[^2]: Recall that the limits of integration will come from the space we are projecting into: $[-2a,2a]$ and not the space where the wave function currently is: $[-a,a]$.
 
 $$\begin{aligned}
 \ket{\psi} &= \ket{\varphi_1} \\
-\ket{\psi^\prime} &= \left(\sum_{m=1}^{\infty}{\ket{{\varphi_m}^\prime}\bra{{\varphi_m}^\prime}}\right) \ket{\psi}
+\ket{\psi^\prime} &= \sum_{m=odd}^{\infty}{\ket{{\varphi_m}^\prime}\braket{{\varphi_m}^\prime}{\psi}} \\
+\\
+\braket{{\varphi_m}^\prime}{\varphi_1} &= \int_{-2a}^{2a}{ \left(\sqrt{\frac{1}{2a}}\sin{\left(\frac{m\pi (x+2a)}{4a}\right)}\right)\left(\sqrt{\frac{1}{a}}\sin{\left(\frac{\pi (x+a)}{2a}\right)}\right)\bigg(\Theta(x+a)-\Theta(x-a)\bigg) dx} \\
+&= \frac{1}{a\sqrt{2}} \int_{-a}^{a}{ \sin{\left(\frac{m\pi x}{4a} + \frac{m\pi}{2}\right)} \sin{\left(\frac{\pi x}{2a} + \frac{\pi}{2}\right)} dx}
 \end{aligned}$$
 
-$$\begin{aligned}
-\braket{{\varphi_m}^\prime}{\varphi_1} &= \int_{-2a}^{2a}{ \left(\sqrt{\frac{2}{4a}}\sin{\left(\frac{m\pi x}{4a}\right)}\right)\left(\sqrt{\frac{2}{2a}}\sin{\left(\frac{\pi x}{2a}\right)}\right) dx} \\
-&= \frac{1}{a}\sqrt{\frac{4}{8}} \int_{-2a}^{2a}{ \sin{\left(\frac{m\pi x}{4a}\right)} \sin{\left(\frac{\pi x}{2a}\right)} dx} \\
+Using the sum formula for sine, we can simplify the integrand for two general cases:
+
+$$
+\begin{aligned}
+\sin{(\alpha + \beta)} &= \sin{\alpha}\cos{\beta} + \cos{\alpha} \sin{\beta} \\
 \\
+\sin{\left(\frac{\pi x}{2a} + \frac{\pi}{2}\right)} &= \sin{\left(\frac{\pi x}{2a}\right)}\cos{\frac{\pi}{2}} + \cos{\left(\frac{\pi x}{2a}\right)}\sin{\frac{\pi}{2}} \\
+&= \cos{\left(\frac{\pi x}{2a}\right)}\\
+\\
+\sin{\left(\frac{m\pi x}{4a} + \frac{m\pi}{2}\right)} &= \sin{\left(\frac{m\pi x}{4a}\right)}\cos{\frac{m\pi}{2}} + \cos{\left(\frac{m\pi x}{4a}\right)}\sin{\frac{m\pi}{2}} \\
+\text{for odd m } &\rightarrow \cos{\frac{m\pi}{2}} = 0, \quad \sin{\frac{m\pi}{2}} = 1 \\
+&\Rightarrow \cos{\left(\frac{m\pi x}{4a}\right)}\\
+\text{for even m } &\rightarrow \cos{\frac{m\pi}{2}} = 1, \quad \sin{\frac{m\pi}{2}} = 0 \\
+&\Rightarrow \sin{\left(\frac{m\pi x}{4a}\right)}\\
+\end{aligned}$$
+
+This allows us to rewrite the integrand in a cleaner form:
+
+$$\begin{aligned}
+m\in(2\mathbb{Z}),\quad \braket{{\varphi_m}^\prime}{\varphi_1} &= \frac{1}{a\sqrt{2}} \int_{-a}^{a}{ \sin{\left(\frac{m\pi x}{4a}\right)} \cos{\left(\frac{\pi x}{2a}\right)} dx} \\
+m\in(2\mathbb{Z}+1),\quad \braket{{\varphi_m}^\prime}{\varphi_1} &= \frac{1}{a\sqrt{2}} \int_{-a}^{a}{ \cos{\left(\frac{m\pi x}{4a}\right)} \cos{\left(\frac{\pi x}{2a}\right)} dx} \\
+\end{aligned}$$
+
+We can disregard the '$m$ is even' set of solutions as: $\cos{nx}$ is orthogonal to $\sin{mx}$ for all integer values of $n,m$ (i.e. the 'Harmonic Integrals' or more commonly known as the basis for Fourier Series) and due to the parity of the potential ($V(x)$ is symmetric $\Rightarrow$ $V(x)$ is even $\Rightarrow$ $V(x)$ will only permit even wave functions). We can proceed with the odd integer solutions of $m$ by using a $u$-substitution and referencing an integral table.
+
+$$\begin{aligned}
 \text{let } u &= \frac{\pi x}{4a} \Rightarrow du = \frac{\pi}{4a}dx \\
-u &\in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right] \\
+u &\in \left[-\frac{\pi}{4}, \frac{\pi}{4}\right] \\
 \\
-&= \frac{4a}{a\pi}\sqrt{\frac{4}{8}} \int_{-\pi/2}^{\pi/2}{ \sin{(mu)} \sin{(2u)} du}
+&= \frac{4a}{a\pi\sqrt{2}} \int_{-\pi/4}^{\pi/4}{ \cos{(mu)} \cos{(2u)} du}
 \end{aligned}$$
 
-Consulting the integral table at the back of D. McIntyre's *Quantum Mechanics*, we find Equation F.1:
+Consulting the integral table at the back of D. McIntyre's *Quantum Mechanics*, we find Equation F.2:
 
-$$\int{\sin{mx}\sin{nx} dx} = \frac{\sin{((m-n)x)}}{2(m-n)} - \frac{\sin{((m+n)x)}}{2(m+n)}, \quad m^2 \neq n^2$$
-
-Using this result for $m^2 \neq 4$:
+$$\int{\cos{mx}\cos{nx} dx} = \frac{\sin{((m-n)x)}}{2(m-n)} + \frac{\sin{((m+n)x)}}{2(m+n)}, \quad m^2 \neq n^2$$
 
 $$\begin{aligned}
-\braket{{\varphi_m}^\prime}{\varphi_1} &= \frac{4a}{a\pi}\sqrt{\frac{4}{8}} \left[ \frac{\sin{((m-2)u)}}{2(m-2)} - \frac{\sin{((m+2)u)}}{2(m+2)} \right]_{u=-\pi/2}^{u=\pi/2} \\
-&= \frac{4}{\pi}\sqrt{\frac{1}{2}} \left[ \left(\frac{\sin{\left(\frac{\pi m}{2} - \pi \right)}}{2m-4} - \frac{\sin{\left(\frac{\pi m}{2} + \pi \right)}}{2m+4}\right) - \left(\frac{\sin{\left(-\frac{\pi m}{2} + \pi \right)}}{2m-4} - \frac{\sin{\left(-\frac{\pi m}{2} - \pi \right)}}{2m+4}\right) \right] \\
-&= \frac{4}{\pi}\sqrt{\frac{1}{2}} \left[ \frac{\sin{\left(\frac{\pi m}{2} - \pi \right)}}{2m-4} - \frac{\sin{\left(\frac{\pi m}{2} + \pi \right)}}{2m+4} - \left(-\frac{\sin{\left(\frac{\pi m}{2} - \pi \right)}}{2m-4} + \frac{\sin{\left(\frac{\pi m}{2} + \pi \right)}}{2m+4}\right) \right] \\
-&= -\frac{4}{\pi}\sqrt{\frac{1}{2}} \left[ \frac{\sin{\left(\frac{\pi m}{2}\right)}}{m-2} - \frac{\sin{\left(\frac{\pi m}{2}\right)}}{m+2} \right] \\
-&= -\frac{ 8\sqrt{2} }{ \pi(m^2-4) } \sin{\left(\frac{\pi m}{2}\right)} \\
-\text{for } &\begin{cases} m\in(2\mathbb{Z}), & \sin{((\mathbb{Z})\pi)} = 0 \\ m\in(2\mathbb{Z} +1), & \sin{\left((\mathbb{Z})\frac{\pi}{2}\right)} = 1 \end{cases}\\
+\braket{{\varphi_m}^\prime}{\varphi_1} &= \frac{4a}{a\pi\sqrt{2}} \left[ \frac{\sin{((m-2)u)}}{2(m-2)} + \frac{\sin{((m+2)u)}}{2(m+2)} \right]_{u=-\pi/4}^{u=\pi/4} \\
+&= \frac{2\sqrt{2}}{\pi} \left[ \left(\frac{\sin{\left(\frac{\pi m}{4} - \frac{\pi}{2} \right)}}{2m-4} + \frac{\sin{\left(\frac{\pi m}{4} + \frac{\pi}{2} \right)}}{2m+4}\right) - \left(\frac{\sin{\left(-\frac{\pi m}{4} + \frac{\pi}{2} \right)}}{2m-4} + \frac{\sin{\left(-\frac{\pi m}{4} - \frac{\pi}{2} \right)}}{2m+4}\right) \right] \\
+\\
+\sin(x\pm \pi/2) &= \pm\cos(x)\\
+\sin(-x) &= -\sin(x)\\
+\\
+&= \frac{2\sqrt{2}}{\pi}  \left[ \left(\frac{-1}{2m-4} + \frac{1}{2m+4}\right) + \left(\frac{-1}{2m-4} + \frac{1}{2m+4}\right) \right]\cos{\left(\frac{\pi m}{4}\right)} \\
+&= \frac{2\sqrt{2}}{\pi}  \left[ \frac{1}{m+2} - \frac{1}{m-2} \right] \cos{\left(\frac{\pi m}{4}\right)} \\
+&= -\frac{2\sqrt{2}}{\pi}  \left[ \frac{4}{m^2-4} \right] \cos{\left(\frac{\pi m}{4}\right)} \\
+&= -\frac{ 8\sqrt{2} }{ \pi(m^2-4) } \cos{\left(\frac{\pi m}{4}\right)} \\
+\text{for } &\begin{cases} m=1,5,9..., \quad &\cos{\left(\frac{\pi m}{4}\right)} = +\frac{1}{\sqrt{2}} \\ m=3,7,11..., \quad &\cos{\left(\frac{\pi m}{4}\right)} = -\frac{1}{\sqrt{2}} \end{cases}
 \end{aligned}$$
 
-$$\braket{{\varphi_m}^\prime}{\varphi_1} = -\frac{ 8\sqrt{2} }{ \pi(m^2-4) }, \qquad m\in(2\mathbb{Z} +1)$$
+$$\braket{{\varphi_m}^\prime}{\varphi_1} = \frac{(-1)^{m-1} 8}{ \pi(m^2-4) }, \qquad m\in(2\mathbb{Z^+} +1),\ m>0$$
 
-And now we need to handle the case for $m=2$ ($m^2 = 4$) separately:
+Since we are projecting into a non-degenerate basis, we are guaranteed that the transformation to $\ket{\psi^\prime}$ will be normalized, as $\ket{\psi}$ was normalized to start with. Therefore, the probability of being in the ground state for this new potential is straightforward:
 
+$$\mathcal{P}_{E_1} = {\left\lvert \braket{{\varphi_1}^\prime}{\psi^\prime} \right\rvert}^2 = {\left\lvert \frac{8}{ \pi(-3) } \right\rvert}^2 = \frac{64}{9\pi^2} \approx 0.72$$
+
+## Verifying the Projected State Vector is Normalized
+
+To verify work accomplished by hand, the following Mathematica code was used to verify the results of calculations:
+
+> $\ $
+
+### 1. Defining the energy eigenfunctions
+
+```Mathematica
+$Assumptions = a > 0 && a \[Element] Reals && m > 0 && m \[Element] Integers;
+
+groundStateOld[x_] :=  1/Sqrt[a]
+  * Sin[(\[Pi] (x + a))/(2 a)]*(UnitStep[x + a] - UnitStep[x - a])
+
+energyEigenfunctionNew[m_, x_] :=  1/Sqrt[2 a] * Sin[(m*\[Pi] (x + 2 a))/(4 a)]
+
+```
+
+> $\ $
+
+### 2. Sanity check: Are these orthogonal and normalized (in their own basis)?
+
+```Mathematica
+innerProductOld = \!\(
+    \*SubsuperscriptBox[\(\[Integral]\), \(-a\), \(a\)]\(\((Conjugate[
+       groundStateOld[x]]*\ groundStateOld[x])\) \[DifferentialD]x\)\);
+
+innerProductNew = \!\(
+    \*SubsuperscriptBox[\(\[Integral]\), \(\(-2\) a\), \(2  
+     a\)]\(\((Conjugate[energyEigenfunctionNew[2, x]]*\
+      energyEigenfunctionNew[2, x])\) \[DifferentialD]x\)\);
+
+```
+
+> $\ $
+
+### 3. Find the $m$-th probability amplitude: (and verify the structure of the integrand)
+
+```Mathematica
+integrand[x] =
+  FullSimplify[
+   Conjugate[energyEigenfunctionNew[2, x]]* groundStateOld[x]];
+
+Subscript[c, m][m_] := \!\(
+    \*SubsuperscriptBox[\(\[Integral]\), \(\(-2\) a\), \(2  
+    a\)]\(\((Conjugate[energyEigenfunctionNew[m, x]]*\
+     groundStateOld[x])\) \[DifferentialD]x\)\)
+
+```
+
+> $\ $
+
+### 4. Calculate $c_1$ and verify that the sum of all $\lvert c_m \rvert^2$ is unity.
+
+``` Mathematica
+Subscript[c, 1] = \!\(
+    \*SubsuperscriptBox[\(\[Integral]\), \(\(-2\) a\), \(2  
+    a\)]\(\((Conjugate[energyEigenfunctionNew[1, x]]*\
+     groundStateOld[x])\) \[DifferentialD]x\)\)
+
+FullSimplify[
+ Sum[Conjugate[Subscript[c, m][j]]*Subscript[c, m][j], {j, 1,
+   Infinity, 2}]]
+```
