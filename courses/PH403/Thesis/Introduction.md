@@ -36,7 +36,7 @@ d\tau^2 = g(\sigma^t,\ \sigma^t ), \qquad ds^2= g(\sigma^i,\ \sigma^j) \qquad i,
 The next complication comes from Einstein considering the presence of massive objects on spacetime. Simply put: mass distorts or curves spacetime. The simplest and most prominent example of this is the Schwarzschild solution to Einstein's field equations, in which an isolated, non-rotating, and spherically symmetric massive object is placed at the origin. It is easy to see from the line element (physicists tend to refer to Equation $(\ref{SchwarzschildWithC})$ as the metric for Schwarzschild) of this space why this particular geometry for spacetime is used as the first non-flat introduction to General Relativity (GR):
 
 \begin{equation}\label{SchwarzschildWithC}
-ds^2=- \left( 1 - \frac{2GM}{c^2\ r} \right)(c^2\ dt^2) + \frac{dr^2}{1\frac{2GM}{c^2\ r}} + r^2 d^2\Omega
+ds^2=- \left( 1 - \frac{2GM}{c^2\ r} \right)(c^2\ dt^2) + \frac{dr^2}{1-\frac{2GM}{c^2\ r}} + r^2 d^2\Omega
 \end{equation}
 
 The final hurdle, in our simplified case, arises from another required application of length contraction and time dilation. This second set is a direct manifestation from curved spacetime and is completely independent from using SR. The subtle problem here is that now we consider how our grid that describes the fabric of spacetime is affected by the presence of massive objects. In popular media, this effect is typically demonstrated in Science Fiction TV shows or movies such as: *Stargate: SG1* or *Interstellar*. In class rooms, the SR side of this is examined with geostationary satellites for the GPS system, but the GR aspect is often overlooked. The short answer is that we can adopt a coordinate system that is immune to these effects and is either referred colloquially as the Schwarzschild or Bookkeeper's coordinates: $r$, $\theta$, $\varphi$, $t$. This type of coordinate system is a geometric representation (unaffected by the curvature of spacetime).
@@ -48,6 +48,8 @@ The path a free-falling object takes is always correspond to a straight worldlin
 \end{equation}
 
 While Equation $(\ref{GeneralSchwarzschildEOM})$ can be cleaned up by suppressing constants (typically G_N and c), the functional form still conceals information about this object's trajectory: Where is it at some time t? How fast is it moving? What's the acceleration? Where did it start? How do I build an intuitive understanding? This is the focus of the project: to help translate these compact and foreign equations from General Relativity into visualizations and other representations that tie back into and build off already existing intuitions and reasoning skillsets.
+
+\pagebreak
 
 ## A Primer on Spacetime and Relativity
 
@@ -135,3 +137,5 @@ def bookkeeper_lightclock_tick_as_measured_from_shell(proper_time):
 Knowing that time has dimensions of length in GR, due to scaling by $c$, we could naively ask about using `__r_step_resolution` or `__time_step_resolution`. At the surface, this feels like a straightforward answer, but there's an added layer of complexity.
 
 We're talking about time and the resolution should depend on the precision as specified by $dt_{bk}$. However, at the same time, we're talking about what the difference in clock tick rates are at each distance along some `r` interval. The context is the deciding factor: we want to measure the disagreement between the physical observation and the geometric expectation along some distance, therefore we iterate over `__r_domain` and scale `r` by $dr_{bk}$.
+
+\pagebreak

@@ -148,3 +148,209 @@ Remembering that we are fundamently ploting a function that takes the form of $$
 
 ### 5. Refactor
 
+\pagebreak
+
+## Measuring Performance and Optimizations
+
+> TODO: Ripped from *Progress Report 11/22*, Refine Later
+
+The next logical step for plot functionality was implementing Equation 21 from *Exploring Black Holes*:
+
+$$\frac{dr}{dt}=-\left(1-\frac{2M}{r}\right)\sqrt{\frac{2M}{r}}$$
+
+```py
+def get_bk_speed_at_geometric_position(r_coord):
+  M = get_blackhole_mass_in_meters()
+  speed = np.ones(np.shape(r_coord.domain))
+  for r in r_coord.domain:
+    speed[(r - r_coord.domain[0]) * r_coord.iteration_direction] = - (1 - (2*M)/(r*r_coord.step_resolution)) * np.sqrt((2*M)/(r*r_coord.step_resolution))
+  return speed
+```
+
+Both the speed measure by the Bookkeeper and the speed recorded as the stone passes each shell were trivial to implement after having broken the monolith, however, runtimes have started to increase. In parallel, I had been consuming some content about `numpy` and `python` and was inspired to benchmark the results of this function call to see just how bad it was.
+
+Fortunately, timing is very straightforward:
+
+```py
+import time
+...
+start = time.perf_counter()
+speed = #result of function call
+stop = time.perf_counter()
+print(f"Elapsed time: {stop-start}")
+```
+
+Where `time.perf_counter()` is described by the [docs](https://docs.python.org/3/library/time.html#functions) as:
+
+> Return the value (in fractional seconds) of a performance counter, i.e. a clock with the highest available resolution to measure a short duration. It does include time elapsed during sleep and is system-wide. The reference point of the returned value is undefined, so that only the difference between the results of two calls is valid.
+
+At the time, I was calculating $dr_{shell}(r)$ and $dt_{shell}(r)$ for a black hole with mass $M=500\ meters$, an $r$-coordinate interval from $(2M+1,\ 100M)$, and a $dr_{bk}=0.1\ meters$. This meant that `r_coord` was an array with $4.8999\times 10^5$ elements. Recall the functional definitions:
+
+```python
+def bookkeeper_meter_stick_as_measured_from_shell(proper_distance):
+  for r in __r_domain :
+    proper_distance[ (r - __r_domain[0]) * __r_iteration_direction ] = ..
+      __r_step_resolution / np.sqrt(1 - (2*M)/(r*__r_step_resolution))
+
+def bookkeeper_lightclock_tick_as_measured_from_shell(proper_time):
+  for r in __r_domain :
+    proper_time[ (r - __r_domain[0]) * __r_iteration_direction ] =  ..
+      np.sqrt(1 - (2*M)/(r*__r_step_resolution)) * __time_step_resolution
+```
+
+The corresponding computation time for both operations came out to be:
+
+```
+  Distance: 1.7440086
+  Time: 1.7440086
+Elements in array: 489990
+```
+
+And, in this scenario, would scale linearly with the size of the array: (Just changing $dr_{bk}$ to $0.01\ meters$)
+
+```
+  Distance: 17.5974859
+  Time: 17.728677
+Elements in array: 4989990
+```
+
+So, we're already at almost 2 seconds of runtime per function call, and these are the two simplest equations I can numerically evaluate in the entirety of General Relativity. As mentioned above, after reading some more detail about the `Numpy` documentation, I noticed that `np.multiply` and the other maths functions can *operate in place*. Essentially, the way the following statement would evaluate `proper_distance[ ... ] = __r_step_resolution / np.sqrt(1 - (2*M)/(r*__r_step_resolution))` is that this calculation would occur for each `r`. On its face, this isn't a ground breaking statement, but during the runtime, `__r_step_resolution` is constant, as well as `r_coord`. So, at the very least, we're doubling the amount of calculations that need to occur. Caching the results in a global `CURVATURE_FACTORS` variable that calculates $1-\frac{2M}{r}$ for each `r` at the start of the program can almost cut the total elapsed time in half.
+
+$$1-\frac{2M}{r}$$
+
+The only thing that is not constant in this expression (in code) is the `r` from `r_coord`, but this is where we can actually start to leverage the power of `Numpy`. They have gone through great lengths to optimize operations like scalar multiplication, and by sacrificing some readability:
+
+```py
+__r_step_resolution / np.sqrt(1 - (2*M)/(r*__r_step_resolution))
+```
+
+We can let the compiler optimize and reduce computation time by being very explict that each operation needs to occur to the entire array:
+
+```py
+ALMOST_CURVATURE_FACTOR = np.reciprocal(np.true_divide(np.multiply(r_coord_local.domain, r_coord_local.step_resolution), 2*M))
+CURVATURE_FACTORS = np.sqrt(np.ones(np.shape(r_coord_local.domain)) - ALMOST_CURVATURE_FACTOR)
+```
+
+Where `ALMOST_CURVATURE_FACTOR` is $2M/r$. The caching of `CURVATURE_FACTORS` means we save the entire time it would take to do it again, and then since both functions are just scalar multiples of `CURVATURE_FACTORS`, their definition simplifies (at the cost of readability):
+
+```py
+def get_bookkeeper_meter_stick_as_measured_from_shell(dr):
+  return np.multiply(np.reciprocal(get_curvature_factor()), dr)
+
+def get_bookkeeper_lightclock_tick_as_measured_from_shell(dt):
+  return np.multiply(get_curvature_factor(), dt)
+```
+
+And the resulting computation time for the same parameters:
+
+```
+Old:
+  Distance: 17.5974859
+  Time: 17.728677
+Optimized:
+  Curvature: 0.0580259
+  Distance: 0.007410
+  Time: 0.00830
+Elements in array: 4989990
+```
+
+That is a $99.79\%$ reduction in runtime.
+
+\pagebreak
+
+## SOLID, KISS, and DRY: Breaking Monoliths
+
+With the plots of physical vs geometric measurements working as expected, it was time to refactor the code. Most of what existed in `dimensionless_plot.py` was already fairly descriptive and narrative, there wasn't much to add in terms of comments or renaming variables. What was apparent, however, was the growing friction in changing the runtime parameters to see how the plots changed for different mass black holes or for different intervals.
+
+One of the original design concepts behind Cartographer was to allow a configuration file to be supplied to specify these parameters. Then the comparision between different situations would be a simple matter of swapping out configuration files and allowing for a method to easily save the state that generated a series of plots.
+
+This is then the perfect time to start dividing up sections of the code into logical files:
+
+```
+/Cartographer/
+              spacetime/
+                        schwarzschild.py
+              Cartographer.py
+              configuration_reader.py
+              coordinate_array.py
+              runtime_configurations.yaml
+```
+
+Cartographer, as its name suggests, should really just focus on generating the plots, and while being the namesake of the project, should also be the host of the service.
+
+```
+Cartographer.py
+    | -- make_plot(...)
+    | -- main(...)
+```
+
+In order to begin to calculate or plot anything, we first need to read in the configuration file:
+
+``` python
+import configuration_reader as cf_r
+
+def main():
+  coordinate_domains = cf_r.get_configuration_settings()
+  if len(coordinate_domains) == 0:
+    print('''Error in loading runtime_configurations.yaml.
+     Check to make sure the file is located in the
+     same directory and has content.''')
+    return
+```
+
+`configuration_reader.py` only has one function: parse the content we've specified in the configuration file. Since its is the only one who does any reading, in future iterations, it should also house any of the error checking for badly formatted config files. `get_configuration_settings()` does a simple reading of the `runtime_configurations.yaml` file and rips out the content.
+
+I choose the `yaml` type as it offers benefits to both interacting as a user and for the program, as shown in the excerpt below:
+
+```yaml
+physical_constants:
+  speed_of_light: 1
+  gravitational_constant: 1
+spacetime_parameters:
+  mass:
+    in_meters: 500
+  charge: 0
+  angular_momentum: 0
+coordinate_domains:
+  - dimension: "time"
+    start: 0
+    stop: 10
+    step: 0.1
+  - dimension: "reduced circumference" # as factors of M
+    start: 2
+    stop: 100
+    step: 0.1
+```
+
+The indentation and dashes allow for logical distinction when the file is being read, similar to JSON files. Essentially, at the uppermost level, we have a dictionary with three keys: `physical_constants`, `spacetime_parameters`, and `coordinate_domains`. From there, its just another logical extension into further nested dictionaries. The power behind this implementation, is that not everything has to be specified.
+
+By removing the `- dimension: "time"` entry, Cartographer will simply not create the time coordinate array. Also, by specifying the values for the physical constants here, it removes the possibility for incorrect plots when trying to use more accurate values for $c$ and $G$, and unintentionally forgetting to change one (or both) after running test data.
+
+`schwarzschild.py` is where most of this data should live during runtime: as the arbiter of spacetime geometry, it should know the mass of the black hole and be responsible for answering questions asked about the geometry. I'm not sure exactly how to deal with different geometeries explicitly in the future, but for the moment, this seems to be the logical way forward.
+
+`coordinate_array.py` is just a wrapper class for the `numpy` arrays.
+
+```python
+class Coordinate_Array:
+
+  def __init__(self, start = int(), stop = int(), resolution = float()):
+    dimensionless_start_value = remove_dimensions(start, resolution)
+    dimensionless_stop_value = remove_dimensions(stop, resolution)
+    self.step_resolution = resolution
+    self.iteration_direction = (1 if (start < stop) else -1 )
+    self.domain = np.arange(
+        dimensionless_start_value,
+        dimensionless_stop_value,
+        self.iteration_direction
+      )
+
+def remove_dimensions(value_to_remove_dimensions_from, dimensions_to_remove):
+    return int(value_to_remove_dimensions_from / dimensions_to_remove)
+
+def add_dimensions(value_to_add_dimensions_to, dimensionful_variable):
+    return (value_to_add_dimensions_to * dimensionful_variable)
+```
+
+The only downside to splitting everything up into silos was that I still needed a way to ask about $dr_{bk}$ and $dt_{bk}$, but couldn't find out a way that using just the $initial$ and $final$ values with the $size$ of the array.
+
+\pagebreak
