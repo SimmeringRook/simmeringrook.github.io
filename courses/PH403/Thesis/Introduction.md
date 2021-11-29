@@ -13,6 +13,8 @@ header-includes: |
 
 # Introduction
 
+$$\ $$
+
 ## Motivation
 
 > TODO: Introduction (Ripped from Proposal, Refine Later)
@@ -53,6 +55,8 @@ While Equation $(\ref{GeneralSchwarzschildEOM})$ can be cleaned up by suppressin
 
 ## A Primer on Spacetime and Relativity
 
+$$\ $$
+
 ### The Breaking Point of Galileo's Relativity
 
 > TODO: Possibly redirect to Appendix for a refresher on concepts from PH 315: Theoretical Mechanics (i.e., *The Surveyor's Parable*).
@@ -63,7 +67,14 @@ Consider a stunt-person jumping out of a moving car. We construct three referenc
 
 > TODO: Simple sketch/figure showing the view from each frame.
 
+\begin{figure}[H]
+    \centering
+    \caption{\label{GalileanRelativity}An illustration of the above physical situtation as seen from three reference frames. }
+\end{figure}
+
 Now, we increase the speed of the stunt-person diving away from the car to $0.5c$ (half the speed of light) and the car to $0.9c$. The cameraman then would calculate a speed of the stunt-person of $\sqrt{1.06}c\approx 1.03c$. While a crude example, our method of determining relative velocities allows a description of a massive object moving faster than the speed of light. Our two modest assumptions about the universe are the same two ideas that Einstein uses as the postulates of Special Relativity.
+
+$$\ $$
 
 ### Space into Spacetime
 
@@ -71,9 +82,29 @@ Now, we increase the speed of the stunt-person diving away from the car to $0.5c
 
 > TODO: Introduce/Refresh Proper Time and Proper Distance
 
+$$\ $$
+
 ### Mass is Curvature
 
 > TODO: Make sure to introduce terminology of geometric and physical distance to allow easier comparisions of quantities beyond Bookkeeper and Shell observers. Figure including the hyperbolic angle on a radial spacetime diagram would help. Also include figure if Cartographer generates embedding diagrams.
+
+\begin{figure}[H]
+    \centering
+        \begin{tikzpicture}[scale=1.5]
+
+    % create coordinates
+    \coordinate (O) at (0,0);
+    \coordinate (L) at (5,0);
+    \coordinate (P) at (0,-2);
+
+    % Construct triangle
+    \draw (P) -- (L) node [midway, below] {$dr_{shell}$};
+    \draw (O) -- (L) node [midway, above] {$dr_{bk}$};
+    \draw (O) -- (P) node [midway, left] {$\sqrt{1-\frac{2M}{r_{shell}}}$};
+
+    \end{tikzpicture}
+    \caption{\label{drvectorInSchwarz}A hyperbolic geometric representation of how the physical distance, $dr_{shell}$, is greater than the geometric distance, $dr_{bk}$, due to the curvature at that shell's $r$-coordinate. }
+\end{figure}
 
 > TODO: Remember $d\vec{r}$ from PH 422? Well, it's back and this time, its going to make life a lot easier.
 
@@ -81,9 +112,13 @@ Now, we increase the speed of the stunt-person diving away from the car to $0.5c
 
 ## Computational Physics Background
 
+$$\ $$
+
 ### The Flaws of Doing Maths Computationally
 
 > TODO: Describe the problems of using binary to represent base 10 numbers and the operations; i.e. Floating Point Precision
+
+$$\ $$
 
 ### Variables, Dimensions, and their Representation
 

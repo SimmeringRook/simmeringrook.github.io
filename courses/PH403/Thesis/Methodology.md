@@ -14,6 +14,8 @@ header-includes: |
 
 # Methodology
 
+$$\ $$
+
 ## Design Principles
 
 > TODO: Guidelines and idealize criteria to inform decision making during synthesis and refactoring.
@@ -31,27 +33,28 @@ header-includes: |
 > TODO: Ripped from Proposal: "Plan of Work", Refine Later
 
 We will study the equations of motion for massive and massless particles in the presence of curved spacetime. A Schwarzschild black hole will serve as the source of curvature for analysis of limiting cases that will be used as the foundation for sense making and error checking in computational runtimes. The project itself has been subdivided into three major phases: Scaffolding, Curving, and Refinement.
-The core of the toolset depends on a series of key design and implementation decisions about the underlying framework. One of the key features is to have an intuitive code base for physicists to use, which implies a latticework of grid points mapping out the space. Ideally, this latticework will be agnostic with respect to the active geometry and type of curvature. This stage will focus on the creation of the latticework, its documentation and the manifestation of key mathematical tools such as differential scattering and the representation and parameterization of a geodesic. Examples of this design process are shown on the following page with Figure 1 and Figure 2.
+
+The core of the toolset depends on a series of key design and implementation decisions about the underlying framework. One of the key features is to have an intuitive code base for physicists to use, which implies a latticework of grid points mapping out the space. Ideally, this latticework will be agnostic with respect to the active geometry and type of curvature. This stage will focus on the creation of the latticework, its documentation and the manifestation of key mathematical tools such as differential scattering and the representation and parameterization of a geodesic. Examples of this design process are shown on the following page with Figure $\ref{DesignProcess1}$ and Figure $\ref{DesignProcess2}$.
 
 > TODO: Replace if final implementation is no longer OOP.
 
 \begin{figure}[H]
     \centering
-    \caption{Latticework design implementation document detailing desired behaviour and properties. }
+    \caption{\label{DesignProcess1}Latticework design implementation document detailing desired behaviour and properties. }
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \caption{SpacetimeGeometry design implementation document outlining the use of object-oriented class inheritance to allow modularity for future different descriptions of curvature in spacetime and to ensure the framework does not implicitly assume any behaviour of the geometry: “Spacetime agnostic”. }
+    \caption{\label{DesignProcess2}SpacetimeGeometry design implementation document outlining the use of object-oriented class inheritance to allow modularity for future different descriptions of curvature in spacetime and to ensure the framework does not implicitly assume any behaviour of the geometry: “Spacetime agnostic”. }
 \end{figure}
 
-The differential scattering cross-section has a general form that can be parameterized based off the impact parameter, $\sigma\left(b\right)=\int{\frac{d\sigma\left(b\right)}{d\Omega}\left(\theta,\ \phi\right)d\Omega}$ [5], but we will need to still solve the EOM, Equation 4, and mesh the two together. Care will need to be taken to avoid any implicit assumptions about the object traversing the spacetime to avoid unphysical geodesics and cross-sections: e.g., the impact parameter has a different form for massive versus massless particles [1,3]. Below, in Figure 3, the general user story has been mapped out to provide insight into the conceptual process of the toolset.
+The differential scattering cross-section has a general form that can be parameterized based off the impact parameter, $\sigma\left(b\right)=\int{\frac{d\sigma\left(b\right)}{d\Omega}\left(\theta,\ \phi\right)d\Omega}$ [5], but we will need to still solve the EOM, Equation 4, and mesh the two together. Care will need to be taken to avoid any implicit assumptions about the object traversing the spacetime to avoid unphysical geodesics and cross-sections: e.g., the impact parameter has a different form for massive versus massless particles [1,3]. Below, in Figure $\ref{FlowChart}$, the general user story has been mapped out to provide insight into the conceptual process of the toolset.
 
 > TODO: Replace with final version's flow system. Maybe keep original for comparision
 
 \begin{figure}[H]
     \centering
-    \caption{Flow chart detailing the typical user story for interacting with the toolset. }
+    \caption{\label{FlowChart}Flow chart detailing the typical user story for interacting with the toolset. }
 \end{figure}
 
 \pagebreak
@@ -82,6 +85,8 @@ As mentioned in previous sections, each equation in GR very quickly increases in
 \begin{equation}\label{ShellTime}
     dt_{shell} = \left(1-\frac{2M}{r}\right)^{\frac{1}{2}} dt
 \end{equation}
+
+$$\ $$
 
 ### 2. Translate to Python
 
@@ -115,6 +120,8 @@ $$\frac{1}{2}\dot{r}^2 = \frac{E^2-kc^4}{2c^2} +k \frac{GM}{r} - \frac{ {L_z}^2 
 
 In the later parts of this thesis, my hope is that this equation will have lost some of its confounding nature, but that will be accomplished through plots and descriptions of objects interacting with the curvature, not through piece by piece deconstruction of the variables (at least, directly). A computational model of a system should be able to be parsed by someone who is fluent in the language of the program, iregardless if they have the model's domain knowledge, just as a mathematican should be able to parse a series of equations describing physical phenoma.
 
+$$\ $$
+
 ### 3. Plot
 
 This portion definitely falls within the realm of an in-class assignment that can be given to a student in the PH 36X series with a simple implementation using Matplotlib:
@@ -127,24 +134,70 @@ def get_proper_distance_for_shell(r, M, dr):
   from math import sqrt
   return dr/sqrt(1-(2*M)/r)
 
-M = 50
+M = 5
 dr = 1
 
-r_coordinates = np.arrange(2*M+dr, 15*M, dr)
-proper_distance = np.zeros(r_coordiantes.shape)
+r_coordinates = np.arange(2*M+dr, 15*M, dr)
+proper_distance = np.zeros(r_coordinates.shape)
 
 for r in r_coordinates:
-    proper_distance[r-2*M+dr] = get_proper_distance_for_shell(r, M, dr)
+  proper_distance[r-(2*M+dr)] = get_proper_distance_for_shell(r, M, dr)
 
 plt.plot(r_coordinates, proper_distance)
-plt.show()
+plt.title(f"Proper distance between shells separated by {dr=} meters \n and {M=} meters")
+plt.xlabel("r-coordinate")
+plt.ylabel("Physical distance between shells")
+plt.savefig(fname="CoreDesign_Plot.png")
 ```
+
+The resulting plot is displayed in the following subsection *4. Verify Results* as Figure $\ref{DesignProcessVerify_Python}$.
+
+$$\ $$
 
 ### 4. Verify Results
 
-Remembering that we are fundamently ploting a function that takes the form of $$f(x) = \frac{1}{\sqrt{1-\frac{1}{x}}}$$ It is very easy to compare the general shapes between the output generated by Cartographer and any other various plotting software. As more complex expressions are represented and interpreted by Cartographer, this stage will become more time consuming as the chance for mistakes increases in greater proportion than complexity. Also, more literature research will need to be conducting in conjuction to ensure that the results are comparable or reproducible to already existing figures.
+Remembering that we are fundamently ploting a function that takes the form of 
 
-> TODO: Figure comparision of above code versus Mathematica (or Desmos?)
+\begin{equation}\label{Comparision}
+f(x) = \frac{1}{\sqrt{1-\frac{1}{x}}}
+\end{equation}
+
+> TODO: Remove paragraph and move code to appendix?
+
+It is very easy to compare the general shapes between the output generated by Cartographer and any other various plotting software. Using the following Mathematica code, we can compare that the function has the same concavity and characteristic behaviour in both plots:
+
+```Mathematica
+M = 5;
+f[x_] := 1/Sqrt[1 - 10/x]
+Plot[f[x], {x, 2*M + dr, 15*M}, PlotRange -> {{2*M, 15*M}, {1, 3.5}}, 
+ AxesLabel -> {"x", "f(x)"}, 
+ PlotLabel -> 
+  "Mathematica Plot for Comparision of Cartographer Output", 
+ ImageSize -> Large]
+```
+
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.5\textwidth}
+      \centering
+      \includegraphics{CoreDesign_Plot.png}
+      \caption{Cartogrpaher}
+      \label{DesignProcessVerify_Python}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.5\textwidth}
+      \centering
+      \includegraphics{CoreDesign_PlotMathematica.png}
+      \caption{Mathematica}
+      \label{DesignProcessVerify_Mathematica}
+  \end{subfigure}
+  \caption{Displayed on the left, \ref{DesignProcessVerify_Python}, is the plot produced by the python representation of Equation \ref{ShellDistance} with \ref{DesignProcessVerify_Mathematica} demonstrating similar behaviour from Mathematica's interpretation of Equation \ref{Comparision} (where the quantities of $M$ and $dr$ have been replaced with numeric values).}
+\end{figure}
+
+> TODO: Attempt to align formatting between Mathematica and Python plots?
+
+As more complex expressions are represented and interpreted by Cartographer, this stage will become more time consuming as the chance for mistakes increases in greater proportion than complexity. Also, more literature research will need to be conducting in conjuction to ensure that the results are comparable or reproducible to already existing figures.
+
+$$\ $$
 
 ### 5. Refactor
 
@@ -163,7 +216,8 @@ def get_bk_speed_at_geometric_position(r_coord):
   M = get_blackhole_mass_in_meters()
   speed = np.ones(np.shape(r_coord.domain))
   for r in r_coord.domain:
-    speed[(r - r_coord.domain[0]) * r_coord.iteration_direction] = - (1 - (2*M)/(r*r_coord.step_resolution)) * np.sqrt((2*M)/(r*r_coord.step_resolution))
+    speed[(r - r_coord.domain[0]) * r_coord.iteration_direction] = - (1 - (2*M)/
+      (r*r_coord.step_resolution)) * np.sqrt((2*M)/(r*r_coord.step_resolution))
   return speed
 ```
 
@@ -227,8 +281,13 @@ __r_step_resolution / np.sqrt(1 - (2*M)/(r*__r_step_resolution))
 We can let the compiler optimize and reduce computation time by being very explict that each operation needs to occur to the entire array:
 
 ```py
-ALMOST_CURVATURE_FACTOR = np.reciprocal(np.true_divide(np.multiply(r_coord_local.domain, r_coord_local.step_resolution), 2*M))
-CURVATURE_FACTORS = np.sqrt(np.ones(np.shape(r_coord_local.domain)) - ALMOST_CURVATURE_FACTOR)
+ALMOST_CURVATURE_FACTOR = np.reciprocal(np.true_divide(np.multiply(
+    r_coord_local.domain, 
+    r_coord_local.step_resolution
+  ), 2*M))
+CURVATURE_FACTORS = np.sqrt(np.ones(np.shape(r_coord_local.domain))
+   - ALMOST_CURVATURE_FACTOR
+  )
 ```
 
 Where `ALMOST_CURVATURE_FACTOR` is $2M/r$. The caching of `CURVATURE_FACTORS` means we save the entire time it would take to do it again, and then since both functions are just scalar multiples of `CURVATURE_FACTORS`, their definition simplifies (at the cost of readability):
