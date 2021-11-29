@@ -73,6 +73,8 @@ Now, we increase the speed of the stunt-person diving away from the car to $0.5c
 
 > TODO: Make sure to introduce terminology of geometric and physical distance to allow easier comparisions of quantities beyond Bookkeeper and Shell observers. Figure including the hyperbolic angle on a radial spacetime diagram would help. Also include figure if Cartographer generates embedding diagrams.
 
+> TODO: Remember $d\vec{r}$ from PH 422? Well, it's back and this time, its going to make life a lot easier.
+
 \pagebreak
 
 ## Computational Physics Background
