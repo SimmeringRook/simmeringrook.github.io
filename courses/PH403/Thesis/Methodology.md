@@ -61,9 +61,9 @@ The differential scattering cross-section has a general form that can be paramet
 
 ## The Core Design Process
 
-> TODO: This is true at this stage, Refine as progress continues.
+To facilitate periodic testing and quick implementation, the desired functionality of Cartographer was divided into a series of milestones. Each milestone was choosen such that it gradually increased in complexity and laid the groundwork for subsequent milestones. This iterative design process is often referred to the minimal viable product: At the conclusion of each milestone, all corresponding functionality has been implemented and the code has been cleaned up and reorganized (refactored). 
 
-The underlying theme of iterating on and releasing a minimal viable product was chosen to facilitate efficent paritioning of the desired feature set along with fast implementation and iteration. By necessity, this required a simple core design process. In the early stages of synthesis, the algorithm was defined by five steps:
+This design process can be distilled into a series of five steps:
 
 1. Find/Choose an Equation
 2. Translate Equation to Python
@@ -71,13 +71,24 @@ The underlying theme of iterating on and releasing a minimal viable product was 
 4. Verify results and implement changes as necessary
 5. Refactor
 
+The end goal of Cartographer is to generate visualizations correspoding to no-mass/low-mass particles moving through Schwarzschild spacetime and how they are scattered due to the pressence of a black hole. As mentioned previously in *Introduction: Motivation*, these geodesic equations are complex but we can leverage the fact that they are the result of algebraic compositions from simpler expressions. This very naturally allows us to work backwards from the end goal of visualizating something like Equation $(\ref{GeneralSchwarzschildEOM})$ to the very *building blocks* of describing the curvature of spacetime. 
+
+> TODO: Simple Illiustration? Scattering -> GeneralSchwarzschildEOM (general motion in schwarz) -> motion with angular momentum -> orbits -> just radial motion -> just curvature
+> Also callout sections/subsections?
+
+| Scattering | GeneralSchwarzschildEOM -> motion with angular momentum -> orbits | radial motion | curvature factors |
+| -- | -- | -- | -- |
+| 4. Scattering | 3.3 Angular Momentum, Effective Potential, and Orbits | 3.2 Gaining SPeed and Radial Geodesics | 3.1 Distance, Time, and Embedding Diagrams |
+
+The following subsections provide additional context for each step by detailing the process for implementing the effects of curvature on distance and time measurements. These subsections focus primarly on the computational implementation whereas *3.1 Distance, Time, and Embedding Diagrams* offers an analysis of the resulting visualizations and the physics behind them. 
+
 ### 1. Choose an Equation
 
-> TODO: Move following paragraph to *Introduction: A Primer on Spacetime and Relativity*?
+We begin by isolating the descriptions of proper time and proper distance as measured by a shell observer using the line element (Equation $\ref{SchwarzschildWithC}$). Recall from *1.2.3 Space into Spacetime*, proper time and distance are invariant with respect to changing reference frames. By setting each differential in the line element to $0$ other than $dr$ or $dt$, we can obtain the expressions which allow us to discuss proper time and distance with respect to any stationary observer:
 
-As mentioned in previous sections, each equation in GR very quickly increases in both mathematical and congnitive complexity. Therefore, it was paramount to start with the simplest descriptions in Schwarzschild: proper time and proper distance. Recall that we can simplify the line element (Equation $\ref{SchwarzschildWithC}$) by dictating what coordinates can change. Each corresponding invariant measurement is performed by finding the set of *rest* frames in which the change in spatial (or temporal) coordinates is minimized (typically zero)[^-21]. The corresponding invariant measurements for the stationary observers in Schwarzschild are then given as:
+$$ds^2= - f(r)^2 (dt^2) + \frac{dr^2}{f(r)^2} + r^2 d^2\Omega$$
 
-[^-21]: For proper distance, this is done be measuring the spacetime separation between two events that occur simultaneously; $t_{e1}=t_{e2}$, $dt=0$. Proper time is measured similarly: ${space}_{e1} = {space}_{e2}$, $d{space} = 0$.
+where we have introduced the shorthand of $f(r)= \sqrt{1 - \frac{2M}{r}}$ to simplify the expression and $d^2\Omega$ represents the angular components of $\sin^2{\theta}d^2\varphi + d^2\theta$. Setting $d^2\Omega=0$. Examining a change in $r$ or $t$ separately, we derive Equations $\ref{ShellDistance}$ and $\ref{ShellTime}$:
 
 \begin{equation}\label{ShellDistance}
     dr_{shell} = \left(1-\frac{2M}{r}\right)^{-\frac{1}{2}} dr
@@ -90,19 +101,7 @@ $$\ $$
 
 ### 2. Translate to Python
 
-Given the relative simplicty of Equations $\ref{ShellDistance}$ and $\ref{ShellTime}$, the conversion to Python is straightfoward:
-
-``` python
-def get_proper_distance_for_shell(shell_r_coordinate, blackhole_mass_in_meters, dr):
-  from math import sqrt
-  return dr/sqrt(1-(2*blackhole_mass_in_meters)/shell_r_coordinate)
-
-def get_proper_time_for_shell(shell_r_coordinate, blackhole_mass_in_meters, dt):
-  from math import sqrt
-  return sqrt(1-(2*blackhole_mass_in_meters)/shell_r_coordinate)*dt
-```
-
-While the translation from a mathematical expression to a functional call is easy, due note that the readability has already decreased by a factor. This can be mitigated by trying to write the functions with Physicists in mind: 
+Having obtained our two equations to implement, the next step is to represent them in Python. Given the relative simplicty of Equations $\ref{ShellDistance}$ and $\ref{ShellTime}$ and their lack of dependancy on previous expressions, this conversion to Python is straightfoward:
 
 ``` python
 def get_proper_distance_for_shell(r, M, dr):
@@ -114,17 +113,11 @@ def get_proper_time_for_shell(r, M, dt):
   return sqrt(1-(2*M)/r)*dt
 ```
 
-However, the shorthand of using mathematical variable names does come at a cost. Recall, as noted in *Introduction: Computational Physics Background: "Variables, Dimensions, and their Representation"*, that the accepted design practices for *clean* code require variable names to be specific. "But why is using the variable names that allow a direct map between mathematical expression and progomatic representation not the *easiest* implementation?" At this stage, it most certaintly is, but we are also in the process of implementing the two simplest expressions in the simplest geometry for curved spacetime. Recall Equation $(\ref{GeneralSchwarzschildEOM})$ from *Introduction: Motivation*:
-
-$$\frac{1}{2}\dot{r}^2 = \frac{E^2-kc^4}{2c^2} +k \frac{GM}{r} - \frac{ {L_z}^2 }{2r^2} + \frac{GM {L_z}^2}{c^2 r^3}$$
-
-In the later parts of this thesis, my hope is that this equation will have lost some of its confounding nature, but that will be accomplished through plots and descriptions of objects interacting with the curvature, not through piece by piece deconstruction of the variables (at least, directly). A computational model of a system should be able to be parsed by someone who is fluent in the language of the program, iregardless if they have the model's domain knowledge, just as a mathematican should be able to parse a series of equations describing physical phenoma.
-
 $$\ $$
 
 ### 3. Plot
 
-This portion definitely falls within the realm of an in-class assignment that can be given to a student in the PH 36X series with a simple implementation using Matplotlib:
+This portion falls within the realm of an in-class assignment that can be given to a student in the PH 36X series, as it requires only basic familarity with Matplotlib and NumPy. Using the function as defined in the previous subsection, we choose convient values for `M` and `dr` initially. Specific values of `M` and `dr` can be used later on to verify the results from literature, but we want to be able to easily inspect the resulting plot for uncharacteristic behaviour.
 
 ``` python
 import numpy as np
@@ -136,7 +129,11 @@ def get_proper_distance_for_shell(r, M, dr):
 
 M = 5
 dr = 1
+```
 
+Since there is a coordinate singularity at $r=2M$ and shell observers only exist outside the event horizon (see *1.2.4 Mass is Curvature*), we need to prevent the script from trying to divide by zero. This is simple enough by denoting our interval of $r$-coordinates to be exclusive $(2M,15M)$; programmatically, we do this by adding $dr$ to $2M$. The upper bound of $15M$ was chosen similar to the values of `M=5` and `dr=1`: it's just far enough away to display the shape of the plot without supressing the desired behaviour.
+
+``` python
 r_coordinates = np.arange(2*M+dr, 15*M, dr)
 proper_distance = np.zeros(r_coordinates.shape)
 
@@ -144,9 +141,10 @@ for r in r_coordinates:
   proper_distance[r-(2*M+dr)] = get_proper_distance_for_shell(r, M, dr)
 
 plt.plot(r_coordinates, proper_distance)
-plt.title(f"Proper distance between shells separated by {dr=} meters \n and {M=} meters")
-plt.xlabel("r-coordinate")
-plt.ylabel("Physical distance between shells")
+plt.title(f"Proper distance of {dr=} meters as measured by each shell\n observer with a
+ blackhole of {M=} meters")
+plt.xlabel("r-coordinate of shell")
+plt.ylabel("Distance measured by shell")
 plt.savefig(fname="CoreDesign_Plot.png")
 ```
 
@@ -156,15 +154,13 @@ $$\ $$
 
 ### 4. Verify Results
 
-Remembering that we are fundamently ploting a function that takes the form of 
+Recall that for distance, we are plotting a function that takes the form of 
 
 \begin{equation}\label{Comparision}
 f(x) = \frac{1}{\sqrt{1-\frac{1}{x}}}
 \end{equation}
 
-> TODO: Remove paragraph and move code to appendix?
-
-It is very easy to compare the general shapes between the output generated by Cartographer and any other various plotting software. Using the following Mathematica code, we can compare that the function has the same concavity and characteristic behaviour in both plots:
+With this in mind, it is very easy to compare the general shapes between the output generated by Cartographer and any other various plotting software due to the choice of parameters: `M=5`, `dr=1`, $(2M,15M)$. Using the following Mathematica code, we can compare that the function for proper distance has the same concavity and characteristic behaviour in both plots:
 
 ```Mathematica
 M = 5;
@@ -180,7 +176,7 @@ Plot[f[x], {x, 2*M + dr, 15*M}, PlotRange -> {{2*M, 15*M}, {1, 3.5}},
   \begin{subfigure}[b]{0.5\textwidth}
       \centering
       \includegraphics{CoreDesign_Plot.png}
-      \caption{Cartogrpaher}
+      \caption{Cartographer}
       \label{DesignProcessVerify_Python}
   \end{subfigure}
   \hfill
@@ -190,16 +186,100 @@ Plot[f[x], {x, 2*M + dr, 15*M}, PlotRange -> {{2*M, 15*M}, {1, 3.5}},
       \caption{Mathematica}
       \label{DesignProcessVerify_Mathematica}
   \end{subfigure}
-  \caption{Displayed on the left, \ref{DesignProcessVerify_Python}, is the plot produced by the python representation of Equation \ref{ShellDistance} with \ref{DesignProcessVerify_Mathematica} demonstrating similar behaviour from Mathematica's interpretation of Equation \ref{Comparision} (where the quantities of $M$ and $dr$ have been replaced with numeric values).}
+  \caption{Displayed on the left, \ref{DesignProcessVerify_Python} is the plot produced by the Python representation of Equation \ref{ShellDistance}. On the right, \ref{DesignProcessVerify_Mathematica} demonstrates Mathematica's interpretation of Equation \ref{Comparision} with the same behaviour: monotonically decreasing and asympotically approaching $f(x)=1$ as $x\rightarrow\infty$ (where the quantities of $M$ and $dr$ have been replaced with matching numeric values).}
 \end{figure}
 
 > TODO: Attempt to align formatting between Mathematica and Python plots?
 
-As more complex expressions are represented and interpreted by Cartographer, this stage will become more time consuming as the chance for mistakes increases in greater proportion than complexity. Also, more literature research will need to be conducting in conjuction to ensure that the results are comparable or reproducible to already existing figures.
+As more complex expressions are represented and interpreted by Cartographer, this stage becomes more time consuming due to the increased chance for mistakes in derivation and/or implementation. This stage also requires more literature review to ensure the results are comparable to already existing representations and interpretations. 
 
 $$\ $$
 
 ### 5. Refactor
+
+Refactoring is a catch-all term for:
+
+- finding and fixing bugs from the result of adding new code or using existing code differently
+- reorganizing code into logical divisions
+- renaming variables to more clearly denote their purpose
+
+The following is an example of refactoring the code written in the previous subsections. Recall that the functions were given descriptive names, but the variables used the same representation as their mathematical counterparts:
+
+``` python
+        def dr_shell(r, M, dr):                   def dt_shell(r, M, dt):
+          from math import sqrt                     from math import sqrt
+          return dr/sqrt(1-(2*M)/r)                 return sqrt(1-(2*M)/r)*dt
+```
+
+$$dr_{shell} = \left(1-\frac{2M}{r}\right)^{-\frac{1}{2}} dr, \qquad dt_{shell} = \left(1-\frac{2M}{r}\right)^{\frac{1}{2}} dt$$
+
+While the two representations are almost identitcal, especially for those used to representing math equations in LaTeX, the names of the functions and variables can be improved to be more descriptive. As is, a good custodian would insert comments into the code to add more context:
+
+``` python
+def dr_shell(r, M, dr):
+  """Returns the proper distance for 'dr' as measured by the shell located at 'r' from a 
+   blackhole of mass 'M'.
+  
+  'M' is the mass of the blackhole in meters
+  'r' is the r-coordinate of the shell
+  'dr' is the length measured by the bookkeeper
+  """
+  from math import sqrt
+  return dr/sqrt(1-(2*M)/r)
+
+def dt_shell(r, M, dt):
+  """Returns the proper time for 'dt' as measured by the shell located at 'r' from a
+   blackhole of mass 'M'.
+  
+  'M' is the mass of the blackhole in meters
+  'r' is the r-coordinate of the shell
+  'dt' is the time measured by the bookkeeper
+  """
+  from math import sqrt
+  return sqrt(1-(2*M)/r)*dt
+```
+
+> TODO: Do I cite PEP8? or leave a link/reference, since I'm referring in general to the concepts and not quoting them? These concepts are not unique to PEP8 or Python, but come from a nameless amalgmation of unaffiliated software develeopers.
+
+There is no specific set of requirements which state how code must be documented, but there is a set of *best practices* agreeded upon by various communities. For Python, this is given in the style guide of [PEP8](TODO:Link!), however, these recommendations are not as strict or easy to implement on a case by case basis as criteria for the References section of a paper. The general idea is to comment the code to allow easier interpretations of the purpose and/or functionality.
+
+This, however, is treated as the bare minimum in being a good custodian of the code. Very often comments are not changed when a function is rewritten or bugfixed ( the analogy here is a figure or picture given with a problem statement for Math/Physics. It might show that the intersection of two lines/vectors is 90 degrees, but more often than not, the picture lies and doesn't match the values given by the problem.). Instead, it recommended to self document the code using descriptive variable/function/object names (in addition to comments).
+
+``` python
+def get_corresponding_proper_distance_for_shell(
+    shell_r_coordinate, 
+    blackhole_mass_in_meters, 
+    bk_distance_measured
+  ):
+  """Returns the proper distance of `bk_distance_measured` as measured by the shell at 
+  `shell_r_coordinate` in Schwarzschild.
+
+  This is the implementation of Equation $\ref{ShellDistance}$ from the Thesis. 
+  Alternatively, this is derived and given in 'Exploring Black Holes' by E.F Taylor 
+  and J. A. Wheeler as Equation 12 from Page 2-22. Reference: [1].
+  """
+  from math import sqrt
+  return bk_distance_measured/sqrt(1-(2*blackhole_mass_in_meters)/shell_r_coordinate)
+
+def get_corresponding_proper_time_for_shell(
+    shell_r_coordinate, 
+    blackhole_mass_in_meters, 
+    bk_time_measured
+  ):
+  """Returns the proper time of `bk_time_measured` as measured by the shell at 
+  `shell_r_coordinate` in Schwarzschild.
+
+  This is the implementation of Equation $\ref{ShellTime}$ from the Thesis. 
+  Alternatively, this is derived and given in 'Exploring Black Holes' by E.F Taylor 
+  and J. A. Wheeler as Equation 19 from Page 2-23. Reference: [1].
+  """
+  from math import sqrt
+  return sqrt(1-(2*blackhole_mass_in_meters)/shell_r_coordinate)*bk_time_measured
+```
+
+While this has lost the readability from the almost LaTeX like implementation, it has removed the redundant comments everywhere denoting what `M` was, especially in relation to `M`'s dimensions. 
+
+> TODO: Add further example where we use lessons learned/introduced from *1.3.2 Variables, Dimensions, and their Representation*? `shell_r_coordinate` $\rightarrow$ `dimensionless_shell_r_coordinate`; make the `r_coordinates` array dimensionless and introduce the `r_coordinate_resolution` scaling factor?
 
 \pagebreak
 
@@ -268,11 +348,11 @@ And, in this scenario, would scale linearly with the size of the array: (Just ch
 Elements in array: 4989990
 ```
 
-So, we're already at almost 2 seconds of runtime per function call, and these are the two simplest equations I can numerically evaluate in the entirety of General Relativity. As mentioned above, after reading some more detail about the `Numpy` documentation, I noticed that `np.multiply` and the other maths functions can *operate in place*. Essentially, the way the following statement would evaluate `proper_distance[ ... ] = __r_step_resolution / np.sqrt(1 - (2*M)/(r*__r_step_resolution))` is that this calculation would occur for each `r`. On its face, this isn't a ground breaking statement, but during the runtime, `__r_step_resolution` is constant, as well as `r_coord`. So, at the very least, we're doubling the amount of calculations that need to occur. Caching the results in a global `CURVATURE_FACTORS` variable that calculates $1-\frac{2M}{r}$ for each `r` at the start of the program can almost cut the total elapsed time in half.
+So, we're already at almost 2 seconds of runtime per function call, and these are the two simplest equations I can numerically evaluate in the entirety of General Relativity. As mentioned above, after reading some more detail about the `NumPy` documentation, I noticed that `np.multiply` and the other maths functions can *operate in place*. Essentially, the way the following statement would evaluate `proper_distance[ ... ] = __r_step_resolution / np.sqrt(1 - (2*M)/(r*__r_step_resolution))` is that this calculation would occur for each `r`. On its face, this isn't a ground breaking statement, but during the runtime, `__r_step_resolution` is constant, as well as `r_coord`. So, at the very least, we're doubling the amount of calculations that need to occur. Caching the results in a global `CURVATURE_FACTORS` variable that calculates $1-\frac{2M}{r}$ for each `r` at the start of the program can almost cut the total elapsed time in half.
 
 $$1-\frac{2M}{r}$$
 
-The only thing that is not constant in this expression (in code) is the `r` from `r_coord`, but this is where we can actually start to leverage the power of `Numpy`. They have gone through great lengths to optimize operations like scalar multiplication, and by sacrificing some readability:
+The only thing that is not constant in this expression (in code) is the `r` from `r_coord`, but this is where we can actually start to leverage the power of `NumPy`. They have gone through great lengths to optimize operations like scalar multiplication, and by sacrificing some readability:
 
 ```py
 __r_step_resolution / np.sqrt(1 - (2*M)/(r*__r_step_resolution))

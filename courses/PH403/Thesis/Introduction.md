@@ -49,7 +49,7 @@ The path a free-falling object takes is always correspond to a straight worldlin
 \frac{1}{2}\dot{r}^2 = \frac{E^2-kc^4}{2c^2} +k \frac{GM}{r} - \frac{ {L_z}^2 }{2r^2} + \frac{GM {L_z}^2}{c^2 r^3}
 \end{equation}
 
-While Equation $(\ref{GeneralSchwarzschildEOM})$ can be cleaned up by suppressing constants (typically G_N and c), the functional form still conceals information about this object's trajectory: Where is it at some time t? How fast is it moving? What's the acceleration? Where did it start? How do I build an intuitive understanding? This is the focus of the project: to help translate these compact and foreign equations from General Relativity into visualizations and other representations that tie back into and build off already existing intuitions and reasoning skillsets.
+While Equation $(\ref{GeneralSchwarzschildEOM})$ can be cleaned up by suppressing constants (typically $G_N$ and $c$), the functional form still conceals information about this object's trajectory: Where is it at some time t? How fast is it moving? What's the acceleration? Where did it start? How do I build an intuitive understanding? This is the focus of the project: to help translate these compact and foreign equations from General Relativity into visualizations and other representations that tie back into and build off already existing intuitions and reasoning skillsets.
 
 \pagebreak
 

@@ -19,8 +19,6 @@ header-includes: |
 \newcommand{\expectation}[1]{{\left\langle #1 \right\rangle}}
 \newcommand{\pprime}{{\prime\prime}}
 
-\pagebreak
-
 # Question 1
 
 > Consider a $1$-D harmonic oscillator.
@@ -44,6 +42,8 @@ t_3 &= t_1 + t_2 \\
 &= im\hbar\omega\left(\left[a,\ {a^\dagger}\right]\right)\sin{(\omega (t_2 - t_1))} \\
 &= im\hbar\omega\sin{(\omega (t_2 - t_1))} \\
 \end{aligned}$$
+
+\pagebreak
 
 ## Part B
 
@@ -169,8 +169,3 @@ $$\mathcal{P_n} = {\lvert c_n \rvert}^2 = \exp{\left(-\left(\frac{\alpha}{\sqrt{
 And finally, we calculate the probabilities of the charged particle being in the unpeturbed ground and first excited states after the field is turned off (at $t=0$):
 
 $$P_0 = \exp{\left(-\frac{q^2\mathcal{E}^2}{2\hbar m \omega^3}\right)}, \qquad P_1 = \frac{q^2\mathcal{E}}{2\hbar m \omega^3}\exp{\left(-\frac{q^2\mathcal{E}^2}{2\hbar m \omega^3}\right)}$$
-
-\pagebreak
-
-# Question 3
-
