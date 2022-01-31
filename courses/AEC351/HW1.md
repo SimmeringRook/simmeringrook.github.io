@@ -1,14 +1,20 @@
 ---
 title: Homework 1
-subtitle: AEC 351, W2022
+subtitle: AEC 353, W2022
 author: Thomas Knudson
 date: Thursday, January 6, 2022
 papersize: a4
 geometry: margin=2cm
 header-includes: |
+    \usepackage{pgfplots}
+    \usepackage{hyperref}
+    \usepackage{tikz,tikz-3dplot} 
+    \usepackage{tkz-euclide}
     \usepackage{fancyhdr}
+    \usepackage{float}
+    \usepackage{subcaption}
     \pagestyle{fancy}
-    \fancyhead[RO,RE]{AEC 351, W2022}
+    \fancyhead[RO,RE]{AEC 353, W2022}
     \fancyhead[CO,CE]{HW1}
     \fancyhead[LO,LE]{Knudson}
 ---
@@ -75,34 +81,67 @@ $$2.5\bigg(141.2 - 0.2824 (1+2x)\bigg) = 0.025\bigg(2.5(141.2x-0.2824x^2)-6941.5
 Let:
  - $\alpha = 2.5$
  - $\beta = 141.2$
- - $\xi = -0.2824$
- - $\varphi = -6941.57$
- - $\chi = 3691.15$
-
-$$\alpha\bigg(\beta + \xi (1+2x)\bigg) = \frac{\alpha}{100}\bigg(\alpha(\beta x + \xi x^2) + \varphi\bigg) + \frac{\alpha}{100}\chi$$
-
-Expanding out, we can work to isolate powers of $x$ to one side and all other constants to the other:
-
-Divide both sides by the reciprocal of $\alpha/100$:
-$$\begin{aligned}
-\frac{100}{\alpha}\alpha\bigg(\beta + \xi (1+2x)\bigg) &= \frac{100}{\alpha} \bigg [\frac{\alpha}{100}\bigg(\alpha(\beta x + \xi x^2) + \varphi\bigg) + \frac{\alpha}{100}\chi \bigg] \\
-100\bigg(\beta + \xi (1+2x)\bigg) &= \bigg(\alpha(\beta x + \xi x^2) + \varphi\bigg) + \chi \\
-100(\beta + \xi) + 200\xi x &= \alpha\beta x + \alpha\xi x^2 + \varphi + \chi \\
-\alpha\xi x^2 + (\alpha\beta -200\xi)x &= \varphi + \chi - 100(\beta + \xi) \\
-\end{aligned}$$
-
-To further clean this up before completing the square, let's introduce the following substitutions,
-
-$$a = \alpha\xi, \quad b = \alpha\beta - 200\xi, \quad c=\varphi+\chi-100(\beta+\xi),$$
-
-such that our expression now takes the form of $a x^2 + bx = c$.
+ - $\gamma = -0.2824$
+ - $\chi = -6941.57$
+ - $\varphi = \frac{2.5}{100}(3691.15)$
 
 $$\begin{aligned}
-a x^2 + bx &= c\\
-x^2 + \frac{b}{a}x + 0 &= \frac{c}{a}\\
-x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 - \left(\frac{b}{2a}\right)^2 &= \frac{c}{a} \\
-\left(x + \frac{b}{2a} \right)^2 &= \frac{c}{a} + \frac{b^2}{4a^2} \\
-\sqrt{\left(x + \frac{b}{2a} \right)^2} &= \sqrt{\frac{4ac+b^2}{4a^2}} \\
-x + \frac{b}{2a} &= \frac{\sqrt{4ac+b^2}}{2a} \\
-x &= \frac{-b+\sqrt{4ac+b^2}}{2a}
+\alpha\bigg(\beta + \gamma (1+2x)\bigg) &= \frac{\alpha}{100}\bigg(\alpha(\beta x + \gamma x^2) + \chi\bigg) + \varphi \\
+\beta + \gamma + 2\gamma x &= \frac{\alpha\beta}{100} x + \frac{\alpha\gamma}{100} x^2 + \frac{\chi}{100} + \frac{\varphi}{\alpha} \\
+\frac{\alpha\gamma}{100} x^2 + x \left(\frac{\alpha\beta}{100} - 2\gamma\right) &= \beta + \gamma - \left(\frac{\chi}{100} + \frac{\varphi}{\alpha}\right)
 \end{aligned}$$
+
+To further clean this and to reveal the underlying structure, let us introduce the following secondary substitutions,
+
+$$a = \frac{\alpha\gamma}{100}, \quad b = \left(\frac{\alpha\beta}{100} - 2\gamma\right), \quad -c = \beta + \gamma - \left(\frac{\chi}{100} + \frac{\varphi}{\alpha}\right),$$
+
+such that our expression now takes the form of $a x^2 + bx = -c$. Noting that this is the general form for a quadratic, we can immediately move to apply the quadratic formula and note that the roots of $x$ are given by:
+
+$$\frac{-b\pm\sqrt{b^2 - 4ac}}{2a}$$
+
+Undoing all of the substitution, we then obtain the following possible solutions:
+
+$$\begin{aligned}
+x &= \frac{-\left(\frac{\alpha\beta}{100} - 2\gamma\right)\pm\sqrt{\left(\frac{\alpha\beta}{100} - 2\gamma\right)^2 + 4\frac{\alpha\gamma}{100}\left(\beta + \gamma - \left(\frac{\chi}{100} + \frac{\varphi}{\alpha}\right)\right)}}{2\frac{\alpha\gamma}{100}}\\
+&= \frac{-\left(\frac{2.5(141.2)}{100} + 2(0.2824)\right)\pm\sqrt{\left(\frac{2.5(141.2)}{100} + 2(0.2824)\right)^2 + 4\frac{2.5(-0.2824)}{100}\left(141.2 -0.2824) - \left(-\frac{6941.57}{100} + \frac{3691.15}{100}\right)\right)}}{2\frac{2.5(-0.2824)}{100}}\\
+&= \frac{-4.0948 \pm \sqrt{4.0948^2-4(0.00706)(173.422)}}{2(-0.00706)}\\
+&= 46,\ 534
+\end{aligned}$$
+
+\pagebreak
+
+# Question 2
+
+## Part A
+
+\begin{figure}[H]
+      \centering
+\includegraphics[scale=.1]{2a.jpg}
+\end{figure}
+
+\pagebreak
+
+## Part B
+
+\begin{figure}[H]
+      \centering
+\includegraphics[scale=.1]{2b.jpg}
+\end{figure}
+
+\pagebreak
+
+## Part C
+
+\begin{figure}[H]
+      \centering
+\includegraphics[scale=.1]{2c.jpg}
+\end{figure}
+
+\pagebreak
+
+# Question 3
+
+\begin{figure}[H]
+      \centering
+\includegraphics[scale=.1]{3.jpg}
+\end{figure}
