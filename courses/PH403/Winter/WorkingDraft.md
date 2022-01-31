@@ -143,10 +143,6 @@ $$\ $$
 
 ## The Core Design Process
 
-> Notes: I'm planning on having introduced concepts of SR and GR in the introduction as well as some computational things. That is, a reader going in order will know the context of a "geodesic" and "geodesic equation" by reaching this section.
-
-> TODO: Possibly move the following paragraph to the preceding section $\rightarrow$ Define/introduce minimal viable product (MVP) there?
-
 To facilitate periodic testing and quick implementation, the desired functionality of Cartographer was divided into a series of milestones. Each milestone was chosen such that it gradually increased in complexity and laid the groundwork for subsequent milestones. This iterative design process is often referred to the minimal viable product: at the conclusion of each milestone, all corresponding functionality has been implemented and the code has been cleaned up and reorganized (refactored).
 
 This design process can be distilled into a series of five steps:
@@ -166,7 +162,7 @@ The end goal of Cartographer is to generate visualizations corresponding to ligh
 | -- | -- | -- |
 | 3.3 Angular Momentum, Effective Potential, and Orbits | 3.2 Gaining Speed and Radial Geodesics | 3.1 Distance, Time, and Embedding Diagrams |
 
-The following subsections provide additional context for each step by detailing the process of implementing the building blocks. These subsections focus primarily on the computational implementation whereas *3.1 Distance, Time, and Embedding Diagrams* offers an analysis of the resulting visualizations and the physics behind them.
+The following subsections provide additional context for each step by detailing the process of implementing the building blocks. These subsections focus primarily on the computational implementation whereas Section 3.1 offers an analysis of the resulting visualizations and the physics behind them.
 
 ### Choose an Equation
 
