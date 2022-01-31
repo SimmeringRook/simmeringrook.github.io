@@ -41,8 +41,73 @@ $$\ $$
 
 \pagebreak
 
-
 # Introduction
+
+Galilean relativity is the model we use to describe relative velocities in everyday life and is fairly robust, requiring extremes to find the breaking points. Einstein’s famous thought experiment about light moving on a train is the perfect analog for describing problem involving Global Positioning System (GPS) Satellites and thier transmissions to Earth. Using Galilean relativity, we can illustrate the physical situation like in Figure 1, however, anything beyond simple kinematics fails.
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+
+  % create coordinates
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (8,0);
+  \coordinate (V) at (8,2);
+
+  % Earth
+  \node[circle,draw,text=white,fill=gray,minimum size = 3cm] (c1) at (O) {Earth};
+
+  % Satellite
+  \node[circle, draw] (c2) at (P) {};
+  \node at (c2) [below, right] {$\ $ GPS Satellite};
+
+  % Label the radius
+  \draw[dashed] (c1) -- (c2) node [midway, below] {$2.02\times 10^7\ m$};
+
+  % Show velocity
+  \draw[stealth-] (V) --++ (c2) node [midway, right] {$3.861\times 10^3\ m/s$};
+
+  \end{tikzpicture}
+  \caption{Galilean description of the relative velocities between Earth and a GPS Satellite. Source: https://earthobservatory.nasa.gov/features/OrbitsCatalog.}
+  \label{gpsGalileo}
+\end{figure}
+
+> TODO: Reference figure 2 to highlight $\gamma$
+
+In short, each GPS satellite periodically transmits location data alongside a timecode (TODO: Source). Using special relativity (SR), we find a scaling factor—typically $\gamma$—that represents the strength of length contraction and time dilation caused by the relative velocity. To calculate this factor, we must transition from the Galilean model (treating space and time distances  separately) to SR’s spacetime. However, measurement and theory would still disagree on the time between ticks of Earth’s and the GPS’s light-clocks: we have failed to consider the effect of gravity.
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+
+  % create coordinates
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (8,0);
+  \coordinate (V) at (8,2);
+
+  % Earth
+  \node[circle,draw,text=white,fill=gray,minimum size = 3cm] (c1) at (O) {Earth};
+
+  % Satellite
+  \node[circle, draw] (c2) at (P) {};
+  \node at (c2) [below, right] {$\ $ GPS Satellite};
+
+  % Label the radius
+  \draw[dashed] (c1) -- (c2) node [midway, below] {$2.02\times 10^7\ m$};
+
+  % Show velocity
+  \draw[stealth-] (V) --++ (c2) node [midway, right] {$3.861\times 10^3\ m/s$};
+
+  \end{tikzpicture}
+  \caption{TODO: Update figure.}
+  \label{gpsSR}
+\end{figure}
+
+By expressing the intensity of a massive body’s gravitational field as curvature, we discover and are able to correct for an additional set of length contraction and time dilation. This geometric model is called Schwarzschild Geometry and is the simplest solution to Einstein’s field equations involving a single massive object that is non-rotating. 
+
+While we now have a theory that provides extremely accurate predictions, we subtly sacrificed a lot along the way. In Galilean relativity, we could easily switch from reference frame to reference frame and agree on what all observers measured: distance, time, relative velocities, and order of events. As the relative speed of objects increased, we had to switch to special relativity, but lost: observers agreeing on the order of events (see the “barn and pole” paradox). Finally, in using general relativity (GR) to correctly unify observers’ measurements in the presence of a gravitational field, we lost the notion of relative velocity.
+
+We will first review the notions of proper time, proper distance, and geodesics in GR and how to use the line element to measure separation in spacetime and how to represent it computationally (Sections 2.1-2.2). Then we will refresh on differential scattering cross-sections of light about an object (Section 2.3) in preparation for examining the scattering caused by the curvature of spacetime. Section 3 focuses on the generation and analysis of visualizations depicting simple and complex geodesics in the Schwarzschild geometry.
 
 $$\ $$
 
