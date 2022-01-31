@@ -43,6 +43,8 @@ $$\ $$
 
 # Introduction
 
+> This thesis was written with a OSU physics major starting their capstone courses in mind. While not uniformly true for all physics students, base concepts of astrophysics and relativity, as would be covered in PH 455: Astrophysics and PH 335: Theoretical Mechanics, are treated as prior knowledge. Advanced concepts from general relativity or programming & optimization (beyond PH 36X: Computational Lab) will be explained or given an explicit appendix reference. $$\ $$
+
 Galilean relativity is the model we use to describe relative velocities in everyday life and is fairly robust, requiring extremes to find the breaking points. Einstein’s famous thought experiment about light moving on a train is the perfect analog for describing problem involving Global Positioning System (GPS) Satellites and thier transmissions to Earth. Using Galilean relativity, we can illustrate the physical situation like in Figure 1, however, anything beyond simple kinematics fails.
 
 \begin{figure}
@@ -112,44 +114,6 @@ We will first review the notions of proper time, proper distance, and geodesics 
 \pagebreak
 
 # Background
-
-## Motivation {#motivation}
-
-> TODO: Introduction (Ripped from Proposal, Refine Later)
-
-When considering new systems and their interactions, we tend to gravitate towards two main features: energy and kinematics. As we move away from Newtonian Mechanics, each system or formalism strongly suggests, if not outright requires, we abandon our familiar and direct kinematic equations for a more enigmatic exploration through energy conservation.
-
-One such example of this shift is from Classical Thermodynamics into Statistical Mechanics. The student, eager to discuss small numbers of particles, immediately recognizes the futility attempting to use kinematics to describe the evolution of the system. On one hand, this can be expected of quantum mechanical (QM) systems, but these complications arise in classical mechanics as velocities approach significant fractions of the speed of light. While Special Relativity (SR) does not "break" the discussion of kinematics in the same fashion as QM, SR plays havoc with the student's everyday intuition molded from Galilean Relativity.
-
-Fortunately, we are still able to discuss trajectories in this more complicated formalism, but they require different terminology. The most immediate consequence of the relativistic formalism comes from the disagreement from observers on lengths and times measured and even the order in which events occur. To rectify this, we transition from a discussion of time and space as separate entities to a single entity: spacetime. The method in which we measure distances also changes from the very familiar Pythagorean (or Euclidean) distance formula to a hyperbolic distance formula. This is evident in the comparison of each space's line element:
-
-\begin{equation}
-\underbrace{ds^2 = dx^2 + dy^2}_{\mathbb{E}^2} \quad \text{v.s.} \quad \underbrace{ds^2 = dx^2 - dy^2}_{\mathbb{M}^2}
-\end{equation}
-
-In the exploration of flat spacetimes (or Minkowski space), we are obliged to refresh our understanding of and the importance of an inertial reference frame. This tool is largely disregarded in undergraduate physics courses due to the explicit requirement of the Newtonian mechanics’ model. From this reevaluation of what different inertial observers see, we ultimately arrive at two seemingly inconsequential invariant measurements: proper time and proper distance.
-
-\begin{equation}
-d\tau^2 = g(\sigma^t,\ \sigma^t ), \qquad ds^2= g(\sigma^i,\ \sigma^j) \qquad i,j\neq t
-\end{equation}
-
-The next complication comes from Einstein considering the presence of massive objects on spacetime. Simply put: mass distorts or curves spacetime. The simplest and most prominent example of this is the Schwarzschild solution to Einstein's field equations, in which an isolated, non-rotating, and spherically symmetric massive object is placed at the origin. It is easy to see from the line element (physicists tend to refer to Equation $(\ref{SchwarzschildWithC})$ as the metric for Schwarzschild) of this space why this particular geometry for spacetime is used as the first non-flat introduction to General Relativity (GR):
-
-\begin{equation}\label{SchwarzschildWithC}
-ds^2=- \left( 1 - \frac{2GM}{c^2\ r} \right)(c^2\ dt^2) + \frac{dr^2}{1-\frac{2GM}{c^2\ r}} + r^2 d^2\Omega
-\end{equation}
-
-The final hurdle, in our simplified case, arises from another required application of length contraction and time dilation. This second set is a direct manifestation from curved spacetime and is completely independent from using SR. The subtle problem here is that now we consider how our grid that describes the fabric of spacetime is affected by the presence of massive objects. In popular media, this effect is typically demonstrated in Science Fiction TV shows or movies such as: *Stargate: SG1* or *Interstellar*. In class rooms, the SR side of this is examined with geostationary satellites for the GPS system, but the GR aspect is often overlooked. The short answer is that we can adopt a coordinate system that is immune to these effects and is either referred colloquially as the Schwarzschild or Bookkeeper's coordinates: $r$, $\theta$, $\varphi$, $t$. This type of coordinate system is a geometric representation (unaffected by the curvature of spacetime).
-
-The path a free-falling object takes is always correspond to a straight worldline from the perspective of its rest frame. These paths adopt a special name: geodesic, with a sub-classification that null geodesics are paths that can only be traveled by massless particles. As an example of the perplexing nature of geodesic equations (GR's EOM analog), below is the generalized geodesic equation for motion about the Schwarzschild geometry:
-
-\begin{equation}\label{GeneralSchwarzschildEOM}
-\frac{1}{2}\dot{r}^2 = \frac{E^2-kc^4}{2c^2} +k \frac{GM}{r} - \frac{ {L_z}^2 }{2r^2} + \frac{GM {L_z}^2}{c^2 r^3}
-\end{equation}
-
-While Equation $(\ref{GeneralSchwarzschildEOM})$ can be cleaned up by suppressing constants (typically $G_N$ and $c$), the functional form still conceals information about this object's trajectory: Where is it at some time t? How fast is it moving? What's the acceleration? Where did it start? How do I build an intuitive understanding? This is the focus of the project: to help translate these compact and foreign equations from General Relativity into visualizations and other representations that tie back into and build off already existing intuitions and reasoning skillsets.
-
-$$\ $$
 
 ## A Primer on Spacetime and Relativity
 
@@ -1035,28 +999,26 @@ $$\ $$
 
 # References
 
-[1] E.F Taylor and J. A. Wheeler, *Exploring Black Holes: Introduction to General Relativity*.
+[1] E.F Taylor and J. A. Wheeler, *Exploring Black Holes: Introduction to General Relativity*. 2000, Addison Wesley Longman, Inc.
 
 <br />
 
-[2] J. R. Taylor, *Classical Mechanics*.
+[2] J. R. Taylor, *Classical Mechanics*. 2005, University Science Books.
 
 <br />
 
-[3] C. W. Misner, K. S. Thorne, and J. A. Wheeler, *Gravitation*.
+[3] C. W. Misner, K. S. Thorne, and J. A. Wheeler, *Gravitation*. 2017, Princeton University Press.
 
 <br />
 
-[4] C. Bambi, *Introduction to General Relativity: A Course for Undergraduate Students of Physics.*
+[4] C. Bambi, *Introduction to General Relativity: A Course for Undergraduate Students of Physics*.  2018, Springer.
 
 <br />
 
-[5] J. R. Taylor, *Classical Mechanics*.
+[5] J. R. Taylor, *Classical Mechanics*. 2005, University Science Books.
 <br />
 
 [6] G. van Rossum, Guido; Warsaw, Barry; Coghlan, Nick. "PEP 8 -- Style Guide for Python Code." pythong.org. https://www.python.org/dev/peps/pep-0008/ (accessed December 1, 2021)
-
-> TODO: Add Hartle, *Black Holes*,
 
 \pagebreak
 
