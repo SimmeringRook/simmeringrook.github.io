@@ -1,5 +1,6 @@
 ---
-title: "Proposal Draft, Process Memo"
+title: "Thesis Draft, Process Memo"
+date: "February 4, 2022"
 author:
   - Thomas Knudson `\\\\`{=latex} Department of Physics, OSU
 geometry:
@@ -12,6 +13,15 @@ header-includes: |
     \fancyhead[CO,CE]{Knudson}
 ---
 
+# Revisied Memo
+
+I implemented most of my peer review's changes as they helped reveal what I had and hadn't touched on. I am very happy, at this point, with the Introduction and its two figures to help illiustrate and guide the reader back to the joyful confusion of relativity. I am very pleasently surprised, again through conversations with Christopher (Magone) and Benjamin, at how short the introduce and background for my thesis is shaping up to be.
+
+The arguably worst part of the entire process is how much time goes into tweaking formatting or figures slightly to make it meet the standards or get the visual effect correct. This is extremely unfortunate as each figure is worth so much in conveying information to the reader, but each minute spent on figures is a minute not spent on writing or revisions.
+
+At this stage I feel like I understand more of what the final product is going to look like and with the completetion of Figures 1 and 2, it all feels more in reach than it used to be. Also, the opportunity of spacetime puns/GR jokes seems to be increasing quadraticly with progress.
+
+# Original
 
 Through discussions with Benjamin and Christopher Magone, I think I have a better idea on how to approach the beginning of the thesis. The biggest hurdle has been overcoming rewriting the Introductory section multiple times to avoid writting a textbook. Due to the aforementioned conversations, I think I have a plan forward on how to toe the line on what is necessary and to what extent.
 

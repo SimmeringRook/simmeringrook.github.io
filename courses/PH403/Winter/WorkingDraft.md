@@ -3,7 +3,7 @@ title: "Cartographer: Using Python to Create Maps of Curved Spacetime and Differ
 author:
   - Thomas Knudson `\\\\`{=latex} Advised by Dr. Kathryn Hadley
 subtitle: "Department of Physics, OSU"
-date: December 6, 2021
+date: "February 4, 2022"
 geometry:
  - a4paper
  - margin=2cm
@@ -27,8 +27,8 @@ header-includes: |
 
 \captionsetup{format=hang,indention=-0.5cm}
 \onehalfspacing
-\setlength{\parindent}{4em}
-\setlength{\parskip}{1em}
+<!-- \setlength{\parindent}{4em} -->
+\setlength{\parskip}{1.5em}
 
 $$\ $$
 
@@ -254,7 +254,7 @@ By expressing the intensity of a massive body’s gravitational field as curvatu
 
 While we now have a theory that provides extremely accurate predictions, we subtly sacrificed a lot along the way. In Galilean relativity, we could easily switch reference frames and agree on what all observers measured: distance, time, relative velocities, and order of events. As the relative speed of objects increased, we had to switch to special relativity, but lost: observers agreeing on the order of events (see the “barn and pole” paradox). Finally, in using general relativity (GR) to correctly unify observers’ measurements in the presence of a gravitational field, we lose the ability to easily measure the relative velocity between reference frames.
 
-We first review the concepts of proper time, proper distance, and geodesics in GR and how to use the line element to measure separation in spacetime and how to represent it computationally (Sections 2.1-2.2). Then we will refresh on differential scattering cross-sections of light about an object (Section 2.3) in preparation for examining the scattering caused by the curvature of spacetime in Section 4. Section 3 focuses on the generation and analysis of visualizations depicting simple and complex geodesics in the Schwarzschild geometry.
+We first review the concepts of proper time, proper distance, and geodesics in GR and how to use the line element to measure separation in spacetime and how to represent it computationally (Sections \ref{primer}-\ref{design}). Then we will refresh on differential scattering cross-sections of light about an object (Section \ref{diffScatt}) in preparation for examining the scattering caused by the curvature of spacetime in Section \ref{scattering}. Section \ref{schwarzMaps} focuses on the generation and analysis of visualizations depicting simple and complex geodesics in the Schwarzschild geometry.
 
 \pagebreak
 
@@ -350,7 +350,7 @@ Since the physical distance, denoted as $dr_{shell}$, increases as we approach $
 
 $$\ $$
 
-## The Design Process
+## The Design Process {#design}
 
 To facilitate periodic testing and quick implementation, the desired functionality of Cartographer was divided into a series of milestones. Each milestone was chosen such that it gradually increased in complexity and laid the groundwork for subsequent milestones. This iterative design process is often referred to the minimal viable product: at the conclusion of each milestone, all corresponding functionality has been implemented and the code has been cleaned up and reorganized (refactored).
 
@@ -567,9 +567,15 @@ def get_corresponding_proper_time_for_shell(
     * bookkeeper_time_measured
 ```
 
+$$\ $$
+
+## Differential Scattering {#diffScatt}
+
+> TODO: Add description once Cartographer is generating content for Section \ref{scattering} and I understand it better.
+
 \pagebreak
 
-# The Mapping of Schwarzschild
+# The Mapping of Schwarzschild {#schwarzMaps}
 
 $$\ $$
 
@@ -923,7 +929,7 @@ $$\ $$
 
 \pagebreak
 
-# Scattering
+# Scattering {#scattering}
 
 > TODO: For each section: geodesic on embedding diagram
 
@@ -1194,7 +1200,12 @@ $$\ $$
 
 # References
 
-[1] https://earthobservatory.nasa.gov/features/OrbitsCatalog.
+<!-- \setlength{\parindent}{0em} -->
+
+<br />
+
+[1] Riebeek, Holli. "Catalog of Earth Satellite Orbits." NASA Earth Observatory. https://earthobservatory.nasa.gov/
+features/OrbitsCatalog (accessed January 30, 2022).
 
 <br />
 
@@ -1226,6 +1237,8 @@ $$\ $$
 \pagebreak
 
 # Appendices
+
+<!--\setlength{\parindent}{4em}-->
 
 $$\ $$
 
