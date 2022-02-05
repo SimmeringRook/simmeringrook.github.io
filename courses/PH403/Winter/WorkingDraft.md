@@ -19,7 +19,14 @@ header-includes: |
     \usepackage{float}
     \usepackage{subcaption}
     \pagestyle{fancy}
+    \usetikzlibrary{shapes.geometric}
+    \usetikzlibrary{calc}
+    \usetikzlibrary{angles}
+    \usepackage{setspace}
 ---
+
+\captionsetup{format=hang,indention=-0.5cm}
+\onehalfspacing
 
 $$\ $$
 
@@ -39,105 +46,298 @@ $$\ $$
 
 > TODO: Figure out how modify pandoc's template to move about table of contents.
 
+<!-- \renewcommand{\baselinestretch}{1.5}\selectfont -->
+
+> This thesis was written with a OSU physics major starting their capstone courses in mind. While not uniformly true for all physics students, base concepts of astrophysics and relativity, as would be covered in PH 455: Astrophysics and PH 335: Theoretical Mechanics, are treated as prior knowledge. Advanced concepts from general relativity or programming & optimization (beyond PH 36X: Computational Lab) will be explained or given an explicit appendix reference. $$\ $$
+
 \pagebreak
 
 # Introduction
 
-> This thesis was written with a OSU physics major starting their capstone courses in mind. While not uniformly true for all physics students, base concepts of astrophysics and relativity, as would be covered in PH 455: Astrophysics and PH 335: Theoretical Mechanics, are treated as prior knowledge. Advanced concepts from general relativity or programming & optimization (beyond PH 36X: Computational Lab) will be explained or given an explicit appendix reference. $$\ $$
-
-Galilean relativity is the model we use to describe relative velocities in everyday life and is fairly robust, requiring extremes to find the breaking points. Einstein’s famous thought experiment about light moving on a train is the perfect analog for describing problem involving Global Positioning System (GPS) Satellites and thier transmissions to Earth. Using Galilean relativity, we can illustrate the physical situation like in Figure 1, however, anything beyond simple kinematics fails.
+Galilean relativity is the model we use to describe relative velocities in everyday life and is fairly robust, requiring extremes to find the breaking points. Einstein’s famous thought experiment about light moving on a train is the perfect analog for describing problem involving Global Positioning System (GPS) Satellites and thier transmissions to Earth. Using Galilean relativity, we can illustrate the physical situation like in Figure \ref{gpsDemonstration}, however, anything beyond simple kinematics fails.
 
 \begin{figure}
   \centering
+  \scalebox{0.95}{
   \begin{tikzpicture}
 
   % create coordinates
-  \coordinate (O) at (0,0);
-  \coordinate (P) at (8,0);
-  \coordinate (V) at (8,2);
+  \coordinate (O) at (0,-1.25);
+  \coordinate (gps) at (8,-0.4);
+  \coordinate (V) at (7.4,1);
 
   % Earth
-  \node[circle,draw,text=white,fill=gray,minimum size = 3cm] (c1) at (O) {Earth};
+  \node[circle,draw,text=white,fill=gray,minimum size = 50, outer sep = 2] (c1) at (O) {Earth};
+  \draw[blue, dashed, thick] (c1) ellipse (0.85 and 0.25);
+  \node at (c1.160) [left] {$\Delta t$};
+  \node at (c1.south) [below=10pt, blue] {$dt_{Earth}=\sqrt{1-\frac{2M}{r_{Earth}}}dt$};
+
+  % Add curvature
+  \tikzstyle{shell}=[ellipse,dash pattern=on \pgflinewidth off 2pt, outer sep=12pt]
+
+  \node[shell, minimum width=450, minimum height=150] (gpsShell) at (0,0) {};
+  \node at (gpsShell.south east) [below, right, sloped, red] {$dt_{GPS}=\sqrt{1-\frac{2M}{r_{GPS}}}dt$};
+  \draw[red, dashed, thick] (0,-0.4) ellipse (8 and 1.8);
+
+  \draw[dotted] (0,-0.55) ellipse (5.75 and 1.5);
+  \draw[dotted] (0,-0.8) ellipse (3.5 and 1);
+  \draw[dotted] (0,-1) ellipse (2 and 0.5);
 
   % Satellite
-  \node[circle, draw] (c2) at (P) {};
-  \node at (c2) [below, right] {$\ $ GPS Satellite};
+  \node[circle, draw, outer sep = 2, fill=white] (c2) at (gps) {$\ $};
+  \node at (c2.east) [right] {$\Delta t^\prime = \gamma\Delta t$};
+  \node[fill=white] at (c2.south) [below] {GPS Satellite};
 
   % Label the radius
-  \draw[dashed] (c1) -- (c2) node [midway, below] {$2.02\times 10^7\ m$};
+  \draw[dashed] (c1.east) -- (c2) node [midway, below, sloped] {$2\times 10^7\ m$};
 
   % Show velocity
-  \draw[stealth-] (V) --++ (c2) node [midway, right] {$3.861\times 10^3\ m/s$};
+  \draw[stealth-] (V) --++ (c2) node [midway, right] {$4\times 10^3\frac{m}{s}$};
 
   \end{tikzpicture}
-  \caption{Galilean description of the relative velocities between Earth and a GPS Satellite. Source: https://earthobservatory.nasa.gov/features/OrbitsCatalog.}
-  \label{gpsGalileo}
+  }
+  \caption{The Galilean description of the relative velocities between Earth and a GPS Satellite is given by the velocity vector from the satellite [1]. $\gamma$ represents the scale factor for time-dilation to unify observer's measurements in the context of special relativity and the ellipses represent stationary observers in general relativity. The time dilation factors and the corresponding observers for $r_{Earth}$ and $r_{GPS}$ are colored in blue and red, respectively.}
+  \label{gpsDemonstration}
 \end{figure}
 
-> TODO: Reference figure 2 to highlight $\gamma$
+In short, each GPS satellite periodically transmits location data alongside a timecode [1]. Using special relativity (SR), we find a scaling factor, $\gamma$, that represents the strength of length contraction and time dilation caused by the relative velocity. To calculate this factor, we must transition from the Galilean model (treating space and time distances separately) to SR’s spacetime. However, measurement and theory would still disagree on the time between ticks of Earth’s and the GPS’s light-clocks: we have failed to consider the effect of gravity as demonstrated by Figure \ref{fig:timeDilationSum}.
 
-In short, each GPS satellite periodically transmits location data alongside a timecode (TODO: Source). Using special relativity (SR), we find a scaling factor—typically $\gamma$—that represents the strength of length contraction and time dilation caused by the relative velocity. To calculate this factor, we must transition from the Galilean model (treating space and time distances  separately) to SR’s spacetime. However, measurement and theory would still disagree on the time between ticks of Earth’s and the GPS’s light-clocks: we have failed to consider the effect of gravity.
-
-\begin{figure}
+\begin{figure}[H]
+  \begin{subfigure}{\textwidth}
   \centering
-  \begin{tikzpicture}
+  \scalebox{0.75}{
+    \begin{tikzpicture}
 
-  % create coordinates
-  \coordinate (O) at (0,0);
-  \coordinate (P) at (8,0);
-  \coordinate (V) at (8,2);
+      \tikzstyle{clock}=[circle,draw,minimum size=100,inner sep=0pt]
+      \tikzstyle{sign}=[rectangle,minimum width=50,inner sep=0pt]
 
-  % Earth
-  \node[circle,draw,text=white,fill=gray,minimum size = 3cm] (c1) at (O) {Earth};
+      \node[sign, scale=3]  (equals) at (0,0) {=};
+      \node[clock] (GPST)   at (-3,0)   {};
+      \node[clock] (GPSSR)  at (3,0)  {};
+      \node[sign, scale=3]  (plus)   at (6,0)   {+};
+      \node[clock] (GPSGR)  at (9,0)    {};
 
-  % Satellite
-  \node[circle, draw] (c2) at (P) {};
-  \node at (c2) [below, right] {$\ $ GPS Satellite};
+      \coordinate (gpsTOrigin) at (GPST);
+      \coordinate (gpsSROrigin) at (GPSSR);
+      \coordinate (gpsGROrigin) at (GPSGR);
 
-  % Label the radius
-  \draw[dashed] (c1) -- (c2) node [midway, below] {$2.02\times 10^7\ m$};
+      % GPS Total
+      \node at (GPST.west) [left] {GPS};
+      \node at (GPST.south) [below] {Clock tick};
+      \draw[dashed] (GPST.90) -- (GPST.center);
+      \draw[dashed] (GPST.60) -- (GPST.center);
 
-  % Show velocity
-  \draw[stealth-] (V) --++ (c2) node [midway, right] {$3.861\times 10^3\ m/s$};
+      %hour markings
+      \foreach \j in {0,30,60,...,360}{
+        \draw ($(GPST.center)!0.85! \j:(GPST.west)$) -- ($(GPST.center)!0.95! \j:(GPST.west)$);
+      }
 
-  \end{tikzpicture}
-  \caption{TODO: Update figure.}
-  \label{gpsSR}
+      \coordinate (GPST90) at (GPST.90);
+      \coordinate (GPSTC) at (gpsTOrigin);
+      \coordinate (GPST60) at (GPST.60);
+
+      \node at (GPST.75) [above, sloped] {${\Delta t^\prime}_{net}$};
+      \tkzFillAngle[fill=gray, opacity=0.4, size = 1.5](GPST60,GPSTC,GPST90){};
+
+      % GPS SR
+      \node at (GPSSR.south) [below] {Time dilation from relative velocity};
+      \draw[dashed] (GPSSR.90) -- (GPSSR.center);
+      \draw[dashed] (GPSSR.45) -- (GPSSR.center);
+
+      %hour markings
+      \foreach \j in {0,30,60,...,360}{
+        \draw ($(GPSSR.center)!0.85! \j:(GPSSR.west)$) -- ($(GPSSR.center)!0.95! \j:(GPSSR.west)$);
+      }
+
+      \coordinate (GPSSR90) at (GPSSR.90);
+      \coordinate (GPSSRC) at (gpsSROrigin);
+      \coordinate (GPSSR45) at (GPSSR.45);
+
+      \node at (GPSSR.68) [above] {\color{red}$\gamma\Delta t$};
+      \tkzFillAngle[fill=red, opacity=0.4, size = 1.5](GPSSR45,GPSSRC,GPSSR90){};
+
+      % GPS GR
+      \node at (GPSGR.south) [below] {Time dilaton from graviational field};
+      \draw[dashed] (GPSGR.90) -- (GPSGR.center);
+      \draw[dashed] (GPSGR.105) -- (GPSGR.center);
+
+      %hour markings
+      \foreach \j in {0,30,60,...,360}{
+        \draw ($(GPSGR.center)!0.85! \j:(GPSGR.west)$) -- ($(GPSGR.center)!0.95! \j:(GPSGR.west)$);
+      }
+
+      \coordinate (GPSGR90) at (GPSGR.90);
+      \coordinate (GPSGRC) at (gpsGROrigin);
+      \coordinate (GPSGR105) at (GPSGR.105);
+
+      \node[color=black!50!green] at (GPSGR.100) [above] {$1-\frac{2M}{r_{GPS}}$};
+      \tkzFillAngle[fill=black!50!green, opacity=0.4, size = 1.5](GPSGR90,GPSGRC,GPSGR105){};
+
+    \end{tikzpicture}
+  }
+  \end{subfigure}
+  \newline
+  \begin{subfigure}{\textwidth}
+  \centering
+  \scalebox{0.75}{
+    \begin{tikzpicture}
+
+      \tikzstyle{clock}=[circle,draw,minimum size=100,inner sep=0pt]
+      \tikzstyle{sign}=[rectangle,minimum width=50,inner sep=0pt]
+
+      \node[sign, scale=3]  (equals) at (0,0)                     {=};
+      \node[clock] (EarthT)   at (-3,0)   {};
+      \node[clock] (EarthSR)  at (3,0)  {};
+      \node[sign, scale=3]  (plus)   at (6,0)   {+};
+      \node[clock] (EarthGR)  at (9,0)    {};
+
+      \coordinate (earthTOrigin) at (EarthT);
+      \coordinate (earthSROrigin) at (EarthSR);
+      \coordinate (earthGROrigin) at (EarthGR);
+
+      % Earth Total
+      \node at (EarthT.west) [left] {Earth};
+      \node at (EarthT.south) [below] {Clock tick};
+      \draw[dashed] (EarthT.90) -- (EarthT.center);
+      \draw[dashed] (EarthT.45) -- (EarthT.center);
+
+      %hour markings
+      \foreach \j in {0,30,60,...,360}{
+        \draw ($(EarthT.center)!0.85! \j:(EarthT.west)$) -- ($(EarthT.center)!0.95! \j:(EarthT.west)$);
+      }
+
+      \coordinate (EarthT90) at (EarthT.90);
+      \coordinate (EarthTC) at (earthTOrigin);
+      \coordinate (EarthT45) at (EarthT.45);
+
+      \node at (EarthT.75) [above, sloped] {${\Delta t}_{net}$};
+      \tkzFillAngle[fill=gray, opacity=0.4, size = 1.5](EarthT45,EarthTC,EarthT90){};
+
+      % Earth SR
+      \node at (EarthSR.south) [below] {Time dilation from relative velocity};
+
+      %hour markings
+      \foreach \j in {0,30,60,...,360}{
+        \draw ($(EarthSR.center)!0.85! \j:(EarthSR.west)$) -- ($(EarthSR.center)!0.95! \j:(EarthSR.west)$);
+      }
+
+      % Earth GR
+      \node at (EarthGR.south) [below] {Time dilaton from graviational field};
+      \draw[dashed] (EarthGR.90) -- (EarthGR.center);
+      \draw[dashed] (EarthGR.45) -- (EarthGR.center);
+
+      %hour markings
+      \foreach \j in {0,30,60,...,360}{
+        \draw ($(EarthGR.center)!0.85! \j:(EarthGR.west)$) -- ($(EarthGR.center)!0.95! \j:(EarthGR.west)$);
+      }
+
+      \coordinate (EarthGR90) at (EarthGR.90);
+      \coordinate (EarthGRC) at (earthGROrigin);
+      \coordinate (EarthGR45) at (EarthGR.45);
+
+      \node[color=red] at (EarthGR.67) [above] {$1-\frac{2M}{r_{E}}$};
+      \tkzFillAngle[fill=red, opacity=0.4, size = 1.5](EarthGR45,EarthGRC,EarthGR90){};
+
+    \end{tikzpicture}
+  }
+  \end{subfigure}
+  \caption{A first order approximation demonstrating how the each consideration of relativity effects the accuracy in the time elapsed between ticks on a clock. Note that Earth is at rest in its own frame and therefore experiences no dilation due to SR.}
+  \label{fig:timeDilationSum}
 \end{figure}
 
-By expressing the intensity of a massive body’s gravitational field as curvature, we discover and are able to correct for an additional set of length contraction and time dilation. This geometric model is called Schwarzschild Geometry and is the simplest solution to Einstein’s field equations involving a single massive object that is non-rotating. 
+By expressing the intensity of a massive body’s gravitational field as curvature, we discover and are able to correct for an additional set of length contraction and time dilation (Section \ref{primer}). This geometric model is called Schwarzschild Geometry and is the simplest solution to Einstein’s field equations involving a single massive object that is non-rotating.
 
 While we now have a theory that provides extremely accurate predictions, we subtly sacrificed a lot along the way. In Galilean relativity, we could easily switch from reference frame to reference frame and agree on what all observers measured: distance, time, relative velocities, and order of events. As the relative speed of objects increased, we had to switch to special relativity, but lost: observers agreeing on the order of events (see the “barn and pole” paradox). Finally, in using general relativity (GR) to correctly unify observers’ measurements in the presence of a gravitational field, we lost the notion of relative velocity.
 
-We will first review the notions of proper time, proper distance, and geodesics in GR and how to use the line element to measure separation in spacetime and how to represent it computationally (Sections 2.1-2.2). Then we will refresh on differential scattering cross-sections of light about an object (Section 2.3) in preparation for examining the scattering caused by the curvature of spacetime. Section 3 focuses on the generation and analysis of visualizations depicting simple and complex geodesics in the Schwarzschild geometry.
+We will first review the notions of proper time, proper distance, and geodesics in GR and how to use the line element to measure separation in spacetime and how to represent it computationally (Sections 2.1-2.2). Then we will refresh on differential scattering cross-sections of light about an object (Section 2.3) in preparation for examining the scattering caused by the curvature of spacetime in Section 4. Section 3 focuses on the generation and analysis of visualizations depicting simple and complex geodesics in the Schwarzschild geometry.
 
 \pagebreak
 
 # Background
 
-## A Primer on Spacetime and Relativity
+## A Primer on Spacetime and Relativity {#primer}
 
-> TODO: Make sure to introduce terminology of geometric and physical distance to allow easier comparisions of quantities beyond Bookkeeper and Shell observers. Figure including the hyperbolic angle on a radial spacetime diagram would help. Also include figure if Cartographer generates embedding diagrams.
+As we move into more complex but accurate formulations of relativity, we lose properties that can be taken for granted in the more intuitive (but less accurate) descriptions. Asking simple questions like "how much time elapsed between when they threw the ball and it hit the ground?" or "how far did the ball fly?" become increasingly difficult to answer. In special relativity, we measure the spacetime separation between events, not space and time separately. Mathematically, this corresponds to a transition from measurements using the Pythagorean theorem,
+
+\begin{equation}\label{eqn:pythag}
+c = \sqrt{a^2 + b^2},
+\end{equation}
+
+within an Euclidean geometric model to the hyperbolic distance formula, 
+
+\begin{equation}\label{eqn:hyperDistance}
+c = \sqrt{a^2 - b^2},
+\end{equation}
+
+in a non-Euclidean space.
+
+From this, the spacetime separation measured by any reference frame--between two events to be only temporal or only spatial--is given the respective label of proper time or proper distance. In the two dimensional Minkowski geometric model for flat spacetime, $\mathbb{M}^2$, the metric--how spacetime separation is measured--takes the form of $ds^2 = - c^2dt^2 + dx^2$. Note that notion for both SR and GR vary greatly--including the signs for time and space components--and this paper will adopt the practice of E.F Taylor and J. A. Wheeler by using $\tau$ and $\sigma$ to signify proper time and distance, respectively, as well as natural units[^-1]. Therefore, in $\mathbb{M}^2$, **proper time** is where 
+
+\begin{equation}\label{eqn:minkowsiProperTime}
+  d\tau^2 = -ds^2 = dt^2
+\end{equation}
+
+and **proper distance** is
+
+\begin{equation}\label{eqn:minkowsiProperDistance}
+  d\sigma^2 = ds^2 = dx^2.
+\end{equation}
+
+[^-1]: This corresponds to setting the magntiude of various physical constants, such as the speed of light, to unity in order to simplify the visual appearance of equations.
+
+Notably, there exists a scaling factor, $\gamma$, that corresponds to a length contraction and/or a time dilation between reference frames such that the measurements of proper time and proper distance can be measured by everyone. The behaviour of this property is called invariance and is crucial to determining what other observers in spacetime see. While GR does introduce another set of length contraction and time dilation, the notions of proper time and distance remain the same, but take on a different mathematical representation. The fact that we can express both (SR and GR) sets of simultaneously and independently is crucial and explored more in-depth in Section \ref{radialShellSpeed}.
+
+In the Schwarzschild geometric model, we consider spacetime to be curved due to the presence of a massive object with spherical symmetry. The gravitional field exerted by this object can be fully described by this curvature in an analogous fashion as to how electrostatic potential, $V(\vec{r})$, can describe the electric field $\vec{E}$. Unlike potential, it is very difficult to visually represent the features of the curved four dimensional spacetime in two dimensional projections and before we can introduce some attempts to visualize these properties, some additional notation is required.
+
+As mentioned previously, SR requires we treat all reference frames equally: any frame moving with the same relative velocity as another will measure the same spacetime seperation between events. With the introduction of curvature, not all reference frames agree on what they measure. Notably, we have three major *families* of frames now: shell observers, the bookkeeper, and the rain frame. While Section \ref{rainAndHail} will elaborate on the **rain frame**, for now we can treat it synonmously with the intertial refernce frame of an object that is free falling radially inward towards a massive object from rest. **Shell observers** represent reference frames of constant distance, $r$-coordinate, or time, $t$. Finally, the **Bookkeeper** (BK), represents the set of frames infintely far away in flat space.
+
+We can, however, take cross-sections and create two simple visualizations that highlight how curvature effects the measurements of space and time in this non-Euclidean space. This is shown below with Figure \ref{fig:schwarzDistanceTriangle} and \ref{fig:schwarzTimeTriangle}, respectively.
 
 \begin{figure}[H]
+  \begin{subfigure}{.5\textwidth}
     \centering
-        \begin{tikzpicture}[scale=1.5]
+    \begin{tikzpicture}[scale=1.5]
 
-    % create coordinates
-    \coordinate (O) at (0,0);
-    \coordinate (L) at (5,0);
-    \coordinate (P) at (0,-2);
+      % create coordinates
+      \coordinate (O) at (0,0);
+      \coordinate (L) at (5,0);
+      \coordinate (P) at (0,-2);
 
-    % Construct triangle
-    \draw (P) -- (L) node [midway, below] {$dr_{shell}$};
-    \draw (O) -- (L) node [midway, above] {$dr_{bk}$};
-    \draw (O) -- (P) node [midway, left] {$\sqrt{1-\frac{2M}{r_{shell}}}$};
+      % Construct triangle
+      \draw (P) -- (L) node [midway, below, sloped] {$dr_{shell}$};
+      \draw (O) -- (L) node [midway, above] {$dr_{bk}$};
+      \draw (O) -- (P) node [midway, left] {$1-\frac{2M}{r_{shell}}$};
 
     \end{tikzpicture}
-    \caption{\label{drvectorInSchwarz}A hyperbolic geometric representation of how the physical distance, $dr_{shell}$, is greater than the geometric distance, $dr_{bk}$, due to the curvature at that shell's $r$-coordinate. }
+    \caption{Distance}
+    \label{fig:schwarzDistanceTriangle}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.5]
+
+      % create coordinates
+      \coordinate (O) at (0,0);
+      \coordinate (L) at (5,0);
+      \coordinate (P) at (0,-2);
+
+      % Construct triangle
+      \draw (P) -- (L) node [midway, below, sloped] {$dt_{shell}$};
+      \draw (O) -- (L) node [midway, above] {$dt_{bk}$};
+      \draw (O) -- (P) node [midway, left] {$1-\frac{2M}{r_{shell}}$};
+
+    \end{tikzpicture}
+    \caption{Time}
+    \label{fig:schwarzTimeTriangle}
+  \end{subfigure}
+  \caption{A hyperbolic geometric representation of how the physical distance, $dr_{shell}$, is greater than the geometric distance, $dr_{bk}$, due to the curvature at that shell's $r$-coordinate. }
+  \label{fig:schwarzTriangle}
 \end{figure}
 
-> TODO: Remember $d\vec{r}$ from PH 422? Well, it's back and this time, its going to make life a lot easier.
+
+
+> TODO: Make sure to introduce terminology of geometric and physical distance to allow easier comparisions of quantities beyond Bookkeeper and Shell observers. Figure including the hyperbolic angle on a radial spacetime diagram would help. Also include figure if Cartographer generates embedding diagrams.
 
 $$\ $$
 
@@ -499,7 +699,7 @@ And with this, we get the characteristic diverging behaviour: The Bookkeeper see
 
 $$\ $$
 
-### Changing Perspective
+### Changing Perspective {#radialShellSpeed}
 
 The tricky bit is now to describe what a specific shell observer measures throughout the stone's entire journey. Previously, we've been using the value of $dr_{bk}$ to determine the basis for all measurements, but for a specific shell, that needs to be scaled by their view of things.
 
@@ -597,7 +797,7 @@ $$\begin{aligned}
 \pagebreak
 
 
-### Rain versus Hail
+### Rain versus Hail {#rainAndHail}
 
 > TODO: Rain frame (rest at infinity) versus Hail frame (initial speed) as measured from different observers.
 
@@ -994,6 +1194,8 @@ $$\ $$
 \pagebreak
 
 # References
+
+[1] https://earthobservatory.nasa.gov/features/OrbitsCatalog.
 
 [1] E.F Taylor and J. A. Wheeler, *Exploring Black Holes: Introduction to General Relativity*. 2000, Addison Wesley Longman, Inc.
 
