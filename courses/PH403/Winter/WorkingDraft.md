@@ -27,6 +27,8 @@ header-includes: |
 
 \captionsetup{format=hang,indention=-0.5cm}
 \onehalfspacing
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
 
 $$\ $$
 
@@ -54,7 +56,7 @@ $$\ $$
 
 # Introduction
 
-Galilean relativity is the model we use to describe relative velocities in everyday life and is fairly robust, requiring extremes to find the breaking points. Einstein’s famous thought experiment about light moving on a train is the perfect analog for describing problem involving Global Positioning System (GPS) Satellites and thier transmissions to Earth. Using Galilean relativity, we can illustrate the physical situation like in Figure \ref{gpsDemonstration}, however, anything beyond simple kinematics fails.
+Galilean relativity is the model we use to describe relative velocities in everyday life and is fairly robust, requiring extremes to find the breaking points. Einstein’s famous thought experiment about light moving on a train is the perfect analog for describing problem involving Global Positioning System (GPS) Satellites and thier transmissions to Earth. Using Galilean relativity, we can illustrate the physical situation like in Figure \ref{fig:gpsDemonstration}, however, anything beyond simple kinematics fails.
 
 \begin{figure}
   \centering
@@ -70,13 +72,13 @@ Galilean relativity is the model we use to describe relative velocities in every
   \node[circle,draw,text=white,fill=gray,minimum size = 50, outer sep = 2] (c1) at (O) {Earth};
   \draw[blue, dashed, thick] (c1) ellipse (0.85 and 0.25);
   \node at (c1.160) [left] {$\Delta t$};
-  \node at (c1.south) [below=10pt, blue] {$dt_{Earth}=\sqrt{1-\frac{2M}{r_{Earth}}}dt$};
+  \node at (c1.south) [below=10pt, blue] {$\left(1-\frac{2M}{r_{Earth}}\right)^{-1/2}$};
 
   % Add curvature
   \tikzstyle{shell}=[ellipse,dash pattern=on \pgflinewidth off 2pt, outer sep=12pt]
 
   \node[shell, minimum width=450, minimum height=150] (gpsShell) at (0,0) {};
-  \node at (gpsShell.south east) [below, right, sloped, red] {$dt_{GPS}=\sqrt{1-\frac{2M}{r_{GPS}}}dt$};
+  \node at (gpsShell.south east) [below, right, sloped, red] {$\left(1-\frac{2M}{r_{GPS}}\right)^{-1/2}$};
   \draw[red, dashed, thick] (0,-0.4) ellipse (8 and 1.8);
 
   \draw[dotted] (0,-0.55) ellipse (5.75 and 1.5);
@@ -96,11 +98,11 @@ Galilean relativity is the model we use to describe relative velocities in every
 
   \end{tikzpicture}
   }
-  \caption{The Galilean description of the relative velocities between Earth and a GPS Satellite is given by the velocity vector from the satellite [1]. $\gamma$ represents the scale factor for time-dilation to unify observer's measurements in the context of special relativity and the ellipses represent stationary observers in general relativity. The time dilation factors and the corresponding observers for $r_{Earth}$ and $r_{GPS}$ are colored in blue and red, respectively.}
-  \label{gpsDemonstration}
+  \caption{The Galilean description of the relative velocities between Earth and a GPS Satellite is given by the velocity vector from the satellite [1]. $\gamma$ represents the scale factor for time-dilation to unify observer's measurements in the context of special relativity and the ellipses represent stationary observers in general relativity. $M$ is the mass of the Earth (in meters) and the time dilation factors with their corresponding observers (at \textcolor{blue}{$r_{Earth}$} and \textcolor{red}{$r_{GPS}$}) are colored in blue and red, respectively.}
+  \label{fig:gpsDemonstration}
 \end{figure}
 
-In short, each GPS satellite periodically transmits location data alongside a timecode [1]. Using special relativity (SR), we find a scaling factor, $\gamma$, that represents the strength of length contraction and time dilation caused by the relative velocity. To calculate this factor, we must transition from the Galilean model (treating space and time distances separately) to SR’s spacetime. However, measurement and theory would still disagree on the time between ticks of Earth’s and the GPS’s light-clocks: we have failed to consider the effect of gravity as demonstrated by Figure \ref{fig:timeDilationSum}.
+In short, each GPS satellite periodically transmits location data alongside a timecode [1]. Using special relativity (SR), we find a scaling factor, $\gamma$, that represents the strength of length contraction and time dilation caused by the relative velocity of the satellite to Earth. To calculate this factor, we must transition from the Galilean model of treating space and time distances separately to SR’s spacetime. However, measurement and theory would still disagree on the time elapsed between ticks of both the Earth’s and the GPS’s light-clocks and that is because we have failed to consider the effects of gravity. These results are illustrated in Figure \ref{fig:timeDilationSum}.
 
 \begin{figure}[H]
   \begin{subfigure}{\textwidth}
@@ -111,11 +113,11 @@ In short, each GPS satellite periodically transmits location data alongside a ti
       \tikzstyle{clock}=[circle,draw,minimum size=100,inner sep=0pt]
       \tikzstyle{sign}=[rectangle,minimum width=50,inner sep=0pt]
 
-      \node[sign, scale=3]  (equals) at (0,0) {=};
-      \node[clock] (GPST)   at (-3,0)   {};
-      \node[clock] (GPSSR)  at (3,0)  {};
-      \node[sign, scale=3]  (plus)   at (6,0)   {+};
-      \node[clock] (GPSGR)  at (9,0)    {};
+      \node[sign, scale=3]  (equals) at (0,0)  {=};
+      \node[clock]          (GPST)   at (-3,0) {};
+      \node[clock]          (GPSSR)  at (3,0)  {};
+      \node[sign, scale=3]  (plus)   at (6,0)  {+};
+      \node[clock]          (GPSGR)  at (9,0)  {};
 
       \coordinate (gpsTOrigin) at (GPST);
       \coordinate (gpsSROrigin) at (GPSSR);
@@ -185,11 +187,11 @@ In short, each GPS satellite periodically transmits location data alongside a ti
       \tikzstyle{clock}=[circle,draw,minimum size=100,inner sep=0pt]
       \tikzstyle{sign}=[rectangle,minimum width=50,inner sep=0pt]
 
-      \node[sign, scale=3]  (equals) at (0,0)                     {=};
-      \node[clock] (EarthT)   at (-3,0)   {};
-      \node[clock] (EarthSR)  at (3,0)  {};
-      \node[sign, scale=3]  (plus)   at (6,0)   {+};
-      \node[clock] (EarthGR)  at (9,0)    {};
+      \node[sign, scale=3]  (equals)  at (0,0)  {=};
+      \node[clock]          (EarthT)  at (-3,0) {};
+      \node[clock]          (EarthSR) at (3,0)  {};
+      \node[sign, scale=3]  (plus)    at (6,0)  {+};
+      \node[clock]          (EarthGR) at (9,0)  {};
 
       \coordinate (earthTOrigin) at (EarthT);
       \coordinate (earthSROrigin) at (EarthSR);
@@ -199,7 +201,8 @@ In short, each GPS satellite periodically transmits location data alongside a ti
       \node at (EarthT.west) [left] {Earth};
       \node at (EarthT.south) [below] {Clock tick};
       \draw[dashed] (EarthT.90) -- (EarthT.center);
-      \draw[dashed] (EarthT.45) -- (EarthT.center);
+      %\draw[dashed] (EarthT.60) -- (EarthT.center);
+      \draw[dashed] (EarthT.15) -- (EarthT.center);
 
       %hour markings
       \foreach \j in {0,30,60,...,360}{
@@ -208,10 +211,12 @@ In short, each GPS satellite periodically transmits location data alongside a ti
 
       \coordinate (EarthT90) at (EarthT.90);
       \coordinate (EarthTC) at (earthTOrigin);
-      \coordinate (EarthT45) at (EarthT.45);
+      \coordinate (EarthT60) at (EarthT.60);
+      \coordinate (EarthT15) at (EarthT.15);
 
       \node at (EarthT.75) [above, sloped] {${\Delta t}_{net}$};
-      \tkzFillAngle[fill=gray, opacity=0.4, size = 1.5](EarthT45,EarthTC,EarthT90){};
+      \tkzFillAngle[fill=gray, opacity=0.4, size = 1.5](EarthT15,EarthTC,EarthT90){};
+      %\tkzFillAngle[fill=red, opacity=0.4, size = 1.5](EarthT15,EarthTC,EarthT90){};
 
       % Earth SR
       \node at (EarthSR.south) [below] {Time dilation from relative velocity};
@@ -224,7 +229,7 @@ In short, each GPS satellite periodically transmits location data alongside a ti
       % Earth GR
       \node at (EarthGR.south) [below] {Time dilaton from graviational field};
       \draw[dashed] (EarthGR.90) -- (EarthGR.center);
-      \draw[dashed] (EarthGR.45) -- (EarthGR.center);
+      \draw[dashed] (EarthGR.15) -- (EarthGR.center);
 
       %hour markings
       \foreach \j in {0,30,60,...,360}{
@@ -233,23 +238,23 @@ In short, each GPS satellite periodically transmits location data alongside a ti
 
       \coordinate (EarthGR90) at (EarthGR.90);
       \coordinate (EarthGRC) at (earthGROrigin);
-      \coordinate (EarthGR45) at (EarthGR.45);
+      \coordinate (EarthGR15) at (EarthGR.15);
 
-      \node[color=red] at (EarthGR.67) [above] {$1-\frac{2M}{r_{E}}$};
-      \tkzFillAngle[fill=red, opacity=0.4, size = 1.5](EarthGR45,EarthGRC,EarthGR90){};
+      \node[color=red] at (EarthGR.65) [right, above] {$1-\frac{2M}{r_{E}}$};
+      \tkzFillAngle[fill=red, opacity=0.4, size = 1.5](EarthGR15,EarthGRC,EarthGR90){};
 
     \end{tikzpicture}
   }
   \end{subfigure}
-  \caption{A first order approximation demonstrating how the each consideration of relativity effects the accuracy in the time elapsed between ticks on a clock. Note that Earth is at rest in its own frame and therefore experiences no dilation due to SR.}
+  \caption{A first order approximation demonstrating how the each consideration of relativity effects the accuracy in the time elapsed between ticks on a clock. \textcolor{red}{Red} slices of the clock denote more elapsed time between ticks, while \textcolor{black!50!green}{green} denotes less (quicker clock-ticks). Note that Earth is at rest in its own frame and therefore experiences no dilation due to SR and that the result is the net elapsed time between clock-ticks for Earth, ${\Delta t}_{net}$, is greater than the GPS's elapsed time, ${\Delta t^\prime}_{net}$.}
   \label{fig:timeDilationSum}
 \end{figure}
 
-By expressing the intensity of a massive body’s gravitational field as curvature, we discover and are able to correct for an additional set of length contraction and time dilation (Section \ref{primer}). This geometric model is called Schwarzschild Geometry and is the simplest solution to Einstein’s field equations involving a single massive object that is non-rotating.
+By expressing the intensity of a massive body’s gravitational field as curvature to spacetime (alluded to by the ellipses in Figure \ref{fig:gpsDemonstration}), we discover and are able to correct for an additional set of length contraction and time dilation (Section \ref{primer}). This geometric model is called Schwarzschild Geometry and is the simplest solution to Einstein’s field equations involving a single massive object that is spherically symmetric, uncharged, and non-rotating.
 
-While we now have a theory that provides extremely accurate predictions, we subtly sacrificed a lot along the way. In Galilean relativity, we could easily switch from reference frame to reference frame and agree on what all observers measured: distance, time, relative velocities, and order of events. As the relative speed of objects increased, we had to switch to special relativity, but lost: observers agreeing on the order of events (see the “barn and pole” paradox). Finally, in using general relativity (GR) to correctly unify observers’ measurements in the presence of a gravitational field, we lost the notion of relative velocity.
+While we now have a theory that provides extremely accurate predictions, we subtly sacrificed a lot along the way. In Galilean relativity, we could easily switch reference frames and agree on what all observers measured: distance, time, relative velocities, and order of events. As the relative speed of objects increased, we had to switch to special relativity, but lost: observers agreeing on the order of events (see the “barn and pole” paradox). Finally, in using general relativity (GR) to correctly unify observers’ measurements in the presence of a gravitational field, we lose the ability to easily measure the relative velocity between reference frames.
 
-We will first review the notions of proper time, proper distance, and geodesics in GR and how to use the line element to measure separation in spacetime and how to represent it computationally (Sections 2.1-2.2). Then we will refresh on differential scattering cross-sections of light about an object (Section 2.3) in preparation for examining the scattering caused by the curvature of spacetime in Section 4. Section 3 focuses on the generation and analysis of visualizations depicting simple and complex geodesics in the Schwarzschild geometry.
+We first review the concepts of proper time, proper distance, and geodesics in GR and how to use the line element to measure separation in spacetime and how to represent it computationally (Sections 2.1-2.2). Then we will refresh on differential scattering cross-sections of light about an object (Section 2.3) in preparation for examining the scattering caused by the curvature of spacetime in Section 4. Section 3 focuses on the generation and analysis of visualizations depicting simple and complex geodesics in the Schwarzschild geometry.
 
 \pagebreak
 
@@ -289,14 +294,15 @@ Notably, there exists a scaling factor, $\gamma$, that corresponds to a length c
 
 In the Schwarzschild geometric model, we consider spacetime to be curved due to the presence of a massive object with spherical symmetry. The gravitional field exerted by this object can be fully described by this curvature in an analogous fashion as to how electrostatic potential, $V(\vec{r})$, can describe the electric field $\vec{E}$. Unlike potential, it is very difficult to visually represent the features of the curved four dimensional spacetime in two dimensional projections and before we can introduce some attempts to visualize these properties, some additional notation is required.
 
-As mentioned previously, SR requires we treat all reference frames equally: any frame moving with the same relative velocity as another will measure the same spacetime seperation between events. With the introduction of curvature, not all reference frames agree on what they measure. Notably, we have three major *families* of frames now: shell observers, the bookkeeper, and the rain frame. While Section \ref{rainAndHail} will elaborate on the **rain frame**, for now we can treat it synonmously with the intertial refernce frame of an object that is free falling radially inward towards a massive object from rest. **Shell observers** represent reference frames of constant distance, $r$-coordinate, or time, $t$. Finally, the **Bookkeeper** (BK), represents the set of frames infintely far away in flat space.
+As mentioned previously, SR requires we treat all reference frames equally: any frame moving with the same relative velocity as another will measure the same spacetime seperation between events (without corrections). With the introduction of curvature, not all reference frames agree on what they measure. Notably, we have three major *families* of frames now: shell observers, the bookkeeper, and the rain frame. While Section \ref{rainAndHail} will elaborate on the **rain frame**, for now we treat it synonmously with the intertial reference frame of an object free falling radially inward. **Shell observers** represent reference frames of constant distance, $r$-coordinate, or time, $t$. Finally, the **Bookkeeper** (BK), represents the set of frames infintely far away from the influence of the gravitational source and conduct their measurements as if in flat space.
 
-We can, however, take cross-sections and create two simple visualizations that highlight how curvature effects the measurements of space and time in this non-Euclidean space. This is shown below with Figure \ref{fig:schwarzDistanceTriangle} and \ref{fig:schwarzTimeTriangle}, respectively.
+Due to Schwarzschild's spherical symmetry, we naturally adopt a version of spherical coordinates. The important difference is in how we measure distance from the origin. For example, consider the hyperbolic triangles in Figure \label{fig:schwarzTriangle} which show how the *radial* distance from the massive object, $M$, changes how we measure things versus someone at a different $r$-coordinate. 
 
 \begin{figure}[H]
   \begin{subfigure}{.5\textwidth}
     \centering
-    \begin{tikzpicture}[scale=1.5]
+    \scalebox{1.15}{
+      \begin{tikzpicture}
 
       % create coordinates
       \coordinate (O) at (0,0);
@@ -304,18 +310,20 @@ We can, however, take cross-sections and create two simple visualizations that h
       \coordinate (P) at (0,-2);
 
       % Construct triangle
-      \draw (P) -- (L) node [midway, below, sloped] {$dr_{shell}$};
-      \draw (O) -- (L) node [midway, above] {$dr_{bk}$};
-      \draw (O) -- (P) node [midway, left] {$1-\frac{2M}{r_{shell}}$};
+      \draw (P) -- (L) node [midway, below, sloped] {$dr_{shell} = \frac{dr_{BK}}{\sqrt{1-\frac{2M}{r_{shell}}}}$};
+      \draw (O) -- (L) node [midway, above] {$dr_{BK}$};
+      \draw (O) -- (P) node [midway, left] {$\sqrt{1-\frac{2M}{r_{shell}}}$};
 
-    \end{tikzpicture}
+      \end{tikzpicture}
+    }
     \caption{Distance}
     \label{fig:schwarzDistanceTriangle}
   \end{subfigure}
   \hfill
   \begin{subfigure}{.5\textwidth}
     \centering
-    \begin{tikzpicture}[scale=1.5]
+    \scalebox{1.15}{
+      \begin{tikzpicture}
 
       % create coordinates
       \coordinate (O) at (0,0);
@@ -323,25 +331,26 @@ We can, however, take cross-sections and create two simple visualizations that h
       \coordinate (P) at (0,-2);
 
       % Construct triangle
-      \draw (P) -- (L) node [midway, below, sloped] {$dt_{shell}$};
-      \draw (O) -- (L) node [midway, above] {$dt_{bk}$};
-      \draw (O) -- (P) node [midway, left] {$1-\frac{2M}{r_{shell}}$};
+      \draw (P) -- (L) node [midway, below, sloped] {$dt_{shell} = \sqrt{1-\frac{2M}{r_{shell}}}dt_{BK}$};
+      \draw (O) -- (L) node [midway, above] {$dt_{BK}$};
+      \draw (O) -- (P) node [midway, left] {$\sqrt{1-\frac{2M}{r_{shell}}}$};
 
     \end{tikzpicture}
+    }
     \caption{Time}
     \label{fig:schwarzTimeTriangle}
   \end{subfigure}
-  \caption{A hyperbolic geometric representation of how the physical distance, $dr_{shell}$, is greater than the geometric distance, $dr_{bk}$, due to the curvature at that shell's $r$-coordinate. }
+  \caption{A hyperbolic geometric representation of how the physical distance, $dr_{shell}$, is greater than the geometric distance, $dr_{BK}$, due to the curvature at that shell's $r$-coordinate. Also note that while the hyperbolic triangle for the time appears to be the same, }
   \label{fig:schwarzTriangle}
 \end{figure}
 
+Since the physical distance, denoted as $dr_{shell}$, increases as we approach $M$, we must exercise caution in how we define our geometric location[^-2]. As a result, we measure the circumference of our concentric shell and divide by $2\pi$ to obtain our **$\mathbf{r}$-coordinate**. This process is analogous to tracing out great circles on a sphere which leads us to the next important geometric object useful in describing paths: **geodesics** are the lines of spacetime. Mathematically, these are *straight* lines (constant speed) in this non-Euclidean geometry[8]. Physically, these lines correspond to paths through spacetime of objects moving at constant velocity. It is very important to reiterate that the gravitational field is merely another method to describe the curvature of spacetime, and so gravity is not treated as a force in GR.
 
-
-> TODO: Make sure to introduce terminology of geometric and physical distance to allow easier comparisions of quantities beyond Bookkeeper and Shell observers. Figure including the hyperbolic angle on a radial spacetime diagram would help. Also include figure if Cartographer generates embedding diagrams.
+[^-2]: Consider how far (radially) away a neighboring shell would be if $r$ was very close to $2M$. The use of physical distance to be synmous with our geometric location works perfectly fine in Euclidean geometries, but here in Schwarzschild, having points that are almost infinitely far away when they are neighbors is not useful to describe positions.
 
 $$\ $$
 
-## The Core Design Process
+## The Design Process
 
 To facilitate periodic testing and quick implementation, the desired functionality of Cartographer was divided into a series of milestones. Each milestone was chosen such that it gradually increased in complexity and laid the groundwork for subsequent milestones. This iterative design process is often referred to the minimal viable product: at the conclusion of each milestone, all corresponding functionality has been implemented and the code has been cleaned up and reorganized (refactored).
 
@@ -353,28 +362,19 @@ This design process can be distilled into a series of five steps:
 4. Verify Results and Change as Necessary
 5. Refactor
 
-The end goal of Cartographer is to generate visualizations corresponding to light and low-mass particles moving through Schwarzschild spacetime. As mentioned in $\ref{motivation}$, these geodesic equations are complex but we can leverage that they are the result of algebraic compositions from simpler expressions. This naturally allows us to work backwards from the end goal of visualizing something like Equation $(\ref{GeneralSchwarzschildEOM})$ to the building blocks of describing the curvature of spacetime.
-
-> TODO: Simple Illustration? Scattering -> GeneralSchwarzschildEOM (general motion in schwarz) -> motion with angular momentum -> orbits -> just radial motion -> just curvature
-> Also callout sections/subsections?
-
-| GeneralSchwarzschildEOM -> motion with angular momentum -> orbits | radial motion | curvature factors |
-| -- | -- | -- |
-| 3.3 Angular Momentum, Effective Potential, and Orbits | 3.2 Gaining Speed and Radial Geodesics | 3.1 Distance, Time, and Embedding Diagrams |
+The goal of Cartographer is to generate visualizations corresponding to light and low-mass particles moving through Schwarzschild spacetime. As mentioned in \ref{motivation}, these geodesic equations are complex but we can leverage that they are the result of algebraic compositions from simpler expressions. This allows us to work backwards from the end goal of visualizing something like Equation (\ref{GeneralSchwarzschildEOM}) to the building blocks of describing the curvature of spacetime.
 
 The following subsections provide additional context for each step by detailing the process of implementing the building blocks. These subsections focus primarily on the computational implementation whereas Section 3.1 offers an analysis of the resulting visualizations and the physics behind them.
 
 ### Choose an Equation
 
-> TODO: Move derivation to background section for GR in the Intro? Or have conceptual introduction there and leave this more mathematical approach here?
-
-We begin by isolating the descriptions of proper time and proper distance as measured by a shell observer using the line element (Equation $\ref{SchwarzschildWithC}$). Recall from *1.2.3 Space into Spacetime* that proper time and distance are invariant with respect to changing reference frames. We can introduce the shorthand of $f(r)= \sqrt{1 - \frac{2M}{r}}$ and $d^2\Omega=\sin^2{\theta}d^2\varphi + d^2\theta$ to simplify the expression.
+We begin by isolating the descriptions of proper time and proper distance as measured by a shell observer using the line element (Equation $\ref{SchwarzschildWithC}$). Recall from Section \ref{primer} that proper time and distance are invariant with respect to changing reference frames. We can introduce the shorthand of $f(r)= \sqrt{1 - \frac{2M}{r}}$ and $d^2\Omega=\sin^2{\theta}d^2\varphi + d^2\theta$ to simplify the expression.
 
 \begin{equation}
 ds^2= - f(r)^2 (dt^2) + \frac{dr^2}{f(r)^2} + r^2 d^2\Omega
 \end{equation}
 
-Then by setting $d^2\Omega=0$, we simplify the description of the line element to be changes in $r$ or $t$. Examining just a change in $r$ or $t$, we derive proper distance and time for the shell observer as Equations $\ref{ShellDistance}$ and $\ref{ShellTime}$:
+Then by setting $d^2\Omega=0$, we simplify the description of the line element to be changes in $r$ or $t$. Examining just a change in $r$ or $t$, we derive proper distance and time for the shell observer as Equations \ref{ShellDistance} and \ref{ShellTime}:
 
 \begin{equation}\label{ShellDistance}
     dr_{shell} = \left(1-\frac{2M}{r}\right)^{-\frac{1}{2}} dr
@@ -387,7 +387,7 @@ $$\ $$
 
 ### Translate to Python
 
-The next step is to represent the two equations in Python. Given the relative simplicity of Equations $\ref{ShellDistance}$ and $\ref{ShellTime}$, they naturally lend themselves to being represented as Python functions:
+The next step is to represent the two equations in Python.
 
 ``` python
 def dr_shell(r, M, dr):
@@ -405,7 +405,7 @@ $$\ $$
 
 ### Generate Visualization for Equation
 
-This portion requires only basic familiarity with Matplotlib and NumPy. Using the distance function, `dr_shell(...)`, with convenient values for `M` and `dr` are choosen allow for easy inspection for uncharacteristic behaviour. Specific values of `M` and `dr` will be used in $\ref{distanceTimeAndEmbedding}$ to verify the expected results from literature.
+Using the distance function, `dr_shell(...)`, with convenient values for `M` and `dr` are choosen allow for easy identification of uncharacteristic behaviour. Specific values of `M` and `dr` will be used in $\ref{distanceTimeAndEmbedding}$ to verify the expected results from literature.
 
 ``` python
 import numpy as np
@@ -419,7 +419,7 @@ M = 5
 dr = 1
 ```
 
-Since there is a coordinate singularity at $r=2M$ and shell observers only exist outside the event horizon (see $\ref{massIsCurvature}$), we need to adjust the interval of possible $r$-coordinates accordingly. We also need the size of the interval to be in a nice middle ground: just far enough away to display the shape of the plot and close enough to avoid suppressing the desired behaviour.
+Since there is a coordinate singularity at $r=2M$ and shell observers only exist outside the event horizon, we need to adjust the interval of possible $r$-coordinates accordingly. We also need the size of the interval to be in a nice middle ground: just far enough away from $2M$ to display the shape of the plot and close enough to avoid suppressing the shape of the function.
 
 ``` python
 r_coordinates = np.arange(2*M+dr, 15*M, dr)
@@ -444,11 +444,13 @@ $$\ $$
 
 ### Verify Results and Change as Necessary
 
-Recall that for distance, we are plotting a function that takes the general form of
+Recall that for distance, we are plotting Equation (\ref{ShellDistance}) which has the general form of
 
-$$f(x) = \frac{1}{\sqrt{1-\frac{1}{x}}}$$
+\begin{equation}
+f(x) = \frac{1}{\sqrt{1-\frac{1}{x}}}.
+\end{equation}
 
-With this in mind, it is very easy to compare the general shapes between the output generated by Cartographer and any other plotting software. Using the following Mathematica code, we compare the two functions by considering their concavity, shape, and behaviour as $x\rightarrow\infty$.
+With this in mind, it is very easy to construct comparisions for the shape of the output generated by Cartographer to any plotting software. Using the following Mathematica code, we compare the two functions by considering their concavity, shape, and behaviour as $x\rightarrow\infty$.
 
 ```Mathematica
 dr = 1; M = 5;
@@ -475,11 +477,10 @@ Plot[f[x], {x, 2*M + dr, 15*M}, PlotRange -> {{2*M, 15*M}, {1, 3.5}},
       \label{DesignProcessVerify_Mathematica}
   \end{subfigure}
   \caption{a Python representation of Equation \ref{ShellDistance}. b Mathematica's interpretation. Note that both visualizations have the same behaviour: monotonically decreasing and asympotically approaching $f(x)=1$ as $x\rightarrow\infty$.}
+  \label{fig:designProcessVerify}
 \end{figure}
 
-> TODO: Attempt to align formatting between Mathematica and Python plots? The difference is definitely detracting, but they are different software visualizations. I would like to unify them, but it comes at a cost (besides time). If one of my intents is to have code present that can be ripped out and thrown into someone else's computer for reproducibility, then I have to include all the extra formatting line as well. This'll increase the size of each codeblock along with intensity. Maybe have the full Mathematica code in the appendix then?
-
-As more complex expressions are represented and interpreted by Cartographer, this stage becomes more time consuming due to the increased chance for mistakes in derivation and/or implementation. This stage is also when direct comparisons to any existing visualizations from literature are conducted.
+As expected, Figure \ref{fig:designProcessVerify} shows a strong agreement between representations. Comparing the output generated by Cartographer to the results from other plotting software, where applicable, is a key step in sense making and verifing the results agree with the already established predictions of GR. As more complex expressions are represented and interpreted by Cartographer, this stage becomes more time consuming due to the increased chance for mistakes in derivation and/or implementation.
 
 $$\ $$
 
@@ -565,8 +566,6 @@ def get_corresponding_proper_time_for_shell(
   return sqrt(1 - (2*blackhole_mass_in_meters)/shell_r_coordinate)
     * bookkeeper_time_measured
 ```
-
-> TODO: Add further example where we use lessons learned/introduced from *1.3.2 Variables, Dimensions, and their Representation*? `shell_r_coordinate` $\rightarrow$ `dimensionless_shell_r_coordinate`; make the `r_coordinates` array dimensionless and introduce the `r_coordinate_resolution` scaling factor?
 
 \pagebreak
 
@@ -1197,26 +1196,32 @@ $$\ $$
 
 [1] https://earthobservatory.nasa.gov/features/OrbitsCatalog.
 
-[1] E.F Taylor and J. A. Wheeler, *Exploring Black Holes: Introduction to General Relativity*. 2000, Addison Wesley Longman, Inc.
+<br />
+
+[2] E.F Taylor and J. A. Wheeler, *Exploring Black Holes: Introduction to General Relativity*. 2000, Addison Wesley Longman, Inc.
 
 <br />
 
-[2] J. R. Taylor, *Classical Mechanics*. 2005, University Science Books.
+[3] J. R. Taylor, *Classical Mechanics*. 2005, University Science Books.
 
 <br />
 
-[3] C. W. Misner, K. S. Thorne, and J. A. Wheeler, *Gravitation*. 2017, Princeton University Press.
+[4] C. W. Misner, K. S. Thorne, and J. A. Wheeler, *Gravitation*. 2017, Princeton University Press.
 
 <br />
 
-[4] C. Bambi, *Introduction to General Relativity: A Course for Undergraduate Students of Physics*.  2018, Springer.
+[5] C. Bambi, *Introduction to General Relativity: A Course for Undergraduate Students of Physics*.  2018, Springer.
 
 <br />
 
-[5] J. R. Taylor, *Classical Mechanics*. 2005, University Science Books.
+[6] J. R. Taylor, *Classical Mechanics*. 2005, University Science Books.
 <br />
 
-[6] G. van Rossum, Guido; Warsaw, Barry; Coghlan, Nick. "PEP 8 -- Style Guide for Python Code." pythong.org. https://www.python.org/dev/peps/pep-0008/ (accessed December 1, 2021)
+[7] G. van Rossum, Guido; Warsaw, Barry; Coghlan, Nick. "PEP 8 -- Style Guide for Python Code." pythong.org. https://www.python.org/dev/peps/pep-0008/ (accessed December 1, 2021)
+
+<br />
+
+[8] T. Dray, *Differential Forms and the Geometry of General Relativity*. 2015, Taylor & Franics Group, LLC.
 
 \pagebreak
 
