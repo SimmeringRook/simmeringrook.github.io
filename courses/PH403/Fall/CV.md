@@ -1,9 +1,5 @@
 ---
 title: "Thomas J. Knudson"
-author:
-- "My Physical Address"
-- "knudsont@oregonstate.edu"
-- "https://simmeringrook.github.io/"
 geometry:
  - a4paper
  - margin=2cm
@@ -109,4 +105,3 @@ Recipe management tool that updated inventory of ingredients to simplify meal pl
 **Programming Languages:** C++, C#, Java, HTML & CSS, PHP, Python (and NumPy, MatplotLib, PyYaml), SQL (Oracle, Access, and SQLite)
 
 **General/Applications:** Windows, Linux, and macOS Operating Systems (and their CLI), Microsoft Office Suite, pandoc & LaTeX, git & GitHub
-
