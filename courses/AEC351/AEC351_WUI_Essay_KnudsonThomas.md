@@ -61,7 +61,6 @@ What is? what is included?
 - Schoennagel et al. 2017
   - increase in \gls{wui} area
 
-
 ## Climate Change
 
 - Increase in fires
@@ -72,13 +71,38 @@ What is? what is included?
 
 ## Strategies
 
+Johnston et al. 2020
 
+- Firefighting Chemicals
+  - Retardants
+  - water enchancers
+- Fuel Treatments
+  - alter fuel to reduce fire severity and/or behaviour
 
 # Discussion of Findings
 
 $$\text{What are some of your anticipated findings? What are you drawing from your research?}$$
 
-Schoennagel 2017
+Use Rasker as an exmaple of continuing old paradigms (i.e., Schoennagel et al. 2017 argues about)
+
+- Solutions are to reduce costs by economic means
+
+Contrast with suggestions from Schoennagel et al. 2017
+
+  - Not a specific solution, but a change in mentality towards a solution
+  - avoids "head in sand" approach from most of Rasker's proposals
+  - agree about education in WUI areas
+
+Rasker 2009
+
+- National Fire Insurance and Mortgage Program
+  - Flood insurance helps a little bit, but current implmentation is flawed
+    - Depending on the depth of the arguement, will need to include additional sources
+- Redirect Land Use through:
+  - Zoning
+  - Acquisition
+
+Schoennagel et al. 2017
 
 - Shift paradigm
   - from fire suppression to fuel build up
@@ -96,9 +120,10 @@ Schoennagel 2017
 
 # References
 
+Johnston L., Blanchi R., Jappiot M. (2020) “Wildland-urban interface.Links to an external site.” in: Manzello S.L. (eds) Encyclopedia of Wildfires and Wildland-Urban Interface (WUI) Fires. Springer. 
+
+Rasker, Ray. 2009. “Solutions to the rising cost of fighting fires in the wildland-urban interface Download Solutions to the rising cost of fighting fires in the wildland-urban interface ” Headwawters Economics.
+
 Schoennagel, Tania, Jennifer K. Balch, Hannah Brenkert-Smith, Philip E. Dennison, Brian J. Harvey, Meg A. Krawchuk, Nathan Mietkiewicz et al. 2017. "Adapt to more wildfire in western North American forests as climate changes (Links to an external site.)." Proceedings of the National Academy of Sciences 114(18): 4582-4590.
 
 > The authors review how the current, as of publication in 2017, wildfire policy and management has not adapted to changing circumstances in \glspl{ses}. Schoennagel et al. stress the importance of adopting an *adaptive resilience* to wildfires by highlighting the 1000% increase in frequency of large fires in the Northwestern forests since the 1970s. Predictably, the annual economic damage suffered in the \gls{wui} has increased by 300% since 1990. The authors also caution of worsening conditons due to climate change (early snowmelt leading to longer fire seasons) and lack of forest fuel maitenance.
-
-Johnston L., Blanchi R., Jappiot M. (2020) “Wildland-urban interface.Links to an external site.” in: Manzello S.L. (eds) Encyclopedia of Wildfires and Wildland-Urban Interface (WUI) Fires. Springer. 
-
