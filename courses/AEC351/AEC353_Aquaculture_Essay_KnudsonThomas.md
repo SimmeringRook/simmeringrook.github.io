@@ -1,8 +1,8 @@
 ---
-title: "A Critical Essay"
+title: "Aquaculture: A Growing Industry but not yet Sustainable"
 author:
   - Thomas Knudson
-subtitle: "AEC 353: Intro to Coastal and Marine Resource Economics and Pollicy"
+subtitle: "Critical Essay, AEC 353: Introduction to Coastal and Marine Resource Economics and Policy"
 date: "February 27, 2022"
 geometry:
  - a4paper
