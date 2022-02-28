@@ -39,23 +39,63 @@ header-includes: |
 
 $$\text{How are you setting up your paper?}$$
 
-- Yeah, we're screwed.
+- Lam 2016 states that "Aquaculture supplied 42 % of the world’s fish in 2012 and is forecast to eclipse capture fisheries production by 2030." 
+- Anderson et al. 2019 agree but note that economists haven't been as influencial on respective policies
+- Costa-Pierce 2012 offers hope about the sustainability.
 
 # Critical Literature Review
 
 $$\text{What do you expect to say about your minimum 3 outside sources?}$$
 
-## Aquaculture
+### What is Aquaculture?
 
-- What is it?
+Costa-Pierce 2012
 
-## Climate change
+- Polyculture
+  - two or more noncompetitive species
+  - enhance total production
+  - *efficent land-use*
+- explore models
+  - IMTA & SEA
+  - creating ecological systems
+    - recycle waste and use natural filtration
 
-- Does climate change impact the susitanability?
-- Any comparisons to the impacts from other protein sources?
+### Sustainable?
+
+Anderson et al 2019
+
+- half the world uses aquaculture for fish consumption
+  - expected to increase to 2/3rds by 2030
+- growth of industry $\rightarrow$ success story of produciton technologies
+  - most production occurs overseas
+  - US is primarly an importer
+- concerns
+  - pollution
+  - ethics (feeding, disease management)
+  - habitats
+  - food quality/safety
+
+Lam 2016
+
+
 
 # Discussion of Findings
 
 $$\text{What are some of your anticipated findings? What are you drawing from your research?}$$
 
+- Anderson et al. 2019 and Lam 2016 both agree that world food needs are a problem, and if aquaculture can be done sustainably, it offers a major solution. 
+- Costa-Pierce claims sustainable systems like IMTA & SEA are the economic solution due to reduced overhead costs
+
 # References
+
+Anderson, James L, Frank Asche, and Taryn Garlock. “Economics of Aquaculture Policy and Regulation.” Annual Review of Resource Economics 11, no. 1 (2019): 101–23. https://doi.org/10.1146/annurev-resource-100518-093750.
+
+> Anderson et al. discuss the rapid growth of the aquaculture industry and its rising dominance for supplying the global food market. The US is now a major importer of sea food due to explicit bans on aquaculture in various coastal states and subsquently does not fund much economic research into this area. The authors advocate strongly for more inclusion of natural resource economists in the discussions of policy to better inform viability and sustainability of aquaculture for the fishery/aquaculture sectors. There are pollution, ethical, and safety concerns about current techniques and mangement of aquacultures but very limited research has examined these areas. 
+
+Costa-Pierce B.A. (2012) Ocean Farming and Sustainable Aquaculture Science and Technology, An Introduction to. In: Meyers R.A. (eds) Encyclopedia of Sustainability Science and Technology. Springer, New York, NY. https://doi-org.ezproxy.proxy.library.oregonstate.edu/10.1007/978-1-4419-0851-3_933
+
+> The author for the encylopedia entry briefly discusses the history of aquaculture and showcases two promising current models: IMTA and SEA. These models are designed to be ecologically sustainable first and offer economic benefits as a result: diversification of product (and risk), efficient *land* use, and ethical benefits. Costa-Pierce reviews the adoption and spread of current aquaculture technology along coastal waters along with their costs and benefits.
+
+Lam, M.E. The Ethics and Sustainability of Capture Fisheries and Aquaculture. J Agric Environ Ethics 29, 35–65 (2016). https://doi-org.ezproxy.proxy.library.oregonstate.edu/10.1007/s10806-015-9587-2
+
+> The author concludes that small scale fishers are more ethical and sustainable. Lam considers
