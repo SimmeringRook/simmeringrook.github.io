@@ -37,6 +37,14 @@ header-includes: |
 
 > **Prompt** Have scientific and technological advances since the 1970s made aquaculture a sustainable source of protein for US consumers in the 2020s?
 
+- technology is there
+- growth is there
+- sustainable?
+  - unchanged? no
+  - more research
+    - Anderson: need economists
+    - Lam: need more ethics
+
 $$\text{How are you setting up your paper?}$$
 
 - Lam 2016 states that "Aquaculture supplied 42 % of the world’s fish in 2012 and is forecast to eclipse capture fisheries production by 2030." 
@@ -60,6 +68,10 @@ Costa-Pierce 2012
   - creating ecological systems
     - recycle waste and use natural filtration
 
+Lam 2016
+
+- cultivation under controlled conditions
+
 ### Sustainable?
 
 Anderson et al 2019
@@ -77,7 +89,10 @@ Anderson et al 2019
 
 Lam 2016
 
-
+- supply of fish to market: 3.2% annual growth (vs 1.6% world pop)
+- seafood is highest traded global food commodity
+- UN Code of Conduct for Responsible Fisheries
+  - majority of non-compliance
 
 # Discussion of Findings
 
@@ -98,4 +113,4 @@ Costa-Pierce B.A. (2012) Ocean Farming and Sustainable Aquaculture Science and T
 
 Lam, M.E. The Ethics and Sustainability of Capture Fisheries and Aquaculture. J Agric Environ Ethics 29, 35–65 (2016). https://doi-org.ezproxy.proxy.library.oregonstate.edu/10.1007/s10806-015-9587-2
 
-> The author concludes that small scale fishers are more ethical and sustainable. Lam considers
+> The author considers the steady increase in (global) seafood demand in contrast to declining wild fish stocks. In light of this issue, Lam highlights the lack of a previous analysis and subsequently provides a quanlitative analysis of the ethics and sustainability of both capture fisheries and aquaculture. They review case studies on how large and small scale capture fisheries and aquacultures have effected ecosystems, policies, and consumers. Their conclusion is that small-scale fisheries are more sustainable than large-scale and that omnivorous aquaculture systems are more ethical than carnivorous systems.
