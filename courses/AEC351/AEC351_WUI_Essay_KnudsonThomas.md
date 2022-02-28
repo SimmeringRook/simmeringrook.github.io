@@ -16,6 +16,7 @@ header-includes: |
     \usepackage{float}
     \usepackage{subcaption}
     \pagestyle{fancy}
+    \usepackage{setspace}
     \usepackage[acronym]{glossaries-extra}
     \setabbreviationstyle[acronym]{long-short}
     \makeglossaries
@@ -31,7 +32,7 @@ header-includes: |
 
 > **Prompt** Is the frequency of large, costly, and dangerous wildfires affecting communities at the wildland-urban interface (WUI) around the world expected to increase this century? If so, what are some economically-efficient strategies for adapting to wildfires affecting WUI communities?
 
-$$\text{Is the frequency of wildfires expected to increase?}\rightarrow Yes$$
+$$\text{Is the frequency of wildfires expected to increase?}\rightarrow\text{Yes}$$
 
 Use Schoennagel et al. 2017 to set up agreement with prompt:
 
@@ -69,6 +70,10 @@ What is? what is included?
   - early snowmelt and longer fire season
   - thinning $\rightarrow$ reduces fire severity but harms ecological resilence
 
+## Strategies
+
+
+
 # Discussion of Findings
 
 $$\text{What are some of your anticipated findings? What are you drawing from your research?}$$
@@ -97,4 +102,3 @@ Schoennagel, Tania, Jennifer K. Balch, Hannah Brenkert-Smith, Philip E. Dennison
 
 Johnston L., Blanchi R., Jappiot M. (2020) “Wildland-urban interface.Links to an external site.” in: Manzello S.L. (eds) Encyclopedia of Wildfires and Wildland-Urban Interface (WUI) Fires. Springer. 
 
-> **\gls{wui} Entry**:  
