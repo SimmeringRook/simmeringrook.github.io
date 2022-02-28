@@ -1,8 +1,8 @@
 ---
-title: "A Critical Essay: \n How the Wildland-Urban Interface is DOOMed by Climate Change"
+title: "Adopting 'Adaptive Reslience' for Efficient Social, Ecological, and Economical Strategies to Manage Wildfires at the Wildland-Urban Interface"
 author:
   - Thomas Knudson
-subtitle: "AEC 351: Natural Resource Economics and Pollicy"
+subtitle: "Critical Essay, AEC 351: Natural Resource Economics and Policy"
 date: "February 27, 2022"
 geometry:
  - a4paper
@@ -30,7 +30,7 @@ header-includes: |
 
 # Introduction
 
-> **Prompt** Is the frequency of large, costly, and dangerous wildfires affecting communities at the wildland-urban interface (WUI) around the world expected to increase this century? If so, what are some economically-efficient strategies for adapting to wildfires affecting WUI communities?
+> **Prompt** Is the frequency of large, costly, and dangerous wildfires affecting communities at the wildland-urban interface (WUI) around the world expected to increase this century? If so, what are some economically-efficient strategies for adapting to WUI communities?
 
 $$\text{Is the frequency of wildfires expected to increase?}\rightarrow\text{Yes}$$
 
