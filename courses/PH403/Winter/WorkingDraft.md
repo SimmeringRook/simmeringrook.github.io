@@ -32,6 +32,7 @@ header-includes: |
 \newacronym{gr}{GR}{general relativity}
 \newacronym{sr}{SR}{special relativity}
 \newacronym{gps}{GPS}{Global Positition System}
+\newacronym{bh}{BH}{black hole}
 \newacronym{embedding}{embedding diagram}{embedding diagram}
 \captionsetup{format=hang,indention=-0.5cm}
 \onehalfspacing
@@ -66,7 +67,7 @@ $$\ $$
 
 # Introduction
 
-Galilean relativity is the model we use to describe relative velocities in everyday life and is fairly robust, requiring extremes to find the breaking points. Einstein’s famous thought experiment about light moving on a train is the perfect analog for describing problem involving \gls{gps} Satellites and thier transmissions to Earth. Using Galilean relativity, we can illustrate the physical situation like in Figure \ref{fig:gpsDemonstration}, however, anything beyond simple kinematics fails.
+Galilean relativity is the model we use to describe relative velocities in everyday life and is fairly robust, requiring extremes to find the breaking points. Einstein’s famous thought experiment about light moving on a train is the perfect analog for describing problem involving \gls{gps} Satellites and thier transmissions to Earth. Using Galilean relativity, we can illustrate the physical situation like in Figure \ref{fig:gpsDemonstration}, however, it fails to provide a consistent description of physics for both the satellite and Earth.
 
 \begin{figure}
   \centering
@@ -101,10 +102,10 @@ Galilean relativity is the model we use to describe relative velocities in every
   \node[fill=white] at (c2.south) [below] {GPS Satellite};
 
   % Label the radius
-  \draw[dashed] (c1.east) -- (c2) node [midway, below, sloped] {$2\times 10^7\ m$};
+  % \draw[dashed] (c1.east) -- (c2) node [midway, below, sloped] {$2\times 10^7\ m$};
 
   % Show velocity
-  \draw[stealth-] (V) --++ (c2) node [midway, right] {$4\times 10^3\frac{m}{s}$};
+  \draw[stealth-] (V) --++ (c2) node [midway, right] {$\vec{v}$};
 
   \end{tikzpicture}
   }
@@ -264,6 +265,8 @@ By expressing the intensity of a massive body’s gravitational field as curvatu
 
 While we now have a theory that provides extremely accurate predictions, we subtly sacrificed a lot along the way. In Galilean relativity, we could easily switch reference frames and agree on what all observers measured: distance, time, relative velocities, and order of events. As the relative speed of objects increased, we had to switch to special relativity, but lost: observers agreeing on the order of events (see the “barn and pole” paradox). Finally, in using \gls{gr} to correctly unify observers’ measurements in the presence of a gravitational field, we lose the ability to easily measure the relative velocity between reference frames.
 
+To facilitate the exploration of Schwarzschild geometry, the computational framework, dubbed Cartographer, generates visualizations of particular physical situations of interest. While the \gls{gps} example is only concerned with introductory implications of relativity, a particular topic of focus for Cartographer is to map out the differential scattering caused by a \gls{bh} as massless and low-mass particles traverse the curved spacetime. Differential scattering is modeled using minor adjustments to Rutherford scattering [6].
+
 We first review the concepts of proper time, proper distance, and geodesics in \gls{gr} and how to use the line element to measure separation in spacetime and how to represent it computationally (Sections \ref{primer}-\ref{design}). Then we will refresh on differential scattering cross-sections of light about an object (Section \ref{diffScatt}) in preparation for examining the scattering caused by the curvature of spacetime in Section \ref{scattering}. Section \ref{schwarzMaps} focuses on the generation and analysis of visualizations depicting simple and complex geodesics in the Schwarzschild geometry.
 
 \pagebreak
@@ -286,7 +289,19 @@ z = \sqrt{x^2 - y^2},
 
 in a non-Euclidean space, where $x$, $y$, and $z$ are positive real numbers representing physical lengths.
 
-From this, the spacetime separation measured by any reference frame--between two events to be only temporal or only spatial--is given the respective label of proper time or proper distance. In the two dimensional Minkowski geometric model for flat spacetime, $\mathbb{M}^2$, the metric--how spacetime separation is measured--takes the form of $ds^2 = - c^2dt^2 + dx^2$. Note that notion for both SR and \gls{gr} vary greatly--including the signs for time and space components--and this paper will adopt the practice of E.F Taylor and J. A. Wheeler by using $\tau$ and $\sigma$ to signify proper time and distance, respectively, as well as natural units[^-1]. Therefore, in $\mathbb{M}^2$, **proper time** is where 
+From this, the spacetime separation measured by any reference frame--between two events to be only temporal or only spatial--is given the respective label of proper time or proper distance. In the two dimensional Minkowski geometric model for flat spacetime, $\mathbb{M}^2$, the **line element**--how spacetime separation is measured--takes the form of 
+
+\begin{equation}\label{eqn:m2LineElement}
+  ds^2 = - c^2dt^2 + dx^2.
+\end{equation}
+
+In informal language, Equation \ref{eqn:m2LineElement}, is sometimes reffered to as the *metric* [3]. More specifically, the metric, denoted by $g$, is the tool that describes how to resolve the inner product between basis 1-forms. While we generally avoid disucssing operations from different geometry in this paper, it is worth the brief detour to note where the differences in signs of the line element come from. Misner, Thorne, and Wheeler devote the inside cover of *Gravitation* [4] to display the most common set of choices for how $g$ resolves the product of basis 1-forms. In this paper, we will adopt the practice of E.F Taylor and J. A. Wheeler by using the $-+++$ signature, such that the time direction carries the negative sign. In more detail, Equation \ref{eqn:m2LineElement} is given by
+
+\begin{equation}\label{eqn:m2LineElementExplicit}
+ds^2 = g(d\vec{r},d\vec{r}) = c^2 dt^2 g(\hat{t},\hat{t}) + dx^2 g(\hat{x},\hat{x}) = -c^2 dt^2 + dx^2.
+\end{equation}
+
+We also adopt the shorthand of $\tau$ and $\sigma$ to signify proper time and distance, respectively, as well as natural units[^-1]. Therefore, in $\mathbb{M}^2$, **proper time** is where 
 
 \begin{equation}\label{eqn:minkowsiProperTime}
   d\tau^2 = -ds^2 = dt^2
@@ -304,7 +319,9 @@ Notably, there exists a scaling factor, $\gamma$, that corresponds to a length c
 
 In the Schwarzschild geometric model, we consider spacetime to be curved due to the presence of a massive object with spherical symmetry. The gravitional field exerted by this object can be fully described by this curvature in an analogous fashion as to how electrostatic potential, $V(\vec{r})$, can describe the electric field $\vec{E}$. Unlike potential, it is very difficult to visually represent the features of the curved four dimensional spacetime in two dimensional projections and before we can introduce some attempts to visualize these properties, some additional notation is required.
 
-As mentioned previously, \gls{sr} requires we treat all reference frames equally: any frame moving with the same relative velocity as another will measure the same spacetime seperation between events (without corrections). With the introduction of curvature, not all reference frames agree on what they measure. Notably, we have three major *families* of frames now: shell observers, the bookkeeper, and the rain frame. While Section \ref{rainAndHail} will elaborate on the **rain frame**, for now we treat it synonmously with the intertial reference frame of an object free falling radially inward. **Shell observers** represent reference frames of constant distance, $r$-coordinate, or time, $t$. Finally, the **Bookkeeper** (BK), represents the set of frames infintely far away from the influence of the gravitational source and conduct their measurements as if in flat space.
+As mentioned previously, \gls{sr} requires we treat all reference frames[^-2] equally: any frame moving with the same relative velocity as another will measure the same spacetime seperation between events (without corrections). With the introduction of curvature, not all reference frames agree on what they measure. Notably, we have three major *families* of frames now: shell observers, the bookkeeper, and the rain frame. While Section \ref{rainAndHail} will elaborate on the **rain frame**, for now we treat it synonmously with the intertial reference frame of an object free falling radially inward. **Shell observers** represent reference frames of constant distance, $r$-coordinate, or time, $t$. Finally, the **Bookkeeper** (BK), represents the set of frames infintely far away from the influence of the gravitational source and conduct their measurements as if in flat space.
+
+[^-2]: Recall that an intertial reference frame describes a region of space that follows Newton's First Law of Motion [6].  
 
 Due to Schwarzschild's spherical symmetry, we naturally adopt a version of spherical coordinates. The important difference is in how we measure distance from the origin. For example, consider the hyperbolic triangles in Figure \label{fig:schwarzTriangle} which show how the *radial* distance from the massive object, $M$, changes how we measure things versus someone at a different $r$-coordinate.
 
@@ -341,8 +358,8 @@ Due to Schwarzschild's spherical symmetry, we naturally adopt a version of spher
       \coordinate (P) at (0,-2);
 
       % Construct triangle
-      \draw (P) -- (L) node [midway, below, sloped] {$dt_{shell} = \sqrt{1-\frac{2M}{r_{shell}}}dt_{BK}$};
-      \draw (O) -- (L) node [midway, above] {$dt_{BK}$};
+      \draw (P) -- (L) node [midway, below, sloped] {$dt_{BK}$};
+      \draw (O) -- (L) node [midway, above] {$dt_{shell} = \sqrt{1-\frac{2M}{r_{shell}}}dt_{BK}$};
       \draw (O) -- (P) node [midway, left] {$\sqrt{1-\frac{2M}{r_{shell}}}$};
 
     \end{tikzpicture}
@@ -350,13 +367,13 @@ Due to Schwarzschild's spherical symmetry, we naturally adopt a version of spher
     \caption{Time}
     \label{fig:schwarzTimeTriangle}
   \end{subfigure}
-  \caption{A hyperbolic geometric representation of how the physical distance, $dr_{shell}$, is greater than the geometric distance, $dr_{BK}$, due to the curvature at that shell's $r$-coordinate. Also note that while the hyperbolic triangle for the time appears to be the same, }
+  \caption{The two hyperbolic triangles represent the difference between physical quantites and their geometric coordinates. Extending a latticework of these constructions for each coordinate allows for the creation of embedding diagrams like Figure \ref{fig:Embedding}, which offer a direct visual representation of the underlying curvature.}
   \label{fig:schwarzTriangle}
 \end{figure}
 
-Since the physical distance, denoted as $dr_{shell}$, increases as we approach $M$, we must exercise caution in how we define our geometric location[^-2]. As a result, we measure the circumference of our concentric shell and divide by $2\pi$ to obtain our **$\mathbf{r}$-coordinate**. This process is analogous to tracing out great circles on a sphere which leads us to the next important geometric object useful in describing paths: **geodesics** are the lines of spacetime. Mathematically, these are *straight* lines (constant speed) in this non-Euclidean geometry[8]. Physically, these lines correspond to paths through spacetime of objects moving at constant velocity. It is very important to reiterate that the gravitational field is merely another method to describe the curvature of spacetime, and so gravity is not treated as a force in \gls{gr}.
+Since the physical distance, denoted as $dr_{shell}$, increases as we approach $M$, we must exercise caution in how we define our geometric location[^-3]. As a result, we measure the circumference of our concentric shell and divide by $2\pi$ to obtain the **$\mathbf{r}$-coordinate**. This process is analogous to tracing out great circles on a sphere which leads us to the next important geometric object useful in describing paths: **geodesics** are the lines of spacetime. Mathematically, these are *straight* lines (constant speed) in this non-Euclidean geometry[8]. Physically, these lines correspond to paths through spacetime of objects moving at constant velocity. It is very important to note that the gravitational field is a description of the curvature of spacetime, and that gravity is not treated as an external force in \gls{gr}.
 
-[^-2]: Consider how far (radially) away a neighboring shell would be if $r$ was very close to $2M$. The use of physical distance to be synonymous with our geometric location works perfectly fine in Euclidean geometries, but here in Schwarzschild, having points that are almost infinitely far away when they are neighbors is not useful to describe positions.
+[^-3]: Consider how far (radially) away a neighboring shell would be if $r$ was very close to $2M$. The use of physical distance to be synonymous with our geometric location works perfectly fine in Euclidean geometries, but here in Schwarzschild, having points that are almost infinitely far away when they are neighbors is not useful to describe positions.
 
 $$\ $$
 
@@ -436,7 +453,7 @@ r_coordinates = np.arange(2*M+dr, 15*M, dr)
 proper_distance = np.zeros(r_coordinates.shape)
 ```
 
-We accomplish this by making the interval exclusive, $(2M,15M)$, and adding $dr$ to $2M$. Trial and error is used to find that $15M$ works as desired for the chosen values of `M=5` and `dr=1`. The figure generated by this implementation is Figure $\ref{DesignProcessVerify_Python}$.
+We choose the interval of $(2M,15M)$ to show the characteristic fall-off of the function as it quickly approaches the asmyptote of $1$. This *locally intense* and *weak at a distance* behaviour is crucial in demonstrating why Euclidean geometric models have previously described physical phenoma so well for so long. The figure generated by this implementation is Figure $\ref{DesignProcessVerify_Python}$.
 
 ``` python
 for r in r_coordinates:
@@ -622,7 +639,7 @@ An equivalent description for gravitational length contraction can also be deriv
 d\sigma = dr_{shell} =  \frac{dr_{BK}}{f(r_{shell})},
 \end{equation}
 
-which can be used to create the complmentary plot of Figure \ref{fig:ShellTime} as shown in Figure \ref{fig:ShellDist}. These functions, given by Equations \ref{eqn:ShellTime} and \ref{eqn:ShellDist}, are then often revolved about the origin to create \glspl{embedding}. These three-dimensional surfaces are used to help construct an intuition about what it means for spacetime to be curved, as Figures \ref{fig:Embedding-Time} and \ref{fig:Embedding-Distance} demonstrate.
+which can be used to create the complmentary plot of Figure \ref{fig:ShellTime} as shown in Figure \ref{fig:ShellDist}. These functions, given by Equations \ref{eqn:ShellTime} and \ref{eqn:ShellDist}, are then often revolved about the origin to create embedding diagrams. These three-dimensional surfaces are used to help construct an intuition about what it means for spacetime to be curved, as Figures \ref{fig:Embedding-Time} and \ref{fig:Embedding-Distance} demonstrate.
 
 \begin{figure}[H]
     \centering
@@ -674,19 +691,25 @@ From the Bookkeeper's measurements, the stone moves along a path described by
 d\vec{r}= f(r) dt\hat{t} - \frac{dr}{f(r)} \hat{r}.
 \end{equation}
 
-Multiplying Equation \ref{eqn:RadialDR} with itself gives us the simplified line element from before (Equation \ref{eqn:SchwarzLine}). We then combine Equations \ref{eqn:SchwarzEnergy} and \ref{SchwarzLine} by equating them after solving each for proper time. The result is speed (as a multiple of $c$) as a function of $r$-coordinate for the stone, as measured by the Bookkeeper:
+Multiplying Equation \ref{eqn:RadialDR} with itself gives us the simplified line element from before (Equation \ref{eqn:SchwarzLine}). We then combine Equations \ref{eqn:SchwarzEnergy} and \ref{eqn:SchwarzLine} by equating them after solving each for proper time. The result is speed (as a multiple of $c$) as a function of $r$-coordinate for the stone, as measured by the Bookkeeper:
 
 \begin{equation}\label{eqn:SchwarzRadBK}
 \frac{dr_{bk}}{dt_{bk}}=-\left(1-\frac{2M}{r}\right)\sqrt{\frac{2M}{r}}.
 \end{equation}
 
-We deriving what a shell observer would measure is much more straightforward. Dividing Equation \ref{eqn:ShellDist} by Equation \ref{eqn:ShellTime}, we obtain what a shell observer would measure when the stone reaches $r_{shell}$. This expression is given as
+The sign of Equation \ref{eqn:SchwarzRadBK} describes an in-falling (when negative) or an escaping (when postive) object. Substituing in the division of Equation \ref{eqn:ShellDist} by Equation \ref{eqn:ShellTime} into the left-hand side of Equation \ref{SchwarzRadBK}, we obtain what a shell observer would measure when the stone reaches $r_{shell}$. This expression is given as
 
 \begin{equation}\label{eqn:SchwarzRadShells}
-\frac{dr_{shell}}{dt_{shell}}=-\sqrt{\frac{2M}{r_{shell}}}.
+\frac{dr_{shell}}{dt_{shell}}=-\sqrt{\frac{2M}{r_{shell}}},
 \end{equation}
 
-As shown in Figure \ref{fig:RainSpeed}, this diverging behaviour has physical consequences. If we give the Bookkeeper the most senstive equipment, they measure any in-falling object to stop as it reaches the event horizon and would never observe any object passing through. In practice, if we model light being emitted by the stone towards the Bookkeeper as continous, the wavelength of light that informs any outside observer that the stone has crossed the horizon will be gravitationally redshifted to an infinite wavelength. This effect can also be noticed from a closer re-examination of Figures \ref{fig:ShellTime} and \ref{fig:ShellDist}.
+where we have applied the same notion of sign to represent direction.
+
+As shown in Figure \ref{fig:RainSpeed}, this diverging behaviour has physical consequences. If we give the Bookkeeper the most senstive equipment, they measure any in-falling object to stop as it reaches the event horizon and would never observe any object passing through. In practice, if we model light being emitted by the stone towards the Bookkeeper as continous, the wavelength of light that informs any outside observer that the stone has crossed the horizon will be gravitationally redshifted to an infinite wavelength. In re-examinating of Figures \ref{fig:ShellTime} and \ref{fig:ShellDist}, if we consider the extreme case as the contraction scaling factor, $\zeta$, approaches $0$, the un-contracted length, $\lambda$, must approach infinity such that the length measured at $r\rightarrow BK$ remains unity as described below:
+
+\begin{equation}\label{eqn:ExampleRedshift}
+\lim_{\zeta\rightarrow 0 ,\ \lambda\rightarrow\infty} \zeta \times \lambda= 1.
+\end{equation}
 
 $$\ $$
 
@@ -700,7 +723,7 @@ To measure things in the stone's frame, we perform a change of basis on the diff
 
 To find out how a particlar shell in Schwarzschild measures speed, we can't just directly manipulate the line element to obtain a simple equation. If we try (to manipulate the line element) to pick a specific shell for our reference frame, the resulting expression leads to unphysical results -- namely the stone can surpass the speed of light if the observation shell is less than $r=6M$. Instead, we must construct a thought experiment:
 
-> Consider a lightblub emitting a known wavelength of light, $\lambda_{emitted}$ (as measured in its rest frame). An observer, situated on a shell ($r_{measured}$), then measures the redshifted wavelength as $\lambda_{measured}$. If the information of which $r$-coordinate is transmitted alongside each $\lambda_{emitted}$, how fast is the lightblub moving towards the event horizon along a radial path?
+> Consider a lightblub emitting a continous known wavelength of light, $\lambda_{emitted}$ (as measured in its rest frame), as it falls inward to the \gls{bh}. An observer, situated on a specific shell, $r_{measured}$, measures the redshifted wavelength as $\lambda_{measured}$. If $r_{emitted}$ is transmitted alongside each instance of $\lambda_{emitted}$, how fast is the lightblub moving towards the event horizon along a radial path, as measured by the shell observer?
 
 Noting that the redshift has contributions from both gravity (curvature of spacetime) and the speed (relativistic Doppler effect), we can build an expression to describe this:
 
@@ -711,15 +734,19 @@ Noting that the redshift has contributions from both gravity (curvature of space
 Solving for speed, we then obtain the function:
 
 \begin{equation}\label{eqn:RainSpeedObsShell}
-v(\lambda_{measured}, r_{measured}, \lambda_{emitted}, r_{emitted}) = c \frac{\left(\frac{\lambda_{measured}}{\lambda_{emitted}}\right)^2 \left(\frac{1-\frac{2M}{r_{emitted}}}{1-\frac{2M}{r_{measured}}}\right) - 1}{\left(\frac{\lambda_{measured}}{\lambda_{emitted}}\right)^2 \left(\frac{1-\frac{2M}{r_{emitted}}}{1-\frac{2M}{r_{measured}}}\right) + 1}
+v(\lambda_{measured}, r_{measured}, \lambda_{emitted}, r_{emitted}) = c \frac{\left(\frac{\lambda_{measured}}{\lambda_{emitted}}\right)^2 \left(\frac{1-\frac{2M}{r_{emitted}}}{1-\frac{2M}{r_{measured}}}\right) - 1}{\left(\frac{\lambda_{measured}}{\lambda_{emitted}}\right)^2 \left(\frac{1-\frac{2M}{r_{emitted}}}{1-\frac{2M}{r_{measured}}}\right) + 1}.
 \end{equation}
+
+Since $r_{measured}$ and $\lambda_{emitted}$ are constants, Equation \ref{eqn:RainSpeedObsShell} becomes a function of two independent variables: $v(\lambda_{m}, r_{e})$. By considering the case where $r_m = r_e$, the gravitational redshiftting terms simplifly to unity and we are left with only the \gls{sr} description of redshift. This expression can then be equated to the result of Equation \ref{eqn:SchwarzRadShells} in an effort to specify the initial condition of the lightbulb starting at rest for $r\rightarrow\infty$. This result is displayed in Figure \ref{fig:RainSpeed_OBS} by plotting $v(r_e)$ versus $r/M$.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=15cm,keepaspectratio,]{rain_speed_obs_shell.png}
-  \caption{Speed of the stone as measured from a shell observer at $r=10M$.}
+  \caption{Speed of the stone as measured from a shell observer at $r=10M$. **TODO:** Replace with Cartographer plot and not the placeholder from Mathematica with faulty formatting.}
   \label{fig:RainSpeed_OBS}
 \end{figure}
+
+As mentioned in the introduction, in moving from the realm of \gls{sr} to \gls{gr}, we lost the notion of a *global* velocity. This is an underdetermined system of equations and can only provide insight into the radial speed and direction of the lightbulb observed by $r_m$ for a given ratio of doppler redshifting, $\lambda_e / \lambda_m$. Since this ratio is non-constant, as the shell frames observe increasing speed, it is impossible to provide a complete answer to the prompt.
 
 \pagebreak
 
@@ -1102,7 +1129,7 @@ $$\ $$
 - Christopher Magone
 - Greg Moulder
 - Liz Gire
-- Corrine Manogue
+- Corinne Manogue
 
 $$\ $$
 
