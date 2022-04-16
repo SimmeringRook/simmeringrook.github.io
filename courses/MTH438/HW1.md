@@ -7,7 +7,9 @@ papersize: a4
 geometry: margin=2cm
 toc: true
 toc_depth: 2
+graphics: yes
 header-includes: |
+    \usepackage{graphicx}
     \usepackage{fancyhdr}
     \usepackage{tikz,tikz-3dplot} 
     \usepackage{tkz-euclide}
@@ -22,6 +24,10 @@ header-includes: |
     \fancyhead[CO,CE]{HW1}
     \fancyhead[LO,LE]{Knudson}
 ---
+
+$$\ $$
+
+Collaborated with Jared Smith
 
 \pagebreak
 
@@ -217,7 +223,7 @@ z = -1 + \left(\frac{1+i}{\sqrt{2}}\right), \qquad z= -1 - \left(\frac{1+i}{\sqr
 
 > Fix a positive integer $n$. Prove that the solutions to the equation $z^n = 1$ are precisely $z=e^{2\pi i \frac{m}{n}}$ where $m\in\mathbb{Z}$.
 
-First, let us begin by considering the polar form of $z$. If $z=re^{i\phi}$, then $z^n = r^n e^{i\phi n}$. While trivial, we proceed to argue that $r=1$ is the only possible valid value for $z^n$.
+First, let us begin by considering the polar form of $z$. If $z=re^{i\phi}$, then $z^n = r^n e^{i\phi n}$. While trivial, we proceed to argue that $r=1$ is the only possible valid value for $z^n$, before systematically restricting allowed values of $\phi$ until the given equality is proven true.
 
 1. Suppose $r=0$, then $z^n = 0^n e^{i \phi n} = 0$, which contradicts the given equality. If $\vert r \vert >0$, then $r^n > 1$ for $n\in 2\mathbb{Z}$ and $r^n < 1$ for $n\in (2\mathbb{Z}+1)$. Similarly, if $1 > \vert r \vert > 0$, then $r^n < 1$ for both $n\in 2\mathbb{Z}$ and $n\in (2\mathbb{Z}+1)$. The only possible value for $r$ that does not contradict the given equality is for $r$ to be equal to unity.
 
@@ -227,3 +233,133 @@ e^{i\phi n} &= \sum_{k=0}^{\infty}{\frac{(i\phi n)^k}{k!}}, \quad k\in\mathbb{N}
 &= \sum_{k=0}^{\infty}{\frac{(-1)^k (\phi n)^{2k}}{(2k)!}} + i\sum_{k=0}^{\infty}{\frac{(-1)^k (\phi n)^{2k+1}}{(2k+1)!}} \\
 &= \cos{(\phi n)} + i \sin{(\phi n)} \\
 \end{align*} Let $\theta$ represent the product of $\phi$ and $n$.
+
+    - If we consider $\theta$ in the range of $(0,\pi)$, we then note that $\sin{(\phi n)}$ will evaluate to value in the range of $(0,1)$ which gives $z^n$ a non-real component and contradicts the given equality.
+    - Similarly, if we consider $\theta$ to have a value in the range of $(\pi,2\pi)$, $\sin{(\phi n)}$ evaluates to some non-zero value in $(-1, 0)$, again giving $z^n$ a non-real component and contradicting the given equality.
+    - Therefore, $\theta$ must evaluate to either $(2\mathbb{Z})\pi$ or $(2\mathbb{Z}+1)\pi$ such that the $\sin{(\phi n)}$ term is zero.
+
+3. If $\theta$ evaluates to an odd integer multiple of $\pi$, we can see that $z^n$ could sometimes evaluate to $-1$ (depending on if $n$ is odd or even), which again contradicts the given equality, as it provides no constraints on $n$ other than it is a positive integer. Therefore $\theta$ must be an even integer multiple of $2\pi$. 
+4. This then sets up the equality of $\cos{(\phi n)}=1$. Solving for $\phi$, we obtain $\phi = \arccos{(1)}/n$ where we can reexpress $\arccos{(1)}$ as an even integer multiple, $m$, of $2\pi$.
+
+Finally, we substitute $(2\pi m)/n$ in for $\phi$ in our polar representation of $z$ and see that all $n$-roots of unity must be even integer multiples of $2\pi$:
+
+\begin{equation*}
+z^n = e^{i \phi n} = e^{i \left(\frac{2\pi m}{n}\right)n} = e^{i 2\pi m} = 1.
+\end{equation*}
+
+\pagebreak
+
+## Problem 1.20
+
+> Use Proposition 1.3 to derive the triple angle formulas.
+
+### Part A
+
+> $\cos{(3\phi)} = \cos^3{\phi} - 3\cos{\phi}\sin^2{\phi}$
+
+\begin{align*}
+\cos{(3\phi)} &= \frac{1}{2} \bigg(e^{3i\phi}+e^{-3i\phi}\bigg) \\
+&= \frac{1}{2} \bigg(e^{3i\phi} + e^{-i\phi} - e^{-i\phi} +e^{-3i\phi} + e^{i\phi} - e^{i\phi}\bigg) \\
+&= \left(\frac{e^{i\phi} + e^{i\phi}}{2}\right)\bigg(e^{2i\phi} + e^{-2i\phi} - 1\bigg) \\
+&= \left(\frac{e^{i\phi} + e^{i\phi}}{2}\right)\left(\frac{4e^{2i\phi} + 4e^{-2i\phi} - 4}{4}\right) \\
+&= \left(\frac{e^{i\phi} + e^{i\phi}}{2}\right)\left(\frac{e^{2i\phi} + e^{-2i\phi} + 2 + 3 e^{2i\phi} + 3 e^{-2i\phi} -6}{4}\right) \\
+&= \left(\frac{e^{i\phi} + e^{i\phi}}{2}\right)\left(\frac{e^{2i\phi} + e^{-2i\phi} + 2}{4}-3\frac{- e^{2i\phi} - e^{-2i\phi} +2}{4}\right) \\
+&= \cos{\phi}\bigg(\cos^2{\phi}-3\sin^2{\phi}\bigg) \\
+&= \cos^3{\phi}-3\cos{\phi}\sin^2{\phi}
+\end{align*}
+
+### Part B
+
+> $\sin{(3\phi)} = 3\cos^2{\phi}\sin{\phi} - \sin^3{\phi}$
+
+\begin{align*}
+\sin{(3\phi)} &= \frac{1}{2i} \bigg(e^{3i\phi}-e^{-3i\phi}\bigg) \\
+&= \frac{1}{2i} \bigg(e^{3i\phi} + e^{-i\phi} - e^{-i\phi} +e^{-3i\phi} + e^{i\phi} - e^{i\phi}\bigg) \\
+&= \left(\frac{e^{i\phi} - e^{i\phi}}{2i}\right)\bigg(e^{2i\phi} + e^{-2i\phi} + 1\bigg) \\
+&= \left(\frac{e^{i\phi} - e^{i\phi}}{2i}\right)\left(\frac{4e^{2i\phi} + 4e^{-2i\phi} + 4}{4}\right) \\
+&= \left(\frac{e^{i\phi} - e^{i\phi}}{2i}\right)\left(\frac{3e^{2i\phi} + 3e^{-2i\phi} + 6 + e^{2i\phi} + e^{-2i\phi} -2}{4}\right) \\
+&= \left(\frac{e^{i\phi} + e^{i\phi}}{2i}\right)\left(3\frac{e^{2i\phi} + e^{-2i\phi} + 2}{4}-\frac{e^{2i\phi} + e^{-2i\phi} -2}{4i^2}\right) \\
+&= \sin{\phi}\bigg(3\cos^2{\phi}-\sin^2{\phi}\bigg) \\
+&= 3\cos^2{\phi}\sin{\phi}-\sin^3{\phi}
+\end{align*}
+
+\pagebreak
+
+## Problem 1.27
+
+> Sktech the sets defined by the following constraints and determine whether they are open, closed, or neither; bounded; connected.
+
+### Part C
+
+> $0 < \vert z -1 \vert < 2$
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm,keepaspectratio,]{127_PartC.png}
+\caption{open}
+\end{figure}
+
+### Part F
+
+> $\vert z \vert \ge \text{Re}(z) + 1$
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm,keepaspectratio,]{127_PartF.png}
+\caption{bounded}
+\end{figure}
+
+\pagebreak
+
+## Problem 1.33
+
+> Find a parametrization for each of the following paths:
+
+### Part A
+
+> The circle $C[1+i,1]$, oriented counter-clockwise.
+
+Recall that $\gamma(t)=\cos{t} + i \sin{t}$ for $0\le t \le 2\pi$ is the standard parameterization (ccw) for a circle. We just need to center it at $1+i$:
+
+$$\gamma(t)= (\cos{t}+1) + i (\sin{t} + 1), \qquad 0\le t \le 2\pi$$
+
+### Part B
+
+> The line segment from $-1-i$ to $2i$.
+
+The imaginary part is the easiest, as it has a form similar to $y=3x+2$ $\Rightarrow$ $\text{Im}(\gamma(t)) = i(3t+2)$ for $t\in[-1, 0]$. Similarly, the real part is just the line segment $y=x$ $\Rightarrow$ $\text{Re}(\gamma(t))=t$ for $t\in[-1,0]$. Combining the two, we obtain:
+
+$$\gamma(t) = t + i(3t+2), \qquad t\in[-1,0]$$
+
+### Part C
+
+> The top half of the circle $C[0,34]$, oriented clockwise.
+
+This is just the same as the normal circle parameterization, but with radius of $34$ and only half the interval and sine phase shifted:
+
+$$\gamma(t) = 34(\cos{t}-i\sin{t}), \qquad t\in[0,\pi]$$
+
+### Part D
+
+> The rectangle with vertices $\pm 1 \pm 2i$, oriented counter-clockwise.
+
+I spent a while trying to figure this one out and just wasn't able to get it. Upon searching online, I found a very neat solution on the math StackExchange (https://math.stackexchange.com/a/279209):
+
+\begin{align*}
+x(t) &= \frac{1}{2}(2)\text{sgn}(\cos{t}) \\
+y(t) &= \frac{1}{2}(4i)\text{sgn}(\sin{t})
+\end{align*}
+
+where the $\text{sgn}$ function serves to only keep the sign from cosine and sine. We can then write the parameterization as:
+
+$$\gamma(t) = \frac{\cos{t}}{\vert\cos{t}\vert} + 2i\frac{\sin{t}}{\vert\sin{t}\vert}, \qquad 0\le t \le 2\pi$$
+
+### Part E
+
+> The ellipse $\{z\in\mathbb{C}: \vert z - 1 \vert + \vert z + 1 \vert = 4\}$, oriented counter-clockwise.
+
+Did not complete.
+
+## Problem 1.34
+
+Did not complete.
