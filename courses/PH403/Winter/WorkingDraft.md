@@ -1,9 +1,9 @@
 ---
-title: "Cartographer: Using Python to Create Maps of Curved Spacetime and Differential Scattering Cross-sections of Low-Mass Objects about a Schwarzschild Black Hole"
+title: "Cartographer: Using Python to Animate the Motion of Low-Mass Objects about a Schwarzschild Blackhole"
 author:
   - Thomas Knudson `\\\\`{=latex} Advised by Dr. Kathryn Hadley
 subtitle: "Department of Physics, OSU"
-date: "February 21, 2022"
+date: "April 30, 2022"
 geometry:
  - a4paper
  - margin=2cm
@@ -16,6 +16,7 @@ header-includes: |
     \usepackage{hyperref}
     \usepackage{tikz,tikz-3dplot} 
     \usepackage{tkz-euclide}
+    \usetikzlibrary{arrows, automata}
     \usepackage{fancyhdr}
     \usepackage{float}
     \usepackage{subcaption}
@@ -31,7 +32,7 @@ header-includes: |
 
 \newacronym{gr}{GR}{general relativity}
 \newacronym{sr}{SR}{special relativity}
-\newacronym{gps}{GPS}{Global Positition System}
+\newacronym{gps}{GPS}{Global Position System}
 \newacronym{bh}{BH}{black hole}
 \newacronym{embedding}{embedding diagram}{embedding diagram}
 \captionsetup{format=hang,indention=-0.5cm}
@@ -57,9 +58,11 @@ $$\ $$
 
 > TODO: Figure out how modify pandoc's template to move about table of contents.
 
-<!-- \renewcommand{\baselinestretch}{1.5}\selectfont -->
+The computational framework, Cartographer, created and examined in this study focused on two key aspects: (1) visualizing exact and simulated motion in general relativity and (2) creating a framework that can be easily extended to describe more complex geometries of general relativity. Even the simplest geometric model of general relativity, the Schwarzschild geometry, requires a mathematical representation that is very complex for most undergraduate physics students. The main method for developing intuition of a object's geodesic (path) is either through examining the equation in detail and reasoning about the described behaviour (radius of orbit, is there an orbit, eccentricity, etc) or by cross comparing various 2-D graphs of coordinates/attributes. The latter involves reasoning through energy versus r-coordinate plots combined with spacetime diagrams showing time vs r-coordinate, time vs phi, or even phi versus r-coordinate.
 
-> This thesis was written with a OSU physics major starting their capstone courses in mind. While not uniformly true for all physics students, base concepts of astrophysics and relativity, as would be covered in PH 455: Astrophysics and PH 335: Theoretical Mechanics, are treated as prior knowledge. Advanced concepts from general relativity or programming & optimization (beyond PH 36X: Computational Lab) will be explained or given an explicit appendix reference. $$\ $$
+The spacetime geometry is discretized into a lattice of nodes. The theoretical geodesics are represented in the three (4?) dimensional plots through numeric integration using the Verlet velocity method. The computational framework then finds the path the object should take, based off initial conditions, by extending the lattice into a weighted graph. The framework then uses the $A^*$ pathfinding algorithm to find the next step the object will take by calculating the action for each possible neighboring node.
+
+The accuracy of the simulate path is directly related to the resolution of the discreteness of the underlying spacetime but has a minimum error threshold proportional to the theoretical path. While it is impossible to remove all error from both the theory and simulated paths, this error can be minimized to a requested precision, allowing for quicker run times and reducing hardware requirements for the computational framework. This framework offers an interface for undergraduate students to approach motion in general relativity in an easier method, requiring only the basic familiarity with python taught in the PH 36X courses. These visualizations also surpass the equivalent representations provided in various texts by allowing a third dimension to be represented: 2-dimensions of space and 1-dimension of time via rotatable animations.
 
 \glsresetall
 
@@ -67,7 +70,7 @@ $$\ $$
 
 # Introduction
 
-Galilean relativity is the model we use to describe relative velocities in everyday life and is fairly robust, requiring extremes to find the breaking points. Einstein’s famous thought experiment about light moving on a train is the perfect analog for describing problem involving \gls{gps} Satellites and thier transmissions to Earth. Using Galilean relativity, we can illustrate the physical situation like in Figure \ref{fig:gpsDemonstration}, however, it fails to provide a consistent description of physics for both the satellite and Earth.
+Galilean relativity is the model we use to describe relative velocities in everyday life and is fairly robust, requiring extremes to find the breaking points. Einstein’s famous thought experiment about light moving on a train is the perfect analog for describing problem involving \gls{gps} Satellites and their transmissions to Earth. Using Galilean relativity, we can illustrate the physical situation like in Figure \ref{fig:gpsDemonstration}, however, it fails to provide a consistent description of physics for both the satellite and Earth.
 
 \begin{figure}
   \centering
@@ -113,7 +116,7 @@ Galilean relativity is the model we use to describe relative velocities in every
   \label{fig:gpsDemonstration}
 \end{figure}
 
-In short, each \gls{gps} satellite periodically transmits location data alongside a timecode [1]. Using \gls{sr}, we find a scaling factor, $\gamma$, that represents the strength of length contraction and time dilation caused by the relative velocity of the satellite to Earth. To calculate this factor, we must transition from the Galilean model of treating space and time distances separately to \gls{sr}’s spacetime. However, measurement and theory would still disagree on the time elapsed between ticks of both the Earth’s and the \gls{gps}’s light-clocks and that is because we have failed to consider the effects of gravity. These results are illustrated in Figure \ref{fig:timeDilationSum}.
+In short, each \gls{gps} satellite periodically transmits location data alongside a time-code [1]. Using \gls{sr}, we find a scaling factor, $\gamma$, that represents the strength of length contraction and time dilation caused by the relative velocity of the satellite to Earth. To calculate this factor, we must transition from the Galilean model of treating space and time distances separately to \gls{sr}’s spacetime. However, measurement and theory would still disagree on the time elapsed between ticks of both the Earth’s and the \gls{gps}’s light-clocks and that is because we have failed to consider the effects of gravity. These results are illustrated in Figure \ref{fig:timeDilationSum}.
 
 \begin{figure}[H]
   \begin{subfigure}{\textwidth}
@@ -377,228 +380,195 @@ Since the physical distance, denoted as $dr_{shell}$, increases as we approach $
 
 $$\ $$
 
-## The Design Process {#design}
+## Cartographer: Design
 
-To facilitate periodic testing and quick implementation, the desired functionality of Cartographer was divided into a series of milestones. Each milestone was chosen such that it gradually increased in complexity and laid the groundwork for subsequent milestones. This iterative design process is often referred to the minimal viable product: at the conclusion of each milestone, all corresponding functionality has been implemented and the code has been cleaned up and reorganized (refactored).
+The Cartographer framework works by discretizing curved spacetime into a lattice of vertices. The `Latticework` class is initialized by specifying the interval and resolution for each spatial dimension. These parameters are independent of each other and allow for optimization with respect to computational runtime versus accuracy of the simulation. The `Latticework` object then instantiates two NumPy arrays as a mesh to represent the spacetime geometry.
 
-This design process can be distilled into a series of five steps:
+At this stage, the lattice can be used to explore the underlying geometry through the embedding diagrams in Section \ref{distanceTimeAndEmbedding}. To visualize motion, two `Stone` objects are created with the initial conditions to be explored: energy per unit mass, $E/m$, and orbital angular momentum[^-221] per unit mass, $L/m$. These objects are used as parameters for calculating both their theoretical and simulated paths.
 
-1. Choose an Equation
-2. Translate Equation to Python
-3. Generate Visualization for Equation
-4. Verify Results and Change as Necessary
-5. Refactor
+The `VerletPathfinding` class uses numerical integration with the Verlet Velocity method (Section \ref{verletAlgo}) to calculate the theoretical geodesic and uses a time step size parameter for controlling the accuracy of the path. The `Latticework` class uses the $A^*$ ("A star") pathfinding algorithm (Section \ref{astarAlgo}) and the principle of least action to determine how the stone should move about the given geometry. A selection of helper data classes created to aid in the readability and verbosity of the code are featured in Appendix \ref{helperClasses}.
 
-The goal of Cartographer is to generate visualizations corresponding to light and low-mass particles moving through Schwarzschild spacetime. As mentioned in \ref{motivation}, these geodesic equations are complex but we can leverage that they are the result of algebraic compositions from simpler expressions. This allows us to work backwards from the end goal of visualizing something like Equation (\ref{GeneralSchwarzschildEOM}) to the building blocks of describing the curvature of spacetime.
+[^-221]: Future references to angular momentum will omit the *orbital* clarifier as spin angular momentum is not discussed or explored in this paper.
 
-The following subsections provide additional context for each step by detailing the process of implementing the building blocks. These subsections focus primarily on the computational implementation whereas Section 3.1 offers an analysis of the resulting visualizations and the physics behind them.
+$$\ $$
 
-### Choose an Equation
+### Verlet Velocity Algorithm {#verletAlgo}
 
-We begin by isolating the descriptions of proper time and proper distance as measured by a shell observer using the line element (Equation $\ref{SchwarzschildWithC}$). Recall from Section \ref{primer} that proper time and distance are invariant with respect to changing reference frames. We can introduce the shorthand of $f(r)= \sqrt{1 - \frac{2M}{r}}$ and $d^2\Omega=\sin^2{\theta}d^2\varphi + d^2\theta$ to simplify the expression.
+The Verlet Velocity Algorithm approximates future position, velocity, and acceleration by using two time steps of data to calculate the next time step. This algorithm, like Euler's method, uses a Taylor series expansion of the position function around a time $t$ describing the future position as
+
+\begin{equation}\label{eqn:TaylorPosition}
+x(t + \Delta t) = x(t) + \Delta t x^\prime (t) + \frac{(\Delta t)^2 x^{\prime\prime} (t)}{2} + \mathcal{O}(\Delta t^3).
+\end{equation}
+
+A simple Python implementation of Equation \ref{eqn:TaylorPosition} typically looks like
+
+```py
+dt, t, total_time = ...
+while t < total_time:
+    current_acceleration = net_force / mass
+    current_velocity = current_velocity + current_acceleration * dt
+    current_position = current_position + current_velocity*dt
+    t = t + dt
+```
+
+While both the Verlet Velocity and Euler's methods use the forward difference definition for derivatives,
 
 \begin{equation}
-ds^2= - f(r)^2 (dt^2) + \frac{dr^2}{f(r)^2} + r^2 d^2\Omega
+x^\prime (t) \approx \frac{x(t + \Delta t) - x(t)}{\Delta t},
 \end{equation}
 
-Then by setting $d^2\Omega=0$, we simplify the description of the line element to be changes in $r$ or $t$. Examining just a change in $r$ or $t$, we derive proper distance and time for the shell observer as Equations \ref{ShellDistance} and \ref{ShellTime}:
-
-\begin{equation}\label{ShellDistance}
-    dr_{shell} = \left(1-\frac{2M}{r}\right)^{-\frac{1}{2}} dr
-\end{equation}
-\begin{equation}\label{ShellTime}
-    dt_{shell} = \left(1-\frac{2M}{r}\right)^{\frac{1}{2}} dt
-\end{equation}
-
-$$\ $$
-
-### Translate to Python
-
-The next step is to represent the two equations in Python.
-
-``` python
-def dr_shell(r, M, dr):
-  from math import sqrt
-  return dr/sqrt(1-(2*M)/r)
-
-def dt_shell(r, M, dt):
-  from math import sqrt
-  return sqrt(1-(2*M)/r)*dt
-```
-
-Like the functional form of Equations $\ref{ShellDistance}$ and $\ref{ShellTime}$, these functions evaluate $dr_{shell}$ and $dt_{shell}$ for a specific $r$-coordinate (corresponding to the shell's location).
-
-$$\ $$
-
-### Generate Visualization for Equation
-
-Using the distance function, `dr_shell(...)`, with convenient values for `M` and `dr` are choosen allow for easy identification of uncharacteristic behaviour. Specific values of `M` and `dr` will be used in $\ref{distanceTimeAndEmbedding}$ to verify the expected results from literature.
-
-``` python
-import numpy as np
-import matplotlib.pyplot as plt
-
-def dr_shell(r, M, dr):
-  from math import sqrt
-  return dr/sqrt(1-(2*M)/r)
-
-M = 5
-dr = 1
-```
-
-Since there is a coordinate singularity at $r=2M$ and shell observers only exist outside the event horizon, we need to adjust the interval of possible $r$-coordinates accordingly. We also need the size of the interval to be in a nice middle ground: just far enough away from $2M$ to display the shape of the plot and close enough to avoid suppressing the shape of the function.
-
-``` python
-r_coordinates = np.arange(2*M+dr, 15*M, dr)
-proper_distance = np.zeros(r_coordinates.shape)
-```
-
-We choose the interval of $(2M,15M)$ to show the characteristic fall-off of the function as it quickly approaches the asmyptote of $1$. This *locally intense* and *weak at a distance* behaviour is crucial in demonstrating why Euclidean geometric models have previously described physical phenoma so well for so long. The figure generated by this implementation is Figure $\ref{DesignProcessVerify_Python}$.
-
-``` python
-for r in r_coordinates:
-  proper_distance[r-(2*M+dr)] = dr_shell(r, M, dr)
-
-plt.plot(r_coordinates, proper_distance)
-plt.title(f"Proper distance of {dr=} meters as measured by each shell\n observer with a
- blackhole of {M=} meters")
-plt.xlabel("r-coordinate of shell")
-plt.ylabel("Distance measured by shell")
-plt.savefig(fname="CoreDesign_Plot.png")
-```
-
-$$\ $$
-
-### Verify Results and Change as Necessary
-
-Recall that for distance, we are plotting Equation (\ref{ShellDistance}) which has the general form of
+Euler's method only considers the derivatives and the position function at $t$ to inform the output for $t+\Delta t$. The Verlet Velocity method improves the accuracy by considering both expansions for $x(t+\Delta t)$ and $x(t-\Delta t)$. $x(t+\Delta t$ is then reexpressed as the sum of the two expansions,
 
 \begin{equation}
-f(x) = \frac{1}{\sqrt{1-\frac{1}{x}}}.
+x(t+\Delta t) = 2x(t) - x(t-\Delta t) + \frac{(\Delta t)^2 a(t)}{2} + \mathcal{O}(\Delta t^4) .
 \end{equation}
 
-With this in mind, it is very easy to construct comparisions for the shape of the output generated by Cartographer to any plotting software. Using the following Mathematica code, we compare the two functions by considering their concavity, shape, and behaviour as $x\rightarrow\infty$.
+$$\ $$
 
-```Mathematica
-dr = 1; M = 5;
-f[x_] := dr/Sqrt[1 - (2*M)/x]
-Plot[f[x], {x, 2*M + dr, 15*M}, PlotRange -> {{2*M, 15*M}, {1, 3.5}},
- AxesLabel -> {"x", "f(x)"},
- PlotLabel ->
-  "Mathematica Plot for Comparision of Cartographer Output",
- ImageSize -> Large]
-```
+### $A^*$ Pathfinding Algorithm {#astarAlgo}
+
+The $A^*$ search algorithm is a heuristic method for navigating graphs. Two common applications for this type of algorithm are the movement of units in a strategy computer game and a mobile GPS providing directions. The problem is classified by considering a weighted graph of nodes, such as in Figure \ref{fig:weightedGraph}. Each node represents some intermediate destination along the way from a <i>source</i> to the desired <i>target</i>. Each edge then has a real valued number corresponding to the <i>cost</i> of moving to the next node.
 
 \begin{figure}[H]
-  \begin{subfigure}[b]{0.5\textwidth}
-      \centering
-      \includegraphics{CoreDesign_Plot.png}
-      \caption{Cartographer}
-      \label{DesignProcessVerify_Python}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.5\textwidth}
-      \centering
-      \includegraphics{CoreDesign_PlotMathematica.png}
-      \caption{Mathematica}
-      \label{DesignProcessVerify_Mathematica}
-  \end{subfigure}
-  \caption{a Python representation of Equation \ref{ShellDistance}. b Mathematica's interpretation. Note that both visualizations have the same behaviour: monotonically decreasing and asympotically approaching $f(x)=1$ as $x\rightarrow\infty$.}
-  \label{fig:designProcessVerify}
+\centering
+    \scalebox{0.75}{
+        \begin{tikzpicture}[
+                    > = stealth, % arrow head style
+                    shorten > = 1pt, % don't touch arrow head to node
+                    auto,
+                    node distance = 3cm, % distance between nodes
+                    semithick % line style
+            ]
+
+            \tikzstyle{every state}=[
+                draw = black,
+                thick,
+                fill = white,
+                minimum size = 4mm
+            ]
+
+            \node[state] (X1) {$x_1$};
+            \node[state] (X4) [right of=X1] {$x_4$};
+            \node[state] (X2) [above of=X4] {$x_2$};
+            \node[state] (X3) [below of=X4] {$x_3$};
+            \node[state] (X5) [right of=X4] {$x_5$};
+            
+            \draw[-stealth] (X1) -- (X2) node[midway] {$y_{12}$};
+            \draw[-stealth] (X1) -- (X3) node[left, midway ] {$y_{13}$};
+            \draw[-stealth] (X2) -- (X5) node[midway] {$y_{25}$};
+            \draw[-stealth] (X3) -- (X4) node[midway] {$y_{34}$};
+            \draw[-stealth] (X4) -- (X5) node[midway] {$y_{45}$};
+        \end{tikzpicture}
+    }
+    \caption{In this directed graph, each $x_i$ is a node and each $y_{ij}$ represents the cost to traverse from $x_i$ to $x_j$. For this example, there are two possible paths from the source node $x_1$ to $x_5$: (1) $x_1 \rightarrow x_2 \rightarrow x_5$ and (2) $x_1 \rightarrow x_3 \rightarrow x_4 \rightarrow x_5$ with total respective costs of $y_{12}+y_{25}$ and $y_{13}+y_{34}+y_{45}$. }
+    \label{fig:weightedGraph}
 \end{figure}
 
-As expected, Figure \ref{fig:designProcessVerify} shows a strong agreement between representations. Comparing the output generated by Cartographer to the results from other plotting software, where applicable, is a key step in sense making and verifing the results agree with the already established predictions of \gls{gr}. As more complex expressions are represented and interpreted by Cartographer, this stage becomes more time consuming due to the increased chance for mistakes in derivation and/or implementation.
+While the example shown in Figure \ref{fig:weightedGraph} is simplistic, the underlying heuristic of $A^*$ will not increase in complexity as the weight graph increases. The algorithm walks through the graph by visiting each node and recording the cost to reach each neighboring node. Once the <i>target</i> node has been reached, the algorithm then sorts through all possible paths by the smallest total cost. Figure \ref{fig:WeightGraph2} represents the same structure but with numeric values for the costs, which allows for a definitive answer to "what is the shortest path from $x_1$ to $x_5$?"
 
-$$\ $$
+\begin{figure}[H]
+    \begin{subfigure}{0.9\textwidth}
+    \centering
+    \scalebox{0.75}{
+        \begin{tikzpicture}[
+                > = stealth, % arrow head style
+                shorten > = 1pt, % don't touch arrow head to node
+                auto,
+                node distance = 3cm, % distance between nodes
+                semithick % line style
+        ]
 
-### Refactor
+        \tikzstyle{every state}=[
+            draw = black,
+            thick,
+            fill = white,
+            minimum size = 4mm
+        ]
 
-Refactoring is a catch-all term for:
+        \node[state] (X1) {$x_1$};
+        \node[state] (X4) [right of=X1] {$x_4$};
+        \node[state] (X2) [above of=X4] {$x_2$};
+        \node[state] (X3) [below of=X4] {$x_3$};
+        \node[state] (X5) [right of=X4] {$x_5$};
+        
+        \draw[-stealth] (X1) -- (X2) node[midway] {$10$};
+        \draw[-stealth] (X1) -- (X3) node[midway] {$2$};
+        \draw[-stealth] (X2) -- (X5) node[midway] {$7$};
+        \draw[-stealth] (X3) -- (X4) node[midway] {$3$};
+        \draw[-stealth] (X4) -- (X5) node[midway] {$5$};
 
-- finding and fixing bugs from the result of adding new code or using existing code differently
-- reorganizing code into logical divisions
-- renaming variables to more clearly denote their purpose
+        \end{tikzpicture}
+    }
+    \end{subfigure}
+    \newline
+    \begin{subfigure}{0.45\textwidth}
+    \centering
+    \scalebox{0.75}{
+        \begin{tikzpicture}[
+                > = stealth, % arrow head style
+                shorten > = 1pt, % don't touch arrow head to node
+                auto,
+                node distance = 3cm, % distance between nodes
+                semithick % line style
+        ]
 
-The following is an example of refactoring the code written in the previous subsections. Recall that the functions and variables were given the same names as their mathematical counterparts:
+        \tikzstyle{every state}=[
+            draw = black,
+            thick,
+            fill = white,
+            minimum size = 4mm
+        ]
 
-``` python
-        def dr_shell(r, M, dr):                   def dt_shell(r, M, dt):
-          from math import sqrt                     from math import sqrt
-          return dr/sqrt(1-(2*M)/r)                 return sqrt(1-(2*M)/r)*dt
-```
+        \node[state] (X2) {$x_2$};
+        \node[state] (X1) [below left of=X2] {$x_1$};
+        \node[state] (X5) [below right of=X2] {$x_5$};
+        
+        \draw[-stealth] (X1) -- (X2) node[midway] {$10$};
+        \draw[-stealth] (X2) -- (X5) node[midway] {$7$};
 
-$$dr_{shell} = \left(1-\frac{2M}{r}\right)^{-\frac{1}{2}} dr, \qquad dt_{shell} = \left(1-\frac{2M}{r}\right)^{\frac{1}{2}} dt$$
+        \end{tikzpicture}
+    }
+    \caption{Path 1: $x_1 \rightarrow x_2 \rightarrow x_5$}
+    \label{fig:2wgb}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+    \centering
+    \scalebox{0.75}{
+        \begin{tikzpicture}[
+                > = stealth, % arrow head style
+                shorten > = 1pt, % don't touch arrow head to node
+                auto,
+                node distance = 3cm, % distance between nodes
+                semithick % line style
+        ]
 
-While the two representations are almost identical, especially for those used to representing math equations in LaTeX, the names of the functions and variables are not *self-narrating*. Therefore, comments denoting the intention and use of each variable are expected.
+        \tikzstyle{every state}=[
+            draw = black,
+            thick,
+            fill = white,
+            minimum size = 4mm
+        ]
 
-``` python
-def dr_shell(r, M, dr):
-  """Returns the proper distance for 'dr' as measured by the shell located at 'r' from a
-   blackhole of mass 'M'. Only valid for r>2M.
+        \node[state] (X1) {$x_1$};
+        \node[state] (X4) [right of=X1] {$x_4$};
+        \node[state] (X3) [below of=X4] {$x_3$};
+        \node[state] (X5) [right of=X4] {$x_5$};
+        
+        \draw[-stealth] (X1) -- (X3) node[midway] {$2$};
+        \draw[-stealth] (X3) -- (X4) node[midway] {$3$};
+        \draw[-stealth] (X4) -- (X5) node[midway] {$5$};
 
-  'M' is the mass of the blackhole in meters
-  'r' is the r-coordinate of the shell
-  'dr' is the length measured by the bookkeeper
-  """
-  from math import sqrt
-  return dr/sqrt(1-(2*M)/r)
+        \end{tikzpicture}   
+    }
+    \caption{Path 2: $x_1 \rightarrow x_3 \rightarrow x_4 \rightarrow x_5$}
+    \label{fig:2wgc}
+    \end{subfigure}
+    \caption{While the first path (Figure \ref{fig:2wgb}) has fewer edges traversed, the total cost is higher than the second path (Figure \ref{fig:2wgc}).}
+    \label{fig:WeightGraph2}
+\end{figure}
 
-def dt_shell(r, M, dt):
-  """Returns the proper time for 'dt' as measured by the shell located at 'r' from a
-   blackhole of mass 'M'. Only valid for r>2M.
-
-  'M' is the mass of the blackhole in meters
-  'r' is the r-coordinate of the shell
-  'dt' is the time measured by the bookkeeper
-  """
-  from math import sqrt
-  return sqrt(1-(2*M)/r)*dt
-```
-
-This, however, is treated as the bare minimum in being a good custodian of the code. Very often comments are not kept up-to-date with the changes to a function[^-21]. Instead, the programming community recommends that the code be self documenting: variable names should be descriptive and offer insight into the type of object they represented and that explicit programming statements are easier to understand than their elegant and brief counter-parts. These *best practices* are recommendations agreed upon by the larger software development community. The Python organization takes this a step further by formally representing their community's best practices in the style guide released as [PEP 8](https://www.python.org/dev/peps/pep-0008/) [6]. By explicitly naming each variable (and function), we can free up the comments to provide a summary of the function's behaviour and reference the derivation of the expression.
-
-[^-21]: An equivalent analogy are the pictures or diagrams included with many problem statements in math and physics. If they are not outright wrong, they end up being deceiving by misrepresenting angles, relative sizes, or trajectories.
-
-``` python
-def get_corresponding_proper_distance_for_shell(
-    shell_r_coordinate,
-    blackhole_mass_in_meters,
-    bookkeeper_distance_measured
-  ):
-  """Returns the proper distance of `bookkeeper_distance_measured` as measured by
-   the shell at `shell_r_coordinate` in Schwarzschild. Only valid for r>2M.
-
-  This is the implementation of Equation $\ref{ShellDistance}$ from the Thesis.
-  Alternatively, this is derived and given in 'Exploring Black Holes' by E.F Taylor
-  and J. A. Wheeler as Equation 12 from Page 2-22. Reference: [1].
-  """
-  from math import sqrt
-  return bookkeeper_distance_measured/sqrt(
-      1 - (2*blackhole_mass_in_meters)/shell_r_coordinate
-    )
-
-def get_corresponding_proper_time_for_shell(
-    shell_r_coordinate,
-    blackhole_mass_in_meters,
-    bookkeeper_time_measured
-  ):
-  """Returns the proper time of `bk_time_measured` as measured by the shell at
-  `shell_r_coordinate` in Schwarzschild. Only valid for r>2M.
-
-  This is the implementation of Equation $\ref{ShellTime}$ from the Thesis.
-  Alternatively, this is derived and given in 'Exploring Black Holes' by E.F Taylor
-  and J. A. Wheeler as Equation 19 from Page 2-23. Reference: [1].
-  """
-  from math import sqrt
-  return sqrt(1 - (2*blackhole_mass_in_meters)/shell_r_coordinate)
-    * bookkeeper_time_measured
-```
-
-$$\ $$
-
-## Differential Scattering {#diffScatt}
-
-> TODO: Add description once Cartographer is generating content for Section \ref{scattering} and I understand it better.
+In Cartographer, the edge cost for radial neighbors (same $\phi$, different $r$) is given by the action, whereas for $\phi$ neighbors, the cost of change in angular momentum is used. While the specific implementation of $A^*$ is discussed in Section \ref{simulatedPaths}, the underlying concept is unchanged.
 
 \pagebreak
 
@@ -747,6 +717,8 @@ Since $r_{measured}$ and $\lambda_{emitted}$ are constants, Equation \ref{eqn:Ra
 \end{figure}
 
 As mentioned in the introduction, in moving from the realm of \gls{sr} to \gls{gr}, we lost the notion of a *global* velocity. This is an underdetermined system of equations and can only provide insight into the radial speed and direction of the lightbulb observed by $r_m$ for a given ratio of doppler redshifting, $\lambda_e / \lambda_m$. Since this ratio is non-constant, as the shell frames observe increasing speed, it is impossible to provide a complete answer to the prompt.
+
+> **TODO:** Scrap? Null result?
 
 \pagebreak
 
@@ -1102,7 +1074,62 @@ $$\ $$
 
 # Conclusions
 
-> TODO: Did Cartographer do what it set out to?
+> TODO: Take inspiration from answering brother's questions and use it to help structure concepts for conclusion
+
+My Brother - 04/21/2022
+I missed why there's a difference in the first place.  Is it just to see the spirals?  I assume even with a different algorithm they'd start at the same point
+
+Me — 04/21/2022
+they start at the same point, but purple is constrained to move only to nearest neighbors at each step, which can lead to extra orbits that shouldn't be there
+like in this case, where the lattice's resolution doesn't allow for smaller steps
+
+My Brother — 04/21/2022
+oh, Aster is A*, I thought it was some physicist's name
+Astar and Verlet, the famous astronomer duo 
+what was the thesis proposal again?  trying to find a performant and efficient approximation?
+
+Me — 04/21/2022
+if I switch to Dijkstra's, I can probably remove some of that inaccuracy due to resolution
+the goal was to create a framework that created visualizations of motion in curved spacetime
+it didn't need to do the pathfinding side of things, but I wanted to use the lattice that was being created to see if the geometry would be able to tell an object how it should move
+overall, it does goes physical answers (as long as the resolution isn't too awkward), but does at the very least exclude the extreme unphysical ones such as moving into the horizon and back out, or escaping when it shouldn't
+an example of the lattice's resolution giving an unphysical path - its supposed to be elliptical, not helical
+Image
+
+Me — 04/21/2022
+its more of a pedagogical venture than trying to discover new stuff
+with the design and language, future undergrads can take this and specify initial conditions and get a view of:
+- how specifying different resolutions in r and phi can lead to things that aren't outright wrong, but not be descriptive of what should happen
+- how varying initial conditions can give expected or unexpected paths for motion
+basically, a much more approachable and easier to tinker with version than trying to cross compare various 2-d plots and interpret what will happen for various quantities
+
+My Brother — 04/21/2022
+so you're intentionally trying to say "this graph is somewhat incorrect so keep that in mind when simplifying your math"?
+
+Me — 04/21/2022
+I think its something I'll mention; we typically expect the model to do something crazy if we ask it to do something that isn't physical. More often than not, the model doesn't explode but more like fail silently
+Image
+this is basically all that's given to talk about different orbits
+after sufficient time, you can develop an intuition on what's going to happen for an initial energy, but what makes part of this worse is that V/m depends on the object's angular momentum, and so its shape changes as well. This isn't enough, as is, to truly inform you about what the motion looks like in Schwarzschild
+and, as far as I know, these plots don't exist for an object without angular momentum but approaching the black hole with some offset such that its not a direct radial path inwards (think of gravitational sling shot maneuver from Far Scape)
+not super novel, just helping pave the way for others in the future (and deepen my understanding of the concepts)
+
+My Brother — 04/21/2022
+no, I get that part.  I just am stuck on the part where you have two paths and one seems more accurate because it uses detailed math while the other was an approximation
+i.e. was there some reason behind looking and displaying A* or other pathfinding algorithms?
+versus simply showing the brown path
+
+Me — 04/21/2022
+I guess you could have done the numeric integration as a standalone, since it is essentially external to the discretized spacetime. So you'd have to generate a visualization of the black hole in some variation to get additional context.
+there was a stretch goal in the proposal to take this underlying framework and add it to the protostar generation models, and in that case you'd need the pathfinding bit
+
+My Brother — 04/21/2022
+I see
+
+Me — 04/21/2022
+its not perfectly setup up such that you can swap things out with inheritance, but its fairly close
+and i'll most likely tinker with this for fun in the future with getting that to work; so you can see how changing the geometry of spacetime alters the paths
+oh, thats the other thing: the numeric integration (brown) only describes paths for objects in free fall; so if we move to the slightly more complicated curved spacetime where the blackhole has a charge and you wanted to ask about the path a charged particle would take - brown no longer applies
 
 $$\ $$
 
@@ -1179,7 +1206,6 @@ features/OrbitsCatalog (accessed January 30, 2022).
 [7] G. van Rossum, Guido; Warsaw, Barry; Coghlan, Nick. "PEP 8 -- Style Guide for Python Code." pythong.org. https://www.python.org/dev/peps/pep-0008/ (accessed December 1, 2021)
 
 <br />
-
 
 \pagebreak
 
