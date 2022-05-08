@@ -268,112 +268,6 @@ We first review the concepts of proper time, proper distance, and geodesics in \
 
 ## A Primer on Spacetime and Relativity {#primer}
 
-### Old
-
-As we move into more complex but accurate formulations of relativity, we lose properties that can be taken for granted in the more intuitive (but less accurate) descriptions. Asking simple questions like "how much time elapsed between when they threw the ball and it hit the ground?" or "how far did the ball fly?" become increasingly difficult to answer. In special relativity, we measure the spacetime separation between events, not space and time separately. Mathematically, this corresponds to a transition from measurements using the Pythagorean theorem,
-
-\begin{equation}\label{eqn:pythag}
-z = \sqrt{x^2 + y^2},
-\end{equation}
-
-within an Euclidean geometric model to the hyperbolic distance formula, 
-
-\begin{equation}\label{eqn:hyperDistance}
-z = \sqrt{x^2 - y^2},
-\end{equation}
-
-in a non-Euclidean space, where $x$, $y$, and $z$ are positive real numbers representing physical lengths.
-
-From this, the spacetime separation measured by any reference frame--between two events to be only temporal or only spatial--is given the respective label of proper time or proper distance. In the two dimensional Minkowski geometric model for flat spacetime, $\mathbb{M}^2$, the **line element**--how spacetime separation is measured--takes the form of 
-
-\begin{equation}\label{eqn:m2LineElement}
-  ds^2 = - c^2dt^2 + dx^2.
-\end{equation}
-
-In informal language, Equation \ref{eqn:m2LineElement}, is sometimes reffered to as the *metric* [3]. More specifically, the metric, denoted by $g$, is the tool that describes how to resolve the inner product between basis 1-forms. While we generally avoid disucssing operations from different geometry in this paper, it is worth the brief detour to note where the differences in signs of the line element come from. Misner, Thorne, and Wheeler devote the inside cover of *Gravitation* [4] to display the most common set of choices for how $g$ resolves the product of basis 1-forms. In this paper, we will adopt the practice of E.F Taylor and J. A. Wheeler by using the $-+++$ signature, such that the time direction carries the negative sign. In more detail, Equation \ref{eqn:m2LineElement} is given by
-
-\begin{equation}\label{eqn:m2LineElementExplicit}
-ds^2 = g(d\vec{r},d\vec{r}) = c^2 dt^2 g(\hat{t},\hat{t}) + dx^2 g(\hat{x},\hat{x}) = -c^2 dt^2 + dx^2.
-\end{equation}
-
-We also adopt the shorthand of $\tau$ and $\sigma$ to signify proper time and distance, respectively, as well as natural units[^-1]. Therefore, in $\mathbb{M}^2$, **proper time** is where 
-
-\begin{equation}\label{eqn:minkowsiProperTime}
-  d\tau^2 = -ds^2 = dt^2
-\end{equation}
-
-and **proper distance** is
-
-\begin{equation}\label{eqn:minkowsiProperDistance}
-  d\sigma^2 = ds^2 = dx^2.
-\end{equation}
-
-[^-1]: This corresponds to setting the magntiude of various physical constants, such as the speed of light, to unity in order to simplify the visual appearance of equations.
-
-Notably, there exists a scaling factor, $\gamma$, that corresponds to a length contraction and/or a time dilation between reference frames such that the measurements of proper time and proper distance can be measured by everyone. The behaviour of this property is called invariance and is crucial to determining what other observers in spacetime see. While \gls{gr} does introduce another set of length contraction and time dilation, the notions of proper time and distance remain the same, but take on a different mathematical representation. The fact that we can express both (\gls{sr} and \gls{gr}) sets of simultaneously and independently is crucial and explored more in-depth in Section \ref{radialShellSpeed}.
-
-In the Schwarzschild geometric model, we consider spacetime to be curved due to the presence of a massive object with spherical symmetry. The gravitional field exerted by this object can be fully described by this curvature in an analogous fashion as to how electrostatic potential, $V(\vec{r})$, can describe the electric field $\vec{E}$. Unlike potential, it is very difficult to visually represent the features of the curved four dimensional spacetime in two dimensional projections and before we can introduce some attempts to visualize these properties, some additional notation is required.
-
-As mentioned previously, \gls{sr} requires we treat all reference frames[^-2] equally: any frame moving with the same relative velocity as another will measure the same spacetime seperation between events (without corrections). With the introduction of curvature, not all reference frames agree on what they measure. Notably, we have three major *families* of frames now: shell observers, the bookkeeper, and the rain frame. While Section \ref{rainAndHail} will elaborate on the **rain frame**, for now we treat it synonmously with the intertial reference frame of an object free falling radially inward. **Shell observers** represent reference frames of constant distance, $r$-coordinate, or time, $t$. Finally, the **Bookkeeper** (BK), represents the set of frames infintely far away from the influence of the gravitational source and conduct their measurements as if in flat space.
-
-[^-2]: Recall that an intertial reference frame describes a region of space that follows Newton's First Law of Motion [6].  
-
-Due to Schwarzschild's spherical symmetry, we naturally adopt a version of spherical coordinates. The important difference is in how we measure distance from the origin. For example, consider the hyperbolic triangles in Figure \label{fig:schwarzTriangle} which show how the *radial* distance from the massive object, $M$, changes how we measure things versus someone at a different $r$-coordinate.
-
-\begin{figure}[H]
-  \begin{subfigure}{.5\textwidth}
-    \centering
-    \scalebox{1.15}{
-      \begin{tikzpicture}
-
-      % create coordinates
-      \coordinate (O) at (0,0);
-      \coordinate (L) at (5,0);
-      \coordinate (P) at (0,-2);
-
-      % Construct triangle
-      \draw (P) -- (L) node [midway, below, sloped] {$dr_{shell} = \frac{dr_{BK}}{\sqrt{1-\frac{2M}{r_{shell}}}}$};
-      \draw (O) -- (L) node [midway, above] {$dr_{BK}$};
-      \draw (O) -- (P) node [midway, left] {$\sqrt{1-\frac{2M}{r_{shell}}}$};
-
-      \end{tikzpicture}
-    }
-    \caption{Distance}
-    \label{fig:schwarzDistanceTriangle}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{.5\textwidth}
-    \centering
-    \scalebox{1.15}{
-      \begin{tikzpicture}
-
-      % create coordinates
-      \coordinate (O) at (0,0);
-      \coordinate (L) at (5,0);
-      \coordinate (P) at (0,-2);
-
-      % Construct triangle
-      \draw (P) -- (L) node [midway, below, sloped] {$dt_{BK}$};
-      \draw (O) -- (L) node [midway, above] {$dt_{shell} = \sqrt{1-\frac{2M}{r_{shell}}}dt_{BK}$};
-      \draw (O) -- (P) node [midway, left] {$\sqrt{1-\frac{2M}{r_{shell}}}$};
-
-    \end{tikzpicture}
-    }
-    \caption{Time}
-    \label{fig:schwarzTimeTriangle}
-  \end{subfigure}
-  \caption{The two hyperbolic triangles represent the difference between physical quantites and their geometric coordinates. Extending a latticework of these constructions for each coordinate allows for the creation of embedding diagrams like Figure \ref{fig:Embedding}, which offer a direct visual representation of the underlying curvature.}
-  \label{fig:schwarzTriangle}
-\end{figure}
-
-Since the physical distance, denoted as $dr_{shell}$, increases as we approach $M$, we must exercise caution in how we define our geometric location[^-3]. As a result, we measure the circumference of our concentric shell and divide by $2\pi$ to obtain the **$\mathbf{r}$-coordinate**. This process is analogous to tracing out great circles on a sphere which leads us to the next important geometric object useful in describing paths: **geodesics** are the lines of spacetime. Mathematically, these are *straight* lines (constant speed) in this non-Euclidean geometry[8]. Physically, these lines correspond to paths through spacetime of objects moving at constant velocity. It is very important to note that the gravitational field is a description of the curvature of spacetime, and that gravity is not treated as an external force in \gls{gr}.
-
-[^-3]: Consider how far (radially) away a neighboring shell would be if $r$ was very close to $2M$. The use of physical distance to be synonymous with our geometric location works perfectly fine in Euclidean geometries, but here in Schwarzschild, having points that are almost infinitely far away when they are neighbors is not useful to describe positions.
-
-$$\ $$
-
-### New
-
 Before introducing the concepts and geometric model of \gls{gr} examined in this project, we first briefly recap the flat spacetime of \gls{sr}. As mentioned in the introduction, when we  attempt to model the physics of objects moving at significant fractions of the speed of light, Galilean relativity is insufficient. This problem is typically motivated to students by recounting Dr. Albert Einstein's thought experiment regarding two light clocks: one on a train platform, the other aboard a moving train.
 
 Supposing two general assumptions: (1) the physical laws are consistent everywhere in the universe and (2) the speed of light is constant, we are forced to conclude that the Galilean method of measuring distance with the Pythagorean Theorem is no longer applicable. The "Surveyor's Parable" offers further motivation to measure time and space using the same dimensions: length. Time is multiplied by the speed of light, $c$, and we move from using the Euclidean geometric model which measures distance with \begin{equation}\label{eqn:pythagTheoremDistance} s = \sqrt{x^2 + y^2} \end{equation} to a non-Euclidean model. In this formalism, the hyperbolic distance formula, \begin{equation}\label{eqn:hyperbolicDistance} s^2 = x^2 - (ct)^2, \end{equation} is used. The two dimensional model described by Equation \ref{eqn:hyperbolicDistance} is called Minkowski spacetime. Equation \ref{eqn:hyperbolicDistance} is constructed from basis differentials and is called the **line element**:
@@ -502,6 +396,26 @@ In cases where the motion is only radial, the convention is to set the azimuthal
 \end{figure}
 
 The first value of angular momentum that supports a circle orbit is $L/m=\sqrt{12}$, located at $r=6M$ and is unstable: any change to the energy of the stone will cause its orbit to decay towards the event horizon. For stones with angular momentum greater than or equal to $4$, the effective potential has a prominent peak. If the stone's energy per unit mass, $E/m$, is less than the value of this local maximum for the effective potential, the stone will orbit the massive object with the corresponding minimum radius and not be captured by the event horizon. At $L/m=4$, the stone can maintain a stable circular orbit at $r=12M$. If the stone has an energy value greater than the local minimum of the effective potential (but less than the peak), the stone will have an eliptical orbit. Finally, in the case where the peak of $V/m$ is greater than unity, and the stone starts with $E/m=1$ (free fall starting at rest, collocated with the bookkeeper), the stone's orbit will be hyperbolic: coming in from $r\rightarrow\infty$, partially rotating about the massive object, and then escaping back out to the bookkeeper.
+
+To offer a more intuitive representation of effective potential versus $r$-coordinate, we rotate the plots of Figure \ref{fig:veffective_vs_r} about the azimuthal axis and create a similar representation to the embedding diagrams of Figure \ref{fig:Embedding} with Figure \ref{fig:vEff3d}. However, with non-zero angular momentum, a stone has two potential barriers it must cross as $V_{eff}$ adopts a valley-like shape for $r$-coordinates in the interval of $(6M, 25M)$. If the stone doesn't have enough energy, it will have a hyperbolic path and perform a partial orbit before escaping to infinity. If the stone starts at rest in this valley, $E/m > V_{eff}$ for $r\in (6M, 25M)$, the stone will orbit between the two extreme $r$-coordinates bound where $E/m = V/m$. If the stone has energy greater than the peak $V/m$, it will perform a parabolic orbit and be captured by the event horizon.
+
+\begin{figure}[H]
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=7.5cm,keepaspectratio,]{effective_potential_L0.png}
+      \caption{$L/m=0$}
+      \label{fig:sub-first}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=7.5cm,keepaspectratio,]{effective_potential_L4.png}
+      \caption{$L/m=4$}
+      \label{fig:sub-first}
+    \end{subfigure}
+  \caption{Comparision of how the effective potential changes as the stone's angular momentum increases. }
+  \label{fig:vEff3d}
+\end{figure}
 
 \pagebreak
 
@@ -694,111 +608,6 @@ While the example shown in Figure \ref{fig:weightedGraph} is simplistic, the und
 \end{figure}
 
 In Cartographer, the edge cost for radial neighbors (same $\phi$, different $r$) is given by the action, whereas for $\phi$ neighbors, the cost of change in angular momentum is used. While the specific implementation of $A^*$ is discussed in Section \ref{pathfinding}, the underlying concept is unchanged.
-
-\pagebreak
-
-# The Mapping of Schwarzschild {#schwarzMaps}
-
-## Distance, Time, and Embedding Diagrams {#distanceTimeAndEmbedding}
-
-The simplest visualizations to help generate intuition about curved spacetime come from plotting how measurements of space and time are affected by radial proximity ($r$-coordinate) to the massive object ($M$) in question. This is done by taking the line element of Schwarzschild geometry, 
-
-\begin{equation}\label{eqn:SchwarzLine}
-ds^2 = -f(r)^2 dt^2 + \frac{dr^2}{f(r)^2},
-\end{equation}
-
-and solving for spacetime measurements conducted by shell observers of constant $r$ or $t$. Note that we have introduced the shorthand of $f(r)$ to represent the scale factor of
-
-\begin{equation}\label{eqn:SchwarzScale}
-\sqrt{1-\frac{2M}{r}}
-\end{equation}
-
-for ease of presentation. Shell observers of constant $r$, $dr=0$, measure the proper time by 
-
-\begin{equation}\label{eqn:ShellTime}
-d\tau = dt_{shell} = \sqrt{1-\frac{2M}{r_{shell}}} dt_{BK}.
-\end{equation}
-
-By plotting Equation \ref{eqn:ShellTime} as a function of $r$, we can graphically represent the effects of time dilation due to proximity of $M$. However, plotting Equation \ref{eqn:ShellTime} in its current form does not immediately answer the question posed in Figure \ref{fig:gpsDemonstration}. To answer the question of "How much slower is a clock tick at the radius of the Earth versus a clock at the orbital height of a \gls{gps}?", it is best to solve Equation \ref{eqn:ShellTime} for $dt_{BK}$ and the plot of that result is shown in Figure \ref{fig:ShellTime}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=10cm,keepaspectratio,]{curvature_diagram_time.jpg}
-    \caption{ Equation \ref{eqn:ShellTime} solved for $dt_{BK}$ and plotted with the domain of $r\in$[$3M$,$10M$]. Note as $r$ approaches the event horizon, the gravitational time dilation approaches infinity.}
-    \label{fig:ShellTime}
-\end{figure}
-
-An equivalent description for gravitational length contraction can also be derived from the line element by considering surfaces of constant time. These shell observers of constant $t$ measure proper distance by 
-
-\begin{equation}\label{eqn:ShellDist}
-d\sigma = dr_{shell} =  \frac{dr_{BK}}{f(r_{shell})},
-\end{equation}
-
-which can be used to create the complmentary plot of Figure \ref{fig:ShellTime} as shown in Figure \ref{fig:ShellDist}. These functions, given by Equations \ref{eqn:ShellTime} and \ref{eqn:ShellDist}, are then often revolved about the origin to create embedding diagrams. These three-dimensional surfaces are used to help construct an intuition about what it means for spacetime to be curved, as Figures \ref{fig:Embedding-Time} and \ref{fig:Embedding-Distance} demonstrate.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=10cm,keepaspectratio,]{curvature_diagram_length.jpg}
-    \caption{Equation \ref{eqn:ShellDist} solved for $dr_{BK}$ and plotted with the domain of $r\in$[$3M$,$10M$]. Note as $r$ approaches the event horizon, the length of an object must approach infinity to be finite from the Bookkeeper's view.}
-    \label{fig:ShellDist}
-\end{figure}
-
-\begin{figure}[H]
-    \begin{subfigure}{.5\textwidth}
-      \centering
-      \includegraphics{embedding_diagram_time.png}
-      \caption{Time}
-      \label{fig:Embedding-Time}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{.5\textwidth}
-      \centering
-      \includegraphics{embedding_diagram_distance.png}
-      \caption{Distance}
-      \label{fig:Embedding-Distance}
-    \end{subfigure}
-  \caption{The two-dimensional projection of the three-dimensional surfaces describe by revolving Equations \ref{eqn:ShellTime} and \ref{eqn:ShellDist} about the origin. Each embedding diagram shows cross-sections for surfaces of constant $t$ and $r$ by using height to represent the strength of curvature at each surface. The $\theta$ coordinate is surpressed through spherical symmetry by taking cross-sections in the equitorial plane($\theta=\pi/2$).}
-  \label{fig:Embedding}
-\end{figure}
-
-\pagebreak
-
-## Angular Momentum, Effective Potential, and Paths {#vEff}
-
-> TODO: Potential vs r-coordinate
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=15cm,keepaspectratio,]{veff.png}
-    \caption{The plot of $V_{eff}$ as a function of $r$-coordinate. The dashed function is the Newtonian description of the gravitational potential with the notable behaviour that an in-falling object with non-zero angular momentum cannot reach the horizon ($r=2M$). }
-    \label{fig:EffectivePotential}
-\end{figure}
-
-Figure \ref{fig:vEff3d} shows what the effective potential looks like rotated about the azimutal axis (demonstrating symmetery in $phi$). With no angular momentum, the effective potential plot resembles an embedding diagram, telling all stones to fall radially inward. However, with non-zero angular momentum, a stone has two potential barriers it must cross as $V_{eff}$ adopts a valley-like shape for $r$-coordinates in the interval of $(6M, 25M)$. If the stone doesn't have enough energy, it will have a hyperbolic path and perform a partial orbit before escaping to infinity. If the stone starts at rest in this valley, $E/m > V_{eff}$ for $r\in (6M, 25M)$, the stone will orbit between the two extreme $r$-coordinates bound where $E/m = V/m$. If the stone has energy greater than the peak $V/m$, it will perform a parabolic orbit and be captured by the event horizon.
-
-\begin{figure}[H]
-    \begin{subfigure}{.5\textwidth}
-      \centering
-      \includegraphics[width=7.5cm,keepaspectratio,]{effective_potential_L0.png}
-      \caption{$L/m=0$}
-      \label{fig:sub-first}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{.5\textwidth}
-      \centering
-      \includegraphics[width=7.5cm,keepaspectratio,]{effective_potential_L4.png}
-      \caption{$L/m=4$}
-      \label{fig:sub-first}
-    \end{subfigure}
-  \caption{Comparision of how the effective potential changes as the stone's angular momentum increases. }
-  \label{fig:vEff3d}
-\end{figure}
-
-$$\ $$
-
-### Pathfinding in Schwarzschild {#pathfinding}
-
-> TODO: discuss how the algorithm operates
 
 \pagebreak
 
