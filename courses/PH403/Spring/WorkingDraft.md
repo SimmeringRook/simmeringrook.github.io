@@ -464,11 +464,44 @@ By constructing concentric hypersurfaces of constant $r$ and setting each shell'
   \label{fig:Embedding}
 \end{figure}
 
-We conclude this brief introduction to \gls{gr} with a disucssion on the equations of motion in Schwarzschild geometry. Since gravity is *baked* into spacetime by this curvature, objects in free fall follow geodesics. Adopting the nomenclature from Taylor and Wheeler, we will refer to these free falling objects as **stones**. As mentioned with Equation \ref{eqn:minkowskiTimelike}, stones will move through Schwarzschild spacetime on time-like geodesics, and the line element from which the equations of motion will be derived changes from Equation \ref{eqn:schwarzLine} to \begin{equation}\label{eqn:schwarzTimelike} {d\tau}^2 = \left(1-\frac{2M}{r}\right)(dt)^2 - \frac{dr^2}{1-\frac{2M}{r}} - r^2{d\phi}^2, \end{equation} where we use spherical symmetry to simplify the disucssion to the equitorial plane ($\theta=\pi/2$).
+We conclude this brief overview of \gls{gr} with a disucssion on the equations of motion in Schwarzschild geometry. Since gravity is curvature, objects in free fall follow geodesics. Adopting the nomenclature from Taylor and Wheeler, we refer to these free falling objects as **stones**. As mentioned with Equation \ref{eqn:minkowskiTimelike}, stones will move through Schwarzschild spacetime on time-like geodesics, and the line element from which the equations of motion will be derived changes from Equation \ref{eqn:schwarzLine} to \begin{equation}\label{eqn:schwarzTimelike} {d\tau}^2 = \left(1-\frac{2M}{r}\right)(dt)^2 - \frac{dr^2}{1-\frac{2M}{r}} - r^2{d\phi}^2, \end{equation} where we use spherical symmetry to simplify the disucssion to the equitorial plane ($\theta=\pi/2$).
 
-In cases where the motion is only radial, the convention is to set the azimuthal angle of $\phi$ to zero. With that, we only need to solve Equation \ref{eqn:schwarzTimelike} for $dr/d\tau$ and this motion is examined in Section \ref{radialMotion}. For paths with non-zero angular momentum, there is an effective potential which describes the orbit the stone will take. This effective potential takes the form \begin{equation}\label{eqn:veffective} \left( \frac{V}{m} \right)^2 = \left(1-\frac{2M}{r}\right)\left(1+\frac{(L/m)^2}{r^2}\right), \end{equation} where $L/m$ is the angular momentum per unit mass of the stone.
+In cases where the motion is only radial, the convention is to set the azimuthal angle of $\phi$ to zero. With that, we only need to solve Equation \ref{eqn:schwarzTimelike} for $dr/d\tau$ and this motion is examined in Section \ref{radialMotion}. For paths with non-zero angular momentum, there is an effective potential which describes the orbit the stone will take. This effective potential takes the form \begin{equation}\label{eqn:veffective} \left( \frac{V}{m} \right)^2 = \left(1-\frac{2M}{r}\right)\left(1+\frac{(L/m)^2}{r^2}\right), \end{equation} where $L/m$ is the angular momentum per unit mass of the stone. Figure \ref{fig:veffective_vs_r} highlights the dependence on $L/m$ with $V/m$ plotted versus $r$-coordinate for significant values of $L/m$.
 
+\begin{figure}[H]
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics{veff_vs_r_L0.jpg}
+      \caption{$L/m=0$}
+      \label{fig:veffective_vs_r_L0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics{veff_vs_r_Lsqrt(12).jpg}
+      \caption{$L/m=\sqrt{12}$}
+      \label{fig:veffective_vs_r_Lsqrt(12)}
+    \end{subfigure}
+    \newline
+    \vspace{0.5cm}
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics{veff_vs_r_L4.jpg}
+      \caption{$L/m=4$}
+      \label{fig:veffective_vs_r_L4}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics{veff_vs_r_L45.jpg}
+      \caption{$L/m>4$}
+      \label{fig:veffective_vs_r_L45}
+    \end{subfigure}
+  \caption{Effective potential versus $r$-coordinate. For the case of zero angular momentum, a stone following a radial geodesic with any energy value will travel directly towards event horizon. The dotted red lines for Figures \ref{fig:veffective_vs_r_Lsqrt(12)}, \ref{fig:veffective_vs_r_L4}, and \ref{fig:veffective_vs_r_L45} denote the $r$-coordinate for a circular orbit, if the stone's energy per unit mass is equal to the effect potential.}
+  \label{fig:veffective_vs_r}
+\end{figure}
 
+The first value of angular momentum that supports a circle orbit is $L/m=\sqrt{12}$, located at $r=6M$ and is unstable: any change to the energy of the stone will cause its orbit to decay towards the event horizon. For stones with angular momentum greater than or equal to $4$, the effective potential has a prominent peak. If the stone's energy per unit mass, $E/m$, is less than the value of this local maximum for the effective potential, the stone will orbit the massive object with the corresponding minimum radius and not be captured by the event horizon. At $L/m=4$, the stone can maintain a stable circular orbit at $r=12M$. If the stone has an energy value greater than the local minimum of the effective potential (but less than the peak), the stone will have an eliptical orbit. Finally, in the case where the peak of $V/m$ is greater than unity, and the stone starts with $E/m=1$ (free fall starting at rest, collocated with the bookkeeper), the stone's orbit will be hyperbolic: coming in from $r\rightarrow\infty$, partially rotating about the massive object, and then escaping back out to the bookkeeper.
 
 \pagebreak
 
