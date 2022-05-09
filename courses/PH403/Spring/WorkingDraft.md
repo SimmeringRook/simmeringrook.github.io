@@ -406,7 +406,7 @@ To offer a more intuitive representation of effective potential versus $r$-coord
       \centering
       \includegraphics[width=7.5cm,keepaspectratio,]{effective_potential_L0.png}
       \caption{$L/m=0$}
-      \label{fig:sub-first}
+      \label{fig:vEff3d_noL}
     \end{subfigure}
     \hfill
     \begin{subfigure}{.5\textwidth}
@@ -505,7 +505,7 @@ The $A^*$ search algorithm is a heuristic method for navigating graphs. Two comm
     \label{fig:weightedGraph}
 \end{figure}
 
-While the example shown in Figure \ref{fig:weightedGraph} is simplistic, the underlying heuristic of $A^*$ will not increase in complexity as the weight graph increases. The algorithm walks through the graph by visiting each node and recording the cost to reach each neighboring node. Once the target node has been reached, the algorithm then sorts through all possible paths by the smallest total cost. Figure \ref{fig:WeightGraph2} represents the same structure but with numeric values for the costs, which allows for a definitive answer to "what is the shortest path from $x_1$ to $x_5$?"
+The algorithm walks through the graph by visiting each node and recording the cost to reach each neighboring node. Once the target node has been reached, the algorithm then sorts through all possible paths by the smallest total cost. Figure \ref{fig:WeightGraph2} represents the same structure but with numeric values for the costs, which allows for a definitive answer to "what is the shortest path from $x_1$ to $x_5$?"
 
 \begin{figure}[H]
     \begin{subfigure}{0.9\textwidth}
@@ -609,7 +609,56 @@ While the example shown in Figure \ref{fig:weightedGraph} is simplistic, the und
     \label{fig:WeightGraph2}
 \end{figure}
 
-In Cartographer, the edge cost for radial neighbors (same $\phi$, different $r$) is given by the action, whereas for $\phi$ neighbors, the cost of change in angular momentum is used. While the specific implementation of $A^*$ is discussed in Section \ref{pathfinding}, the underlying concept is unchanged.
+While the example shown in Figure \ref{fig:weightedGraph} is simplistic, the underlying procedure of $A^*$ will not increase in complexity as the weighted graph increases. Figure \ref{fig:cartographerGraph} provides an example of how $A^*$ treats navigating through the graph constructed by the `Latticework` object for a stone travelling counter-clockwise.
+
+\begin{figure}[H]
+\centering
+    \scalebox{0.75}{
+        \begin{tikzpicture}[
+                    > = stealth, % arrow head style
+                    shorten > = 1pt, % don't touch arrow head to node
+                    auto,
+                    node distance = 3cm, % distance between nodes
+                    semithick % line style
+            ]
+
+            \tikzstyle{every state}=[
+                draw = black,
+                thick,
+                fill = white,
+                minimum size = 4mm
+            ]
+
+            \node[state] (R0P0) {$r_0, \phi_0$};
+            \node[state] (R0P11) [right of=R0P0] {$r_0, \phi_{-1}$};
+            \node[state] (R0P1) [left of=R0P0] {$r_0, \phi_{1}$};
+            \node[state] (R1P0) [above of=R0P0] {$r_1, \phi_0$};
+            \node[state] (R1P11) [right of=R1P0] {$r_1, \phi_{-1}$};
+            \node[state] (R1P1) [left of=R1P0] {$r_1, \phi_{1}$};
+            \node[state] (R11P0) [below of=R0P0] {$r_{-1}, \phi_0$};
+            \node[state] (R11P11) [right of=R11P0] {$r_{-1}, \phi_{-1}$};
+            \node[state] (R11P1) [left of=R11P0] {$r_{-1}, \phi_{1}$};
+            
+            \node (L0) [below of=R11P11] {$\ $};
+            \node (L1) [below of=R11P1] {$\ $};
+
+            \draw[-stealth] (R0P0) -- (R0P11);
+            \draw[-stealth] (R0P0) -- (R0P1);
+            \draw[-stealth] (R0P0) -- (R1P11);
+            \draw[-stealth] (R0P0) -- (R1P1);
+            \draw[-stealth] (R0P0) -- (R11P11);
+            \draw[-stealth] (R0P0) -- (R11P1);
+            \draw[-stealth] (R0P0) -- (R1P0);
+            \draw[-stealth] (R0P0) -- (R11P0);
+
+            \draw[-stealth] (L0) -- (L1) node[midway, below]{$\frac{L}{m}>0$};
+        \end{tikzpicture}
+    }
+    \caption{In this example, the stone's current position would be at the center node: $(r_0, \phi_0)$. Each of the other nodes represent possible neighbors of the current position. The graph does not explicitly disallow travel in the clockwise direction (to the right). The edge costs are calculated and used to determine which of the possible neighbors the stone is permitted to actually travel to. }
+    \label{fig:cartographerGraph}
+\end{figure}
+
+In Cartographer, the edge cost for radial neighbors (same $\phi$, different $r$) is given by the action, which is found by solving Equation \ref{eqn:schwarzTimelike} for $d\tau$. For $\phi$ neighbors, the cost of change in angular momentum is used. This allows the underlying graph to only be generated once, and only requires a recalculation of the edges if the stone's properties are changed. For the free fall motion examined in this project, the stone's properties of $E/m$ and $L/m$ are constant. Therefore, in the example shown in Figure \ref{fig:cartographerGraph}, the nodes with $\phi_0$ and $\phi_{-1}$ will have total edge costs that rule them out.
 
 \pagebreak
 
@@ -617,7 +666,7 @@ In Cartographer, the edge cost for radial neighbors (same $\phi$, different $r$)
 
 ## Gaining Speed and Radial Geodesics {#radialMotion}
 
-As overviewed in Section \ref{primer}, the equations of motion for an object in free-fall in spacetime are given from the line element. We begin by examining the simplest case of motion in the Schwarzschild geometry: radial timelike geodesics. For this case, we go a step further and examine how motion is observed by different refernce frames by changing the basis differentials used in the line element. The two paths shown in Figure \ref{fig:RainSpeed} correspond to the bookkeeper and to shell observers.
+As overviewed in Section \ref{primer}, the equations of motion for an object in free-fall in spacetime are given from manipulations to Equation \ref{eqn:schwarzTimelike}. We begin by examining the simplest case of motion in the Schwarzschild geometry: radial timelike geodesics. For this case, we go a step further and examine how the speed of the stone is observed by different refernce frames by changing the basis differentials used in the line element. The two paths shown in Figure \ref{fig:RainSpeed} correspond to the bookkeeper and to shell observers.
 
 \begin{figure}[H]
   \centering
@@ -626,67 +675,29 @@ As overviewed in Section \ref{primer}, the equations of motion for an object in 
   \label{fig:RainSpeed}
 \end{figure}
 
-Since we are considering a timelike geodesic with only change in the $r$ and $t$ coordinates, the line element (Equation \ref{eqn:SchwarzLineElement}) simplifies to
+Since we are using natural units, $c$ will not be visible in this radial equation of motion, and so any numeric result must be scaled by $c$ to obtain a dimensionful answer. To obtain the speed of the stone as a function of $r$-coordinate, we substitute the $E/m$ from Equation \ref{eqn:energyPerUnitMass} for $d\tau$ and solve for $dr/dt$. The result is \begin{equation}\label{eqn:radialBK}\frac{dr_{bk}}{dt_{bk}}=-\left(1-\frac{2M}{r}\right)\sqrt{\frac{2M}{r}}. \end{equation} Since Equation \ref{eqn:radialBK} is initially squared, we must add back in the formation of direction by choosing the corresponding sign for the right-hand side. A negative value describes inward motion and a positive describes an escaping stone. As the stone reaches $r=2M$, the first quantity approaches zero, which corresponds to far-away observers observing in-falling objects slowing down as they approach the event horizon and never crossing, as shown in Figure \ref{fig:RainSpeed}.
 
-\begin{equation}\label{eqn:timelikeRadial}
-{d\tau}^2 = \left(1-\frac{2M}{r}\right) {dt_{BK}}^2 - \frac{{dr_{BK}}^2}{\left(1-\frac{2M}{r}\right)}.
-\end{equation}
+To obtain the speed measured by shell observes as the stone passes, we change the basis diferentials from the bookkeeper to a shell observer by substituting in the division of \begin{equation}\label{eqn:ShellDistance} dt_{shell} = \sqrt{1-\frac{2M}{r}} dt \end{equation} by \begin{equation}\label{eqn:ShellTime} dt_{shell} = \sqrt{1-\frac{2M}{r}} dt \end{equation} into the left-hand side of Equation \ref{radialBK}, and obtain \begin{equation}\label{eqn:radialShell}\frac{dr_{shell}}{dt_{shell}}=-\sqrt{\frac{2M}{r_{shell}}}. \end{equation}
 
-To obtain the speed of the stone as a function of $r$-coordinate, $dr_{BK}/dt_BK$, we must substitute an equivalent definition for $d\tau$. This other relation is the energy per unit mass of the stone \cite{EBH} and takes the form of
+As shown in Figure \ref{fig:RainSpeed}, this diverging behaviour has physical consequences. If we give the Bookkeeper the most senstive equipment, they measure any in-falling stone to stop as it reaches the event horizon and would never observe it pass through. In practice, if we model light being emitted by the stone towards the Bookkeeper as continous, the wavelength of light that informs any outside observer that the stone has crossed the horizon will be gravitationally redshifted to an infinite wavelength.
 
-\begin{equation}\label{eqn:SchwarzEnergy}
-\frac{E}{m} = \left(1-\frac{2M}{r}\right)\frac{dt}{d\tau}.
-\end{equation}
-
-We then combine Equations \ref{eqn:SchwarzEnergy} and \ref{eqn:SchwarzLine} by equating them after solving each for proper time. The result is speed (as a multiple of $c$) as a function of $r$-coordinate for the stone, as measured by the Bookkeeper:
-
-\begin{equation}\label{eqn:SchwarzRadBK}
-\frac{dr_{bk}}{dt_{bk}}=-\left(1-\frac{2M}{r}\right)\sqrt{\frac{2M}{r}}.
-\end{equation}
-
-The sign of Equation \ref{eqn:SchwarzRadBK} describes an in-falling (when negative) or an escaping (when postive) object. As the stone reaches $r=2M$, the first quantity approaches zero, which corresponds to far-away observers observing in-falling objects slowing down as they approach the event horizon and never crossing. To obtain the speed measured by shell observes as the stone passes, we substitute in the division of Equation \ref{eqn:ShellDist} by Equation \ref{eqn:ShellTime} into the left-hand side of Equation \ref{SchwarzRadBK}, and obtain
-
-\begin{equation}\label{eqn:SchwarzRadShells}
-\frac{dr_{shell}}{dt_{shell}}=-\sqrt{\frac{2M}{r_{shell}}}.
-\end{equation}
-
-Now that the $1-\frac{2M}{r}$ term is absent, we discover the first disagreement of observations between the different families of observers.
-
-As shown in Figure \ref{fig:RainSpeed}, this diverging behaviour has physical consequences. If we give the Bookkeeper the most senstive equipment, they measure any in-falling object to stop as it reaches the event horizon and would never observe any object passing through. In practice, if we model light being emitted by the stone towards the Bookkeeper as continous, the wavelength of light that informs any outside observer that the stone has crossed the horizon will be gravitationally redshifted to an infinite wavelength. In re-examinating of Figures \ref{fig:ShellTime} and \ref{fig:ShellDist}, if we consider the extreme case as the contraction scaling factor, $\zeta$, approaches $0$, the un-contracted length, $\lambda$, must approach infinity such that the length measured at $r\rightarrow BK$ remains unity as described below:
-
-\begin{equation}\label{eqn:ExampleRedshift}
-\lim_{\zeta\rightarrow 0 ,\ \lambda\rightarrow\infty} \zeta \times \lambda= 1.
-\end{equation}
-
-$$\ $$
-
-### Rain versus Hail {#rainAndHail}
-
-> TODO: Rain frame (rest at infinity) versus Hail frame (initial speed)
+Figures \ref{fig:cartographerRadialTheory} and \ref{fig:cartographerRadialSimulated} show the respective visualizations of the numerical integration and $A^*$ simulated path from Cartographer. The surface underneath both lines is the effective potential for a stone with no angular momentum (Figure \ref{fig:vEff3d_noL}) and agree completely. For this type of motion, the resolution of $r$ and $\phi$ set for the `lattice` only affects how smooth the $A^*$ path and effective potential surface are.
 
 \begin{figure}[H]
-    \begin{subfigure}{.5\textwidth}
-      \centering
-      \includegraphics[width=7.5cm,keepaspectratio,]{theory_and_simulated_L0_V20_elapsed_time.png}
-      \caption{Elapsed proper time}
-      \label{fig:sub-first}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{.5\textwidth}
-      \centering
-      \includegraphics[width=7.5cm,keepaspectratio,]{theory_and_simulated_L0_V20_effective_potential.png}
-      \caption{Effective Potential}
-      \label{fig:sub-first}
-    \end{subfigure}
-  \caption{Comparision of the simulated path (purple) versus the exact path (brown) for a stone starting at rest at $r/M = 20$ with no angular momentum.Both paths use the geodesic equation from the stone's reference frame such that all time coordinates are measure in proper time.}
-  \label{HailSpeed}
+  \centering
+  \includegraphics[width=15cm,keepaspectratio,]{rain_speed.png}
+  \caption{Speed of in-falling object as measured from a series of different reference frames. Note the diverging observations from the Bookkeeper and the Shell Observer as $r_{shell}$ approachs $2M$. The Bookkeeper measures the speed of the stone to be increasing in the region of $r>6M$ before its deceleration to $v=0c$ at the event horizon.}
+  \label{fig:cartographerRadialTheory}
 \end{figure}
 
-> TODO: Introduce geodesic equation and discuss purple's funnel in (a)
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=15cm,keepaspectratio,]{rain_speed.png}
+  \caption{Speed of in-falling object as measured from a series of different reference frames. Note the diverging observations from the Bookkeeper and the Shell Observer as $r_{shell}$ approachs $2M$. The Bookkeeper measures the speed of the stone to be increasing in the region of $r>6M$ before its deceleration to $v=0c$ at the event horizon.}
+  \label{fig:cartographerRadialSimulated}
+\end{figure}
 
 $$\ $$
-
-> TODO: Hail frame
 
 \pagebreak
 
