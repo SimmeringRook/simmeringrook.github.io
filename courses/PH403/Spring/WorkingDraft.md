@@ -10,6 +10,7 @@ geometry:
 toc: true
 toc_depth: 2
 graphics: yes
+bibliography: Sources.bib
 header-includes: |
     \usepackage{graphicx}
     \usepackage{pgfplots}
@@ -39,6 +40,8 @@ header-includes: |
 \onehalfspacing
 \setlength{\parindent}{4em}
 \setlength{\parskip}{1.5em}
+
+[@stars], [@osu], [@ReducingPotable], [@DualFlush, p.14]
 
 \pagebreak
 
@@ -117,7 +120,7 @@ In short, each \gls{gps} satellite periodically transmits location data alongsid
       \tikzstyle{clock}=[circle,draw,minimum size=100,inner sep=0pt]
       \tikzstyle{sign}=[rectangle,minimum width=50,inner sep=0pt]
 
-      \node[sign, scale=3]  (equals) at (0,0)  {=};
+      \node[sign, scale=3]  (equals) at (0,0)  {$\approx$};
       \node[clock]          (GPST)   at (-3,0) {};
       \node[clock]          (GPSSR)  at (3,0)  {};
       \node[sign, scale=3]  (plus)   at (6,0)  {+};
@@ -191,7 +194,7 @@ In short, each \gls{gps} satellite periodically transmits location data alongsid
       \tikzstyle{clock}=[circle,draw,minimum size=100,inner sep=0pt]
       \tikzstyle{sign}=[rectangle,minimum width=50,inner sep=0pt]
 
-      \node[sign, scale=3]  (equals)  at (0,0)  {=};
+      \node[sign, scale=3]  (equals)  at (0,0)  {$\approx$};
       \node[clock]          (EarthT)  at (-3,0) {};
       \node[clock]          (EarthSR) at (3,0)  {};
       \node[sign, scale=3]  (plus)    at (6,0)  {+};
@@ -268,29 +271,29 @@ We first review the concepts of proper time, proper distance, and geodesics in \
 
 ## A Primer on Spacetime and Relativity {#primer}
 
-Before introducing the concepts and geometric model of \gls{gr} examined in this project, we first briefly recap the flat spacetime of \gls{sr}. As mentioned in the introduction, when we  attempt to model the physics of objects moving at significant fractions of the speed of light, Galilean relativity is insufficient. This problem is typically motivated to students by recounting Dr. Albert Einstein's thought experiment regarding two light clocks: one on a train platform, the other aboard a moving train.
+Before introducing the concepts and geometric model of \gls{gr} examined in this project, we first briefly recap the flat spacetime of \gls{sr}. As mentioned in the introduction, when we  attempt to model the physics of objects moving at significant fractions of the speed of light, Galilean relativity is insufficient. This problem is typically motivated to students by recounting Albert Einstein's thought experiment regarding two light clocks: one on a train platform, the other aboard a moving train.
 
-Supposing two general assumptions: (1) the physical laws are consistent everywhere in the universe and (2) the speed of light is constant, we are forced to conclude that the Galilean method of measuring distance with the Pythagorean Theorem is no longer applicable. The "Surveyor's Parable" offers further motivation to measure time and space using the same dimensions: length. Time is multiplied by the speed of light, $c$, and we move from using the Euclidean geometric model which measures distance with \begin{equation}\label{eqn:pythagTheoremDistance} s = \sqrt{x^2 + y^2} \end{equation} to a non-Euclidean model. In this formalism, the hyperbolic distance formula, \begin{equation}\label{eqn:hyperbolicDistance} s^2 = x^2 - (ct)^2, \end{equation} is used. The two dimensional model described by Equation \ref{eqn:hyperbolicDistance} is called Minkowski spacetime. Equation \ref{eqn:hyperbolicDistance} is constructed from basis differentials and is called the **line element**:
+Supposing two modest assumptions: (1) the physical laws are consistent everywhere in the universe and (2) the speed of light is constant, we are forced to conclude that the Galilean method of measuring distance with the Pythagorean Theorem is no longer applicable. The *Parable of the Surveyors* [@SpacetimePhysics] offers further motivation to measure time and space using the same dimensions: length. Time is multiplied by the speed of light, $c$, and we move from using the Euclidean geometric model which measures distance with \begin{equation}\label{eqn:pythagTheoremDistance} s = \sqrt{x^2 + y^2} \end{equation} to a non-Euclidean model. In this formalism, the hyperbolic distance formula, \begin{equation}\label{eqn:hyperbolicDistance} s^2 = x^2 - (ct)^2, \end{equation} is used. The two-dimensional model described by Equation \ref{eqn:hyperbolicDistance} is called Minkowski spacetime. Equation \ref{eqn:hyperbolicDistance} is constructed from basis differentials and is called the **line element**[@Dray, @MTW]:
 
 \begin{equation}\label{eqn:hyperbolicDistance}
 {ds}^2 = {dx}^2 - c^2(dt)^2.
 \end{equation}
 
-For the purposes of this paper and the code in Cartographer, we have adopted the common approach of using natural units, where we have set $c$ to be unity such that the equations can be represented in a less cluttered form. Previously, we only considered the positive sign for $ds^2$, but in cases where the separation in time coordinates is greater than spatial, a negative sign is used to keep all spacetime distances real numbers. The sign used on $ds^2$ signifies whether the path is space-like or time-like. In equations, this is more often represented by replacing $s$ with $\sigma$ or $\tau$, which represent **proper distance** and **proper time** respectively.
+For the purposes of this paper and the code in Cartographer, we have adopted the common approach of using natural units, where we have set $c$ to be unity such that the equations can be represented in a less cluttered form. Previously, we only considered the positive sign for $ds^2$ [@EBH], but in cases where the separation in time coordinates is greater than spatial, a negative sign is used to keep all spacetime distances real numbers. The sign used on $ds^2$ signifies whether the path is space-like or time-like. In equations, this is more often represented by replacing $s$ with $\sigma$ or $\tau$, which represent **proper distance** and **proper time** respectively [@EBH].
 
-When the line element is altered to describe the motion of non-accelerating object, the path is then referred to as a **geodesic**. All objects that have mass follow time-like geodesics and as such, the equations of motion will use the time-like version of the line element, \begin{equation}\label{eqn:minkowskiTimelike} {d\tau}^2 = dt^2 - {dx}^2. \end{equation}
+When the line element is altered to describe the motion of non-accelerating object, the path is then referred to as a **geodesic**. All objects that have mass follow time-like geodesics[@EBH, @Dray, @MTW] and as such, the equations of motion will use the time-like version of the line element, \begin{equation}\label{eqn:minkowskiTimelike} {d\tau}^2 = dt^2 - {dx}^2. \end{equation}
 
-The geometric model for flat spacetime is not constrained to only describe one spatial dimension and one temporal. The line element for $\mathbb{M}^3$ using polar coordinates adds the azimuthal angle $\phi$, \begin{equation}\label{eqn:minkowskiPolar} {ds}^2 = - dt^2 + {dr}^2 + r^2{d\phi}^2 , \end{equation} and spherical coordinates follows the same expected form with $\theta$ corresponding to the polar angle: \begin{equation}\label{eqn:minkowskiSpherical} {ds}^2 =  - dt^2 + {dr}^2 + r^2(\sin^2{(\theta)}{d\phi}^2 + {d\theta}^2). \end{equation}
+The geometric model for flat spacetime is not constrained to only describe one spatial dimension and one temporal. The line element for $\mathbb{M}^3$ using polar coordinates adds the azimuthal angle $\phi$, \begin{equation}\label{eqn:minkowskiPolar} {ds}^2 = - dt^2 + {dr}^2 + r^2{d\phi}^2 , \end{equation} and spherical coordinates follows the same expected form with $\theta$ corresponding to the polar angle [@Dray]: \begin{equation}\label{eqn:minkowskiSpherical} {ds}^2 =  - dt^2 + {dr}^2 + r^2(\sin^2{(\theta)}{d\phi}^2 + {d\theta}^2). \end{equation}
 
-With Equation \ref{eqn:minkowskiSpherical}, we are only one step away from discussing \gls{gr}. Performing a similar thought experiment as with the trains, we place one light clock on the surface of the Earth and one in geostationary orbit. The observer on Earth will measure the light clock in orbit as ticking faster than the one on the surface, as mentioned in the Introduction. In \gls{sr}, we noted time dilation was a consequence do to motion, but the relative velocities between the satellite and Earth are zero. Considering this effect was absent in flat spacetime, we conclude that gravity must be the cause.
+With Equation \ref{eqn:minkowskiSpherical}, we are only one step away from discussing \gls{gr}. Performing a similar thought experiment as with the trains, we place one light clock on the surface of the Earth and one in geostationary orbit. The observer on Earth will measure the light clock in orbit as ticking faster than the one on the surface, as mentioned in the introduction. In \gls{sr}, we note time dilation as a consequence do to motion, but the relative velocities between the satellite and Earth are zero [@EBH]. Considering this effect was absent in flat spacetime, we conclude that gravity must be the cause.
 
-For the case of a single massive non-rotating and spherically symmetric object, we model gravity's influence by adding curvature to spacetime. This model is called the Schwarzschild geometric model and only requires a slight adjustment to the spherical Minkowski ($\mathbb{M}^4$) line element with two scaling factors: \begin{equation}\label{eqn:schwarzLine} {ds}^2 = - \left(1-\frac{2M}{r}\right)(dt)^2 + \frac{dr^2}{1-\frac{2M}{r}} + r^2(\sin^2{(\theta)}{d\phi}^2 + {d\theta}^2), \end{equation} where $M$ is the mass of the object measured in meters[^-211]. Only the $r$ and $t$ coordinates obtain this scaling factor as they represent gravitational length contraction and time dilation. If we use Equation \ref{eqn:schwarzLine} to find the path of an object very far away from the massive object, $r\rightarrow\infty$, the line element simplifies back to Equation \ref{eqn:minkowskiSpherical} and we regain the description of \gls{sr}.
+For the case of a single massive non-rotating and spherically symmetric object, we model gravity's influence by adding curvature to spacetime [@EBH, @Dray, @MTW]. This model is called the Schwarzschild geometric model and only requires a slight adjustment to the spherical Minkowski ($\mathbb{M}^4$) line element with two scaling factors: \begin{equation}\label{eqn:schwarzLine} {ds}^2 = - \left(1-\frac{2M}{r}\right)(dt)^2 + \frac{dr^2}{1-\frac{2M}{r}} + r^2(\sin^2{(\theta)}{d\phi}^2 + {d\theta}^2), \end{equation} where $M$ is the mass of the object measured in meters[^-211]. Only the $r$ and $t$ coordinates obtain this scaling factor as they represent gravitational length contraction and time dilation [@EBH]. If we use Equation \ref{eqn:schwarzLine} to find the path of an object very far away from the massive object, $r\rightarrow\infty$, the line element simplifies back to Equation \ref{eqn:minkowskiSpherical} and we regain the description of \gls{sr} [@Dray].
 
-[^-211]: When using the explicit formulation (not natural units), the mass term is $\frac{GM}{c^2}$, where $G$ is Newton's gravitational constant and $M$ is the mass in kilograms.
+[^-211]: When using the explicit formulation (not natural units), the mass term is $\frac{GM}{c^2}$, where $G$ is Newton's gravitational constant and $M$ is the mass in kilograms [@EBH].
 
-One important distinction between \gls{sr} and \gls{gr} is the classification of inertial reference frames. In \gls{sr}, there is no preferred frame and all frames using the line element will measure the same spacetime separation between events. \gls{gr} requires a slight change and creates three categories of inertial reference frames: the **bookkeeper**, **shell observers**, and **rain** frames. The bookkeeper is an observer very far away ($r\rightarrow\infty$) from the massive object and performs their measurements in flat spacetime ($\mathbb{M}^4$). These are the geometric coordinates of the Schwarzschild model and whose basis differentials appear in Equation \ref{eqn:schwarzLine}.
+One important distinction between \gls{sr} and \gls{gr} is the classification of inertial reference frames. In \gls{sr}, there is no preferred frame and all frames using the line element will measure the same spacetime separation between events. \gls{gr} requires a slight change and creates three categories of inertial reference frames: the **bookkeeper**, **shell observers**, and **rain** frames[@EBH, @Dray]. The bookkeeper is an observer very far away ($r\rightarrow\infty$) from the massive object and performs their measurements in flat spacetime ($\mathbb{M}^4$)[@EBH]. These are the geometric coordinates of the Schwarzschild model and whose basis differentials appear in Equation \ref{eqn:schwarzLine} [@Dray].
 
-Shell observers are surfaces of a constant coordinate, typically $r$ or $t$, in proximity to the massive object. As a result, their measurements are affected by the curvature and they measure contracted length and dilated time when compared to the bookkeeper. Figure \ref{fig:schwarzTriangle} visually represents their relations using hyperbolic triangles.
+Shell observers are surfaces of a constant coordinate, typically $r$ or $t$, in proximity to the massive object. As a result, their measurements are affected by the curvature and they measure contracted length and dilated time when compared to the bookkeeper[@EBH, @Dray]. Figure \ref{fig:schwarzTriangle} visually represents their relations using hyperbolic triangles [@Dray].
 
 \begin{figure}[H]
   \begin{subfigure}{.5\textwidth}
@@ -338,7 +341,7 @@ Shell observers are surfaces of a constant coordinate, typically $r$ or $t$, in 
   \label{fig:schwarzTriangle}
 \end{figure}
 
-By constructing concentric hypersurfaces of constant $r$ and setting each shell's vertical axis value equal to $\sqrt{1-\frac{2M}{r}}$, we can construct an embedding diagram, which helps visualize the increasing curvature as $r$ approaches $2M$. Figure \ref{fig:Embedding} shows the result of this process using Cartographer for shells where $\theta$ has been set to $\pi/2$ and the other coordinate suppressed ($t$ and $r$ respectively for Figures \ref{fig:Embedding-Distance} and \ref{fig:Embedding-Time}). These diagrams omit the shells of $r=2M$, as that hypersurface represents the event horizon, where there is infinite curvature and no stationary reference frame can exist.
+By constructing concentric hypersurfaces of constant $r$ and setting each shell's vertical axis value equal to $\sqrt{1-\frac{2M}{r}}$, we can construct an embedding diagram, which helps visualize the increasing curvature as $r$ approaches $2M$[@EBH, @Dray]. Figure \ref{fig:Embedding} shows the result of this process using Cartographer for shells where $\theta$ has been set to $\pi/2$ and the other coordinate suppressed ($t$ and $r$ respectively for Figures \ref{fig:Embedding-Distance} and \ref{fig:Embedding-Time}). These diagrams omit the shells of $r=2M$, as that hypersurface represents the event horizon, where there is infinite curvature and no stationary reference frame can exist[@EBH, @Dray, @MTW].
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -358,11 +361,11 @@ By constructing concentric hypersurfaces of constant $r$ and setting each shell'
   \label{fig:Embedding}
 \end{figure}
 
-We conclude this brief overview of \gls{gr} with a disucssion on the equations of motion in Schwarzschild geometry. Since gravity is curvature, objects in free fall follow geodesics. Adopting the nomenclature from Taylor and Wheeler, we refer to these free falling objects as **stones**. As mentioned with Equation \ref{eqn:minkowskiTimelike}, stones will move through Schwarzschild spacetime on time-like geodesics, and the line element from which the equations of motion will be derived changes from Equation \ref{eqn:schwarzLine} to \begin{equation}\label{eqn:schwarzTimelike} {d\tau}^2 = \left(1-\frac{2M}{r}\right)(dt)^2 - \frac{dr^2}{1-\frac{2M}{r}} - r^2{d\phi}^2, \end{equation} where we use spherical symmetry to simplify the disucssion to the equitorial plane ($\theta=\pi/2$). Two important properties of the stone encoded in Equation \ref{eqn:schwarzTimelike}, energy per unit mass and angular momentum per unit mass, come from dividing both sides of Equation \ref{eqn:schwarzTimelike} by $d\tau$. The first, energy per unit mass, is defined by \begin{equation}\label{eqn:energyPerUnitMass} \frac{E}{m} = \left(1-\frac{2M}{r}\right) \frac{dt}{d\tau}, \end{equation} and comes from the notion of \gls{sr}. For a stone far away ($r\rightarrow\infty$), this quantity reduces to unity for a stone at rest, or scaled by $\gamma$[^-212] for a stone with initial velocity. As featured previously, angular momentum per unit mass, \begin{equation}\label{eqn:angularMomentumPerUnitMass} \frac{L}{m} = r^2 \frac{d\phi}{d\tau}, \end{equation} arises from the conservation of angular momentum in a spherically symmetric model.
+We conclude this brief overview of \gls{gr} with a disucssion on the equations of motion in Schwarzschild geometry. Since gravity is curvature [@EBH], objects in free fall follow geodesics. Adopting the nomenclature from Edwin Taylor and John Wheeler, we refer to these free falling objects as **stones**. As mentioned with Equation \ref{eqn:minkowskiTimelike}, stones will move through Schwarzschild spacetime on time-like geodesics [@EBH], and the line element from which the equations of motion will be derived changes from Equation \ref{eqn:schwarzLine} to \begin{equation}\label{eqn:schwarzTimelike} {d\tau}^2 = \left(1-\frac{2M}{r}\right)(dt)^2 - \frac{dr^2}{1-\frac{2M}{r}} - r^2{d\phi}^2, \end{equation} where we use spherical symmetry to simplify the disucssion to the equitorial plane ($\theta=\pi/2$) [@Dray]. Two important properties of the stone encoded in Equation \ref{eqn:schwarzTimelike}, energy per unit mass and angular momentum per unit mass [@EBH], come from dividing both sides of Equation \ref{eqn:schwarzTimelike} by $d\tau$. The first, energy per unit mass, is defined by \begin{equation}\label{eqn:energyPerUnitMass} \frac{E}{m} = \left(1-\frac{2M}{r}\right) \frac{dt}{d\tau}, \end{equation} and comes from the notion of \gls{sr}. For a stone far away ($r\rightarrow\infty$), this quantity reduces to unity for a stone at rest, or scaled by $\gamma$[^-212] for a stone with initial velocity [@EBH]. As featured previously, angular momentum per unit mass, \begin{equation}\label{eqn:angularMomentumPerUnitMass} \frac{L}{m} = r^2 \frac{d\phi}{d\tau}, \end{equation} arises from the conservation of angular momentum in a spherically symmetric model.
 
 [^-212]: Recall that $\gamma$ is defined as $\left(1-\frac{v^2}{c^2}\right)^{-1/2}$, where $v$ is the relative speed of the object.
 
-In cases where the motion is only radial, the convention is to set the azimuthal angle of $\phi$ to zero. With that, we only need to solve Equation \ref{eqn:schwarzTimelike} for $dr/d\tau$ and this motion is examined in Section \ref{radialMotion}. For paths with non-zero angular momentum, there is an effective potential which describes the orbit the stone will take. This effective potential takes the form \begin{equation}\label{eqn:veffective} \left( \frac{V}{m} \right)^2 = \left(1-\frac{2M}{r}\right)\left(1+\frac{(L/m)^2}{r^2}\right), \end{equation} where $L/m$ is the angular momentum per unit mass of the stone. Figure \ref{fig:veffective_vs_r} highlights the dependence on $L/m$ with $V/m$ plotted versus $r$-coordinate for notable possible paths due to the magnitude of $L/m$.
+In cases where the motion is only radial, the convention is to set the azimuthal angle of $\phi$ to zero. With that, we only need to solve Equation \ref{eqn:schwarzTimelike} for $dr/d\tau$ and this motion is examined in Section \ref{radialMotion}. For paths with non-zero angular momentum, there is an effective potential which describes the orbit the stone will take. This effective potential takes the form [@EBH] \begin{equation}\label{eqn:veffective} \left( \frac{V}{m} \right)^2 = \left(1-\frac{2M}{r}\right)\left(1+\frac{(L/m)^2}{r^2}\right), \end{equation} where $L/m$ is the angular momentum per unit mass of the stone. Figure \ref{fig:veffective_vs_r} highlights the dependence on $L/m$ with $V/m$ plotted versus $r$-coordinate for notable possible paths due to the magnitude of $L/m$[@EBH, @Dray].
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -397,9 +400,9 @@ In cases where the motion is only radial, the convention is to set the azimuthal
   \label{fig:veffective_vs_r}
 \end{figure}
 
-The first value of angular momentum that supports a circle orbit is $L/m=\sqrt{12}$, located at $r=6M$ and is unstable: any change to the energy of the stone will cause its orbit to decay towards the event horizon. For stones with angular momentum greater than or equal to $4$, the effective potential has a prominent peak. If the stone's energy per unit mass, $E/m$, is less than the value of this local maximum for the effective potential, the stone will orbit the massive object with the corresponding minimum radius and not be captured by the event horizon. At $L/m=4$, the stone can maintain a stable circular orbit at $r=12M$. If the stone has an energy value greater than the local minimum of the effective potential (but less than the peak), the stone will have an Elliptical orbit. Finally, in the case where the peak of $V/m$ is greater than unity, and the stone starts with $E/m=1$ (free fall starting at rest, collocated with the bookkeeper), the stone's orbit will be hyperbolic: coming in from $r\rightarrow\infty$, partially rotating about the massive object, and then escaping back out to the bookkeeper.
+The first value of angular momentum that supports a circle orbit is $L/m=\sqrt{12}$, located at $r=6M$ and is unstable[@EBH, @Dray]: any change to the energy of the stone will cause its orbit to decay towards the event horizon. For stones with angular momentum greater than or equal to $4$, the effective potential has a prominent peak. If the stone's energy per unit mass, $E/m$, is less than the value of this local maximum for the effective potential, the stone will orbit the massive object with the corresponding minimum radius and not be captured by the event horizon. At $L/m=4$, the stone can maintain a stable circular orbit at $r=12M$. If the stone has an energy value greater than the local minimum of the effective potential (but less than the peak), the stone will have an Elliptical orbit. Finally, in the case where the peak of $V/m$ is greater than unity, and the stone starts with $E/m=1$ (free fall starting at rest, collocated with the bookkeeper), the stone's orbit will be hyperbolic: coming in from $r\rightarrow\infty$, partially rotating about the massive object, and then escaping back out to the bookkeeper.
 
-To offer a more intuitive representation of effective potential versus $r$-coordinate, we rotate the plots of Figure \ref{fig:veffective_vs_r} about the azimuthal axis and create a similar representation to the embedding diagrams of Figure \ref{fig:Embedding} with Figure \ref{fig:vEff3d_noL}. However, with non-zero angular momentum, a stone has two potential barriers it must cross as $V_{eff}$ adopts a valley-like shape for $r$-coordinates in the interval of $(6M, 25M)$. If the stone doesn't have enough energy, it will have a hyperbolic path and perform a partial orbit before escaping to infinity. If the stone starts at rest in this valley, $E/m > V_{eff}$ for $r\in (6M, 25M)$, the stone will orbit between the two extreme $r$-coordinates bound where $E/m = V/m$. If the stone has energy greater than the peak $V/m$, it will perform a parabolic orbit and be captured by the event horizon.
+To offer a more intuitive representation of effective potential versus $r$-coordinate, we rotate the plots of Figure \ref{fig:veffective_vs_r} about the azimuthal axis and create a similar representation to the embedding diagrams of Figure \ref{fig:Embedding} with Figure \ref{fig:vEff3d_noL}. However, with non-zero angular momentum, a stone has two potential barriers it must cross as $V_{eff}$ adopts a valley-like shape for $r$-coordinates in the interval of $(6M, 25M)$. If the stone starts at rest in this valley, $E/m > V_{eff}$ for $r\in (6M, 25M)$, the stone will orbit between the two extreme $r$-coordinates bound where $E/m = V/m$.
 
 \begin{figure}[H]
     \centering
@@ -437,7 +440,7 @@ The Cartographer framework works by discretizing curved spacetime into a lattice
 
 At this stage, the lattice can be used to explore the underlying geometry through the embedding diagrams in Section \ref{distanceTimeAndEmbedding}. To visualize motion, two `Stone` objects are created with the initial conditions to be explored: energy per unit mass, $E/m$, and orbital angular momentum[^-221] per unit mass, $L/m$. These objects are used as parameters for calculating both their theoretical and simulated paths.
 
-The `VerletPathfinding` class uses numerical integration with the Verlet Velocity method (Section \ref{verletAlgo}) to calculate the theoretical geodesic and uses a time step size parameter for controlling the accuracy of the path. The `Latticework` class uses the $A^*$ ("A star") pathfinding algorithm (Section \ref{astarAlgo}) and the principle of least action to determine how the stone should move about the given geometry. A selection of helper data classes created to aid in the readability and verbosity of the code are featured in Appendix \ref{helperClasses}.
+The `VerletPathfinding` class uses numerical integration with the Verlet Velocity method (Section \ref{verletAlgo}) to calculate the theoretical geodesic and uses a time step size parameter for controlling the accuracy of the path. The `Latticework` class uses the $A^*$ ("A star") pathfinding algorithm (Section \ref{astarAlgo}) and the principle of least action to determine how the stone should move about the given geometry.
 
 [^-221]: Future references to angular momentum will omit the *orbital* clarifier as spin angular momentum is not discussed or explored in this paper.
 
@@ -445,7 +448,7 @@ $$\ $$
 
 ### Verlet Velocity Algorithm {#verletAlgo}
 
-The Verlet Velocity Algorithm approximates future position, velocity, and acceleration by using two time steps of data to calculate the next time step. This algorithm, like Euler's method, uses a Taylor series expansion of the position function around a time $t$ describing the future position as
+The Verlet Velocity Algorithm [@Verlet] approximates future position, velocity, and acceleration by using two time steps of data to calculate the next time step. This algorithm, like Euler's method, uses a Taylor series expansion of the position function around a time $t$ describing the future position as
 
 \begin{equation}\label{eqn:TaylorPosition}
 x(t + \Delta t) = x(t) + \Delta t x^\prime (t) + \frac{(\Delta t)^2 x^{\prime\prime} (t)}{2} + \mathcal{O}(\Delta t^3).
@@ -462,7 +465,7 @@ while t < total_time:
     t = t + dt
 ```
 
-While both the Verlet Velocity and Euler's methods use the forward difference definition for derivatives,
+While both the Verlet Velocity and Euler's methods use the forward difference definition for derivatives [@Verlet],
 
 \begin{equation}
 x^\prime (t) \approx \frac{x(t + \Delta t) - x(t)}{\Delta t},
@@ -478,7 +481,7 @@ $$\ $$
 
 ### $A^*$ Pathfinding Algorithm {#astarAlgo}
 
-The $A^*$ search algorithm is a heuristic method for navigating graphs. Two common applications for this type of algorithm are the movement of units in a strategy computer game and a mobile \gls{gps} providing directions. The problem is classified by considering a weighted graph of nodes, such as in Figure \ref{fig:weightedGraph}. Each node represents some intermediate destination along the way from a *source* to the desired *target*. Each edge then has a real valued number corresponding to the *cost* of moving to the next node.
+The $A^*$ search algorithm is a heuristic method for navigating graphs [@Astar]. Two common applications for this type of algorithm are: (1) the movement of units in a strategy computer game or (2) a mobile phone providing directions via \gls{gps} software. The problem is classified by considering a weighted graph of nodes, such as in Figure \ref{fig:weightedGraph}. Each node represents some intermediate destination along the way from a *source* to the desired *target*. Each edge then has a real valued number corresponding to the *cost* of moving to the next node.
 
 \begin{figure}[H]
 \centering
@@ -668,7 +671,7 @@ While the example shown in Figure \ref{fig:weightedGraph} is simplistic, the und
     \label{fig:cartographerGraph}
 \end{figure}
 
-In Cartographer, the edge cost for radial neighbors (same $\phi$, different $r$) is given by the action, which is found by solving Equation \ref{eqn:schwarzTimelike} for $d\tau$. For $\phi$ neighbors, the cost of change in angular momentum is used. This allows the underlying graph to only be generated once, and only requires a recalculation of the edges if the stone's properties are changed. For the free fall motion examined in this project, the stone's properties of $E/m$ and $L/m$ are constant. Therefore, in the example shown in Figure \ref{fig:cartographerGraph}, the nodes with $\phi_0$ and $\phi_{-1}$ will have total edge costs that rule them out. Figure \ref{fig:lattice_slice} provides a visualization of how the nodes in the lattice are distributed in Cartographer.
+In Cartographer, the edge cost for radial neighbors (same $\phi$, different $r$) is given by the action, which is found by solving Equation \ref{eqn:schwarzTimelike} for $d\tau$. For $\phi$ neighbors, the cost of change in angular momentum is used. This allows the underlying graph to only be generated once, and only requires a recalculation of the edges if the stone's properties are changed. For the free fall motion examined in this project, the stone's properties of $E/m$ and $L/m$ are constant. Therefore, in the example shown in Figure \ref{fig:cartographerGraph}, the nodes with $\phi_0$ and $\phi_{-1}$ will have total edge costs that rule them out. Figure \ref{fig:lattice_slice} provides a more accurate visualization of how the nodes are distributed amonst the lattice.
 
 \begin{figure}[H]
     \centering
@@ -683,20 +686,20 @@ In Cartographer, the edge cost for radial neighbors (same $\phi$, different $r$)
 
 ## Gaining Speed and Radial Geodesics {#radialMotion}
 
-As overviewed in Section \ref{primer}, the equations of motion for an object in free-fall in spacetime are given from manipulations to Equation \ref{eqn:schwarzTimelike}. We begin by examining the simplest case of motion in the Schwarzschild geometry: radial timelike geodesics. For this case, we go a step further and examine how the speed of the stone is observed by different refernce frames by changing the basis differentials used in the line element. The two paths shown in Figure \ref{fig:RainSpeed} correspond to the bookkeeper and to shell observers.
+As overviewed in Section \ref{primer}, the equations of motion for an object in free-fall in spacetime are given from manipulations to Equation \ref{eqn:schwarzTimelike}. We begin by examining the simplest case of motion in the Schwarzschild geometry: radial timelike geodesics. For this case, we also examine how the speed of the stone is observed by different refernce frames by changing the basis differentials used in the line element [@Dray]. The two paths shown in Figure \ref{fig:RainSpeed} correspond to the bookkeeper and to shell observers.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=15cm,keepaspectratio,]{rain_speed.png}
-  \caption{Speed of in-falling object as measured from a series of different reference frames. Note the diverging observations from the Bookkeeper and the Shell Observer as $r_{shell}$ approachs $2M$. The Bookkeeper measures the speed of the stone to be increasing in the region of $r>6M$ before its deceleration to $v=0c$ at the event horizon.}
+  \caption{Speed of in-falling object as measured from a series of different reference frames. Note the diverging observations from the Bookkeeper and the Shell Observer as $r_{shell}$ approachs $2M$. The Bookkeeper measures the speed of the stone to be increasing in the region of $r>6M$ before its deceleration to $v=0c$ at the event horizon [@EBH].}
   \label{fig:RainSpeed}
 \end{figure}
 
-Since we are using natural units, $c$ will not be visible in this radial equation of motion, and so any numeric result must be scaled by $c$ to obtain a dimensionful answer. To obtain the speed of the stone as a function of $r$-coordinate, we substitute the $E/m$ from Equation \ref{eqn:energyPerUnitMass} for $d\tau$ and solve for $dr/dt$. The result is \begin{equation}\label{eqn:radialBK}\frac{dr_{bk}}{dt_{bk}}=-\left(1-\frac{2M}{r}\right)\sqrt{\frac{2M}{r}}. \end{equation} Since Equation \ref{eqn:radialBK} is initially squared, we must add back in the formation of direction by choosing the corresponding sign for the right-hand side. A negative value describes inward motion and a positive describes an escaping stone. As the stone reaches $r=2M$, the first quantity approaches zero, which corresponds to far-away observers observing in-falling objects slowing down as they approach the event horizon and never crossing, as shown in Figure \ref{fig:RainSpeed}.
+Since we are using natural units, $c$ will not be visible in this radial equation of motion, and so any numeric result must be scaled by $c$ to obtain a dimensionful answer. To obtain the speed of the stone as a function of $r$-coordinate, we substitute the $E/m$ from Equation \ref{eqn:energyPerUnitMass} for $d\tau$ and solve for $dr/dt$ [@EBH]. The result is \begin{equation}\label{eqn:radialBK}\frac{dr_{bk}}{dt_{bk}}=-\left(1-\frac{2M}{r}\right)\sqrt{\frac{2M}{r}}. \end{equation} Since Equation \ref{eqn:radialBK} is initially squared, we must add back in the formation of direction by choosing the corresponding sign for the right-hand side. A negative value describes inward motion and a positive describes an escaping stone [@EBH]. As the stone reaches $r=2M$, the first quantity approaches zero, which corresponds to far-away observers observing in-falling objects slowing down as they approach the event horizon and never crossing, as shown in Figure \ref{fig:RainSpeed}.
 
-To obtain the speed measured by shell observes as the stone passes, we change the basis diferentials from the bookkeeper to a shell observer by substituting in the division of \begin{equation}\label{eqn:ShellDistance} dt_{shell} = \sqrt{1-\frac{2M}{r}} dt \end{equation} by \begin{equation}\label{eqn:ShellTime} dt_{shell} = \sqrt{1-\frac{2M}{r}} dt \end{equation} into the left-hand side of Equation \ref{eqn:radialBK}, and obtain \begin{equation}\label{eqn:radialShell}\frac{dr_{shell}}{dt_{shell}}=-\sqrt{\frac{2M}{r_{shell}}}. \end{equation}
+To obtain the speed measured by shell observes as the stone passes, we change the basis diferentials from the bookkeeper to a shell observer [@Dray] by substituting in the division of \begin{equation}\label{eqn:ShellDistance} dt_{shell} = \sqrt{1-\frac{2M}{r}} dt \end{equation} by \begin{equation}\label{eqn:ShellTime} dt_{shell} = \sqrt{1-\frac{2M}{r}} dt \end{equation} into the left-hand side of Equation \ref{eqn:radialBK}, and obtain \begin{equation}\label{eqn:radialShell}\frac{dr_{shell}}{dt_{shell}}=-\sqrt{\frac{2M}{r_{shell}}}. \end{equation}
 
-As shown in Figure \ref{fig:RainSpeed}, this diverging behaviour has physical consequences. If we give the Bookkeeper the most senstive equipment, they measure any in-falling stone to stop as it reaches the event horizon and would never observe it pass through. In practice, if we model light being emitted by the stone towards the Bookkeeper as continous, the wavelength of light that informs any outside observer that the stone has crossed the horizon will be gravitationally redshifted to an infinite wavelength.
+As shown in Figure \ref{fig:RainSpeed}, this diverging behaviour has physical consequences. If we give the Bookkeeper the most senstive equipment, they measure any in-falling stone to stop as it reaches the event horizon and would never observe it pass through [@EBH, @Dray]. In practice, if we model light being emitted by the stone towards the Bookkeeper as continous, the wavelength of light that informs any outside observer that the stone has crossed the horizon will be gravitationally redshifted to an infinite wavelength.
 
 Figures \ref{fig:cartographerRadialTheory} and \ref{fig:cartographerRadialSimulated} show the respective visualizations of the numerical integration and $A^*$ simulated path from Cartographer. The surface underneath both lines is the effective potential for a stone with no angular momentum (Figure \ref{fig:vEff3d_noL}) and agree completely. For this type of motion, the resolution of $r$ and $\phi$ set for the `lattice` only affects how smooth the $A^*$ path and effective potential surface are.
 
@@ -720,7 +723,7 @@ $$\ $$
 
 ## Non-zero Angular Momentum
 
-The equation of motion for angular geodesics follows a similar procedure to that of the radial paths discussed in Section \ref{radialMotion}. This time, however, we will not be seeking to replace the $d\tau$ term in Equation \ref{eqn:schwarzTimelike} and only consider measurements from the stone's frame of reference. Dividing through by $d\tau^2$ and solving for $dr/d\tau$, we obtain \begin{equation}\label{eqn:angularMotionSimple} \left(\frac{dr}{d\tau}\right)^2 = \left(\frac{E}{m}\right)^2 - \left(\frac{V}{m}\right)^2, \end{equation} or in terms of parameters specified in Cartographer: \begin{equation}\label{eqn:angularMotionVerbose} \left(\frac{dr}{d\tau}\right)^2 = \left(\frac{E}{m}\right)^2 - \left(1-\frac{2M}{r}\right)\left(1+\frac{L/m^2}{r^2}\right). \end{equation}
+The equation of motion for angular geodesics follows a similar procedure to that of the radial paths discussed in Section \ref{radialMotion}. This time, however, we will not be seeking to replace the $d\tau$ term in Equation \ref{eqn:schwarzTimelike} and only consider measurements from the stone's frame of reference. Dividing through by $d\tau^2$ and solving for $dr/d\tau$ [@EBH, @Dray], we obtain \begin{equation}\label{eqn:angularMotionSimple} \left(\frac{dr}{d\tau}\right)^2 = \left(\frac{E}{m}\right)^2 - \left(\frac{V}{m}\right)^2, \end{equation} or in terms of parameters specified in Cartographer: \begin{equation}\label{eqn:angularMotionVerbose} \left(\frac{dr}{d\tau}\right)^2 = \left(\frac{E}{m}\right)^2 - \left(1-\frac{2M}{r}\right)\left(1+\frac{L/m^2}{r^2}\right). \end{equation}
 
 The disagreements between the simulated and theoretical paths are discussed in Section \ref{discussion}.
 
@@ -728,7 +731,7 @@ $$\ $$
 
 ### Circular
 
-As discused in Section \ref{primer} with Figure \ref{fig:veffective_vs_r}, the first angular momentum value that permits a circular orbit is $L/m=\sqrt{12}$. This value is obtained either by taking the first derivative with respect to $r$ of Equation \ref{eqn:veffective} and setting it equal to zero, or by noting that circular orbits cannot have a change in $r$-coordinate and as such Equation \ref{eqn:angularMotionSimple} must identically be zero. Figures \ref{fig:circle_theory_L4} and \ref{fig:circle_simulated_L4} show the results generated by Cartographer for a stone with $L/m=4$ starting at $r=12M$.
+As discused in Section \ref{primer} with Figure \ref{fig:veffective_vs_r}, the first angular momentum value that permits a circular orbit is $L/m=\sqrt{12}$. This value is obtained either by taking the first derivative with respect to $r$ of Equation \ref{eqn:veffective} and setting it equal to zero, or by noting that circular orbits cannot have a change in $r$-coordinate and as such Equation \ref{eqn:angularMotionSimple} must identically be zero [@Dray]. Figures \ref{fig:circle_theory_L4} and \ref{fig:circle_simulated_L4} show the results generated by Cartographer for a stone with $L/m=4$ starting at $r=12M$.
 
 \begin{figure}[H]
     \centering
@@ -801,7 +804,7 @@ For examining the case of Elliptical orbits, the stone is given the initial cond
 
 ### Disagreements between Simulated and Theory {#discussion}
 
-While the purely radial and circular cases have strong agreement between the Verlet integration and $A^*$, Cartographer did not fare as well with respect to simulating hyperbolic and elliptical paths. The elliptical orbits shown in Figure \ref{fig:elliptical} do agree more than the hyperbolic path, in terms of overall trajectory.
+While the purely radial and circular cases have strong agreement between the Verlet integration and $A^*$, Cartographer did not fare as well with respect to simulating hyperbolic and elliptical paths. The elliptical orbits shown in Figure \ref{fig:elliptical} do agree more than the hyperbolic path, in terms of overall trajectory (number of orbits).
 
 These disagreements are caused by $A^*$'s sensitivity to the coordinate resolution of the lattice. Since the simulated path can only move from node to node, a sparse lattice, such as Figure \ref{fig:hyperbolic_simulated_L45_dr1}, does not allow the stone to change in $\phi$ as much as it should with each step. Similarly, Figure \ref{fig:hyperbolic_simulated_L45_dr01_dphi005} shows that more resolution in $\phi$ than $r$ will cause the stone to orbit more than it should. The simulated paths for these three figures also feature a sharp turning point which corresponds to a node existing exactly at the $r$-coordinate where $E/m=V/m$, and the lattice directing the stone to abruptly change the sign of $dr/d\tau$ in Equation \ref{eqn:angularMotionVerbose}.
 
@@ -859,4 +862,4 @@ features/OrbitsCatalog (accessed January 30, 2022).
 
 <br />
 
-\pagebreak
+\bibliography{Sources}
