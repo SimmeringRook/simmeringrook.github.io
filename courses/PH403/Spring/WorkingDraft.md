@@ -367,14 +367,14 @@ In cases where the motion is only radial, the convention is to set the azimuthal
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
       \centering
-      \includegraphics{veff_vs_r_L0.jpg}
+      \includegraphics{veff_vs_r_L0.png}
       \caption{$L/m=0$}
       \label{fig:veffective_vs_r_L0}
     \end{subfigure}
     \hfill
     \begin{subfigure}{.5\textwidth}
       \centering
-      \includegraphics{veff_vs_r_Lsqrt(12).jpg}
+      \includegraphics{veff_vs_r_Lsqrt12.png}
       \caption{$L/m=\sqrt{12}$}
       \label{fig:veffective_vs_r_Lsqrt(12)}
     \end{subfigure}
@@ -382,14 +382,14 @@ In cases where the motion is only radial, the convention is to set the azimuthal
     \vspace{0.5cm}
     \begin{subfigure}{.5\textwidth}
       \centering
-      \includegraphics{veff_vs_r_L4.jpg}
+      \includegraphics{veff_vs_r_L4.png}
       \caption{$L/m=4$}
       \label{fig:veffective_vs_r_L4}
     \end{subfigure}
     \hfill
     \begin{subfigure}{.5\textwidth}
       \centering
-      \includegraphics{veff_vs_r_L45.jpg}
+      \includegraphics{veff_vs_r_L45.png}
       \caption{$L/m>4$}
       \label{fig:veffective_vs_r_L45}
     \end{subfigure}
@@ -397,26 +397,36 @@ In cases where the motion is only radial, the convention is to set the azimuthal
   \label{fig:veffective_vs_r}
 \end{figure}
 
-The first value of angular momentum that supports a circle orbit is $L/m=\sqrt{12}$, located at $r=6M$ and is unstable: any change to the energy of the stone will cause its orbit to decay towards the event horizon. For stones with angular momentum greater than or equal to $4$, the effective potential has a prominent peak. If the stone's energy per unit mass, $E/m$, is less than the value of this local maximum for the effective potential, the stone will orbit the massive object with the corresponding minimum radius and not be captured by the event horizon. At $L/m=4$, the stone can maintain a stable circular orbit at $r=12M$. If the stone has an energy value greater than the local minimum of the effective potential (but less than the peak), the stone will have an eliptical orbit. Finally, in the case where the peak of $V/m$ is greater than unity, and the stone starts with $E/m=1$ (free fall starting at rest, collocated with the bookkeeper), the stone's orbit will be hyperbolic: coming in from $r\rightarrow\infty$, partially rotating about the massive object, and then escaping back out to the bookkeeper.
+The first value of angular momentum that supports a circle orbit is $L/m=\sqrt{12}$, located at $r=6M$ and is unstable: any change to the energy of the stone will cause its orbit to decay towards the event horizon. For stones with angular momentum greater than or equal to $4$, the effective potential has a prominent peak. If the stone's energy per unit mass, $E/m$, is less than the value of this local maximum for the effective potential, the stone will orbit the massive object with the corresponding minimum radius and not be captured by the event horizon. At $L/m=4$, the stone can maintain a stable circular orbit at $r=12M$. If the stone has an energy value greater than the local minimum of the effective potential (but less than the peak), the stone will have an Elliptical orbit. Finally, in the case where the peak of $V/m$ is greater than unity, and the stone starts with $E/m=1$ (free fall starting at rest, collocated with the bookkeeper), the stone's orbit will be hyperbolic: coming in from $r\rightarrow\infty$, partially rotating about the massive object, and then escaping back out to the bookkeeper.
 
-To offer a more intuitive representation of effective potential versus $r$-coordinate, we rotate the plots of Figure \ref{fig:veffective_vs_r} about the azimuthal axis and create a similar representation to the embedding diagrams of Figure \ref{fig:Embedding} with Figure \ref{fig:vEff3d}. However, with non-zero angular momentum, a stone has two potential barriers it must cross as $V_{eff}$ adopts a valley-like shape for $r$-coordinates in the interval of $(6M, 25M)$. If the stone doesn't have enough energy, it will have a hyperbolic path and perform a partial orbit before escaping to infinity. If the stone starts at rest in this valley, $E/m > V_{eff}$ for $r\in (6M, 25M)$, the stone will orbit between the two extreme $r$-coordinates bound where $E/m = V/m$. If the stone has energy greater than the peak $V/m$, it will perform a parabolic orbit and be captured by the event horizon.
+To offer a more intuitive representation of effective potential versus $r$-coordinate, we rotate the plots of Figure \ref{fig:veffective_vs_r} about the azimuthal axis and create a similar representation to the embedding diagrams of Figure \ref{fig:Embedding} with Figure \ref{fig:vEff3d_noL}. However, with non-zero angular momentum, a stone has two potential barriers it must cross as $V_{eff}$ adopts a valley-like shape for $r$-coordinates in the interval of $(6M, 25M)$. If the stone doesn't have enough energy, it will have a hyperbolic path and perform a partial orbit before escaping to infinity. If the stone starts at rest in this valley, $E/m > V_{eff}$ for $r\in (6M, 25M)$, the stone will orbit between the two extreme $r$-coordinates bound where $E/m = V/m$. If the stone has energy greater than the peak $V/m$, it will perform a parabolic orbit and be captured by the event horizon.
 
 \begin{figure}[H]
-    \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=13cm,keepaspectratio,]{veff_3D_L0.png}
+    \caption{$L/m=0$}
+    \label{fig:vEff3d_noL}
+\end{figure}
+
+\begin{figure}[H]
       \centering
-      \includegraphics[width=7.5cm,keepaspectratio,]{effective_potential_L0.png}
-      \caption{$L/m=0$}
-      \label{fig:vEff3d_noL}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{.5\textwidth}
-      \centering
-      \includegraphics[width=7.5cm,keepaspectratio,]{effective_potential_L4.png}
-      \caption{$L/m=4$}
-      \label{fig:sub-first}
-    \end{subfigure}
-  \caption{Comparision of how the effective potential changes as the stone's angular momentum increases. }
-  \label{fig:vEff3d}
+      \includegraphics[width=13cm,keepaspectratio,]{veff_3D_Lsqrt12.png}
+      \caption{$L/m=\sqrt{12}$}
+      \label{fig:vEff3d_Lsqrt(12)}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm,keepaspectratio,]{veff_3D_L4.png}
+    \caption{$L/m=4$}
+    \label{fig:vEff3d_L4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm,keepaspectratio,]{veff_3D_L45.png}
+    \caption{$L/m>4$}
+    \label{fig:vEff3d_L45}
 \end{figure}
 
 \pagebreak
@@ -685,14 +695,14 @@ Figures \ref{fig:cartographerRadialTheory} and \ref{fig:cartographerRadialSimula
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=15cm,keepaspectratio,]{rain_speed.png}
+  \includegraphics[width=15cm,keepaspectratio,]{radial_theory_L0.png}
   \caption{Speed of in-falling object as measured from a series of different reference frames. Note the diverging observations from the Bookkeeper and the Shell Observer as $r_{shell}$ approachs $2M$. The Bookkeeper measures the speed of the stone to be increasing in the region of $r>6M$ before its deceleration to $v=0c$ at the event horizon.}
   \label{fig:cartographerRadialTheory}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=15cm,keepaspectratio,]{rain_speed.png}
+  \includegraphics[width=15cm,keepaspectratio,]{radial_simulated_L0.png}
   \caption{Speed of in-falling object as measured from a series of different reference frames. Note the diverging observations from the Bookkeeper and the Shell Observer as $r_{shell}$ approachs $2M$. The Bookkeeper measures the speed of the stone to be increasing in the region of $r>6M$ before its deceleration to $v=0c$ at the event horizon.}
   \label{fig:cartographerRadialSimulated}
 \end{figure}
@@ -713,7 +723,16 @@ As discused in Section \ref{primer} with Figure \ref{fig:veffective_vs_r}, the f
 
 \begin{figure}[H]
     \centering
-    \caption{\label{EffectivePotentialCircular} $V_{eff}$ versus ${L_z}/m$, highlighting that only a specifc set of angular momentum values correspond to a circular orbit. Note that $r=6M$ is the "Inner-most stable orbit" for any object with mass and that $r=3M$ can only be acheived by a massless particle. $r=3M$ is called the "Light Sphere". }
+    \includegraphics[width=13cm,keepaspectratio,]{circle_theory_L4.png}
+    \caption{The brown circle is the result of numerical integrating Equation \ref{eqn:angularMotionSimple} with an $L/m=4$ and initial $r$-coordinate of $12M$.}
+    \label{fig:circle_theory_L4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm,keepaspectratio,]{circle_simulated_L4.png}
+    \caption{The purple circle is the path chosen by $A^*$ for a stone with an $L/m=4$ and initial $r$-coordinate of $12M$.}
+    \label{fig:circle_simulated_L4}
 \end{figure}
 
 $$\ $$
@@ -722,28 +741,53 @@ $$\ $$
 
 The next case of motion we consider is for a stone traveling inwards with an angular momentum greater in magnitude than $4$. This condition is necessary for the orbit to be hyperpolic as Equation \ref{eqn:veffective} approaches unity as $r$ approaches flat spacetime.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm,keepaspectratio,]{hyperbolic_theory_L45.png}
+    \caption{The brown circle is the result of numerical integrating Equation \ref{eqn:angularMotionSimple} with an $L/m=4$ and initial $r$-coordinate of $12M$.}
+    \label{fig:hyperbolic_theory_L45}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=7.5cm,keepaspectratio,]{hyperbolic_simulated_L45_dr1.png}
+        \caption{Lattice grid resolution: $dr=1$, $d\phi=0.1$}
+        \label{fig:hyperbolic_simulated_L45_dr1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=7.5cm,keepaspectratio,]{hyperbolic_simulated_L45_dr01_dphi005.png}
+        \caption{Lattice grid resolution: $dr=0.1$, $d\phi=0.05$}
+        \label{fig:hyperbolic_simulated_L45_dr01_dphi005}
+    \end{subfigure}
+    \caption{ Bleh.}
+    \label{fig:hyperbolic_simulated}
+\end{figure}
+
 $$\ $$
 
-### Eliptical
+### Elliptical
 
-For examining the case of eliptical orbits, the stone is given the initial conditions of $L/m=4$, $E/m=V/m(r=20M)$, and an initial inward direction of travel (). The angular momentum of $4$ is choosen as it provides a variety of possible small $r$-coordinate intervals inside the steep valley of the effective potential. For this given energy, the stone will oscillate between the minimum radius of $8.2M$ and $20M$.
+For examining the case of Elliptical orbits, the stone is given the initial conditions of $L/m=4$, $E/m=V/m(r=20M)$, and an initial inward direction of travel. The angular momentum of $4$ is choosen as it provides a variety of possible small $r$-coordinate intervals inside the steep valley of the effective potential. For this given energy, the stone will oscillate between the minimum radius of $8.2M$ and $20M$.
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
       \centering
-      \includegraphics[width=7.5cm,keepaspectratio,]{theory_and_simulated_L4_V20_elapsed_time.png}
-      \caption{Elapsed proper time}
-      \label{fig:sub-first}
+      \includegraphics[width=7.5cm,keepaspectratio,]{elliptical_theory_L4.png}
+      \caption{Verlet integration}
+      \label{fig:elliptical_theory_L4}
     \end{subfigure}
     \hfill
     \begin{subfigure}{.5\textwidth}
       \centering
-      \includegraphics[width=7.5cm,keepaspectratio,]{theory_and_simulated_L4_V20_effective_potential.png}
-      \caption{Effective Potential}
-      \label{fig:sub-first}
+      \includegraphics[width=7.5cm,keepaspectratio,]{elliptical_simulated_L4.png}
+      \caption{$A^*$ pathfinding, Lattice grid resolution: $dr=0.1$, $d\phi=0.075$}
+      \label{fig:elliptical_simulated_L4}
     \end{subfigure}
   \caption{Comparision of the simulated path (purple) versus the exact path (brown) for a stone starting at rest at $r/M = 20$ with and angular momentum per unit mass of $4$. Both paths use the geodesic equation from the stone's reference frame such that all time coordinates are measure in proper time.}
-  \label{fig:angular}
+  \label{fig:elliptical}
 \end{figure}
 
 \pagebreak
