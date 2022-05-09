@@ -703,15 +703,13 @@ $$\ $$
 
 ## Non-zero Angular Momentum
 
-$$\ $$
-
-### Hyperbolic and Parabolic
+The equation of motion for angular geodesics follows a similar procedure to that of the radial paths discussed in Section \ref{radialMotion}. This time, however, we will not be seeking to replace the $d\tau$ term in Equation \ref{eqn:schwarzTimelike} and only consider measurements from the stone's frame of reference. Dividing through by $d\tau^2$ and solving for $dr/d\tau$, we obtain \begin{equation}\label{eqn:angularMotionSimple} \left(\frac{dr}{d\tau}\right)^2 = \left(\frac{E}{m}\right)^2 - \left(\frac{V}{m}\right)^2, \end{equation} or in terms of parameters specified in Cartographer: \begin{equation}\label{eqn:angularMotionVerbose} \left(\frac{dr}{d\tau}\right)^2 = \left(\frac{E}{m}\right)^2 - \left(1-\frac{2M}{r}\right)\left(1+\frac{L/m^2}{r^2}\right). \end{equation}
 
 $$\ $$
 
 ### Circular
 
-> TODO: Limiting cases
+As discused in Section \ref{primer} with Figure \ref{fig:veffective_vs_r}, the first angular momentum value that permits a circular orbit is $L/m=\sqrt{12}$. This value is obtained either by taking the first derivative with respect to $r$ of Equation \ref{eqn:veffective} and setting it equal to zero, or by noting that circular orbits cannot have a change in $r$-coordinate and as such Equation \ref{eqn:angularMotionSimple} must identically be zero.
 
 \begin{figure}[H]
     \centering
@@ -720,14 +718,15 @@ $$\ $$
 
 $$\ $$
 
-### Eliptical 
+### Hyperbolic
 
-> TODO: Precession of Mercury
+The next case of motion we consider is for a stone traveling inwards with an angular momentum greater in magnitude than $4$. This condition is necessary for the orbit to be hyperpolic as Equation \ref{eqn:veffective} approaches unity as $r$ approaches flat spacetime.
 
-\begin{figure}[H]
-    \centering
-    \caption{\label{Mercury} Note that by removing the restriction of a circular orbit, we obtain the family of stable orbits that are almost elliptical in shape. This is one method in which the claims of \gls{gr} were verified experimentally, as it correctly described Mercury's precision about the Sun. }
-\end{figure}
+$$\ $$
+
+### Eliptical
+
+For examining the case of eliptical orbits, the stone is given the initial conditions of $L/m=4$, $E/m=V/m(r=20M)$, and an initial inward direction of travel (). The angular momentum of $4$ is choosen as it provides a variety of possible small $r$-coordinate intervals inside the steep valley of the effective potential. For this given energy, the stone will oscillate between the minimum radius of $8.2M$ and $20M$.
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
