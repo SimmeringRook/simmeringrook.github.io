@@ -668,7 +668,14 @@ While the example shown in Figure \ref{fig:weightedGraph} is simplistic, the und
     \label{fig:cartographerGraph}
 \end{figure}
 
-In Cartographer, the edge cost for radial neighbors (same $\phi$, different $r$) is given by the action, which is found by solving Equation \ref{eqn:schwarzTimelike} for $d\tau$. For $\phi$ neighbors, the cost of change in angular momentum is used. This allows the underlying graph to only be generated once, and only requires a recalculation of the edges if the stone's properties are changed. For the free fall motion examined in this project, the stone's properties of $E/m$ and $L/m$ are constant. Therefore, in the example shown in Figure \ref{fig:cartographerGraph}, the nodes with $\phi_0$ and $\phi_{-1}$ will have total edge costs that rule them out.
+In Cartographer, the edge cost for radial neighbors (same $\phi$, different $r$) is given by the action, which is found by solving Equation \ref{eqn:schwarzTimelike} for $d\tau$. For $\phi$ neighbors, the cost of change in angular momentum is used. This allows the underlying graph to only be generated once, and only requires a recalculation of the edges if the stone's properties are changed. For the free fall motion examined in this project, the stone's properties of $E/m$ and $L/m$ are constant. Therefore, in the example shown in Figure \ref{fig:cartographerGraph}, the nodes with $\phi_0$ and $\phi_{-1}$ will have total edge costs that rule them out. Figure \ref{fig:lattice_slice} provides a visualization of how the nodes in the lattice are distributed in Cartographer.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm,keepaspectratio,]{lattice_slice.png}
+    \caption{A portion of the lattice, where blue dots correspond to node locations as described by Figure \ref{fig:cartographerGraph}. Any path found by $A^*$ most move from one blue dot to another.}
+    \label{fig:lattice_slice}
+\end{figure}
 
 \pagebreak
 
